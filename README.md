@@ -1,6 +1,6 @@
 # Micro Cloud
 
-A Public API cloud platform
+A public API cloud platform
 
 ## Overview
 
