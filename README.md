@@ -19,3 +19,9 @@ Micro Cloud is a public API platform which streamlines the developer experience.
 - Generate an API key on the [Settings page](https://m3o.com/settings/keys).
 - Browse the APIs on the [Explore page](https://m3o.com/explore).
 - Call any using your token in the `Authorization: Bearer [Token]` header and `https://api.m3o.com/v1/[service]/[endpoint]` url.
+
+## Learn More
+
+- Read the [Announcement](https://blog.m3o.com/2021/06/24/micro-apis-for-everyday-use.html) blog post
+- Join the [Slack](https://slack.m3o.com) community
+- Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
