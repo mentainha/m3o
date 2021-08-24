@@ -1,6 +1,6 @@
 # Micro Cloud
 
-A public API cloud platform powered by Micro
+A public cloud platform powered by Micro
 
 ## Overview
 
