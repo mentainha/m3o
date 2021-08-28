@@ -35,4 +35,4 @@ See the [examples](https://github.com/micro/cloud/tree/main/examples) directory 
 ## Publish APIs
 
 If you'd like to publish your own APIs [fill in this form](https://forms.gle/9SQV6DdLNDzSRQ477) and 
-We'll get back to you.
+we'll get back to you.
