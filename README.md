@@ -31,3 +31,8 @@ See the [examples](https://github.com/micro/cloud/tree/main/examples) directory 
 - Read the [Announcement](https://blog.m3o.com/2021/06/24/micro-apis-for-everyday-use.html) blog post
 - Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
+
+## Publish APIs
+
+If you'd like to publish your own APIs [fill in this form](https://forms.gle/9SQV6DdLNDzSRQ477) and 
+We'll get back to you.
