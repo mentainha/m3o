@@ -28,7 +28,7 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 ## Learn More
 
-- Checkout the [Examples](examples) to see what you can build with the platform
+- Checkout the [Examples](examples) to see what you can build
 - Read the [Announcement](https://blog.m3o.com/2021/06/24/micro-apis-for-everyday-use.html) blog post
 - Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
