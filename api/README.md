@@ -16,7 +16,7 @@ Here's a simple helloworld
 Curl
 
 ```
-curl -H "Authorization: Bearer $MICRO_API_TOKEN" \
+curl -H "Authorization: Bearer $M3O_API_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"name": "John"}' \
      https://api.m3o.com/v1/helloworld/call
@@ -25,7 +25,7 @@ curl -H "Authorization: Bearer $MICRO_API_TOKEN" \
 Go
 
 ```go
-	token := os.Getenv("MICRO_API_TOKEN")
+	token := os.Getenv("M3O_API_TOKEN")
 
 	query := map[string]interface{}{
 		"name": "John",
