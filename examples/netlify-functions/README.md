@@ -21,5 +21,5 @@ npm install --save @netlify/zip-it-and-ship-it
 npm install --save @m3o/m3o-node
 ```
 
-Make sure you save your Micro API token (https://m3o.com/settings/keys) and save it as an environment variable (`MICRO_API_TOKEN`) on Netlify.
+Make sure you save your Micro API token (https://m3o.com/settings/keys) and save it as an environment variable (`M3O_API_TOKEN`) on Netlify.
 
