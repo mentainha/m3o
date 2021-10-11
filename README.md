@@ -61,7 +61,7 @@ Here's the homes of all the related projects:
 - [m3o/cloud](https://github.com/m3o/cloud) - locally hostable dev UX for the website
 - [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
-- [micro/micro](https://github.com/micro/micro) - the open source operating system for the cloud
+- [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
 
 ## Development
