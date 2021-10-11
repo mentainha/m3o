@@ -49,7 +49,7 @@ We then host our own custom dev UX on top and a [backend](https://github.com/m3o
 - [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
 - [micro/micro](https://github.com/micro/micro) - the open source operating system for the cloud
-- [micro/services](https://github.com/micro/services) - open source micro services powering m3o
+- [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com apis
 
 ## Development
 
