@@ -17,7 +17,7 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-var client = m3o.NewClient(os.Getenv("MICRO_API_TOKEN"))
+var client = m3o.NewClient(os.Getenv("M3O_API_TOKEN"))
 
 // csv of user ids
 var mods = os.Getenv("REDDIT_MODS")
