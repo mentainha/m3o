@@ -66,7 +66,7 @@ Here's the homes of all the related projects:
 
 ## Development
 
-This project is VC funded with a combination of open source development and management provided by the Micro team.
+This project is VC funded with a combination of open source development and platform management provided by the Micro team.
 
 ## Publish APIs
 
