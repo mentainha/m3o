@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	token := os.Getenv("MICRO_API_TOKEN")
+	token := os.Getenv("M3O_API_TOKEN")
 	if len(token) == 0 {
-		fmt.Println("Missing MICRO_API_TOKEN")
+		fmt.Println("Missing M3O_API_TOKEN")
 		return
 	}
 
