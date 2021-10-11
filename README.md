@@ -41,6 +41,16 @@ power all the [Micro Services](https://github.com/micro/services), which provide
 
 We then host our own custom dev UX on top and a [backend](https://github.com/m3o/backend) as the management control plane.
 
+## Where Everything Lives
+
+- [m3o.com] - a hosted fully managed offering of micro services
+- [m3o/m3o] - the canonical location for everything on github
+- [m3o/cloud] - locally hostable dev UX for the website
+- [m3o/platform] - the infrastructure automation for a cloud stack
+- [m3o/backend] - the services which power the m3o.com backend
+- [micro/micro] - the open source operating system for the cloud
+- [micro/services] - open source micro services powering m3o
+
 ## Development
 
 This project is venture funded with a combination of open source services, managed hosting and a team with much distain for AWS.
