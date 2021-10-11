@@ -49,8 +49,8 @@ We then host our own custom dev UX on top and a [backend](https://github.com/m3o
 Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), an Apache 2.0 licensed vendor neutral home. 
 We then automate the building and publishing of those services and client libraries. This creates a shared and fully managed platform for everyone to leverage. 
 
-We primarily use existing open source software, fully managed services and SaaS APIs as the backing infrastructure and create a standard interface on top. With 
-all the services on one platform, accessible with one API token, to drastically improve the Dev UX.
+We primarily use existing open source software, fully managed services and SaaS APIs as the backing infrastructure then layer a standard interface on top. With 
+all the services on one platform, accessible with one API token, we drastically improve the Dev UX.
 
 ## Where Everything Lives
 
