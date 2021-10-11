@@ -46,7 +46,15 @@ power all the [Micro Services](https://github.com/micro/services), which provide
 
 We then host our own custom dev UX on top and a [backend](https://github.com/m3o/backend) as the management control plane.
 
+Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), an Apache 2.0 licensed vendor neutral home. 
+We then automate the building and publishing of those services and client libraries. This creates a shared and fully managed platform for everyone to leverage. 
+
+We primarily use existing open source software, fully managed services and SaaS APIs as the backing infrastructure and create a standard interface on top. With 
+all the services on one platform, accessible with one API token, to drastically improve the Dev UX.
+
 ## Where Everything Lives
+
+Here's the homes of all the related projects:
 
 - [m3o.com](https://m3o.com) - a hosted fully managed offering of micro services
 - [m3o/m3o](https://github.com/m3o/m3o) - the canonical location for everything on github
@@ -58,7 +66,7 @@ We then host our own custom dev UX on top and a [backend](https://github.com/m3o
 
 ## Development
 
-This project is venture funded with a combination of open source services, managed hosting and a team with much disdain for AWS.
+This project is VC funded with a combination of open source development and management provided by the Micro team.
 
 ## Publish APIs
 
