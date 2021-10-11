@@ -46,7 +46,7 @@ We then host our own custom dev UX on top and a [backend](https://github.com/m3o
 - [m3o.com](https://m3o.com) - a hosted fully managed offering of micro services
 - [m3o/m3o](https://github.com/m3o/m3o) - the canonical location for everything on github
 - [m3o/cloud](https://github.com/m3o/cloud) - locally hostable dev UX for the website
-- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for a cloud stack
+- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
 - [micro/micro](https://github.com/micro/micro) - the open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o
