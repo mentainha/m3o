@@ -25,7 +25,7 @@ Here's the highlights:
 
 ## Services
 
-Some of the services offered:
+Currently with over 35+ services. Here are some of the services offered:
 
 - [Address](https://m3o.com/address) - Address lookup by postcode
 - [Cache](https://m3o.com/cache) - Quick access key-value storage
