@@ -5,7 +5,7 @@
 	</a>
 </p>
 
-<p align="center">[M3O](https://m3o.com) is an open source public cloud platform. We are building an AWS alternative for the next generation of developers.</p>
+<p align="center">M3O is an open source public cloud platform. We are building an AWS alternative for the next generation of developers.</p>
 
 ## Overview
 
