@@ -19,7 +19,6 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 ## Features
 
-------------------------------------------------------------------------------------------------- |
 | **🔥 Dev UX** | The developer experience is first priority. A slick new UX for the next generation of developers. |
 | |
 
