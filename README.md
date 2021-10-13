@@ -65,9 +65,9 @@ The core cloud OS and services exists in a vendor neutral org and are Apache 2.0
 
 The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
 
-- [m3o/cloud](https://github.com/m3o/cloud) - locally hostable dev UX for the website
-- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
-- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
+- [m3o/cloud](https://github.com/m3o/cloud) - locally hostable angular based dev UX for the website
+- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
+- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
 ## Development
 
