@@ -85,7 +85,8 @@ Developers build and contribute to services in [github.com/micro/services](https
 
 We then automate the building and publishing of those services and client libraries. This creates a shared and fully managed platform for everyone to leverage.
 
-We primarily use existing open source software, fully managed services and third party SaaS APIs as the backing infrastructure then layer a standard interface on top. With all the services on one platform, accessible with one API token, we drastically improve the Dev UX. Think of it like a distributed public cloud.
+We primarily use existing open source software, fully managed services and third party public APIs as the backing infrastructure then layer a standard interface 
+on top. With all the services on one platform, accessible with one API token, we drastically improve the Dev UX. Develop against one uniform backend API offering.
 
 ## Development
 
