@@ -52,7 +52,9 @@ We then automate the building and publishing of those services and client librar
 We primarily use existing open source software, fully managed services and SaaS APIs as the backing infrastructure then layer a standard interface on top. With 
 all the services on one platform, accessible with one API token, we drastically improve the Dev UX.
 
-## Where Everything Lives
+## Development
+
+This project is VC funded with a combination of open source development and platform management provided by the Micro team.
 
 The cloud hosted providers of Micro services:
 
@@ -69,9 +71,6 @@ The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the fo
 - [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
-## Development
-
-This project is VC funded with a combination of open source development and platform management provided by the Micro team.
 
 ## Publish APIs
 
