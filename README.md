@@ -56,7 +56,7 @@ all the services on one platform, accessible with one API token, we drastically 
 
 This project is VC funded with a combination of open source development and platform management provided by the Micro team.
 
-### Hosting
+### Cloud Hosting
 
 The cloud hosted providers of Micro services:
 
