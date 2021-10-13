@@ -7,7 +7,7 @@ together docs for more on architecture and usage for self hosting, local develop
 
 A few resources to look at in the mean time
 
-### Community && Support
+### Community & Support
 
 - Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
