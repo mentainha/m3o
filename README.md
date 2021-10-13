@@ -1,7 +1,7 @@
 <p align="center">
 	<a href="http://m3o.com">
 		<img src="https://avatars.githubusercontent.com/u/65984637?s=200&v=4" />
-		<h2 align="center">M3O</h2>
+		<h1 align="center">M3O</h1>
 	</a>
 </p>
 <p align="center">M3O is an open source public cloud platform.<br>We are building an AWS alternative for the next generation of developers.</p>
