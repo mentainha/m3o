@@ -5,7 +5,9 @@ together docs for more on architecture and usage for self hosting, local develop
 
 ## TODO
 
+- Getting Started
 - Architecture guide
 - Local development
 - Self hosting 
 - Writing services
+- Contributing
