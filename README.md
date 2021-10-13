@@ -54,18 +54,20 @@ all the services on one platform, accessible with one API token, we drastically 
 
 ## Where Everything Lives
 
-Here's the homes of all the related projects:
+The cloud hosted providers of Micro services:
 
-- [m3o.com](https://m3o.com) - a hosted fully managed offering of micro services
-- [m3o/m3o](https://github.com/m3o/m3o) - the canonical location for everything on github
-- [m3o/cloud](https://github.com/m3o/cloud) - locally hostable dev UX for the website
-- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
-- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
+- [m3o.com](https://m3o.com) - a fully managed offering of micro services
 
-The core cloud OS and services are in a vendor neutral org and Apache 2.0 licensed
+The core cloud OS and services exists in a vendor neutral org and are Apache 2.0 licensed
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
+
+The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
+
+- [m3o/cloud](https://github.com/m3o/cloud) - locally hostable dev UX for the website
+- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for hosted cloud stack
+- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com backend
 
 ## Development
 
