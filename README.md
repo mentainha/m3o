@@ -70,7 +70,7 @@ M3O is built on existing public cloud infrastructure using managed kubernetes al
 
 We then host our own custom dev UX on top and a [backend](https://github.com/m3o/backend) as the management control plane.
 
-Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), an Apache 2.0 licensed vendor neutral home.
+Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), a vendor neutral home.
 
 We then automate the building and publishing of those services and client libraries. This creates a shared and fully managed platform for everyone to leverage.
 
