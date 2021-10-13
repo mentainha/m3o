@@ -42,14 +42,13 @@ Currently with over 35+ services. Here are some of the services offered:
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
 - [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
 - [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
+- [**IP**](https://m3o.com/ip) - IP to geolocation lookup
 
-### Miscellaneous
+### Web
 
 - [**Currency**](https://m3o.com/currency) - Exchange rates and currency conversion
 - [**Email**](https://m3o.com/email) - Send emails in a flash
-- [**Id**](https://m3o.com/id) - Generate unique IDs (uuid, snowflake, etc)
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
-- [**IP**](https://m3o.com/ip) - IP to geolocation lookup
 - [**OTP**](https://m3o.com/otp) - One time password generation
 - [**QR Codes**](https://m3o.com/qr) - QR code generator
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
