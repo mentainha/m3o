@@ -56,14 +56,20 @@ all the services on one platform, accessible with one API token, we drastically 
 
 This project is VC funded with a combination of open source development and platform management provided by the Micro team.
 
+### Hosting
+
 The cloud hosted providers of Micro services:
 
 - [m3o.com](https://m3o.com) - a fully managed offering of micro services
+
+### Open Source
 
 The core cloud OS and services exists in a vendor neutral org and are Apache 2.0 licensed
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
+
+### M3O Dev
 
 The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
 
