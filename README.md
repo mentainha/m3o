@@ -10,7 +10,7 @@
 
 ## Overview
 
-AWS is a first generation public cloud provider. It's infrastructure services and pay as go pricing model made it an incredibly 
+AWS was a first generation public cloud provider. It's infrastructure services and pay as go pricing model made it an incredibly 
 compelling choice for a previous generation of developers. But what about the future? M3O is an attempt to build a new public 
 cloud platform with new building block primitives for the next generation of developers.
 
