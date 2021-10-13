@@ -27,24 +27,32 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 Currently with over 35+ services. Here are some of the services offered:
 
-- [Address](https://m3o.com/address) - Address lookup by postcode
-- [Cache](https://m3o.com/cache) - Quick access key-value storage
+### Backend
+
+- [**Cache**](https://m3o.com/cache) - Quick access key-value storage
+- [**DB**](https://m3o.com/db) - Simple database service
+- [**Functions**](https://m3o.com/function) - Serverless compute as a service
+- [**Stream**](https://m3o.com/stream) - Publish and subscribe to messages
+- [**User**](https://m3o.com/user) - User management and authentication
+- [**File**](https://m3o.com/file) - Store, list, and retrieve text files
+
+### Logistics
+
+- [**Address**](https://m3o.com/address) - Address lookup by postcode
+- [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
+- [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
+- [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
+
+### Miscellaneous
+
 - [Currency](https://m3o.com/currency) - Exchange rates and currency conversion
-- [DB](https://m3o.com/db) - Simple database service
 - [Email](https://m3o.com/email) - Send emails in a flash
-- [File](https://m3o.com/file) - Store, list, and retrieve text files
-- [Functions](https://m3o.com/function) - Serverless compute as a service
-- [Geocoding](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
 - [Id](https://m3o.com/id) - Generate unique IDs (uuid, snowflake, etc)
 - [Image](https://m3o.com/image) - Quickly upload, resize, and convert images
 - [IP](https://m3o.com/ip) - IP to geolocation lookup
-- [Location](https://m3o.com/location) - Real time GPS location tracking and search
 - [OTP](https://m3o.com/otp) - One time password generation
 - [QR Codes](https://m3o.com/qr) - QR code generator
-- [Routing](https://m3o.com/routing) - Etas, routes and turn by turn directions
 - [SMS](https://m3o.com/sms) - Send an SMS message
-- [Stream](https://m3o.com/stream) - Publish and subscribe to messages
-- [User](https://m3o.com/user) - User management and authentication
 - [Weather](https://m3o.com/weather) - Real time weather forecast
 
 See the full list at [m3o.com/explore](https://m3o.com/explore) or the source at [github.com/micro/services](https://github.com/micro/services).
