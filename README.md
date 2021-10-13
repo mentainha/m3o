@@ -80,4 +80,4 @@ The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the fo
 
 ## Publish APIs
 
-If you'd like to publish your own APIs [fill in this form](https://forms.gle/9SQV6DdLNDzSRQ477) and we'll get back to you.
+If you'd like to publish your own APIs on the M3O platform [fill in this form](https://forms.gle/9SQV6DdLNDzSRQ477) and we'll get back to you.
