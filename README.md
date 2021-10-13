@@ -45,15 +45,15 @@ Currently with over 35+ services. Here are some of the services offered:
 
 ### Miscellaneous
 
-- [Currency](https://m3o.com/currency) - Exchange rates and currency conversion
-- [Email](https://m3o.com/email) - Send emails in a flash
-- [Id](https://m3o.com/id) - Generate unique IDs (uuid, snowflake, etc)
-- [Image](https://m3o.com/image) - Quickly upload, resize, and convert images
-- [IP](https://m3o.com/ip) - IP to geolocation lookup
-- [OTP](https://m3o.com/otp) - One time password generation
-- [QR Codes](https://m3o.com/qr) - QR code generator
-- [SMS](https://m3o.com/sms) - Send an SMS message
-- [Weather](https://m3o.com/weather) - Real time weather forecast
+- [**Currency**](https://m3o.com/currency) - Exchange rates and currency conversion
+- [**Email**](https://m3o.com/email) - Send emails in a flash
+- [**Id**](https://m3o.com/id) - Generate unique IDs (uuid, snowflake, etc)
+- [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
+- [**IP**](https://m3o.com/ip) - IP to geolocation lookup
+- [**OTP**](https://m3o.com/otp) - One time password generation
+- [**QR Codes**](https://m3o.com/qr) - QR code generator
+- [**SMS**](https://m3o.com/sms) - Send an SMS message
+- [**Weather**](https://m3o.com/weather) - Real time weather forecast
 
 See the full list at [m3o.com/explore](https://m3o.com/explore) or the source at [github.com/micro/services](https://github.com/micro/services).
 
