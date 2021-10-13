@@ -90,7 +90,8 @@ on top. With all the services on one platform, accessible with one API token, we
 
 ## Development
 
-This project is VC funded with a combination of open source development and platform management provided by the Micro team.
+This project is a combination of open source projects and a platform managed by the Micro team. Our goal is to enable any developer to 
+contribute to the open source while benefiting from the platform as a shared resource.
 
 ### Cloud Hosting
 
