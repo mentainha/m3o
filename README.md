@@ -70,7 +70,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore) or the source at
 - Checkout the [Examples](examples) to see what you can build
 - Read the [Announcement](https://blog.m3o.com/2021/06/24/micro-apis-for-everyday-use.html) blog post
 - Join the [Slack](https://slack.m3o.com) community
-- Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
+- Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Email [Support](mailto:support@m3o.com) for help
 
 ## How it Works
