@@ -38,9 +38,9 @@ The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the fo
 
 ## TODO
 
-- Getting Started
-- Architecture guide
-- Local development
-- Self hosting 
-- Writing services
-- Contributing
+- [ ] Getting Started
+- [ ] Architecture guide
+- [ ] Local development
+- [ ] Self hosting 
+- [ ] Writing services
+- [ ] Contributing
