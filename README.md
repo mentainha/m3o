@@ -29,7 +29,7 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
 and other modern development models, the building blocks we're looking for are changing. They're mostly now third party APIs. M3O is looking to 
-aggregate all those third party APIs into a single uniform offering with a slick new dev UX.
+aggregate all those third party public APIs into a single uniform offering with a slick new dev UX.
 
 ## Services
 
