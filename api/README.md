@@ -25,18 +25,18 @@ curl -H "Authorization: Bearer $M3O_API_TOKEN" \
 Go
 
 ```go
-	token := os.Getenv("M3O_API_TOKEN")
+token := os.Getenv("M3O_API_TOKEN")
 
-	query := map[string]interface{}{
-		"name": "John",
-	}
-	b, _ := json.Marshal(query)
+query := map[string]interface{}{
+	"name": "John",
+}
+b, _ := json.Marshal(query)
 
-	req, _ := http.NewRequest("POST", "https://api.m3o.com/v1/helloworld/call", bytes.NewReader(b))
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+token)
+req, _ := http.NewRequest("POST", "https://api.m3o.com/v1/helloworld/call", bytes.NewReader(b))
+req.Header.Set("Content-Type", "application/json")
+req.Header.Set("Authorization", "Bearer "+token)
 
-	rsp, err := http.DefaultClient.Do(req)
+rsp, err := http.DefaultClient.Do(req)
 ```
 
 See the [examples](../examples) for more use cases.
