@@ -48,7 +48,6 @@ So far there are over 35+ services. Here are some of the highlights:
 
 ### Web
 
-- [**Currency**](https://m3o.com/currency) - Exchange rates and currency conversion
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
 - [**OTP**](https://m3o.com/otp) - One time password generation
