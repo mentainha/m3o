@@ -11,8 +11,10 @@
 ## Overview
 
 AWS was a first generation public cloud provider. It's infrastructure services and pay as go pricing model made it an incredibly 
-compelling choice for a previous generation of developers. But what about the future? M3O is an attempt to build a new public 
-cloud platform with building block primitives for the next generation of developers.
+compelling choice for a previous generation of developers. But what about the future? 
+
+M3O is an attempt to build a new public 
+cloud platform with higher level building block primitives for the next generation of developers.
 
 M3O is powered by the open source [Micro](https://github.com/micro/micro) platform and programmable real world [Micro Services](https://github.com/micro/services).
 
@@ -27,7 +29,7 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 ## Services
 
-Currently with over 35+ services. Here are some of the services offered:
+So far there are over 35+ services. Here are some of the highlights:
 
 ### Backend
 
