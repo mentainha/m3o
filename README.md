@@ -10,7 +10,7 @@
 
 ## Overview
 
-AWS was a first generation public cloud provider. It's infrastructure services and pay as go pricing model made it an incredibly 
+AWS was a first generation public cloud provider started in 2006. It's infrastructure services and pay as go pricing model made it an incredibly 
 compelling choice for a previous generation of developers. But what about the future? 
 
 M3O is an attempt to build a new public cloud platform with higher level building blocks for the next generation of developers. 
@@ -24,6 +24,12 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 - **🆓 Free to start** - It's a simple pay as you go model and everything is priced per request. Top up your account and start making calls.
 - **🚫 Anti AWS Billing** - Don't get lost in a sea of infinite cloud billing. We show you exactly what you use and don't hide any of the costs.
 - **✔️ Open Source Software** - Built on an open source foundation and services which anyone can contribute to with a simple PR.
+
+## Rationale
+
+AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
+and other modern development models, the building blocks we're looking for are changing. They're mostly now third party APIs. M3O is looking to 
+aggregate all those third party APIs into a single uniform offering with a slick new dev UX.
 
 ## Services
 
