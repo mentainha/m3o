@@ -29,7 +29,7 @@ Here's the highlights:
 - Generate an API key on the [Settings page](https://m3o.com/settings/keys).
 - Browse the APIs on the [Explore page](https://m3o.com/explore).
 - Call any API using your token in the `Authorization: Bearer [Token]` header and `https://api.m3o.com/v1/[service]/[endpoint]` url.
-- See the [m3o/cli](cli) for command line usage in your terminal.
+- See the [m3o/cli](cli) for command line usage.
 
 ## Learn More
 
