@@ -135,4 +135,4 @@ If you'd like to publish your own APIs on the M3O platform [fill in this form](h
 - Write examples - [m3o/examples](examples) provides a place to showcase things built on top which we'll feature on the website
 - Write services - [micro/services](https://github.com/micro/services) are all the services we host and hope for more devs to help
 - Write docs - [m3o/docs](docs) is where our docs will live and we know without great docs this isn't going to work
-- Show support - Let the world know what we're building so that more people can get involved
+- Show support - Tweet [@m3oservices](https://twitter.com/m3oservices) and let the world know what we're building so that more people can get involved
