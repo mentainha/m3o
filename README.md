@@ -26,7 +26,7 @@ M3O is host to 35+ [services](#services) and counting. Below are the platform fe
 - **🆓 Free to start** - It's a simple pay as you go model and everything is priced per request. Top up your account and start making calls.
 - **🚫 Anti AWS Billing** - Don't get lost in a sea of infinite cloud billing. We show you exactly what you use and don't hide any of the costs.
 - **✔️ Open Source Software** - Built on an open source foundation and services which anyone can contribute to with a simple PR.
-- **
+
 ## Rationale
 
 AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
