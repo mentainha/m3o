@@ -21,4 +21,3 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
-
