@@ -10,7 +10,7 @@
 
 ## Overview
 
-AWS was a first generation public cloud provider started in 2006. It's infrastructure services and pay as go pricing model made it an incredibly 
+AWS was a first generation public cloud provider started in 2006. Its infrastructure services and pay as go pricing model made it an incredibly 
 compelling choice for a previous generation of developers. But what about the future? 
 
 M3O is an attempt to build a new public cloud platform with higher level building blocks for the next generation of developers. 
