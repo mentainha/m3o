@@ -1,4 +1,5 @@
 name: 💡 General Feature Request
+description: Make a feature request or start a discussion to contribute one.
 title: "[FEATURE] <description>"
 labels: ["⭐ goal: addition"]
 body:
