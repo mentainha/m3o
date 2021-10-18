@@ -30,7 +30,7 @@ M3O is host to 35+ [services](#services) and counting. Below are the platform fe
 ## Rationale
 
 AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
-and other modern development models, the building blocks we're looking for are changing. They're mostly now third party APIs. M3O is looking to 
+and other modern development tools, the building blocks we're looking for are changing. They're mostly now third party APIs. M3O is looking to 
 aggregate all those third party public APIs into a single uniform offering with a slick new dev UX.
 
 ## Services
@@ -124,7 +124,7 @@ The core cloud OS and services exists in a vendor neutral org
 
 The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
 
-- [m3o/cloud](https://github.com/m3o/cloud) - locally hostable angular based dev UX for the website
+- [m3o/cloud](https://github.com/m3o/cloud) - locally self hostable angular based dev UX for the website
 - [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
@@ -134,7 +134,7 @@ If you'd like to publish your own APIs on the M3O platform [fill in this form](h
 
 ## Contributing
 
-- Write examples - [m3o/examples](examples) provides a place to showcase things built on top which we'll feature on the website
-- Write services - [micro/services](https://github.com/micro/services) are all the services we host and hope for more devs to help
-- Write docs - [m3o/docs](docs) is where our docs will live and we know without great docs this isn't going to work
-- Show support - Tweet [@m3oservices](https://twitter.com/m3oservices) and let the world know what we're building so that more people can get involved
+- **Write examples** - [m3o/examples](examples) provides a place to showcase things built on top which we'll feature on the website
+- **Write services** - [micro/services](https://github.com/micro/services) are all the services we host and hope for more devs to help
+- **Write docs** - [m3o/docs](docs) is where our docs will live and we know without great docs this isn't going to work
+- **Show support** - Tweet [@m3oservices](https://twitter.com/m3oservices) and let the world know what we're building so that more people can get involved
