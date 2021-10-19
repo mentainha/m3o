@@ -1,6 +1,6 @@
 # M3O CLI
 
-The codebase for the M3O CLI
+The command line for M3O
 
 ## Install
 
