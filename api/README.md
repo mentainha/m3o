@@ -6,7 +6,8 @@ The M3O API consists of a set of many public apis all consumed through a single 
 
 M3O APIs are a standard set of http/json APIs which act as programmable building blocks 
 for rapid development of any product or services. Pick up and use one or more APIs as 
-easily as importing a library and making a function call from a library.
+easily as importing a library and making a function call from a library. M3O APIs are 
+hosted versions of [github.com/micro/services](https://github.com/micro/services).
 
 ## Examples
 
