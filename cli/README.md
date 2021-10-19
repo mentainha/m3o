@@ -10,9 +10,15 @@ Building from source
 go get github.com/m3o/m3o
 ```
 
-Otherwise release binaries coming soon
+Otherwise download the latest [release](https://github.com/m3o/m3o/releases/latest) binary.
 
 ## Usage
+
+Display help
+
+```
+m3o -h
+```
 
 Export your API token as found in the UI
 
@@ -27,4 +33,16 @@ $ m3o call helloworld Call '{"name": "Alice"}'
 {
  "message": "Hello Alice"
 }
+```
+
+List services
+
+```
+m3o explore list
+```
+
+Search for services
+
+```
+m3o explore search --query=db
 ```
