@@ -31,7 +31,7 @@ var callCmd = &cobra.Command{
 		// check for a token
 		token := os.Getenv("M3O_API_TOKEN")
 		if len(token) == 0 {
-			fmt.Fprintln(os.Stderr, "Missing M3O_API_TOKEN")
+			fmt.Fprintln(os.Stderr, "Missing M3O_API_TOKEN environment variable")
 			os.Exit(1)
 		}
 
