@@ -1,6 +1,6 @@
 # M3O API
 
-The M3O API consists of a set of many separate public apis all consumed through a single gateway.
+The M3O API consists of a set of many public apis all consumed through a single gateway.
 
 ## Overview
 
