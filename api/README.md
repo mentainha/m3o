@@ -1,11 +1,10 @@
-# Micro API
+# M3O API
 
-The Micro API consists of a set of public apis for everyday use.
-
+The M3O API consists of a set of many separate public apis all consumed through a single gateway.
 
 ## Overview
 
-Micro APIs are a standard set of http/json APIs which act as programmable building blocks 
+M3O APIs are a standard set of http/json APIs which act as programmable building blocks 
 for rapid development of any product or services. Pick up and use one or more APIs as 
 easily as importing a library and making a function call from a library.
 
