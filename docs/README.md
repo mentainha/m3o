@@ -7,7 +7,7 @@ together docs for more on architecture and usage for self hosting, local develop
 
 - [Roadmap](#roadmap)
 - [Resources](#resources)
-- [Community](#community-&-support)
+- [Community](#community)
 - [Hosting](#cloud-hosting)
 - [Open Source](#open-source)
 - [M3O Development](#m3o-development)
@@ -21,7 +21,7 @@ Check out the [roadmap](ROADMAP.md) and feel free to PR future features
 
 A few resources to look at in the mean time
 
-### Community & Support
+### Community
 
 - Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
