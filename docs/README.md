@@ -8,10 +8,10 @@ together docs for more on architecture and usage for self hosting, local develop
 - [Roadmap](#roadmap)
 - [Resources](#resources)
 - [Community](#community)
-- [Hosting](#cloud-hosting)
+- [Cloud Hosting](#cloud-hosting)
 - [Open Source](#open-source)
 - [M3O Development](#m3o-development)
-- [Todo](#todo)
+- [TODO](#todo)
 
 ## Roadmap
 
