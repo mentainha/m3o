@@ -3,6 +3,16 @@
 Currently we're focused heavily on Dev UX for the hosted version. Over the coming weeks we'll start to put 
 together docs for more on architecture and usage for self hosting, local development and writing services.
 
+## Contents
+
+- [Roadmap](#roadmap)
+- [Resources](#resources)
+- [Community](#community-&-support)
+- [Hosting](#cloud-hosting)
+- [Open Source](#open-source)
+- [M3O Development](#m3o-development)
+- [Todo](#todo)
+
 ## Roadmap
 
 Check out the [roadmap](ROADMAP.md) and feel free to PR future features
@@ -29,7 +39,7 @@ The core cloud OS and services exists in a vendor neutral org and are Apache 2.0
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
 
-### M3O Dev
+### M3O Development
 
 The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
 
