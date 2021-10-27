@@ -4,6 +4,27 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Quran/api](htt
 
 Endpoints:
 
+## Summary
+
+Get a summary for a given chapter (surah)
+
+
+[https://m3o.com/quran/api#Summary](https://m3o.com/quran/api#Summary)
+
+```js
+const { QuranService } = require('m3o/quran');
+
+// Get a summary for a given chapter (surah)
+async function getChapterSummary() {
+	let quranService = new QuranService(process.env.M3O_API_TOKEN)
+	let rsp = await quranService.summary({
+  "chapter": 1
+})
+	console.log(rsp)
+}
+
+getChapterSummary()
+```
 ## Verses
 
 Lookup the verses (ayahs) for a chapter including
@@ -70,25 +91,4 @@ async function listChapters() {
 }
 
 listChapters()
-```
-## Summary
-
-Get a summary for a given chapter (surah)
-
-
-[https://m3o.com/quran/api#Summary](https://m3o.com/quran/api#Summary)
-
-```js
-const { QuranService } = require('m3o/quran');
-
-// Get a summary for a given chapter (surah)
-async function getChapterSummary() {
-	let quranService = new QuranService(process.env.M3O_API_TOKEN)
-	let rsp = await quranService.summary({
-  "chapter": 1
-})
-	console.log(rsp)
-}
-
-getChapterSummary()
 ```
