@@ -79,9 +79,10 @@ jobs:
 
       - name: Move clients/examples
         run: |
-          rm -rf clients services examples/go examples/ts examples/curl
+          rm -rf clients examples
           cp -r ./services/clients .
-          cp -r ./services/examples/* examples/
+          cp -r ./services/examples .
+          rm -rf services
 
       - name: Commit back clients/examples
         uses: EndBug/add-and-commit@v7
