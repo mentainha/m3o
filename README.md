@@ -63,7 +63,7 @@ So far there are over 35+ services. Here are some of the highlights:
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
 - [**Weather**](https://m3o.com/weather) - Real time weather forecast
 
-See the full list at [m3o.com/explore](https://m3o.com/explore) or the source at [github.com/micro/services](https://github.com/micro/services).
+See the full list at [m3o.com/explore](https://m3o.com/explore).
 
 ## Getting Started
 
