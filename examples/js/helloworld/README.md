@@ -4,27 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Helloworld/api
 
 Endpoints:
 
-## Stream
-
-Stream returns a stream of "Hello $name" responses
-
-
-[https://m3o.com/helloworld/api#Stream](https://m3o.com/helloworld/api#Stream)
-
-```js
-const { HelloworldService } = require('m3o/helloworld');
-
-// Stream returns a stream of "Hello $name" responses
-async function streamsAreCurrentlyTemporarilyNotSupportedInClients() {
-	let helloworldService = new HelloworldService(process.env.M3O_API_TOKEN)
-	let rsp = await helloworldService.stream({
-  "name": "not supported"
-})
-	console.log(rsp)
-}
-
-streamsAreCurrentlyTemporarilyNotSupportedInClients()
-```
 ## Call
 
 Call returns a personalised "Hello $name" response
@@ -45,4 +24,25 @@ async function callTheHelloworldService() {
 }
 
 callTheHelloworldService()
+```
+## Stream
+
+Stream returns a stream of "Hello $name" responses
+
+
+[https://m3o.com/helloworld/api#Stream](https://m3o.com/helloworld/api#Stream)
+
+```js
+const { HelloworldService } = require('m3o/helloworld');
+
+// Stream returns a stream of "Hello $name" responses
+async function streamsAreCurrentlyTemporarilyNotSupportedInClients() {
+	let helloworldService = new HelloworldService(process.env.M3O_API_TOKEN)
+	let rsp = await helloworldService.stream({
+  "name": "not supported"
+})
+	console.log(rsp)
+}
+
+streamsAreCurrentlyTemporarilyNotSupportedInClients()
 ```

@@ -4,6 +4,28 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Db/api](https:
 
 Endpoints:
 
+## Read
+
+Read data from a table. Lookup can be by ID or via querying any field in the record.
+
+
+[https://m3o.com/db/api#Read](https://m3o.com/db/api#Read)
+
+```js
+const { DbService } = require('m3o/db');
+
+// Read data from a table. Lookup can be by ID or via querying any field in the record.
+async function readRecords() {
+	let dbService = new DbService(process.env.M3O_API_TOKEN)
+	let rsp = await dbService.read({
+  "query": "age == 43",
+  "table": "users"
+})
+	console.log(rsp)
+}
+
+readRecords()
+```
 ## Delete
 
 Delete a record in the database by id.
@@ -119,26 +141,4 @@ async function updateArecord() {
 }
 
 updateArecord()
-```
-## Read
-
-Read data from a table. Lookup can be by ID or via querying any field in the record.
-
-
-[https://m3o.com/db/api#Read](https://m3o.com/db/api#Read)
-
-```js
-const { DbService } = require('m3o/db');
-
-// Read data from a table. Lookup can be by ID or via querying any field in the record.
-async function readRecords() {
-	let dbService = new DbService(process.env.M3O_API_TOKEN)
-	let rsp = await dbService.read({
-  "query": "age == 43",
-  "table": "users"
-})
-	console.log(rsp)
-}
-
-readRecords()
 ```
