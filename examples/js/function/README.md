@@ -4,31 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Function/api](
 
 Endpoints:
 
-## Deploy
-
-Deploy a group of functions
-
-
-[https://m3o.com/function/api#Deploy](https://m3o.com/function/api#Deploy)
-
-```js
-const { FunctionService } = require('m3o/function');
-
-// Deploy a group of functions
-async function deployAfunction() {
-	let functionService = new FunctionService(process.env.M3O_API_TOKEN)
-	let rsp = await functionService.deploy({
-  "entrypoint": "helloworld",
-  "name": "my-first-func",
-  "project": "tests",
-  "repo": "github.com/m3o/nodejs-function-example",
-  "runtime": "nodejs14"
-})
-	console.log(rsp)
-}
-
-deployAfunction()
-```
 ## Call
 
 Call a function by name
@@ -113,4 +88,29 @@ async function describeFunctionStatus() {
 }
 
 describeFunctionStatus()
+```
+## Deploy
+
+Deploy a group of functions
+
+
+[https://m3o.com/function/api#Deploy](https://m3o.com/function/api#Deploy)
+
+```js
+const { FunctionService } = require('m3o/function');
+
+// Deploy a group of functions
+async function deployAfunction() {
+	let functionService = new FunctionService(process.env.M3O_API_TOKEN)
+	let rsp = await functionService.deploy({
+  "entrypoint": "helloworld",
+  "name": "my-first-func",
+  "project": "tests",
+  "repo": "github.com/m3o/nodejs-function-example",
+  "runtime": "nodejs14"
+})
+	console.log(rsp)
+}
+
+deployAfunction()
 ```

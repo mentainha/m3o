@@ -4,34 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Routing/api](h
 
 Endpoints:
 
-## Route
-
-Retrieve a route as a simple list of gps points along with total distance and estimated duration
-
-
-[https://m3o.com/routing/api#Route](https://m3o.com/routing/api#Route)
-
-```js
-const { RoutingService } = require('m3o/routing');
-
-// Retrieve a route as a simple list of gps points along with total distance and estimated duration
-async function gpsPointsForAroute() {
-	let routingService = new RoutingService(process.env.M3O_API_TOKEN)
-	let rsp = await routingService.route({
-  "destination": {
-    "latitude": 52.529407,
-    "longitude": 13.397634
-  },
-  "origin": {
-    "latitude": 52.517037,
-    "longitude": 13.38886
-  }
-})
-	console.log(rsp)
-}
-
-gpsPointsForAroute()
-```
 ## Eta
 
 Get the eta for a route from origin to destination. The eta is an estimated time based on car routes
@@ -87,4 +59,32 @@ async function turnByTurnDirections() {
 }
 
 turnByTurnDirections()
+```
+## Route
+
+Retrieve a route as a simple list of gps points along with total distance and estimated duration
+
+
+[https://m3o.com/routing/api#Route](https://m3o.com/routing/api#Route)
+
+```js
+const { RoutingService } = require('m3o/routing');
+
+// Retrieve a route as a simple list of gps points along with total distance and estimated duration
+async function gpsPointsForAroute() {
+	let routingService = new RoutingService(process.env.M3O_API_TOKEN)
+	let rsp = await routingService.route({
+  "destination": {
+    "latitude": 52.529407,
+    "longitude": 13.397634
+  },
+  "origin": {
+    "latitude": 52.517037,
+    "longitude": 13.38886
+  }
+})
+	console.log(rsp)
+}
+
+gpsPointsForAroute()
 ```
