@@ -4,6 +4,28 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Sunnah/api](ht
 
 Endpoints:
 
+## Chapters
+
+Get all the chapters of a given book within a collection.
+
+
+[https://m3o.com/sunnah/api#Chapters](https://m3o.com/sunnah/api#Chapters)
+
+```js
+const { SunnahService } = require('m3o/sunnah');
+
+// Get all the chapters of a given book within a collection.
+async function listTheChaptersInAbook() {
+	let sunnahService = new SunnahService(process.env.M3O_API_TOKEN)
+	let rsp = await sunnahService.chapters({
+  "book": 1,
+  "collection": "bukhari"
+})
+	console.log(rsp)
+}
+
+listTheChaptersInAbook()
+```
 ## Hadiths
 
 Hadiths returns a list of hadiths and their corresponding text for a
@@ -71,26 +93,4 @@ async function getTheBooksWithinAcollection() {
 }
 
 getTheBooksWithinAcollection()
-```
-## Chapters
-
-Get all the chapters of a given book within a collection.
-
-
-[https://m3o.com/sunnah/api#Chapters](https://m3o.com/sunnah/api#Chapters)
-
-```js
-const { SunnahService } = require('m3o/sunnah');
-
-// Get all the chapters of a given book within a collection.
-async function listTheChaptersInAbook() {
-	let sunnahService = new SunnahService(process.env.M3O_API_TOKEN)
-	let rsp = await sunnahService.chapters({
-  "book": 1,
-  "collection": "bukhari"
-})
-	console.log(rsp)
-}
-
-listTheChaptersInAbook()
 ```
