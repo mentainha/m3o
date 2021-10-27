@@ -65,6 +65,11 @@ jobs:
           cd cmd/clients;
           go install
 
+      - name: install prettier
+        working-directory: services
+        run: |
+          sudo npm install -g prettier
+
       - name: Generate package
         working-directory: services
         if: github.ref == 'refs/heads/main'
