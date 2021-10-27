@@ -95,10 +95,6 @@ jobs:
           cp -r ../services/clients .
           cp -r ../services/examples .
 
-      - name: Copy Public API files
-        working-directory: m3o
-        run: bash ./scripts/publicapi.sh
-
       - name: Commit back clients/examples
         uses: EndBug/add-and-commit@v7
         with:
