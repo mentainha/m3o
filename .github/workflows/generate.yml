@@ -91,9 +91,10 @@ jobs:
       - name: Copy clients/examples
         working-directory: m3o
         run: |
-          rm -rf clients examples
-          cp -r ../services/clients .
-          cp -r ../services/examples .
+          rm -rf clients/go && rm -rf clients/js && rm -rf clients/curl
+          rm -rf examples/go && rm -rf examples/js && rm -rf examples/curl
+          cp -r ../services/clients/* clients/.
+          cp -r ../services/examples/* examples/.
 
       - name: Commit back clients/examples
         uses: EndBug/add-and-commit@v7
