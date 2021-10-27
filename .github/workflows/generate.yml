@@ -90,8 +90,9 @@ jobs:
           cp -r ../services/examples .
 
       - name: Commit back clients/examples
-        working-directory: m3o
         uses: EndBug/add-and-commit@v7
+        with:
+          cwd: './m3o'
 
 #      - name: install postman converter
 #        working-directory: services
