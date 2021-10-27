@@ -4,6 +4,28 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Db/api](https:
 
 Endpoints:
 
+## Delete
+
+Delete a record in the database by id.
+
+
+[https://m3o.com/db/api#Delete](https://m3o.com/db/api#Delete)
+
+```js
+const { DbService } = require('m3o/db');
+
+// Delete a record in the database by id.
+async function deleteArecord() {
+	let dbService = new DbService(process.env.M3O_API_TOKEN)
+	let rsp = await dbService.delete({
+  "id": "1",
+  "table": "users"
+})
+	console.log(rsp)
+}
+
+deleteArecord()
+```
 ## Truncate
 
 Truncate the records in a table
@@ -119,26 +141,4 @@ async function readRecords() {
 }
 
 readRecords()
-```
-## Delete
-
-Delete a record in the database by id.
-
-
-[https://m3o.com/db/api#Delete](https://m3o.com/db/api#Delete)
-
-```js
-const { DbService } = require('m3o/db');
-
-// Delete a record in the database by id.
-async function deleteArecord() {
-	let dbService = new DbService(process.env.M3O_API_TOKEN)
-	let rsp = await dbService.delete({
-  "id": "1",
-  "table": "users"
-})
-	console.log(rsp)
-}
-
-deleteArecord()
 ```

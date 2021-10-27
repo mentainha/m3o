@@ -76,6 +76,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          rm -rf clients examples
           clients .
       
       - name: Generate beta package
