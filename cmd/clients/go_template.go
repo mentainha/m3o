@@ -3,7 +3,7 @@ package main
 const goIndexTemplate = `package m3o
 
 import(
-	{{ range $service := .services }}"github.com/m3o/m3o/clients/go/{{ $service.Name}}"
+	{{ range $service := .services }}"github.com/micro/services/clients/go/{{ $service.Name}}"
 {{ end }}
 )
 
@@ -60,7 +60,7 @@ import(
 	"fmt"
 	"os"
 
-	"github.com/m3o/m3o/clients/go/{{ $service.Name}}"
+	"github.com/micro/services/clients/go/{{ $service.Name}}"
 )
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func {{ .funcName }}() {
@@ -98,7 +98,7 @@ import(
 	"fmt"
 	"os"
 
-	"github.com/m3o/m3o/clients/go/{{ $service.Name}}"
+	"github.com/micro/services/clients/go/{{ $service.Name}}"
 )
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func {{ .funcName }}() {
