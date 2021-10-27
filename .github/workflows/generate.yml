@@ -100,6 +100,26 @@ jobs:
         with:
           cwd: './m3o'
 
+      - name: publish npm clients
+        working-directory: m3o
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git status
+          cd clients/ts;
+          npm install
+          npm run build
+          npm publish --access public
+
+      - name: publish npm beta clients
+        working-directory: m3o
+        if: github.ref == 'refs/heads/beta'
+        run: |
+          git status
+          cd clients/ts;
+          npm install
+          npm run build
+          npm publish --access public --tag beta
+
 #      - name: install postman converter
 #        working-directory: services
 #        run: |
@@ -114,23 +134,3 @@ jobs:
 #          go run cmd/publisher/main.go .
 #        env:
 #          MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
-
-#      - name: publish npm clients
-#        working-directory: services
-#        if: github.ref == 'refs/heads/master'
-#        run: |
-#          git status
-#          cd clients/ts;
-#          npm install
-#          npm run build
-#          npm publish --access public
-
-#      - name: publish npm beta clients
-#        working-directory: services
-#        if: github.ref == 'refs/heads/beta'
-#        run: |
-#          git status
-#          cd clients/ts;
-#          npm install
-#          npm run build
-#          npm publish --access public --tag beta
