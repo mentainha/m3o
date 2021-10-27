@@ -4,6 +4,28 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Function/api](
 
 Endpoints:
 
+## Call
+
+Call a function by name
+
+
+[https://m3o.com/function/api#Call](https://m3o.com/function/api#Call)
+
+```js
+const { FunctionService } = require('m3o/function');
+
+// Call a function by name
+async function callAfunction() {
+	let functionService = new FunctionService(process.env.M3O_API_TOKEN)
+	let rsp = await functionService.call({
+  "name": "my-first-func",
+  "request": {}
+})
+	console.log(rsp)
+}
+
+callAfunction()
+```
 ## List
 
 List all the deployed functions
@@ -91,26 +113,4 @@ async function deployAfunction() {
 }
 
 deployAfunction()
-```
-## Call
-
-Call a function by name
-
-
-[https://m3o.com/function/api#Call](https://m3o.com/function/api#Call)
-
-```js
-const { FunctionService } = require('m3o/function');
-
-// Call a function by name
-async function callAfunction() {
-	let functionService = new FunctionService(process.env.M3O_API_TOKEN)
-	let rsp = await functionService.call({
-  "name": "my-first-func",
-  "request": {}
-})
-	console.log(rsp)
-}
-
-callAfunction()
 ```
