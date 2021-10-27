@@ -7,8 +7,8 @@ on:
     types: [micro_services]
     
 jobs:
-  docs:
-    name: Generate docs
+  generate:
+    name: Generate Clients
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go 1.13
@@ -120,17 +120,17 @@ jobs:
           npm run build
           npm publish --access public --tag beta
 
-#      - name: install postman converter
-#        working-directory: services
-#        run: |
-#          sudo npm install -g openapi-to-postmanv2
-#          sudo npm install -g prettier
-#          openapi2postmanv2 -h
+      - name: install postman converter
+        working-directory: services
+        run: |
+          sudo npm install -g openapi-to-postmanv2
+          sudo npm install -g prettier
+          openapi2postmanv2 -h
 
-#      - name: Generate openapi spec and publish the api
-#        working-directory: services
-#        if: github.ref == 'refs/heads/master'
-#        run: |
-#          go run cmd/publisher/main.go .
-#        env:
-#          MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
+      - name: Generate openapi spec and publish the api
+        working-directory: services
+        if: github.ref == 'refs/heads/main'
+        run: |
+          go run cmd/publisher/main.go .
+        env:
+          MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
