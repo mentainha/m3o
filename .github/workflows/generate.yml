@@ -23,6 +23,11 @@ jobs:
       - name: Check services repo
         uses: actions/checkout@v2
         with:
+          path: m3o
+
+      - name: Check services repo
+        uses: actions/checkout@v2
+        with:
           repository: 'micro/services'
           path: services
 
@@ -78,13 +83,14 @@ jobs:
           clients .
 
       - name: Move clients/examples
+        working-directory: m3o
         run: |
           rm -rf clients examples
-          cp -r ./services/clients .
-          cp -r ./services/examples .
-          rm -rf services
+          cp -r ../services/clients .
+          cp -r ../services/examples .
 
       - name: Commit back clients/examples
+        working-directory: m3o
         uses: EndBug/add-and-commit@v7
 
 #      - name: install postman converter
