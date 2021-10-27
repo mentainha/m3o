@@ -4,48 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Crypto/api](ht
 
 Endpoints:
 
-## Price
-
-Get the last price for a given crypto ticker
-
-
-[https://m3o.com/crypto/api#Price](https://m3o.com/crypto/api#Price)
-
-```js
-const { CryptoService } = require('m3o/crypto');
-
-// Get the last price for a given crypto ticker
-async function getCryptocurrencyPrice() {
-	let cryptoService = new CryptoService(process.env.M3O_API_TOKEN)
-	let rsp = await cryptoService.price({
-  "symbol": "BTCUSD"
-})
-	console.log(rsp)
-}
-
-getCryptocurrencyPrice()
-```
-## Quote
-
-Get the last quote for a given crypto ticker
-
-
-[https://m3o.com/crypto/api#Quote](https://m3o.com/crypto/api#Quote)
-
-```js
-const { CryptoService } = require('m3o/crypto');
-
-// Get the last quote for a given crypto ticker
-async function getAcryptocurrencyQuote() {
-	let cryptoService = new CryptoService(process.env.M3O_API_TOKEN)
-	let rsp = await cryptoService.quote({
-  "symbol": "BTCUSD"
-})
-	console.log(rsp)
-}
-
-getAcryptocurrencyQuote()
-```
 ## History
 
 Returns the history for the previous close
@@ -87,4 +45,46 @@ async function getCryptocurrencyNews() {
 }
 
 getCryptocurrencyNews()
+```
+## Price
+
+Get the last price for a given crypto ticker
+
+
+[https://m3o.com/crypto/api#Price](https://m3o.com/crypto/api#Price)
+
+```js
+const { CryptoService } = require('m3o/crypto');
+
+// Get the last price for a given crypto ticker
+async function getCryptocurrencyPrice() {
+	let cryptoService = new CryptoService(process.env.M3O_API_TOKEN)
+	let rsp = await cryptoService.price({
+  "symbol": "BTCUSD"
+})
+	console.log(rsp)
+}
+
+getCryptocurrencyPrice()
+```
+## Quote
+
+Get the last quote for a given crypto ticker
+
+
+[https://m3o.com/crypto/api#Quote](https://m3o.com/crypto/api#Quote)
+
+```js
+const { CryptoService } = require('m3o/crypto');
+
+// Get the last quote for a given crypto ticker
+async function getAcryptocurrencyQuote() {
+	let cryptoService = new CryptoService(process.env.M3O_API_TOKEN)
+	let rsp = await cryptoService.quote({
+  "symbol": "BTCUSD"
+})
+	console.log(rsp)
+}
+
+getAcryptocurrencyQuote()
 ```
