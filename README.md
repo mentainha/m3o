@@ -75,7 +75,6 @@ See the full list at [m3o.com/explore](https://m3o.com/explore) or the source at
 
 ## Learn More
 
-- Checkout the [Examples](examples) to see what you can build
 - Follow us on [Twitter](https://twitter.com/m3oservices)
 - Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
@@ -134,7 +133,7 @@ If you'd like to publish your own APIs on the M3O platform [fill in this form](h
 
 ## Contributing
 
-- **Write examples** - [m3o/examples](examples) provides a place to showcase things built on top which we'll feature on the website
-- **Write services** - [micro/services](https://github.com/micro/services) are all the services we host and hope for more devs to help
-- **Write docs** - [m3o/docs](docs) is where our docs will live and we know without great docs this isn't going to work
-- **Show support** - Tweet [@m3oservices](https://twitter.com/m3oservices) and let the world know what we're building so that more people can get involved
+- **Build examples** - Create things built on top of M3O which we'll feature on the website soon
+- **Write services** - Contribute services to [micro/services](https://github.com/micro/services) which will be hosted on M3O
+- **Write docs** - Help us write great docs to help everyone quickly get started 
+- **Show support** - Join our community on slack or discord, talk about us at work or with friends
