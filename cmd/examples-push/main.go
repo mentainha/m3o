@@ -13,9 +13,8 @@ import (
 	"github.com/google/go-github/v39/github"
 	"github.com/google/uuid"
 	log "github.com/micro/micro/v3/service/logger"
-	"golang.org/x/oauth2"
-
 	"github.com/micro/micro/v3/service/runtime/source/git"
+	"golang.org/x/oauth2"
 )
 
 const originRepo = "github.com/m3o/m3o"
