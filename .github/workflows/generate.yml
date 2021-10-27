@@ -88,12 +88,15 @@ jobs:
         run: |
           clients .
 
-      - name: Move clients/examples
+      - name: Copy clients/examples
         working-directory: m3o
         run: |
           rm -rf clients examples
           cp -r ../services/clients .
           cp -r ../services/examples .
+
+      - name: Copy Public API files
+        run: bash m3o/scripts/publicapi.sh
 
       - name: Commit back clients/examples
         uses: EndBug/add-and-commit@v7
@@ -133,3 +136,4 @@ jobs:
           go run cmd/publisher/main.go .
         env:
           MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
+
