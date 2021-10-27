@@ -4,46 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Twitter/api](h
 
 Endpoints:
 
-## Search
-
-Search for tweets with a simple query
-
-
-[https://m3o.com/twitter/api#Search](https://m3o.com/twitter/api#Search)
-
-```js
-const { TwitterService } = require('m3o/twitter');
-
-// Search for tweets with a simple query
-async function searchForTweets() {
-	let twitterService = new TwitterService(process.env.M3O_API_TOKEN)
-	let rsp = await twitterService.search({
-  "query": "cats"
-})
-	console.log(rsp)
-}
-
-searchForTweets()
-```
-## Trends
-
-Get the current global trending topics
-
-
-[https://m3o.com/twitter/api#Trends](https://m3o.com/twitter/api#Trends)
-
-```js
-const { TwitterService } = require('m3o/twitter');
-
-// Get the current global trending topics
-async function getTheCurrentGlobalTrendingTopics() {
-	let twitterService = new TwitterService(process.env.M3O_API_TOKEN)
-	let rsp = await twitterService.trends({})
-	console.log(rsp)
-}
-
-getTheCurrentGlobalTrendingTopics()
-```
 ## User
 
 Get a user's twitter profile
@@ -86,4 +46,44 @@ async function getAtwitterTimeline() {
 }
 
 getAtwitterTimeline()
+```
+## Search
+
+Search for tweets with a simple query
+
+
+[https://m3o.com/twitter/api#Search](https://m3o.com/twitter/api#Search)
+
+```js
+const { TwitterService } = require('m3o/twitter');
+
+// Search for tweets with a simple query
+async function searchForTweets() {
+	let twitterService = new TwitterService(process.env.M3O_API_TOKEN)
+	let rsp = await twitterService.search({
+  "query": "cats"
+})
+	console.log(rsp)
+}
+
+searchForTweets()
+```
+## Trends
+
+Get the current global trending topics
+
+
+[https://m3o.com/twitter/api#Trends](https://m3o.com/twitter/api#Trends)
+
+```js
+const { TwitterService } = require('m3o/twitter');
+
+// Get the current global trending topics
+async function getTheCurrentGlobalTrendingTopics() {
+	let twitterService = new TwitterService(process.env.M3O_API_TOKEN)
+	let rsp = await twitterService.trends({})
+	console.log(rsp)
+}
+
+getTheCurrentGlobalTrendingTopics()
 ```
