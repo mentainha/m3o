@@ -4,25 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Url/api](https
 
 Endpoints:
 
-## List
-
-List information on all the shortened URLs that you have created
-
-
-[https://m3o.com/url/api#List](https://m3o.com/url/api#List)
-
-```js
-const { UrlService } = require('m3o/url');
-
-// List information on all the shortened URLs that you have created
-async function listYourShortenedUrls() {
-	let urlService = new UrlService(process.env.M3O_API_TOKEN)
-	let rsp = await urlService.list({})
-	console.log(rsp)
-}
-
-listYourShortenedUrls()
-```
 ## Shorten
 
 Shortens a destination URL and returns a full short URL.
@@ -64,4 +45,23 @@ async function resolveAshortUrlToAlongDestinationUrl() {
 }
 
 resolveAshortUrlToAlongDestinationUrl()
+```
+## List
+
+List information on all the shortened URLs that you have created
+
+
+[https://m3o.com/url/api#List](https://m3o.com/url/api#List)
+
+```js
+const { UrlService } = require('m3o/url');
+
+// List information on all the shortened URLs that you have created
+async function listYourShortenedUrls() {
+	let urlService = new UrlService(process.env.M3O_API_TOKEN)
+	let rsp = await urlService.list({})
+	console.log(rsp)
+}
+
+listYourShortenedUrls()
 ```

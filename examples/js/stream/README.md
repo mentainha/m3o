@@ -4,6 +4,27 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Stream/api](ht
 
 Endpoints:
 
+## Subscribe
+
+Subscribe to messages for a given topic.
+
+
+[https://m3o.com/stream/api#Subscribe](https://m3o.com/stream/api#Subscribe)
+
+```js
+const { StreamService } = require('m3o/stream');
+
+// Subscribe to messages for a given topic.
+async function subscribeToAtopic() {
+	let streamService = new StreamService(process.env.M3O_API_TOKEN)
+	let rsp = await streamService.subscribe({
+  "topic": "events"
+})
+	console.log(rsp)
+}
+
+subscribeToAtopic()
+```
 ## Publish
 
 Publish a message to the stream. Specify a topic to group messages for a specific topic.
@@ -29,25 +50,4 @@ async function publishAmessage() {
 }
 
 publishAmessage()
-```
-## Subscribe
-
-Subscribe to messages for a given topic.
-
-
-[https://m3o.com/stream/api#Subscribe](https://m3o.com/stream/api#Subscribe)
-
-```js
-const { StreamService } = require('m3o/stream');
-
-// Subscribe to messages for a given topic.
-async function subscribeToAtopic() {
-	let streamService = new StreamService(process.env.M3O_API_TOKEN)
-	let rsp = await streamService.subscribe({
-  "topic": "events"
-})
-	console.log(rsp)
-}
-
-subscribeToAtopic()
 ```
