@@ -60,7 +60,7 @@ import(
 	"fmt"
 	"os"
 
-	"github.com/m3o/m3o/go/{{ $service.Name}}"
+	"github.com/m3o/m3o/clients/go/{{ $service.Name}}"
 )
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func {{ .funcName }}() {
