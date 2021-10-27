@@ -56,6 +56,13 @@ jobs:
         working-directory: micro/cmd/protoc-gen-openapi
         run: |
           go install
+          
+      - name: Install generator
+        working-directory: m3o
+        run: |
+          pwd
+          cd cmd/clients;
+          go install
 
       - name: Generate package
         working-directory: services
@@ -63,10 +70,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pwd
-          cd cmd/clients;
-          go install;
-          cd ../..;
           clients .
       
       - name: Generate beta package
@@ -76,10 +79,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           IS_BETA: yup
         run: |
-          pwd
-          cd cmd/clients;
-          go install;
-          cd ../..;
           clients .
 
       - name: Move clients/examples
