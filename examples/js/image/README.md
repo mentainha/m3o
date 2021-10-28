@@ -4,31 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Image/api](htt
 
 Endpoints:
 
-## Convert
-
-Convert an image from one format (jpeg, png etc.) to an other either on the fly (from base64 to base64),
-or by uploading the conversion result.
-
-
-[https://m3o.com/image/api#Convert](https://m3o.com/image/api#Convert)
-
-```js
-const { ImageService } = require('m3o/image');
-
-// Convert an image from one format (jpeg, png etc.) to an other either on the fly (from base64 to base64),
-// or by uploading the conversion result.
-async function convertApngImageToAjpegTakenFromAurlAndSavedToAurlOnMicrosCdn() {
-	let imageService = new ImageService(process.env.M3O_API_TOKEN)
-	let rsp = await imageService.convert({
-  "name": "cat.jpeg",
-  "outputURL": true,
-  "url": "somewebsite.com/cat.png"
-})
-	console.log(rsp)
-}
-
-convertApngImageToAjpegTakenFromAurlAndSavedToAurlOnMicrosCdn()
-```
 ## Upload
 
 Upload an image by either sending a base64 encoded image to this endpoint or a URL.
@@ -164,4 +139,29 @@ async function base64toBase64imageWithCropping() {
 }
 
 base64toBase64imageWithCropping()
+```
+## Convert
+
+Convert an image from one format (jpeg, png etc.) to an other either on the fly (from base64 to base64),
+or by uploading the conversion result.
+
+
+[https://m3o.com/image/api#Convert](https://m3o.com/image/api#Convert)
+
+```js
+const { ImageService } = require('m3o/image');
+
+// Convert an image from one format (jpeg, png etc.) to an other either on the fly (from base64 to base64),
+// or by uploading the conversion result.
+async function convertApngImageToAjpegTakenFromAurlAndSavedToAurlOnMicrosCdn() {
+	let imageService = new ImageService(process.env.M3O_API_TOKEN)
+	let rsp = await imageService.convert({
+  "name": "cat.jpeg",
+  "outputURL": true,
+  "url": "somewebsite.com/cat.png"
+})
+	console.log(rsp)
+}
+
+convertApngImageToAjpegTakenFromAurlAndSavedToAurlOnMicrosCdn()
 ```

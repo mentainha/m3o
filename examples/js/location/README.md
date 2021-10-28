@@ -4,33 +4,6 @@ An [m3o.com](https://m3o.com) API. For example usage see [m3o.com/Location/api](
 
 Endpoints:
 
-## Search
-
-Search for entities in a given radius
-
-
-[https://m3o.com/location/api#Search](https://m3o.com/location/api#Search)
-
-```js
-const { LocationService } = require('m3o/location');
-
-// Search for entities in a given radius
-async function searchForLocations() {
-	let locationService = new LocationService(process.env.M3O_API_TOKEN)
-	let rsp = await locationService.search({
-  "center": {
-    "latitude": 51.511061,
-    "longitude": -0.120022
-  },
-  "numEntities": 10,
-  "radius": 100,
-  "type": "bike"
-})
-	console.log(rsp)
-}
-
-searchForLocations()
-```
 ## Save
 
 Save an entity's current position
@@ -80,4 +53,31 @@ async function getLocationById() {
 }
 
 getLocationById()
+```
+## Search
+
+Search for entities in a given radius
+
+
+[https://m3o.com/location/api#Search](https://m3o.com/location/api#Search)
+
+```js
+const { LocationService } = require('m3o/location');
+
+// Search for entities in a given radius
+async function searchForLocations() {
+	let locationService = new LocationService(process.env.M3O_API_TOKEN)
+	let rsp = await locationService.search({
+  "center": {
+    "latitude": 51.511061,
+    "longitude": -0.120022
+  },
+  "numEntities": 10,
+  "radius": 100,
+  "type": "bike"
+})
+	console.log(rsp)
+}
+
+searchForLocations()
 ```
