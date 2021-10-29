@@ -64,8 +64,8 @@ jobs:
           pwd
           cd cmd/clients;
           go install
-          rm -rf ../services/cmd/clients
-          cp -r cmd/clients ../services/cmd/
+          rm -rf ../../../services/cmd/clients
+          cp -r ../clients ../../../services/cmd/
 
       - name: install prettier
         working-directory: services
