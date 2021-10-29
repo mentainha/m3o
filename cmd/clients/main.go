@@ -599,7 +599,7 @@ func main() {
 			   filepath.Join(tsFiles, "package-lock.json"), filepath.Join(tsFiles, "package-lock.json"), 
 			   filepath.Join(tsFiles, "build.js"), filepath.Join(tsFiles, "tsconfig.es.json"), 
 			   filepath.Join(tsFiles, "package-lock.json"), filepath.Join(tsFiles, "tsconfig.json"), 
-			   filepath.Join(workDir, "clients", "ts"), filepath.Join(tsFiles, "README.md"))
+			   filepath.Join(tsFiles, "README.md"), filepath.Join(workDir, "clients", "ts"))
 	
 	cmd.Dir = filepath.Join(tsPath)
 	outp, err = cmd.CombinedOutput()
