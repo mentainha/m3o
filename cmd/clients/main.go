@@ -134,7 +134,7 @@ func main() {
 		}
 		if f.IsDir() && !strings.HasPrefix(f.Name(), ".") {
 			serviceName := f.Name()
-			tsFileList = append(tsFileList, serviceName)
+			//tsFileList = append(tsFileList, serviceName)
 			serviceDir := filepath.Join(workDir, f.Name())
 			cmd := exec.Command("make", "api")
 			cmd.Dir = serviceDir
