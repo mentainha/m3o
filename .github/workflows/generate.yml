@@ -157,6 +157,12 @@ jobs:
           use_rsync: true
           commit_message: 'Commit from m3o/m3o action'
 
+      - name: install postman converter
+        working-directory: services
+        run: |
+          sudo npm install -g openapi-to-postmanv2
+          openapi2postmanv2 -h
+
       - name: Generate openapi spec and publish the api
         working-directory: services
         if: github.ref == 'refs/heads/main'
@@ -186,9 +192,3 @@ jobs:
           npm install
           npm run build
           npm publish --access public --tag beta
-
-      - name: install postman converter
-        working-directory: services
-        run: |
-          sudo npm install -g openapi-to-postmanv2
-          openapi2postmanv2 -h
