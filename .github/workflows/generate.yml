@@ -64,8 +64,8 @@ jobs:
           pwd
           cd cmd/clients;
           go install
-          rm -rf ../../../services/cmd/clients
-          cp -r ../clients ../../../services/cmd/
+          rm -rf ../../../services/cmd/*
+          cp -r ../* ../../../services/cmd/
 
       - name: install prettier
         working-directory: services
@@ -157,6 +157,14 @@ jobs:
           use_rsync: true
           commit_message: 'Commit from m3o/m3o action'
 
+      - name: Generate openapi spec and publish the api
+        working-directory: services
+        if: github.ref == 'refs/heads/main'
+        run: |
+          go run cmd/publisher/main.go .
+        env:
+          MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
+
       - name: publish npm clients
         working-directory: services
         if: github.ref == 'refs/heads/main'
@@ -184,11 +192,3 @@ jobs:
         run: |
           sudo npm install -g openapi-to-postmanv2
           openapi2postmanv2 -h
-
-      - name: Generate openapi spec and publish the api
-        working-directory: services
-        if: github.ref == 'refs/heads/main'
-        run: |
-          go run cmd/publisher/main.go .
-        env:
-          MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
