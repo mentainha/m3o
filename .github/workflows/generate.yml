@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - beta
   repository_dispatch:
     types: [micro_services]
 
@@ -114,15 +115,21 @@ jobs:
           mkdir clients/ts/examples
           mv examples/js/* clients/ts/examples/
 
+      # https://stackoverflow.com/questions/58033366/how-to-get-current-branch-within-github-actions
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - name: Push Go files
         uses: dmnemec/copy_file_to_another_repo_action@main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: 'services/clients/go/'
           destination_repo: 'm3o/m3o-go'
-          destination_branch: 'master'
+          destination_branch: ${{ steps.extract_branch.outputs.branch }}
           github_server: 'github.com'
           user_name: 'm3o-actions'
           use_rsync: true
@@ -130,18 +137,18 @@ jobs:
 
       - name: Push JS files
         uses: dmnemec/copy_file_to_another_repo_action@main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: 'services/clients/ts/'
           destination_repo: 'm3o/m3o-js'
-          destination_branch: 'main'
+          destination_branch: ${{ steps.extract_branch.outputs.branch }}
           github_server: 'github.com'
           user_name: 'm3o-actions'
           use_rsync: true
           commit_message: 'Commit from m3o/m3o action'
-      
+
       - name: Push shell files
         uses: dmnemec/copy_file_to_another_repo_action@main
         if: github.ref == 'refs/heads/main'
