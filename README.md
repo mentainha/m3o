@@ -41,8 +41,8 @@ So far there are over 35+ services. Here are some of the highlights:
 
 - [**Cache**](https://m3o.com/cache) - Quick access key-value storage
 - [**DB**](https://m3o.com/db) - Simple database service
-- [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
+- [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**User**](https://m3o.com/user) - User management and authentication
 - [**File**](https://m3o.com/file) - Store, list, and retrieve text files
 
