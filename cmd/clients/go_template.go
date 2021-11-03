@@ -40,11 +40,34 @@ type {{ title $service.Name }}Service struct {
 	client *client.Client
 }
 
-{{ range $key, $req := $service.Spec.Components.RequestBodies }}
-{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}func (t *{{ title $service.Name }}Service) {{ $endpointName }}(request *{{ requestType $key }}) (*{{ requestTypeToResponseType $key }}, error) {
-	rsp := &{{ requestTypeToResponseType $key }}{}
+{{ range $key, $req := $service.Spec.Components.RequestBodies }}{{ $reqType := requestType $key }}
+{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}func (t *{{ title $service.Name }}Service) {{ $endpointName }}(request *{{ requestType $key }}) (*{{ requestTypeToResponseType $key }}{{ if isStream $service.Spec $service.Name $reqType }}Stream{{ end }}, error) {
+	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := t.client.Stream("{{ $service.Name }}", "{{ requestTypeToEndpointPath $key}}", request)
+	if err != nil {
+			return nil, err
+	}
+	return &{{ requestTypeToResponseType $key }}Stream{
+			stream: stream,
+	}, nil
+	{{ end }}
+	{{ if isNotStream $service.Spec $service.Name $reqType }}rsp := &{{ requestTypeToResponseType $key }}{}
 	return rsp, t.client.Call("{{ $service.Name }}", "{{ requestTypeToEndpointPath $key}}", request, rsp)
+	{{ end }}
 }
+
+{{ if isStream $service.Spec $service.Name $reqType }}
+type {{ requestTypeToResponseType $key }}Stream struct {
+	stream *client.Stream
+}
+
+func (t *{{ requestTypeToResponseType $key }}Stream) Recv() (*{{ requestTypeToResponseType $key }}, error) {
+	var rsp {{ requestTypeToResponseType $key }}
+	if err := t.stream.Recv(&rsp); err != nil {
+			return nil, err
+	}
+	return &rsp, nil
+}
+{{ end }}
 {{ end }}
 
 
@@ -65,10 +88,27 @@ import(
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func main() {
 	{{ $service.Name }}Service := {{ $service.Name }}.New{{ title $service.Name }}Service(os.Getenv("M3O_API_TOKEN"))
-	rsp, err := {{ $service.Name }}Service.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := {{ $service.Name }}Service.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
 	})
-	fmt.Println(rsp, err)
+	fmt.Println(rsp, err){{ end }}
+	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := {{ $service.Name }}Service.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
+	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	for {
+			rsp, err := stream.Recv()
+			if err != nil {
+					fmt.Println(err)
+					return
+			}
+
+			fmt.Println(rsp)
+	}{{ end }}
 }
 `
 
