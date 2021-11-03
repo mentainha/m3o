@@ -317,12 +317,12 @@ func goExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title string, s
 	}
 
 	// create go examples directory
-	err = os.MkdirAll(filepath.Join(examplesPath, "go", serviceName, endpoint), 0777)
+	err = os.MkdirAll(filepath.Join(examplesPath, "go", serviceName, endpoint, title), 0777)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	goExampleFile := filepath.Join(examplesPath, "go", serviceName, endpoint, title+".go")
+	goExampleFile := filepath.Join(examplesPath, "go", serviceName, endpoint, title, "main.go")
 	f, err := os.OpenFile(goExampleFile, os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0744)
 	if err != nil {
 		fmt.Println("Failed to open schema file", err)
@@ -370,11 +370,19 @@ func goExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title string, s
 	}
 
 	// gofmt example
-	cmd := exec.Command("gofmt", "-w", title+".go")
-	cmd.Dir = filepath.Join(examplesPath, "go", serviceName, endpoint)
+	cmd := exec.Command("gofmt", "-w", "main.go")
+	cmd.Dir = filepath.Join(examplesPath, "go", serviceName, endpoint, title)
 	outp, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println(fmt.Sprintf("Problem with '%v' example '%v': %v", serviceName, endpoint, string(outp)))
+		os.Exit(1)
+	}
+
+	cmd = exec.Command("go", "build", "-o", "/tmp/bin/outputfile")
+	cmd.Dir = filepath.Join(examplesPath, "go", serviceName, endpoint, title)
+	outp, err = cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println(fmt.Sprintf("Problem building '%v' example '%v': %v", serviceName, endpoint, string(outp)))
 		os.Exit(1)
 	}
 }
@@ -803,15 +811,6 @@ func main() {
 						goExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
 						nodeExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
 						curlExample(examplesPath, serviceName, endpoint, title, service, example)
-					}
-					// only build after each example is generated as old files from
-					// previous generation might not compile
-					cmd = exec.Command("go", "build", "-o", "/tmp/bin/outputfile")
-					cmd.Dir = filepath.Join(examplesPath, "go", serviceName, endpoint)
-					outp, err = cmd.CombinedOutput()
-					if err != nil {
-						fmt.Println(fmt.Sprintf("Problem with '%v' example '%v': %v", serviceName, endpoint, string(outp)))
-						os.Exit(1)
 					}
 				}
 			} else {
