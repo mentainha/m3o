@@ -18,7 +18,7 @@ M3O is powered by the open source [Micro](https://github.com/micro/micro) platfo
 
 ## Features
 
-M3O is host to 35+ [services](#services) and counting. Below are the platform features:
+M3O is host to 40+ [services](#services) and counting. Below are the platform features:
 
 - **🔥 Dev UX** - The developer experience is first priority. A slick new UX for the next generation of developers.
 - **☝️ One Token** - Use one Micro API token to fulfill all your API needs. Access multiple public APIs with a single token.
