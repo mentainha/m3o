@@ -94,7 +94,7 @@ which acts as the management control plane.
 ### Services
 
 Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), a vendor neutral home. We then automate the 
-building and publishing of those services and client libraries. This creates a shared and fully managed platform for everyone to leverage.
+building and publishing of those services and generate client libraries for them all. This creates a shared and fully managed platform for everyone to leverage.
 
 ### Infrastructure
 
