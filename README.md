@@ -35,7 +35,7 @@ aggregate all those third party public APIs into a single uniform offering with 
 
 ## Services
 
-So far there are over 35+ services. Here are some of the highlights:
+So far there are over 40+ services. Here are some of the highlights:
 
 ### Backend
 
