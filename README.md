@@ -68,7 +68,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 ## Getting Started
 
 - Head to [m3o.com](https://m3o.com) and signup for a free account.
-- Generate an API key on the [Settings page](https://m3o.com/settings/keys).
+- Generate an API key on the [Settings page](https://m3o.com/account/keys).
 - Browse the APIs on the [Explore page](https://m3o.com/explore).
 - Call any API using your token in the `Authorization: Bearer [Token]` header and `https://api.m3o.com/v1/[service]/[endpoint]` url.
 - See the [m3o/cli](cli) for command line usage.
