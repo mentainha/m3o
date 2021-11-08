@@ -23,8 +23,8 @@ export class {{ title $service.Name }}Service{
 	constructor(token: string) {
 		this.client = new m3o.Client({token: token})
 	}
-	{{ range $key, $req := $service.Spec.Components.RequestBodies }}{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}{{ untitle $endpointName}}(request: {{ requestType $key }}): Promise<{{ requestTypeToResponseType $key }}> {
-		return this.client.call("{{ $service.Name }}", "{{ requestTypeToEndpointPath $key}}", request) as Promise<{{ requestTypeToResponseType $key }}>;
+	{{ range $key, $req := $service.Spec.Components.RequestBodies }}{{ $reqType := requestType $key }}{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}{{ untitle $endpointName}}(request: {{ requestType $key }}): {{ if isStream $service.Spec $service.Name $reqType }}Promise<m3o.Stream<{{ $reqType }}, {{ requestTypeToResponseType $key }}>>{{ end }}{{ if isNotStream $service.Spec $service.Name $reqType }}Promise<{{ requestTypeToResponseType $key }}>{{ end }} {
+		{{ if isStream $service.Spec $service.Name $reqType }}return this.client.stream("{{ $service.Name }}", "{{ requestTypeToEndpointPath $key}}", request);{{ end }}{{ if isNotStream $service.Spec $service.Name $reqType }}return this.client.call("{{ $service.Name }}", "{{ requestTypeToEndpointPath $key}}", request) as Promise<{{ requestTypeToResponseType $key }}>;{{ end }}
 	};
 	{{ end }}
 }
@@ -40,7 +40,10 @@ const tsExampleTemplate = `{{ $service := .service }}const { {{ title $service.N
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}async function {{ untitle .funcName }}() {
 	let {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
 	let rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
-	console.log(rsp)
+	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}console.log(rsp)
+	{{ end }}{{ if isStream $service.Spec $service.Name $reqType }}rsp.onMessage(msg => {
+		console.log(msg)
+	}){{ end}}
 }
 
 {{ untitle .funcName }}()`
@@ -65,7 +68,10 @@ const { {{ title $service.Name }}Service } = require('m3o/{{ $service.Name }}');
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}async function {{ untitle .funcName }}() {
 	let {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
 	let rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
-	console.log(rsp)
+	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}console.log(rsp)
+	{{ end }}{{ if isStream $service.Spec $service.Name $reqType }}rsp.onMessage(msg => {
+		console.log(msg)
+	}){{ end}}
 }
 
 {{ untitle .funcName }}()
