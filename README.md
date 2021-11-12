@@ -4,7 +4,7 @@
 		<h1 align="center">M3O</h1>
 	</a>
 </p>
-<p align="center">M3O is an open source AWS alternative.<br>We are building a new cloud platform for the Next generation of developers.</p>
+<p align="center">M3O is the open source AWS alternative.<br>We are building a new cloud platform for the Next generation of developers.</p>
 
 ---
 
