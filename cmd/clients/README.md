@@ -7,11 +7,7 @@ To run the code generation, from the repo root issue:
 go install ./cmd/clients; clients .
 ```
 
-The generated clients will end up in `./clients`.
+The general flow is that protos get turned to an openapi json and this generator takes the JSON and creates go and typescript clients.
 
-Take inspiration from the `.github/workflows/publish.yml` to see how to publish the NPM package.
-
-
-# Typescript gotchas
-
-There is some funkiness going on with the package names in the generator - 
+Most of the templating is done with go text templates, but the harder parts like recursive type definitions are done by functions.
+Go and JS are similar enough to share most of the code but PHP proved to be a harder case (see unfinished https://github.com/m3o/m3o/pull/71)
