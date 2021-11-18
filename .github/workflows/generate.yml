@@ -110,6 +110,8 @@ jobs:
           rsync -avz clients/go/ ../m3o-go/
           # sync the examples to m3o-go/examples
           rsync -avz examples/go/ ../m3o-go/examples/
+          # remove the .git directory
+          rm -rf ../m3o-go/.git
           #  move the js examples
           mkdir clients/ts/examples
           mv examples/js/* clients/ts/examples/
