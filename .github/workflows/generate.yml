@@ -135,7 +135,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: 'm3o-go/'
-          destination_repo: 'm3o/m3o-go/'
+          destination_repo: 'm3o/m3o-go'
           destination_branch: ${{ steps.extract_branch.outputs.branch }}
           github_server: 'github.com'
           user_name: 'm3o-actions'
