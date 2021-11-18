@@ -1,0 +1,566 @@
+{
+  "components": {
+    "requestBodies": {
+      "FunctionCallRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CallRequest"
+            }
+          }
+        },
+        "description": "FunctionCallRequest"
+      },
+      "FunctionDeleteRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeleteRequest"
+            }
+          }
+        },
+        "description": "FunctionDeleteRequest"
+      },
+      "FunctionDeployRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeployRequest"
+            }
+          }
+        },
+        "description": "FunctionDeployRequest"
+      },
+      "FunctionDescribeRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DescribeRequest"
+            }
+          }
+        },
+        "description": "FunctionDescribeRequest"
+      },
+      "FunctionListRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListRequest"
+            }
+          }
+        },
+        "description": "FunctionListRequest"
+      }
+    },
+    "responses": {
+      "FunctionCallResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CallResponse"
+            }
+          }
+        },
+        "description": "FunctionCallResponse"
+      },
+      "FunctionDeleteResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeleteResponse"
+            }
+          }
+        },
+        "description": "FunctionDeleteResponse"
+      },
+      "FunctionDeployResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeployResponse"
+            }
+          }
+        },
+        "description": "FunctionDeployResponse"
+      },
+      "FunctionDescribeResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DescribeResponse"
+            }
+          }
+        },
+        "description": "FunctionDescribeResponse"
+      },
+      "FunctionListResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListResponse"
+            }
+          }
+        },
+        "description": "FunctionListResponse"
+      },
+      "MicroAPIError": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "Code": {
+                  "description": "Error code",
+                  "example": 500,
+                  "type": "number"
+                },
+                "Detail": {
+                  "description": "Error detail",
+                  "example": "service not found",
+                  "type": "string"
+                },
+                "Id": {
+                  "description": "Error ID",
+                  "type": "string"
+                },
+                "Status": {
+                  "description": "Error status message",
+                  "example": "Internal Server Error",
+                  "type": "string"
+                }
+              },
+              "title": "MicroAPIError",
+              "type": "object"
+            }
+          }
+        },
+        "description": "Error from the Micro API"
+      }
+    },
+    "schemas": {
+      "CallRequest": {
+        "description": "Call a function by name",
+        "properties": {
+          "name": {
+            "description": "Name of the function",
+            "type": "string"
+          },
+          "request": {
+            "description": "Request body that will be passed to the function",
+            "type": "object"
+          }
+        },
+        "title": "CallRequest",
+        "type": "object"
+      },
+      "CallResponse": {
+        "properties": {
+          "response": {
+            "description": "Response body that the function returned",
+            "type": "object"
+          }
+        },
+        "title": "CallResponse",
+        "type": "object"
+      },
+      "DeleteRequest": {
+        "description": "Delete a function by name",
+        "properties": {
+          "name": {
+            "description": "The name of the function",
+            "type": "string"
+          },
+          "project": {
+            "description": "Optional project name",
+            "type": "string"
+          }
+        },
+        "title": "DeleteRequest",
+        "type": "object"
+      },
+      "DeleteResponse": {
+        "title": "DeleteResponse",
+        "type": "object"
+      },
+      "DeployRequest": {
+        "description": "Deploy a group of functions",
+        "properties": {
+          "entrypoint": {
+            "description": "entry point, ie. handler name in the source code \n if not provided, defaults to the name parameter",
+            "type": "string"
+          },
+          "envVars": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "environment variables to pass in at runtime",
+            "type": "object"
+          },
+          "name": {
+            "description": "function name",
+            "type": "string"
+          },
+          "project": {
+            "description": "project is used for namespacing your functions\n optional. defaults to \"default\".",
+            "type": "string"
+          },
+          "repo": {
+            "description": "github url to repo",
+            "type": "string"
+          },
+          "runtime": {
+            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+            "type": "string"
+          },
+          "subfolder": {
+            "description": "optional subfolder path",
+            "type": "string"
+          }
+        },
+        "title": "DeployRequest",
+        "type": "object"
+      },
+      "DeployResponse": {
+        "title": "DeployResponse",
+        "type": "object"
+      },
+      "DescribeRequest": {
+        "description": "Get the info for a deployed function",
+        "properties": {
+          "name": {
+            "description": "The name of the function",
+            "type": "string"
+          },
+          "project": {
+            "description": "Optional project name",
+            "type": "string"
+          }
+        },
+        "title": "DescribeRequest",
+        "type": "object"
+      },
+      "DescribeResponse": {
+        "properties": {
+          "function": {
+            "description": "The function requested",
+            "properties": {
+              "entrypoint": {
+                "description": "name of handler in source code",
+                "type": "string"
+              },
+              "name": {
+                "description": "function name\n limitation: must be unique across projects",
+                "type": "string"
+              },
+              "project": {
+                "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+                "type": "string"
+              },
+              "repo": {
+                "description": "git repo address",
+                "type": "string"
+              },
+              "runtime": {
+                "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+                "type": "string"
+              },
+              "status": {
+                "description": "eg. ACTIVE, DEPLOY_IN_PROGRESS, OFFLINE etc",
+                "type": "string"
+              },
+              "subfolder": {
+                "description": "subfolder path to entrypoint",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "timeout": {
+            "description": "The timeout for requests to the function",
+            "type": "string"
+          },
+          "updatedAt": {
+            "description": "The time at which the function was updated",
+            "type": "string"
+          }
+        },
+        "title": "DescribeResponse",
+        "type": "object"
+      },
+      "Func": {
+        "properties": {
+          "entrypoint": {
+            "description": "name of handler in source code",
+            "type": "string"
+          },
+          "name": {
+            "description": "function name\n limitation: must be unique across projects",
+            "type": "string"
+          },
+          "project": {
+            "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+            "type": "string"
+          },
+          "repo": {
+            "description": "git repo address",
+            "type": "string"
+          },
+          "runtime": {
+            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+            "type": "string"
+          },
+          "status": {
+            "description": "eg. ACTIVE, DEPLOY_IN_PROGRESS, OFFLINE etc",
+            "type": "string"
+          },
+          "subfolder": {
+            "description": "subfolder path to entrypoint",
+            "type": "string"
+          }
+        },
+        "title": "Func",
+        "type": "object"
+      },
+      "ListRequest": {
+        "description": "List all the deployed functions",
+        "properties": {
+          "project": {
+            "description": "optional project name",
+            "type": "string"
+          }
+        },
+        "title": "ListRequest",
+        "type": "object"
+      },
+      "ListResponse": {
+        "properties": {
+          "functions": {
+            "description": "List of functions deployed",
+            "items": {
+              "properties": {
+                "entrypoint": {
+                  "description": "name of handler in source code",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "function name\n limitation: must be unique across projects",
+                  "type": "string"
+                },
+                "project": {
+                  "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+                  "type": "string"
+                },
+                "repo": {
+                  "description": "git repo address",
+                  "type": "string"
+                },
+                "runtime": {
+                  "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "eg. ACTIVE, DEPLOY_IN_PROGRESS, OFFLINE etc",
+                  "type": "string"
+                },
+                "subfolder": {
+                  "description": "subfolder path to entrypoint",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "title": "ListResponse",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "M3OAPIToken": {
+        "bearerFormat": "token",
+        "description": "M3O API token",
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "description": "Generated by protoc-gen-openapi",
+    "title": "Function",
+    "version": "1",
+    "x-logo": {
+      "altText": "M3O logo",
+      "backgroundColor": "#000000",
+      "url": "https://raw.githubusercontent.com/m3o/m3o/main/images/logo.png"
+    }
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/function/Function/Call": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionCallRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionCallResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Call(CallRequest)"
+      }
+    },
+    "/function/Function/Delete": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionDeleteRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionDeleteResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Delete(DeleteRequest)"
+      }
+    },
+    "/function/Function/Deploy": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionDeployRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionDeployResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Deploy(DeployRequest)"
+      }
+    },
+    "/function/Function/Describe": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionDescribeRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionDescribeResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Describe(DescribeRequest)"
+      }
+    },
+    "/function/Function/List": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionListRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionListResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.List(ListRequest)"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.m3o.com/v1",
+      "description": "M3O platform"
+    }
+  ]
+}

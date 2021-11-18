@@ -71,6 +71,10 @@ Authorization: Bearer $MICRO_API_TOKEN
 
 All request/responses are in JSON format and require a `Content-Type: application/json` header to be passed on each request.
 
+## OpenAPI Specs
+
+Find the OpenAPI specs in the [spec](spec) directory
+
 ## Public APIs
 
 A list of public APIs can be found on [m3o.com/explore](https://m3o.com/explore)
