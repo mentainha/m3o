@@ -36,10 +36,11 @@ export interface {{ title $typeName }}{{ "{" }}
 `
 
 const tsExampleTemplate = `{{ $service := .service }}const { {{ title $service.Name }}Service } = require('m3o/{{ $service.Name }}');
+{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}
+const {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
 
-{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}async function {{ untitle .funcName }}() {
-	let {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
-	let rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
+async function {{ untitle .funcName }}() {
+	const rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
 	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}console.log(rsp)
 	{{ end }}{{ if isStream $service.Spec $service.Name $reqType }}rsp.onMessage(msg => {
 		console.log(msg)
@@ -64,10 +65,11 @@ const tsReadmeBottomTemplate = `{{ $service := .service }}## {{ title .endpoint}
 
 ` + "```" + `js
 const { {{ title $service.Name }}Service } = require('m3o/{{ $service.Name }}');
+{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}
+const {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
 
-{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}async function {{ untitle .funcName }}() {
-	let {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
-	let rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
+async function {{ untitle .funcName }}() {
+	const rsp = await {{ $service.Name }}Service.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
 	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}console.log(rsp)
 	{{ end }}{{ if isStream $service.Spec $service.Name $reqType }}rsp.onMessage(msg => {
 		console.log(msg)
