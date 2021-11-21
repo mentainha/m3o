@@ -1,7 +1,6 @@
 <p align="center">
 	<a href="https://m3o.com" style="color: #333333;">
 		<img src="images/m3o.png" />
-		<h1 align="center">M3O</h1>
 	</a>
 </p>
 <p align="center">M3O is the open source AWS alternative.<br>We are building a new cloud platform for the Next generation of developers.</p>
