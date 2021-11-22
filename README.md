@@ -44,6 +44,7 @@ So far there are over 40+ services. Here are some of the highlights:
 - [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**User**](https://m3o.com/user) - User management and authentication
 - [**File**](https://m3o.com/file) - Store, list, and retrieve text files
+- [**Email**](https://m3o.com/email) - Send emails in a flash
 
 ### Logistics
 
@@ -51,11 +52,10 @@ So far there are over 40+ services. Here are some of the highlights:
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
 - [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
 - [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
-- [**IP**](https://m3o.com/ip) - IP to geolocation lookup
+- [**IP to Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
 ### Web
 
-- [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
 - [**OTP**](https://m3o.com/otp) - One time password generation
 - [**QR Codes**](https://m3o.com/qr) - QR code generator
