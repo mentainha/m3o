@@ -113,7 +113,7 @@ The cloud hosted providers of Micro services:
 
 ### Open Source
 
-The core cloud OS and services exists in a vendor neutral org
+The core OS, services, backend and infrastructure automation are all open source
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
