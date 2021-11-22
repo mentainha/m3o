@@ -117,14 +117,16 @@ The core cloud OS and services exists in a vendor neutral org
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
+- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
+- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
 ### M3O Dev UX
 
-The hosting of Micro services on [m3o.com](https://m3o.com) is powered by the following:
+We provide the following 10x dev UX for developers:
 
-- [m3o/cloud](https://github.com/m3o/cloud) - angular based dev UX for the website (being replaced by Next.js)
-- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
-- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
+- [m3o/cloud](https://github.com/m3o/cloud) - Web UI for self hostable experience (being replaced by Next.js)
+- [m3o/m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
+- [m3o/m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 
 ## Publish APIs
 
