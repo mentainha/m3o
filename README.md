@@ -113,20 +113,20 @@ The cloud hosted providers of Micro services:
 
 ### Open Source
 
-The core OS, services, backend and infrastructure automation are all open source
+The core OS and services are all open sourced in a vendor neutral org:
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
 - [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
-- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
-- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
 ### M3O Dev UX
 
-We provide the following 10x dev UX for developers:
+We provide the following dev UX for the consumption of Micro services:
 
-- [m3o/cloud](https://github.com/m3o/cloud) - Web UI for self hostable experience (being replaced by Next.js)
+- [m3o/cloud](https://github.com/m3o/cloud) - Web UI for a self hostable experience (being replaced by Next.js)
 - [m3o/m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o/m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
+- [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
+- [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
 
 ## Publish APIs
 
