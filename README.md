@@ -110,7 +110,7 @@ contribute to the open source while benefiting from the platform as a shared res
 The core OS and services are all open sourced in a vendor neutral org:
 
 - [micro/micro](https://github.com/micro/micro) - an open source operating system for the cloud
-- [micro/services](https://github.com/micro/services) - open source micro services powering m3o.com
+- [micro/services](https://github.com/micro/services) - open source micro services offered by m3o.com
 
 ### M3O Dev UX
 
