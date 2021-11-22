@@ -85,7 +85,12 @@ M3O is built on existing public cloud infrastructure using managed kubernetes al
 and abstraction layer for existing third party public APIs. We host the open source [Micro](https://github.com/micro/micro) project as our base OS and 
 use it to power all the [Micro Services](https://github.com/micro/services), which provide simpler building blocks for existing cloud primitives.
 
-### UX
+### Infrastructure
+
+We primarily use existing open source software, fully managed services and third party public APIs as the backing infrastructure then layer a standard interface 
+on top. With all the services on one platform, accessible with one API token, we drastically improve the Dev UX.
+
+### Control Plane
 
 We host our own custom dev UX ([m3o/cloud](https://github.com/m3o/cloud)) on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane.
@@ -94,11 +99,6 @@ which acts as the management control plane.
 
 Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), a vendor neutral home. We then automate the 
 building and publishing of those services and generate client libraries for them all. This creates a shared and fully managed platform for everyone to leverage.
-
-### Infrastructure
-
-We primarily use existing open source software, fully managed services and third party public APIs as the backing infrastructure then layer a standard interface 
-on top. With all the services on one platform, accessible with one API token, we drastically improve the Dev UX.
 
 ## Development
 
