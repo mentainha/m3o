@@ -105,12 +105,6 @@ on top. With all the services on one platform, accessible with one API token, we
 This project is a combination of open source projects and a platform managed by the Micro team. Our goal is to enable any developer to 
 contribute to the open source while benefiting from the platform as a shared resource.
 
-### Cloud Hosting
-
-The cloud hosted providers of Micro services:
-
-- [m3o.com](https://m3o.com) - a fully managed offering of micro services
-
 ### Open Source
 
 The core OS and services are all open sourced in a vendor neutral org:
@@ -127,6 +121,12 @@ We provide the following dev UX for the consumption of Micro services:
 - [m3o/m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 - [m3o/platform](https://github.com/m3o/platform) - the infrastructure automation for cloud hosted stack
 - [m3o/backend](https://github.com/m3o/backend) - the services which power the m3o.com product backend
+
+### Cloud Hosting
+
+The cloud hosting providers of Micro services:
+
+- [m3o.com](https://m3o.com) - a fully managed offering of micro services
 
 ## Publish APIs
 
