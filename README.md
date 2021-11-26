@@ -38,7 +38,9 @@ So far there are over 40+ services. Here are some of the highlights:
 
 ### Coming soon
 
-- [**Apps**](https://m3o.com/app) - Global app deployment. Reserve your app name now!
+- [**Apps**](https://m3o.com/app) - Global app deployment
+- [**NFT**] - Explore, buy and sell NFTs
+- [**Space**] - Infinite cloud storage
 
 ### Backend
 
