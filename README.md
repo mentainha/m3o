@@ -38,6 +38,7 @@ So far there are over 40+ services. Here are some of the highlights:
 
 ### Backend
 
+- [**Apps**](https://m3o.com/app) (coming soon) - Global app deployment. Reserve your app name now!
 - [**Cache**](https://m3o.com/cache) - Quick access key-value storage
 - [**DB**](https://m3o.com/db) - Simple database service
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
