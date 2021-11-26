@@ -38,7 +38,7 @@ So far there are over 40+ services. Here are some of the highlights:
 
 ### Coming soon
 
-- [**Apps**](https://m3o.com/app) (coming soon) - Global app deployment. Reserve your app name now!
+- [**Apps**](https://m3o.com/app) - Global app deployment. Reserve your app name now!
 
 ### Backend
 
