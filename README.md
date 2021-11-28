@@ -4,7 +4,10 @@
 	</a>
 </p>
 <p align="center">M3O is the open source AWS alternative.<br>We are building a new cloud platform for the Next generation of developers.</p>
-
+<p align="center">
+	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
+	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-now-green"></a>
+</p>
 ---
 
 ## Overview
