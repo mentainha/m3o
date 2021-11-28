@@ -53,7 +53,7 @@ So far there are over 40+ services. Here are some of the highlights:
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**User**](https://m3o.com/user) - User management and authentication
-- [**File**](https://m3o.com/file) - Store, list, and retrieve text files
+- [**Files**](https://m3o.com/file) - Store, list, and retrieve text files
 
 ### Logistics
 
