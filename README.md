@@ -143,7 +143,5 @@ If you'd like to publish your own APIs on the M3O platform [fill in this form](h
 
 ## Contributing
 
-- **Build examples** - Create things built on top of M3O which we'll feature on the website soon
-- **Write services** - Contribute services to [micro/services](https://github.com/micro/services) which will be hosted on M3O
-- **Write docs** - Help us write great docs to help everyone quickly get started 
-- **Show support** - Join our community on slack or discord, talk about us at work or with friends
+- **Write examples** - Create things in [m3o/examples](examples) built on top of M3O which we'll feature on the website soon
+- **Show support** - Join our community on [discord](https://discord.gg/TBR9bRjd6Z), talk about us at work or with friends
