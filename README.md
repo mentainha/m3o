@@ -104,7 +104,7 @@ use it to power all the [Micro Services](https://github.com/micro/services), whi
 We host our own custom dev UX ([m3o/cloud](https://github.com/m3o/cloud)) on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane. This productizes the entire offering and allows for publishing of services with configurable pricing.
 
-### Services
+### Micro Services
 
 Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), a vendor neutral home. We then automate the 
 building and publishing of those services and generate client libraries for them all. This creates a shared and fully managed platform for everyone to leverage.
