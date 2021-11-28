@@ -9,6 +9,8 @@
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-now-green"></a>
 </p>
 
+---
+
 ## Overview
 
 AWS was a first generation public cloud provider started in 2006. Its infrastructure services and pay as go pricing model made it an incredibly 
