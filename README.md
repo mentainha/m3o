@@ -8,7 +8,6 @@
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-now-green"></a>
 </p>
----
 
 ## Overview
 
