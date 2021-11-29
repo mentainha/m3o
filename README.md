@@ -85,7 +85,6 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 ## Learn More
 
 - Follow us on [Twitter](https://twitter.com/m3oservices)
-- Join the [Slack](https://slack.m3o.com) community
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Email [Support](mailto:support@m3o.com) for help
 
