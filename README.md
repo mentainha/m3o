@@ -142,4 +142,4 @@ If you'd like to publish your own APIs on the M3O platform [fill in this form](h
 ## Contributing
 
 - **Write examples** - Create [examples](examples) built with M3O which we'll feature on the website soon
-- **Show support** - Join our community on [discord](https://discord.gg/TBR9bRjd6Z) or follow on [twitter](https://twitter.com/m3oservices)
+- **Show support** - Join the community on [discord](https://discord.gg/TBR9bRjd6Z) or follow us on [twitter](https://twitter.com/m3oservices) for updates
