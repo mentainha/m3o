@@ -36,17 +36,14 @@ m3o explore list
 
 ### Search services
 
-Search for services
-
 ```
 m3o explore search --query=db
 ```
 
 ### Call service
 
-Call a service by name and endpoint
-
 ```
+# m3o call [name] [endpoint] [request]
 $ m3o call helloworld Call '{"name": "Alice"}'
 {
  "message": "Hello Alice"
@@ -54,8 +51,6 @@ $ m3o call helloworld Call '{"name": "Alice"}'
 ```
 
 ### Stream response
-
-Stream events
 
 ```
 m3o stream notes Subscribe '{}'
