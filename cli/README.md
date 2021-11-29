@@ -40,10 +40,10 @@ Search for services
 
 ```
 m3o explore search --query=db
+```
 
 ### Call service
 
-```
 Call a service by name and endpoint
 
 ```
