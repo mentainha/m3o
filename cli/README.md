@@ -20,12 +20,30 @@ Display help
 m3o -h
 ```
 
+### API Token
+
 Export your API token as found in the UI
 
 ```
 export M3O_API_TOKEN=xxxxxx
 ```
 
+### List services
+
+```
+m3o explore list
+```
+
+### Search services
+
+Search for services
+
+```
+m3o explore search --query=db
+
+### Call service
+
+```
 Call a service by name and endpoint
 
 ```
@@ -35,20 +53,12 @@ $ m3o call helloworld Call '{"name": "Alice"}'
 }
 ```
 
+### Stream response
+
 Stream events
 
 ```
 m3o stream notes Subscribe '{}'
 ```
 
-List services
 
-```
-m3o explore list
-```
-
-Search for services
-
-```
-m3o explore search --query=db
-```
