@@ -43,7 +43,6 @@ m3o explore search --query=db
 ### Call service
 
 ```
-# m3o call [name] [endpoint] [request]
 $ m3o call helloworld Call '{"name": "Alice"}'
 {
  "message": "Hello Alice"
