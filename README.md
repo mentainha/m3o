@@ -117,16 +117,16 @@ contribute to the open source while benefiting from the platform as a shared res
 
 The core OS and services are all open sourced in a vendor neutral org:
 
-- [micro/micro](https://github.com/micro/micro) - a distributed cloud operating system
-- [micro/services](https://github.com/micro/services) - programmable real world Micro services
+- [micro](https://github.com/micro/micro) - a distributed cloud operating system
+- [services](https://github.com/micro/services) - programmable real world Micro services
 
 ### M3O Dev UX
 
 We provide the following dev UX for the consumption of Micro services:
 
-- [m3o/cloud](https://github.com/m3o/cloud) - Web UI for a self hostable experience (being replaced by Next.js)
-- [m3o/m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
-- [m3o/m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
+- [cloud](https://github.com/m3o/cloud) - Web UI for a self hostable experience (being replaced by Next.js)
+- [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
+- [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 
 ### Cloud Hosting
 
