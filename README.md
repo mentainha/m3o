@@ -105,7 +105,7 @@ which acts as the management control plane. This productizes the entire offering
 
 ### Micro Services
 
-Developers build and contribute to services in [github.com/micro/services](https://github.com/micro/services), a vendor neutral home. We then automate the 
+Developers build and contribute to [services](https://github.com/micro/services) in a vendor neutral home. We then automate the 
 building and publishing of those services and generate client libraries for them all. This creates a shared and fully managed platform for everyone to leverage.
 
 ## Development
