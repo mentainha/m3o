@@ -12,6 +12,7 @@ curl "https://api.m3o.com/v1/function/Deploy" \
   "entrypoint": "Helloworld",
   "name": "example",
   "repo": "github.com/m3o/m3o",
-  "subfolder": "examples/go-function"
-}
+  "subfolder": "examples/go-function",
+  "runtime": "go116"
+}'
 ```

@@ -13,6 +13,7 @@ curl "https://api.m3o.com/v1/function/Deploy" \
   "name": "my-first-func",
   "project": "tests",
   "subfolder": "examples/nodejs-function",
-  "repo": "github.com/m3o/m3o"
-}
+  "repo": "github.com/m3o/m3o",
+  "runtime": "nodejs14"
+}'
 ```
