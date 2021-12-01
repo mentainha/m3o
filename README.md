@@ -100,7 +100,7 @@ use it to power all the [Micro Services](https://github.com/micro/services), whi
 
 ### Control Plane
 
-We host our own custom dev UX ([m3o/cloud](https://github.com/m3o/cloud)) on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
+We host our own custom dev UX ([cloud](https://github.com/m3o/cloud)) on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane. This productizes the entire offering and allows for publishing of services with configurable pricing.
 
 ### Micro Services
