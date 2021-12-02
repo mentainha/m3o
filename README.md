@@ -106,8 +106,7 @@ which acts as the management control plane. This productizes the entire offering
 ### Micro Services
 
 Developers build and contribute to [Micro Services](https://github.com/micro/services), which act as an abstraction layer for existing third party 
-public APIs. We then automate the building and publishing of those services and generate client libraries for them all. This creates a shared and 
-fully managed platform for everyone to use.
+public APIs. We then automate the building and publishing of those services and generate client libraries for them all. 
 
 ## Development
 
