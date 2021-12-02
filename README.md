@@ -33,7 +33,7 @@ M3O is host to 40+ [services](#services) and counting. Below are the platform fe
 ## Rationale
 
 AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
-and other modern development tools, the building blocks we're looking for are changing. We're mostly now consuming third party public APIs. M3O is looking to aggregate all those APIs into a single uniform offering with a slick new dev UX for a 10x developer experience.
+and other modern development tools, the building blocks we're looking for are changing. We're mostly now consuming third party public APIs. M3O wants to aggregate all those APIs into a single uniform offering with a slick new dev UX for a 10x developer experience.
 
 ## Services
 
