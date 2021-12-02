@@ -110,7 +110,7 @@ public APIs. We then automate the building and publishing of those services and 
 
 ## Development
 
-This project is a combination of open source projects and a platform managed by the Micro team. Our goal is to enable any developer to 
+This project is a combination of open source projects and a platform managed by the M3O team. Our goal is to enable any developer to 
 contribute to the open source while benefiting from the platform as a shared resource.
 
 ### Open Source
