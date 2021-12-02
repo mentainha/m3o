@@ -36,7 +36,7 @@ AWS is a fairly complex beast which makes it hard for new developers to get star
 and other modern development tools, the building blocks we're looking for are changing. 
 
 We're mostly now consuming third party public APIs. M3O is looking to aggregate all those APIs into a single uniform offering with a slick 
-new dev UX for the Next generation of developers.
+new dev UX for a 10x developer experience.
 
 ## Services
 
