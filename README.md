@@ -19,8 +19,6 @@ compelling choice for a previous generation of developers. But what about the fu
 M3O is an attempt to build a new cloud platform with higher level building blocks. Micro APIs for the Next generation of developers. 
 Explore and use free and paid public APIs as simpler programmable building blocks all on one platform for a 10x developer experience.
 
-M3O is powered by the open source distributed cloud operating system [Micro](https://github.com/micro/micro).
-
 ## Features
 
 M3O is host to 40+ [services](#services) and counting. Below are the platform features:
