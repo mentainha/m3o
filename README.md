@@ -96,7 +96,7 @@ Read below to learn more about how it all works
 ### Infrastructure
 
 M3O is built on existing public cloud infrastructure using managed kubernetes along with our own [infrastructure automation](https://github.com/m3o/platform) 
-and abstraction layer for existing third party public APIs. We host the open source [Micro](https://github.com/micro/micro) project as our base OS and 
+and abstraction layer for existing third party public APIs. We host the open source project [Micro](https://github.com/micro/micro) as our base OS and 
 use it to power all the [Micro Services](https://github.com/micro/services), which provide simpler building blocks for existing cloud primitives.
 
 ### Control Plane
