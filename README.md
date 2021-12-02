@@ -113,9 +113,9 @@ public APIs. We then automate the building and publishing of those services and 
 This project is a combination of open source projects and a platform managed by the M3O team. Our goal is to enable any developer to 
 contribute to the open source while benefiting from the platform as a shared resource.
 
-### Open Source
+### Source
 
-The core OS and services are all open sourced in a vendor neutral org:
+The core platform and services are all open sourced in a vendor neutral org:
 
 - [micro](https://github.com/micro/micro) - a distributed cloud operating system
 - [services](https://github.com/micro/services) - programmable real world Micro services
