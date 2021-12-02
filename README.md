@@ -120,7 +120,7 @@ The core OS and services are all open sourced in a vendor neutral org:
 - [micro](https://github.com/micro/micro) - a distributed cloud operating system
 - [services](https://github.com/micro/services) - programmable real world Micro services
 
-### M3O Dev UX
+### Dev UX
 
 We provide the following dev UX for the consumption of Micro services:
 
@@ -128,7 +128,7 @@ We provide the following dev UX for the consumption of Micro services:
 - [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 
-### Cloud Hosting
+### Hosting
 
 The cloud hosting providers of Micro services:
 
