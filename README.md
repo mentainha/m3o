@@ -45,6 +45,7 @@ So far there are over 40+ services. Here are some of the highlights:
 - [**Apps**](https://m3o.com/app) - Global app deployment
 - [**NFTs**](https://m3o.com/nft) - Explore, buy and sell NFTs
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
+- [**Search**](https://m3o.com/search) - Full text search
 
 ### Backend
 
