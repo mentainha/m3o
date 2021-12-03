@@ -99,7 +99,7 @@ We host the open source project [Micro](https://github.com/micro/micro) as our b
 
 ### Control Plane
 
-We host our own [cloud](https://github.com/m3o/cloud) dev UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
+We host our own [cloud](https://github.com/m3o/cloud-next) dev UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane. This productizes the entire offering and allows for publishing of services with configurable pricing.
 
 ### Micro Services
@@ -123,7 +123,7 @@ The core platform and services are all open sourced in a vendor neutral org:
 
 We provide the following dev UX for the consumption of Micro services:
 
-- [cloud](https://github.com/m3o/cloud) - Web UI for a self hostable experience (being replaced by Next.js)
+- [cloud-next](https://github.com/m3o/cloud-next) - Next.js based Web dashboard which can be self hosted
 - [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 
