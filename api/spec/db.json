@@ -242,6 +242,10 @@
       "CreateRequest": {
         "description": "Create a record in the database. Optionally include an \"id\" field otherwise it's set automatically.",
         "properties": {
+          "id": {
+            "description": "optional record id to use",
+            "type": "string"
+          },
           "record": {
             "description": "JSON encoded record or records (can be array or object)",
             "type": "object"
