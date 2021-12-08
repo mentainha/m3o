@@ -22,7 +22,7 @@ M3O is host to 40+ [services](#services) and counting. Below are the platform fe
 
 - **🔥 10x Dev UX** - The developer experience is first priority. A slick new UX and code generated clients for the next generation of developers.
 - **☝️ One Token** - Use one account on one platform to fulfill all your API needs. Access multiple public APIs with a single API token.
-- **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same Micro developer experience.
+- **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same developer experience.
 - **🆓 Free to start** - It's a simple pay as you grow model and everything is priced per request. Top up your account and start making calls.
 - **🚫 Anti AWS Billing** - Don't get lost in a sea of infinite cloud billing. We show you exactly what you use and don't hide any of the costs.
 - **✔️ Open Source Software** - Built on an open source foundation and services which anyone can contribute to with a simple PR.
