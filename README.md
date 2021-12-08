@@ -95,7 +95,7 @@ We host the open source project [Micro](https://github.com/micro/micro) as our b
 
 ### Control Plane
 
-We host our own [cloud](https://github.com/m3o/cloud-next) dev UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
+We host our own [cloud](https://github.com/m3o/cloud-next) Next.js UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane. This productizes the entire offering and allows for publishing of services with configurable pricing.
 
 ### Micro Services
