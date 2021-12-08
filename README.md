@@ -20,7 +20,7 @@ Signup and start for free at [m3o.com/register](https://m3o.com/register).
 
 M3O is host to 40+ [services](#services) and counting. Below are the platform features:
 
-- **🔥 10x Dev UX** - The developer experience is first priority. A slick new UX and code generated clients for the next generation of developers.
+- **🔥 10x Dev UX** - Developers are first priority. We provide a slick UX with code generated clients for a 10x developer experience.
 - **☝️ One Token** - Use one account on one platform to fulfill all your API needs. Access multiple public APIs with a single API token.
 - **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same developer experience.
 - **🆓 Free to start** - It's a simple pay as you grow model and everything is priced per request. Top up your account and start making calls.
