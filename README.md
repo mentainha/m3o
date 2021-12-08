@@ -3,7 +3,7 @@
 		<img src="images/m3o.png" />
 	</a>
 </p>
-<p align="center">Next Generation Cloud Platform<br>The open source AWS alternative.</p>
+<p align="center">Next Generation Cloud Platform</p>
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-now-green"></a>
@@ -13,26 +13,22 @@
 
 ## Overview
 
-AWS was a first generation public cloud platform started in 2006. Its infrastructure services and pay as go pricing model made it an incredibly 
-compelling choice for a previous generation of developers. But what about the future? 
-
-M3O is an attempt to build a new cloud platform with simpler higher level building blocks. Micro APIs for the Next generation of developers. 
-Consume free and paid public APIs all one one platform for a 10x developer experience.
+M3O is a new cloud platform with simpler higher level building blocks. Consume free and paid public APIs all on one platform for a 10x developer experience. 
+Signup and start for free at [m3o.com/register](https://m3o.com/register).
 
 ## Features
 
-M3O is host to 40+ [services](#services) and counting. Below are the platform features:
+Here are the main features of M3O
 
-- **🔥 Dev UX** - The developer experience is first priority. A slick new UX and code generated clients for the next generation of developers.
-- **☝️ One Token** - Use one Micro API token to fulfill all your API needs. Access multiple public APIs with a single token.
-- **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same Micro developer experience.
+- **🔥 10x Dev UX** - Developers are first priority. We provide a slick UX with code generated clients for a 10x developer experience.
+- **☝️ One Token** - Use one account on one platform to fulfill all your API needs. Access multiple public APIs with a single API token.
+- **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same developer experience.
 - **🆓 Free to start** - It's a simple pay as you grow model and everything is priced per request. Top up your account and start making calls.
 - **🚫 Anti AWS Billing** - Don't get lost in a sea of infinite cloud billing. We show you exactly what you use and don't hide any of the costs.
-- **✔️ Open Source Software** - Built on an open source foundation and services which anyone can contribute to with a simple PR.
 
 ## Rationale
 
-AWS is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
+Cloud is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
 and other modern development tools, the building blocks we're looking for are changing. We're mostly now consuming third party public APIs. M3O wants to aggregate all those APIs onto one platform as simpler programmable building blocks for a 10x developer experience.
 
 ## Services
@@ -99,7 +95,7 @@ We host the open source project [Micro](https://github.com/micro/micro) as our b
 
 ### Control Plane
 
-We host our own [cloud](https://github.com/m3o/cloud-next) dev UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
+We host our own [cloud](https://github.com/m3o/cloud-next) Next.js UX on top of the infrastructure stack and a [backend](https://github.com/m3o/backend) 
 which acts as the management control plane. This productizes the entire offering and allows for publishing of services with configurable pricing.
 
 ### Micro Services
