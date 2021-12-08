@@ -13,11 +13,7 @@
 
 ## Overview
 
-AWS was a first generation public cloud platform started in 2006. Its infrastructure services and pay as go pricing model made it an incredibly 
-compelling choice for a previous generation of developers. But what about the future? 
-
-M3O is an attempt to build a new cloud platform with simpler higher level building blocks. Micro APIs for the Next generation of developers. 
-Consume free and paid public APIs all one one platform for a 10x developer experience.
+M3O is a new cloud platform with simpler higher level building blocks. Consume free and paid public APIs all one one platform for a 10x developer experience. 
 
 ## Features
 
