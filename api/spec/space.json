@@ -1,15 +1,65 @@
 {
   "components": {
     "requestBodies": {
-      "SpaceVoteRequest": {
+      "SpaceCreateRequest": {
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/VoteRequest"
+              "$ref": "#/components/schemas/CreateRequest"
             }
           }
         },
-        "description": "SpaceVoteRequest"
+        "description": "SpaceCreateRequest"
+      },
+      "SpaceDeleteRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeleteRequest"
+            }
+          }
+        },
+        "description": "SpaceDeleteRequest"
+      },
+      "SpaceHeadRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HeadRequest"
+            }
+          }
+        },
+        "description": "SpaceHeadRequest"
+      },
+      "SpaceListRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListRequest"
+            }
+          }
+        },
+        "description": "SpaceListRequest"
+      },
+      "SpaceReadRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReadRequest"
+            }
+          }
+        },
+        "description": "SpaceReadRequest"
+      },
+      "SpaceUpdateRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateRequest"
+            }
+          }
+        },
+        "description": "SpaceUpdateRequest"
       }
     },
     "responses": {
@@ -45,37 +95,278 @@
         },
         "description": "Error from the Micro API"
       },
-      "SpaceVoteResponse": {
+      "SpaceCreateResponse": {
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/VoteResponse"
+              "$ref": "#/components/schemas/CreateResponse"
             }
           }
         },
-        "description": "SpaceVoteResponse"
+        "description": "SpaceCreateResponse"
+      },
+      "SpaceDeleteResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeleteResponse"
+            }
+          }
+        },
+        "description": "SpaceDeleteResponse"
+      },
+      "SpaceHeadResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HeadResponse"
+            }
+          }
+        },
+        "description": "SpaceHeadResponse"
+      },
+      "SpaceListResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ListResponse"
+            }
+          }
+        },
+        "description": "SpaceListResponse"
+      },
+      "SpaceReadResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReadResponse"
+            }
+          }
+        },
+        "description": "SpaceReadResponse"
+      },
+      "SpaceUpdateResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateResponse"
+            }
+          }
+        },
+        "description": "SpaceUpdateResponse"
       }
     },
     "schemas": {
-      "VoteRequest": {
-        "description": "Vote to have the Space api launched faster!",
+      "CreateRequest": {
+        "description": "Create an object. Returns error if object with this name already exists. If you want to update an existing object use the `Update` endpoint\n You need to send the request as a multipart/form-data rather than the usual application/json\n with each parameter as a form field.",
         "properties": {
-          "message": {
-            "description": "optional message",
+          "name": {
+            "description": "The name of the object. Use forward slash delimiter to implement a nested directory-like structure e.g. images/foo.jpg",
+            "type": "string"
+          },
+          "object": {
+            "description": "The contents of the object",
+            "format": "byte",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "Who can see this object? \"public\" or \"private\", defaults to \"private\"",
             "type": "string"
           }
         },
-        "title": "VoteRequest",
+        "title": "CreateRequest",
         "type": "object"
       },
-      "VoteResponse": {
+      "CreateResponse": {
         "properties": {
-          "message": {
-            "description": "response message",
+          "url": {
+            "description": "A public URL to access the object if visibility is \"public\"",
             "type": "string"
           }
         },
-        "title": "VoteResponse",
+        "title": "CreateResponse",
+        "type": "object"
+      },
+      "DeleteRequest": {
+        "description": "Delete an object",
+        "properties": {
+          "name": {
+            "description": "The name of the object. Use forward slash delimiter to implement a nested directory-like structure e.g. images/foo.jpg",
+            "type": "string"
+          }
+        },
+        "title": "DeleteRequest",
+        "type": "object"
+      },
+      "DeleteResponse": {
+        "title": "DeleteResponse",
+        "type": "object"
+      },
+      "HeadObject": {
+        "properties": {
+          "created": {
+            "description": "when was this created",
+            "format": "int64",
+            "type": "number"
+          },
+          "modified": {
+            "description": "when was this last modified",
+            "format": "int64",
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "description": "URL to access the object if it is public",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "is this public or private",
+            "type": "string"
+          }
+        },
+        "title": "HeadObject",
+        "type": "object"
+      },
+      "HeadRequest": {
+        "description": "Retrieve meta information about an object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "title": "HeadRequest",
+        "type": "object"
+      },
+      "HeadResponse": {
+        "properties": {
+          "object": {
+            "properties": {
+              "created": {
+                "description": "when was this created",
+                "format": "int64",
+                "type": "number"
+              },
+              "modified": {
+                "description": "when was this last modified",
+                "format": "int64",
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "description": "URL to access the object if it is public",
+                "type": "string"
+              },
+              "visibility": {
+                "description": "is this public or private",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "title": "HeadResponse",
+        "type": "object"
+      },
+      "ListObject": {
+        "properties": {
+          "modified": {
+            "description": "when was this last modified",
+            "format": "int64",
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "title": "ListObject",
+        "type": "object"
+      },
+      "ListRequest": {
+        "description": "List the objects in the space",
+        "properties": {
+          "prefix": {
+            "description": "optional prefix for the name e.g. to return all the objects in the images directory pass images/",
+            "type": "string"
+          }
+        },
+        "title": "ListRequest",
+        "type": "object"
+      },
+      "ListResponse": {
+        "properties": {
+          "objects": {
+            "items": {
+              "properties": {
+                "modified": {
+                  "description": "when was this last modified",
+                  "format": "int64",
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "title": "ListResponse",
+        "type": "object"
+      },
+      "ReadRequest": {
+        "description": "Read/download the object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "title": "ReadRequest",
+        "type": "object"
+      },
+      "ReadResponse": {
+        "description": "Returns the raw object",
+        "title": "ReadResponse",
+        "type": "object"
+      },
+      "UpdateRequest": {
+        "description": "Update an object. If an object with this name does not exist, creates a new one.\n You need to send the request as a multipart/form-data rather than the usual application/json\n with each parameter as a form field.",
+        "properties": {
+          "name": {
+            "description": "The name of the object. Use forward slash delimiter to implement a nested directory-like structure e.g. images/foo.jpg",
+            "type": "string"
+          },
+          "object": {
+            "description": "The contents of the object",
+            "format": "byte",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "Who can see this object? \"public\" or \"private\", defaults to \"private\"",
+            "type": "string"
+          }
+        },
+        "title": "UpdateRequest",
+        "type": "object"
+      },
+      "UpdateResponse": {
+        "properties": {
+          "url": {
+            "description": "A public URL to access the object if visibility is \"public\"",
+            "type": "string"
+          }
+        },
+        "title": "UpdateResponse",
         "type": "object"
       }
     },
@@ -100,7 +391,7 @@
   },
   "openapi": "3.0.0",
   "paths": {
-    "/space/Space/Vote": {
+    "/space/Space/Create": {
       "parameters": [
         {
           "in": "header",
@@ -114,11 +405,11 @@
       ],
       "post": {
         "requestBody": {
-          "$ref": "#/components/requestBodies/SpaceVoteRequest"
+          "$ref": "#/components/requestBodies/SpaceCreateRequest"
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SpaceVoteResponse"
+            "$ref": "#/components/responses/SpaceCreateResponse"
           },
           "default": {
             "$ref": "#/components/responses/MicroAPIError"
@@ -129,7 +420,167 @@
             "MicroAPIToken": []
           }
         ],
-        "summary": "Space.Vote(VoteRequest)"
+        "summary": "Space.Create(CreateRequest)"
+      }
+    },
+    "/space/Space/Delete": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceDeleteRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceDeleteResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Delete(DeleteRequest)"
+      }
+    },
+    "/space/Space/Head": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceHeadRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceHeadResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Head(HeadRequest)"
+      }
+    },
+    "/space/Space/List": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceListRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceListResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.List(ListRequest)"
+      }
+    },
+    "/space/Space/Read": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceReadRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceReadResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Read(ReadRequest)"
+      }
+    },
+    "/space/Space/Update": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceUpdateRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceUpdateResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Update(UpdateRequest)"
       }
     }
   },
