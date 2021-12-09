@@ -44,9 +44,7 @@ Events are forwarded to Mixpanel for analysis. Due to the way enum types are con
 
 ## Naming
 
-Directories are the domain boundary for a specific concern e.g user, account, payment. They act as the 
-alias for the otherwise fully qualified domain name "go.micro.service.alias". Services should follow 
-this naming convention and focus on single word naming where possible.
+Directories are the domain boundary for a specific concern e.g user, account, payment.
 
 ## Structure
 
