@@ -120,7 +120,7 @@ curl "https://api.m3o.com/v1/{{ $service.Name }}/{{ title .endpoint }}" \
 {{- end -}}
 {{- if isStream $service.Spec $service.Name $reqType -}}
 echo '{{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}' | \
-websocat -n -H="Authorization: Bearer $M3O_API_TOKEN" \
+websocat -n -H "Authorization: Bearer $M3O_API_TOKEN" \
 wss://api.m3o.com/v1/{{ $service.Name }}/{{ title .endpoint }}
 {{- end}}`
 
