@@ -111,7 +111,7 @@ import(
 	}{{ end }}
 }`
 
-const curlExampleTemplate = `{{ $service := .service -}}
+const curlExampleTemplate = `{{ $reqType := requestType .endpoint }}{{ $service := .service -}}
 {{- if isNotStream $service.Spec $service.Name $reqType -}}
 curl "https://api.m3o.com/v1/{{ $service.Name }}/{{ title .endpoint }}" \
   -H "Content-Type: application/json" \
