@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package customers;
+option go_package = "./proto;customers";
+
+service Customers {
+	// Creates a new, unverified customer
+	rpc Create(CreateRequest) returns (CreateResponse) {}
+	// Mark the customer as verified
+	rpc MarkVerified(MarkVerifiedRequest) returns (MarkVerifiedResponse) {}
+	// Retrieve a customer
+	rpc Read(ReadRequest) returns (ReadResponse) {}
+	// Marks a customer as inactive
+	rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+	// Lists all customers
+	rpc List(ListRequest) returns (ListResponse) {}
+	// Updates a customer
+	rpc Update(UpdateRequest) returns (UpdateResponse) {}
+	// Ban the customer
+	rpc Ban(BanRequest) returns (BanResponse) {}
+	// Unban the customer
+	rpc Unban(UnbanRequest) returns (UnbanResponse) {}
+	// Login returns an auth token
+	rpc Login(LoginRequest) returns (LoginResponse) {}
+	// Logout logs the user out
+	rpc Logout(LogoutRequest) returns (LogoutResponse) {}
+	// Update the name
+	rpc UpdateName(UpdateNameRequest) returns (UpdateNameResponse) {}
+}
+
+message CreateRequest {
+	string id = 1;// deprecated
+	string email = 2;
+}
+
+message CreateResponse {
+	Customer customer = 1;
+}
+
+message Customer {
+	string id = 1;
+	string status = 2; // awaiting_verification, verified, active, inactive
+	int64 created = 3;
+	string email = 6;
+	int64 updated = 7;
+	map<string,string> meta = 8;
+	string name = 9;
+}
+
+message DeleteRequest {
+	string id = 1;
+	string email = 2;
+	bool force = 3;
+}
+
+message DeleteResponse {
+}
+
+message ReadRequest {
+	string id = 1;
+	string email = 2;
+}
+
+message ReadResponse {
+	Customer customer = 1;
+}
+
+message MarkVerifiedRequest {
+	string id = 1;
+	string email = 2;
+}
+
+message MarkVerifiedResponse {}
+
+message ListRequest {
+
+}
+
+message ListResponse {
+	repeated Customer customers = 1;
+}
+
+message UpdateRequest {
+	Customer customer = 1;
+}
+
+message UpdateResponse {}
+
+message BanRequest {
+	string id = 1;
+	string email = 2;
+}
+
+message BanResponse {}
+
+message UnbanRequest {
+	string id = 1;
+	string email = 2;
+}
+
+message UnbanResponse {}
+
+message LoginRequest {
+	string email = 1;
+	string password = 2;
+	string refresh_token = 3;
+}
+
+message Token {
+	string access_token = 1;
+	string refresh_token = 2;
+	int64 expiry = 3;
+}
+
+message LoginResponse {
+	Token token = 1;
+}
+
+message LogoutRequest {
+
+}
+
+message LogoutResponse {
+
+}
+
+message UpdateNameRequest {
+	string name = 1;
+	string id = 2;
+}
+
+message UpdateNameResponse {}
