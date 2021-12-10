@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"strconv"
 	"strings"
 	"time"
@@ -14,6 +15,7 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
+	"github.com/micro/micro/v3/service/store"
 	"github.com/m3o/m3o/services/pkg/tenant"
 	pb "github.com/m3o/m3o/services/space/proto"
 	"github.com/minio/minio-go/v7/pkg/s3utils"
@@ -34,6 +36,11 @@ const (
 
 	visibilityPrivate = "private"
 	visibilityPublic  = "public"
+
+	prefixByUser = "byUser"
+
+	// max read 5mb for small objects
+	maxReadSize = 5 * 1024 * 1024
 )
 
 type Space struct {
@@ -49,6 +56,12 @@ type conf struct {
 	SSL       bool   `json:"ssl"`
 	Region    string `json:"region"`
 	BaseURL   string `json:"base_url"`
+}
+
+type meta struct {
+	Visibility   string
+	CreateTime   string
+	ModifiedTime string
 }
 
 func NewSpace(srv *service.Service) *Space {
@@ -119,7 +132,7 @@ func (s Space) upsert(ctx context.Context, object []byte, name, visibility, meth
 		return "", errors.BadRequest(method, "Object already exists")
 	}
 
-	createTime := aws.String(fmt.Sprintf("%d", time.Now().Unix()))
+	createTime := aws.String(time.Now().Format(time.RFC3339Nano))
 	if exists {
 		createTime = hoo.Metadata[mdCreated]
 	}
@@ -146,8 +159,19 @@ func (s Space) upsert(ctx context.Context, object []byte, name, visibility, meth
 		return "", errors.InternalServerError(method, "Error creating object")
 	}
 
-	// TODO fix the url
-	return fmt.Sprintf("%s/%s", s.conf.BaseURL, objectName), nil
+	// store the metadata for easy retrieval for listing
+	if err := store.Write(store.NewRecord(
+		fmt.Sprintf("%s/%s", prefixByUser, objectName),
+		meta{Visibility: visibility, CreateTime: *createTime, ModifiedTime: time.Now().Format(time.RFC3339Nano)})); err != nil {
+		log.Errorf("Error writing object to store %s", err)
+		return "", errors.InternalServerError(method, "Error creating object")
+	}
+	retUrl := ""
+	if visibility == "public" {
+		retUrl = fmt.Sprintf("%s/%s", s.conf.BaseURL, objectName)
+	}
+
+	return retUrl, nil
 
 }
 
@@ -174,6 +198,10 @@ func (s Space) Delete(ctx context.Context, request *pb.DeleteRequest, response *
 		log.Errorf("Error deleting object %s", err)
 		return errors.InternalServerError(method, "Error deleting object")
 	}
+	if err := store.Delete(fmt.Sprintf("%s/%s", prefixByUser, objectName)); err != nil {
+		log.Errorf("Error deleting store record %s", err)
+		return errors.InternalServerError(method, "Error deleting object")
+	}
 	return nil
 }
 
@@ -192,12 +220,38 @@ func (s Space) List(ctx context.Context, request *pb.ListRequest, response *pb.L
 		log.Errorf("Error listing objects %s", err)
 		return errors.InternalServerError(method, "Error listing objects")
 	}
+
+	recs, err := store.Read(fmt.Sprintf("%s/%s", prefixByUser, objectName), store.ReadPrefix())
+	if err != nil {
+		log.Errorf("Error listing objects %s", err)
+		return errors.InternalServerError(method, "Error listing objects")
+	}
+	md := map[string]meta{}
+	for _, r := range recs {
+		var m meta
+		if err := json.Unmarshal(r.Value, &m); err != nil {
+			log.Errorf("Error unmarshaling meta %s", err)
+			return errors.InternalServerError(method, "Error listing objects")
+		}
+		md[strings.TrimPrefix(r.Key, prefixByUser+"/")] = m
+	}
 	response.Objects = []*pb.ListObject{}
 	for _, oi := range rsp.Contents {
+		m, ok := md[*oi.Key]
+		if !ok {
+			// hack for now
+			m = meta{}
+		}
+		url := ""
+		if m.Visibility == "public" {
+			url = fmt.Sprintf("%s/%s", s.conf.BaseURL, *oi.Key)
+		}
 		response.Objects = append(response.Objects, &pb.ListObject{
-			Name:     strings.TrimPrefix(*oi.Key, tnt+"/"),
-			Modified: oi.LastModified.Unix(),
-			Url:      fmt.Sprintf("%s/%s", s.conf.BaseURL, *oi.Key),
+			Name:       strings.TrimPrefix(*oi.Key, tnt+"/"),
+			Modified:   oi.LastModified.Format(time.RFC3339Nano),
+			Url:        url,
+			Visibility: m.Visibility,
+			Created:    m.CreateTime,
 		})
 	}
 	return nil
@@ -231,27 +285,118 @@ func (s Space) Head(ctx context.Context, request *pb.HeadRequest, response *pb.H
 	if md, ok := goo.Metadata[mdVisibility]; ok && len(*md) > 0 {
 		vis = *md
 	}
-	var created int64
+	var created string
 	if md, ok := goo.Metadata[mdCreated]; ok && len(*md) > 0 {
-		created, err = strconv.ParseInt(*md, 10, 64)
+		t, err := time.Parse(time.RFC3339Nano, *md)
 		if err != nil {
-			log.Errorf("Error %s", err)
+			// try as unix ts
+			createdI, err := strconv.ParseInt(*md, 10, 64)
+			if err != nil {
+				log.Errorf("Error %s", err)
+			} else {
+				t = time.Unix(createdI, 0)
+			}
 		}
+		created = t.Format(time.RFC3339Nano)
 	}
 
+	url := ""
+	if vis == "public" {
+		url = fmt.Sprintf("%s/%s", s.conf.BaseURL, objectName)
+	}
 	response.Object = &pb.HeadObject{
 		Name:       request.Name,
-		Modified:   goo.LastModified.Unix(),
+		Modified:   goo.LastModified.Format(time.RFC3339Nano),
 		Created:    created,
 		Visibility: vis,
-		Url:        fmt.Sprintf("%s/%s", s.conf.BaseURL, objectName),
+		Url:        url,
 	}
 
 	return nil
 }
 
-func (s *Space) Read(ctx context.Context, req *api.Request, rsp *api.Response) error {
+func (s *Space) Read(ctx context.Context, req *pb.ReadRequest, rsp *pb.ReadResponse) error {
 	method := "space.Read"
+	tnt, ok := tenant.FromContext(ctx)
+	if !ok {
+		return errors.Unauthorized(method, "Unauthorized")
+	}
+
+	name := req.Name
+
+	if len(req.Name) == 0 {
+		return errors.BadRequest(method, "Missing name param")
+	}
+
+	objectName := fmt.Sprintf("%s/%s", tnt, name)
+
+	goo, err := s.client.HeadObject(&sthree.HeadObjectInput{
+		Bucket: aws.String(s.conf.SpaceName),
+		Key:    aws.String(objectName),
+	})
+	if err != nil {
+		aerr, ok := err.(awserr.Error)
+		if ok && aerr.Code() == "NotFound" {
+			return errors.BadRequest(method, "Object not found")
+		}
+		log.Errorf("Error s3 %s", err)
+		return errors.InternalServerError(method, "Error reading object")
+	}
+
+	_, gooreq := s.client.GetObjectRequest(&sthree.GetObjectInput{
+		Bucket: aws.String(s.conf.SpaceName),
+		Key:    aws.String(objectName),
+	})
+
+
+	vis := visibilityPrivate
+	if md, ok := goo.Metadata[mdVisibility]; ok && len(*md) > 0 {
+		vis = *md
+	}
+
+	var created string
+	if md, ok := goo.Metadata[mdCreated]; ok && len(*md) > 0 {
+		t, err := time.Parse(time.RFC3339Nano, *md)
+		if err != nil {
+			// try as unix ts
+			createdI, err := strconv.ParseInt(*md, 10, 64)
+			if err != nil {
+				log.Errorf("Error %s", err)
+			} else {
+				t = time.Unix(createdI, 0)
+			}
+		}
+		created = t.Format(time.RFC3339Nano)
+	}
+
+	url := ""
+	if vis == "public" {
+		url = fmt.Sprintf("%s/%s", s.conf.BaseURL, objectName)
+	}
+
+	if *gooreq.ContentLength > maxReadSize {
+		return errors.BadRequest(method, "Exceeds max read size: %v bytes", maxReadSize)
+	}
+
+	b, err := ioutil.ReadAll(gooreq.Body)
+	if err != nil {
+		return errors.InternalServerError(method, "Failed to read data")
+	}
+
+	rsp.Object = &pb.Object{
+		Name:       req.Name,
+		Modified:   goo.LastModified.Format(time.RFC3339Nano),
+		Created:    created,
+		Visibility: vis,
+		Url:        url,
+		Data:       b,
+	}
+
+	return nil
+}
+
+func (s *Space) Download(ctx context.Context, req *api.Request, rsp *api.Response) error {
+	method := "space.Download"
 	tnt, ok := tenant.FromContext(ctx)
 	if !ok {
 		return errors.Unauthorized(method, "Unauthorized")
@@ -294,6 +439,11 @@ func (s *Space) Read(ctx context.Context, req *api.Request, rsp *api.Response) e
 		log.Errorf("Error presigning url %s", err)
 		return errors.InternalServerError(method, "Error reading object")
 	}
+
+	// replace hostname or url with our base
+	split := strings.SplitN(urlStr, s.conf.Endpoint, 2)
+	urlStr = s.conf.BaseURL + split[1]
+
 	rsp.Header = map[string]*api.Pair{
 		"Location": {
 			Key:    "Location",
@@ -301,6 +451,13 @@ func (s *Space) Read(ctx context.Context, req *api.Request, rsp *api.Response) e
 		},
 	}
 	rsp.StatusCode = 302
+
+	resp := map[string]interface{}{
+		"url": urlStr,
+	}
+
+	b, _ := json.Marshal(resp)
+	rsp.Body = string(b)
 
 	return nil
 }

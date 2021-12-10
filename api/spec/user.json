@@ -81,6 +81,16 @@
         },
         "description": "UserResetPasswordRequest"
       },
+      "UserSendMagicLinkRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SendMagicLinkRequest"
+            }
+          }
+        },
+        "description": "UserSendMagicLinkRequest"
+      },
       "UserSendPasswordResetEmailRequest": {
         "content": {
           "application/json": {
@@ -130,6 +140,16 @@
           }
         },
         "description": "UserVerifyEmailRequest"
+      },
+      "UserVerifyTokenRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/VerifyTokenRequest"
+            }
+          }
+        },
+        "description": "UserVerifyTokenRequest"
       }
     },
     "responses": {
@@ -245,6 +265,16 @@
         },
         "description": "UserResetPasswordResponse"
       },
+      "UserSendMagicLinkResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SendMagicLinkResponse"
+            }
+          }
+        },
+        "description": "UserSendMagicLinkResponse"
+      },
       "UserSendPasswordResetEmailResponse": {
         "content": {
           "application/json": {
@@ -294,6 +324,16 @@
           }
         },
         "description": "UserVerifyEmailResponse"
+      },
+      "UserVerifyTokenResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/VerifyTokenResponse"
+            }
+          }
+        },
+        "description": "UserVerifyTokenResponse"
       }
     },
     "schemas": {
@@ -703,6 +743,65 @@
         "title": "ResetPasswordResponse",
         "type": "object"
       },
+      "SendMagicLinkRequest": {
+        "description": "Login using email only - Passwordless",
+        "properties": {
+          "address": {
+            "description": "Your web site address, example www.example.com or user.example.com",
+            "type": "string"
+          },
+          "email": {
+            "description": "the email address of the user",
+            "type": "string"
+          },
+          "endpoint": {
+            "description": "Endpoint name where your http request handler handles MagicLink by \n calling M3O VerifyToken endpoint. You can return as a result a success, \n failed or redirect to another page.",
+            "type": "string"
+          },
+          "fromName": {
+            "description": "Display name of the sender for the email. Note: the email address will still be 'support@m3o.com'",
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "textContent": {
+            "description": "Text content of the email. Don't forget to include the string '$micro_verification_link' which will be replaced by the real verification link\n HTML emails are not available currently.",
+            "type": "string"
+          }
+        },
+        "title": "SendMagicLinkRequest",
+        "type": "object"
+      },
+      "SendMagicLinkResponse": {
+        "properties": {
+          "session": {
+            "properties": {
+              "created": {
+                "description": "unix timestamp",
+                "format": "int64",
+                "type": "number"
+              },
+              "expires": {
+                "description": "unix timestamp",
+                "format": "int64",
+                "type": "number"
+              },
+              "id": {
+                "description": "the session id",
+                "type": "string"
+              },
+              "userId": {
+                "description": "the associated user id",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "title": "SendMagicLinkResponse",
+        "type": "object"
+      },
       "SendPasswordResetEmailRequest": {
         "description": "Send an email with a verification code to reset password.\n Call \"ResetPassword\" endpoint once user provides the code.",
         "properties": {
@@ -861,6 +960,28 @@
       },
       "VerifyEmailResponse": {
         "title": "VerifyEmailResponse",
+        "type": "object"
+      },
+      "VerifyTokenRequest": {
+        "description": "Check whether the token attached to MagicLink is valid or not.\n Ideally, you need to call this endpoint from your http request  \n handler that handles the endpoint which is specified in the \n SendMagicLink request.",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "title": "VerifyTokenRequest",
+        "type": "object"
+      },
+      "VerifyTokenResponse": {
+        "properties": {
+          "is_valid": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "title": "VerifyTokenResponse",
         "type": "object"
       }
     },
@@ -1141,6 +1262,41 @@
         "summary": "User.ResetPassword(ResetPasswordRequest)"
       }
     },
+    "/user/User/SendMagicLink": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UserSendMagicLinkRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UserSendMagicLinkResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          },
+          "stream": {
+            "$ref": "#/components/responses/UserSendMagicLinkResponse"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "User.SendMagicLink(SendMagicLinkRequest)"
+      }
+    },
     "/user/User/SendPasswordResetEmail": {
       "parameters": [
         {
@@ -1299,6 +1455,38 @@
           }
         ],
         "summary": "User.VerifyEmail(VerifyEmailRequest)"
+      }
+    },
+    "/user/User/VerifyToken": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UserVerifyTokenRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UserVerifyTokenResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "User.VerifyToken(VerifyTokenRequest)"
       }
     }
   },

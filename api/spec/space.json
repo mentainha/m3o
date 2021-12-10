@@ -21,6 +21,16 @@
         },
         "description": "SpaceDeleteRequest"
       },
+      "SpaceDownloadRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DownloadRequest"
+            }
+          }
+        },
+        "description": "SpaceDownloadRequest"
+      },
       "SpaceHeadRequest": {
         "content": {
           "application/json": {
@@ -115,6 +125,16 @@
         },
         "description": "SpaceDeleteResponse"
       },
+      "SpaceDownloadResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DownloadResponse"
+            }
+          }
+        },
+        "description": "SpaceDownloadResponse"
+      },
       "SpaceHeadResponse": {
         "content": {
           "application/json": {
@@ -188,10 +208,10 @@
         "type": "object"
       },
       "DeleteRequest": {
-        "description": "Delete an object",
+        "description": "Delete an object from space",
         "properties": {
           "name": {
-            "description": "The name of the object. Use forward slash delimiter to implement a nested directory-like structure e.g. images/foo.jpg",
+            "description": "Name of the object",
             "type": "string"
           }
         },
@@ -202,17 +222,36 @@
         "title": "DeleteResponse",
         "type": "object"
       },
+      "DownloadRequest": {
+        "description": "Download an object via a presigned url",
+        "properties": {
+          "name": {
+            "description": "name of object",
+            "type": "string"
+          }
+        },
+        "title": "DownloadRequest",
+        "type": "object"
+      },
+      "DownloadResponse": {
+        "properties": {
+          "url": {
+            "description": "presigned url",
+            "type": "string"
+          }
+        },
+        "title": "DownloadResponse",
+        "type": "object"
+      },
       "HeadObject": {
         "properties": {
           "created": {
             "description": "when was this created",
-            "format": "int64",
-            "type": "number"
+            "type": "string"
           },
           "modified": {
             "description": "when was this last modified",
-            "format": "int64",
-            "type": "number"
+            "type": "string"
           },
           "name": {
             "type": "string"
@@ -233,6 +272,7 @@
         "description": "Retrieve meta information about an object",
         "properties": {
           "name": {
+            "description": "name of the object",
             "type": "string"
           }
         },
@@ -245,13 +285,11 @@
             "properties": {
               "created": {
                 "description": "when was this created",
-                "format": "int64",
-                "type": "number"
+                "type": "string"
               },
               "modified": {
                 "description": "when was this last modified",
-                "format": "int64",
-                "type": "number"
+                "type": "string"
               },
               "name": {
                 "type": "string"
@@ -273,15 +311,20 @@
       },
       "ListObject": {
         "properties": {
+          "created": {
+            "type": "string"
+          },
           "modified": {
             "description": "when was this last modified",
-            "format": "int64",
-            "type": "number"
+            "type": "string"
           },
           "name": {
             "type": "string"
           },
           "url": {
+            "type": "string"
+          },
+          "visibility": {
             "type": "string"
           }
         },
@@ -289,7 +332,7 @@
         "type": "object"
       },
       "ListRequest": {
-        "description": "List the objects in the space",
+        "description": "List the objects in space",
         "properties": {
           "prefix": {
             "description": "optional prefix for the name e.g. to return all the objects in the images directory pass images/",
@@ -304,15 +347,20 @@
           "objects": {
             "items": {
               "properties": {
+                "created": {
+                  "type": "string"
+                },
                 "modified": {
                   "description": "when was this last modified",
-                  "format": "int64",
-                  "type": "number"
+                  "type": "string"
                 },
                 "name": {
                   "type": "string"
                 },
                 "url": {
+                  "type": "string"
+                },
+                "visibility": {
                   "type": "string"
                 }
               },
@@ -324,10 +372,42 @@
         "title": "ListResponse",
         "type": "object"
       },
+      "Object": {
+        "properties": {
+          "created": {
+            "description": "when was this created",
+            "type": "string"
+          },
+          "data": {
+            "description": "the data within the object",
+            "format": "byte",
+            "type": "string"
+          },
+          "modified": {
+            "description": "when was this last modified",
+            "type": "string"
+          },
+          "name": {
+            "description": "name of object",
+            "type": "string"
+          },
+          "url": {
+            "description": "URL to access the object if it is public",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "is this public or private",
+            "type": "string"
+          }
+        },
+        "title": "Object",
+        "type": "object"
+      },
       "ReadRequest": {
-        "description": "Read/download the object",
+        "description": "Read an object in space",
         "properties": {
           "name": {
+            "description": "name of the object",
             "type": "string"
           }
         },
@@ -336,6 +416,39 @@
       },
       "ReadResponse": {
         "description": "Returns the raw object",
+        "properties": {
+          "object": {
+            "description": "The object itself",
+            "properties": {
+              "created": {
+                "description": "when was this created",
+                "type": "string"
+              },
+              "data": {
+                "description": "the data within the object",
+                "format": "byte",
+                "type": "string"
+              },
+              "modified": {
+                "description": "when was this last modified",
+                "type": "string"
+              },
+              "name": {
+                "description": "name of object",
+                "type": "string"
+              },
+              "url": {
+                "description": "URL to access the object if it is public",
+                "type": "string"
+              },
+              "visibility": {
+                "description": "is this public or private",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
         "title": "ReadResponse",
         "type": "object"
       },
@@ -453,6 +566,38 @@
           }
         ],
         "summary": "Space.Delete(DeleteRequest)"
+      }
+    },
+    "/space/Space/Download": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceDownloadRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceDownloadResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Download(DownloadRequest)"
       }
     },
     "/space/Space/Head": {
