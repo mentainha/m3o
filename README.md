@@ -76,7 +76,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 - Generate an API key on the [Settings page](https://m3o.com/account/keys).
 - Browse the APIs on the [Explore page](https://m3o.com/explore).
 - Call any API using your token in the `Authorization: Bearer [Token]` header and `https://api.m3o.com/v1/[service]/[endpoint]` url.
-- See the [m3o/cli](cli) for command line usage.
+- See the [m3o-cli](https://github.com/m3o/m3o-cli) for command line usage.
 
 ## Learn More
 
@@ -123,6 +123,7 @@ We provide the following dev UX for the consumption of Micro services:
 - [cloud-next](https://github.com/m3o/cloud-next) - Next.js based Web dashboard which can be self hosted
 - [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
+- [m3o-cli](https://github.com/m3o/m3o-cli) - Command line interface for terminal access to services
 
 ### Hosting
 
