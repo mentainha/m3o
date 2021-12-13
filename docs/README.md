@@ -43,7 +43,7 @@ The core services, automation and the backend are all open source:
 
 We provide the following dev UX for the consumption of Micro services:
 
-- [cloud-next](https://github.com/m3o/cloud-next) - Next.js based Web dashboard which can be self hosted
+- [m3o-web](https://github.com/m3o/m3o-web) - Next.js based Web dashboard which can be self hosted
 - [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 - [m3o-cli](https://github.com/m3o/m3o-cli) - Command line interface for terminal access to services
