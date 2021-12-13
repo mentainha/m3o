@@ -98,7 +98,7 @@
     },
     "schemas": {
       "ListRequest": {
-        "description": "List information on all the shortened URLs that you have created",
+        "description": "List all the shortened URLs",
         "properties": {
           "shortURL": {
             "description": "filter by short URL, optional",
@@ -113,21 +113,15 @@
           "urlPairs": {
             "properties": {
               "created": {
-                "format": "int64",
-                "type": "number"
-              },
-              "destinationURL": {
+                "description": "time of creation",
                 "type": "string"
               },
-              "hitCount": {
-                "description": "HitCount keeps track many times the short URL has been resolved.\n Hitcount only gets saved to disk (database) after every 10th hit, so\n its not intended to be 100% accurate, more like an almost correct estimate.",
-                "format": "int64",
-                "type": "number"
-              },
-              "owner": {
+              "destinationURL": {
+                "description": "destination url",
                 "type": "string"
               },
               "shortURL": {
+                "description": "shortened url",
                 "type": "string"
               }
             },
@@ -158,9 +152,10 @@
         "type": "object"
       },
       "ShortenRequest": {
-        "description": "Shortens a destination URL and returns a full short URL.",
+        "description": "Shorten a long URL",
         "properties": {
           "destinationURL": {
+            "description": "the url to shorten",
             "type": "string"
           }
         },
@@ -170,6 +165,7 @@
       "ShortenResponse": {
         "properties": {
           "shortURL": {
+            "description": "the shortened url",
             "type": "string"
           }
         },
@@ -179,21 +175,15 @@
       "URLPair": {
         "properties": {
           "created": {
-            "format": "int64",
-            "type": "number"
-          },
-          "destinationURL": {
+            "description": "time of creation",
             "type": "string"
           },
-          "hitCount": {
-            "description": "HitCount keeps track many times the short URL has been resolved.\n Hitcount only gets saved to disk (database) after every 10th hit, so\n its not intended to be 100% accurate, more like an almost correct estimate.",
-            "format": "int64",
-            "type": "number"
-          },
-          "owner": {
+          "destinationURL": {
+            "description": "destination url",
             "type": "string"
           },
           "shortURL": {
+            "description": "shortened url",
             "type": "string"
           }
         },

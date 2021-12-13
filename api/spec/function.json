@@ -50,6 +50,16 @@
           }
         },
         "description": "FunctionListRequest"
+      },
+      "FunctionUpdateRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateRequest"
+            }
+          }
+        },
+        "description": "FunctionUpdateRequest"
       }
     },
     "responses": {
@@ -102,6 +112,16 @@
           }
         },
         "description": "FunctionListResponse"
+      },
+      "FunctionUpdateResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UpdateResponse"
+            }
+          }
+        },
+        "description": "FunctionUpdateResponse"
       },
       "MicroAPIError": {
         "content": {
@@ -247,6 +267,13 @@
                 "description": "name of handler in source code",
                 "type": "string"
               },
+              "env_vars": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "associated env vars",
+                "type": "object"
+              },
               "name": {
                 "description": "function name\n limitation: must be unique across projects",
                 "type": "string"
@@ -291,6 +318,13 @@
           "entrypoint": {
             "description": "name of handler in source code",
             "type": "string"
+          },
+          "env_vars": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "associated env vars",
+            "type": "object"
           },
           "name": {
             "description": "function name\n limitation: must be unique across projects",
@@ -341,6 +375,13 @@
                   "description": "name of handler in source code",
                   "type": "string"
                 },
+                "env_vars": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "associated env vars",
+                  "type": "object"
+                },
                 "name": {
                   "description": "function name\n limitation: must be unique across projects",
                   "type": "string"
@@ -372,6 +413,47 @@
           }
         },
         "title": "ListResponse",
+        "type": "object"
+      },
+      "UpdateRequest": {
+        "properties": {
+          "entrypoint": {
+            "description": "entry point, ie. handler name in the source code \n if not provided, defaults to the name parameter",
+            "type": "string"
+          },
+          "env_vars": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "environment variables to pass in at runtime",
+            "type": "object"
+          },
+          "name": {
+            "description": "function name",
+            "type": "string"
+          },
+          "project": {
+            "description": "project is used for namespacing your functions\n optional. defaults to \"default\".",
+            "type": "string"
+          },
+          "repo": {
+            "description": "github url to repo",
+            "type": "string"
+          },
+          "runtime": {
+            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+            "type": "string"
+          },
+          "subfolder": {
+            "description": "optional subfolder path",
+            "type": "string"
+          }
+        },
+        "title": "UpdateRequest",
+        "type": "object"
+      },
+      "UpdateResponse": {
+        "title": "UpdateResponse",
         "type": "object"
       }
     },
@@ -554,6 +636,38 @@
           }
         ],
         "summary": "Function.List(ListRequest)"
+      }
+    },
+    "/function/Function/Update": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionUpdateRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionUpdateResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Update(UpdateRequest)"
       }
     }
   },

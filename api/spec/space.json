@@ -70,6 +70,16 @@
           }
         },
         "description": "SpaceUpdateRequest"
+      },
+      "SpaceUploadRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UploadRequest"
+            }
+          }
+        },
+        "description": "SpaceUploadRequest"
       }
     },
     "responses": {
@@ -174,11 +184,21 @@
           }
         },
         "description": "SpaceUpdateResponse"
+      },
+      "SpaceUploadResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UploadResponse"
+            }
+          }
+        },
+        "description": "SpaceUploadResponse"
       }
     },
     "schemas": {
       "CreateRequest": {
-        "description": "Create an object. Returns error if object with this name already exists. If you want to update an existing object use the `Update` endpoint\n You need to send the request as a multipart/form-data rather than the usual application/json\n with each parameter as a form field.",
+        "description": "Create an object. Returns error if object with this name already exists. Max object size of 10MB, see Upload endpoint for larger objects. If you want to update an existing object use the `Update` endpoint\n You need to send the request as a multipart/form-data rather than the usual application/json\n with each parameter as a form field.",
         "properties": {
           "name": {
             "description": "The name of the object. Use forward slash delimiter to implement a nested directory-like structure e.g. images/foo.jpg",
@@ -481,6 +501,30 @@
         },
         "title": "UpdateResponse",
         "type": "object"
+      },
+      "UploadRequest": {
+        "description": "Upload a large object (\u003e 10MB). Returns a time limited presigned URL to be used for uploading the object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "visibility": {
+            "description": "is this object public or private",
+            "type": "string"
+          }
+        },
+        "title": "UploadRequest",
+        "type": "object"
+      },
+      "UploadResponse": {
+        "properties": {
+          "url": {
+            "description": "a presigned url to be used for uploading. To use the URL call it with HTTP PUT and pass the object as the request data",
+            "type": "string"
+          }
+        },
+        "title": "UploadResponse",
+        "type": "object"
       }
     },
     "securitySchemes": {
@@ -726,6 +770,38 @@
           }
         ],
         "summary": "Space.Update(UpdateRequest)"
+      }
+    },
+    "/space/Space/Upload": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SpaceUploadRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SpaceUploadResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Space.Upload(UploadRequest)"
       }
     }
   },

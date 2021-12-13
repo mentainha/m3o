@@ -1,6 +1,16 @@
 {
   "components": {
     "requestBodies": {
+      "YoutubeEmbedRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmbedRequest"
+            }
+          }
+        },
+        "description": "YoutubeEmbedRequest"
+      },
       "YoutubeSearchRequest": {
         "content": {
           "application/json": {
@@ -45,6 +55,16 @@
         },
         "description": "Error from the Micro API"
       },
+      "YoutubeEmbedResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmbedResponse"
+            }
+          }
+        },
+        "description": "YoutubeEmbedResponse"
+      },
       "YoutubeSearchResponse": {
         "content": {
           "application/json": {
@@ -57,6 +77,39 @@
       }
     },
     "schemas": {
+      "EmbedRequest": {
+        "description": "Embed a YouTube video",
+        "properties": {
+          "url": {
+            "description": "provide the youtube url e.g https://www.youtube.com/watch?v=GWRWZu7XsJ0",
+            "type": "string"
+          }
+        },
+        "title": "EmbedRequest",
+        "type": "object"
+      },
+      "EmbedResponse": {
+        "properties": {
+          "embed_url": {
+            "description": "the embeddable link e.g https://www.youtube.com/watch?v=GWRWZu7XsJ0",
+            "type": "string"
+          },
+          "html_script": {
+            "description": "the script code",
+            "type": "string"
+          },
+          "long_url": {
+            "description": "the full url",
+            "type": "string"
+          },
+          "short_url": {
+            "description": "the short url",
+            "type": "string"
+          }
+        },
+        "title": "EmbedResponse",
+        "type": "object"
+      },
       "SearchRequest": {
         "description": "Search for videos on YouTube",
         "properties": {
@@ -183,6 +236,38 @@
   },
   "openapi": "3.0.0",
   "paths": {
+    "/youtube/Youtube/Embed": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/YoutubeEmbedRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/YoutubeEmbedResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Youtube.Embed(EmbedRequest)"
+      }
+    },
     "/youtube/Youtube/Search": {
       "parameters": [
         {
