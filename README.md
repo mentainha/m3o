@@ -125,12 +125,6 @@ We provide the following dev UX for the consumption of Micro services:
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 - [m3o-cli](https://github.com/m3o/m3o-cli) - Command line interface for terminal access to services
 
-### Hosting
-
-The cloud hosting providers of Micro services:
-
-- [m3o.com](https://m3o.com) - Micro as a Service
-
 ## Publish APIs
 
 If you'd like to publish your own APIs on the M3O platform [fill in this form](https://forms.gle/9SQV6DdLNDzSRQ477) and we'll get back to you.
