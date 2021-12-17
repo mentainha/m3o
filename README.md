@@ -33,7 +33,7 @@ and other modern development tools, the building blocks we're looking for are ch
 
 ## Services
 
-So far there are over 40+ services. Here are some of the highlights:
+So far there are over 50+ services. Here are some of the highlights:
 
 ### Coming soon
 
