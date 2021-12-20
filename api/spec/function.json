@@ -51,6 +51,36 @@
         },
         "description": "FunctionListRequest"
       },
+      "FunctionProxyRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProxyRequest"
+            }
+          }
+        },
+        "description": "FunctionProxyRequest"
+      },
+      "FunctionRegionsRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RegionsRequest"
+            }
+          }
+        },
+        "description": "FunctionRegionsRequest"
+      },
+      "FunctionReserveRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReserveRequest"
+            }
+          }
+        },
+        "description": "FunctionReserveRequest"
+      },
       "FunctionUpdateRequest": {
         "content": {
           "application/json": {
@@ -112,6 +142,36 @@
           }
         },
         "description": "FunctionListResponse"
+      },
+      "FunctionProxyResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProxyResponse"
+            }
+          }
+        },
+        "description": "FunctionProxyResponse"
+      },
+      "FunctionRegionsResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RegionsResponse"
+            }
+          }
+        },
+        "description": "FunctionRegionsResponse"
+      },
+      "FunctionReserveResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReserveResponse"
+            }
+          }
+        },
+        "description": "FunctionReserveResponse"
       },
       "FunctionUpdateResponse": {
         "content": {
@@ -188,10 +248,6 @@
           "name": {
             "description": "The name of the function",
             "type": "string"
-          },
-          "project": {
-            "description": "Optional project name",
-            "type": "string"
           }
         },
         "title": "DeleteRequest",
@@ -204,6 +260,10 @@
       "DeployRequest": {
         "description": "Deploy a group of functions",
         "properties": {
+          "branch": {
+            "description": "branch to deploy. defaults to master",
+            "type": "string"
+          },
           "entrypoint": {
             "description": "entry point, ie. handler name in the source code \n if not provided, defaults to the name parameter",
             "type": "string"
@@ -219,8 +279,8 @@
             "description": "function name",
             "type": "string"
           },
-          "project": {
-            "description": "project is used for namespacing your functions\n optional. defaults to \"default\".",
+          "region": {
+            "description": "region to deploy in. defaults to europe-west1",
             "type": "string"
           },
           "repo": {
@@ -228,7 +288,7 @@
             "type": "string"
           },
           "runtime": {
-            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+            "description": "runtime/lanaguage of the function e.g php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16,\n dotnet3, java11, ruby26, ruby27, go111, go113, go116,\n python37, python38, python39",
             "type": "string"
           },
           "subfolder": {
@@ -240,29 +300,17 @@
         "type": "object"
       },
       "DeployResponse": {
-        "title": "DeployResponse",
-        "type": "object"
-      },
-      "DescribeRequest": {
-        "description": "Get the info for a deployed function",
-        "properties": {
-          "name": {
-            "description": "The name of the function",
-            "type": "string"
-          },
-          "project": {
-            "description": "Optional project name",
-            "type": "string"
-          }
-        },
-        "title": "DescribeRequest",
-        "type": "object"
-      },
-      "DescribeResponse": {
         "properties": {
           "function": {
-            "description": "The function requested",
             "properties": {
+              "branch": {
+                "description": "branch to deploy. defaults to master",
+                "type": "string"
+              },
+              "created": {
+                "description": "time of creation",
+                "type": "string"
+              },
               "entrypoint": {
                 "description": "name of handler in source code",
                 "type": "string"
@@ -274,12 +322,16 @@
                 "description": "associated env vars",
                 "type": "object"
               },
+              "id": {
+                "description": "id of the function",
+                "type": "string"
+              },
               "name": {
                 "description": "function name\n limitation: must be unique across projects",
                 "type": "string"
               },
-              "project": {
-                "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+              "region": {
+                "description": "region to deploy in. defaults to europe-west1",
                 "type": "string"
               },
               "repo": {
@@ -287,7 +339,7 @@
                 "type": "string"
               },
               "runtime": {
-                "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+                "description": "runtime/language of the function e.g php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16, \n dotnet3, java11, ruby26, ruby27, go111, go113, go116,\n python37, python38, python39",
                 "type": "string"
               },
               "status": {
@@ -297,17 +349,95 @@
               "subfolder": {
                 "description": "subfolder path to entrypoint",
                 "type": "string"
+              },
+              "updated": {
+                "description": "time it was updated",
+                "type": "string"
+              },
+              "url": {
+                "description": "unique url of the function",
+                "type": "string"
               }
             },
             "type": "object"
-          },
-          "timeout": {
-            "description": "The timeout for requests to the function",
+          }
+        },
+        "title": "DeployResponse",
+        "type": "object"
+      },
+      "DescribeRequest": {
+        "description": "Get the info for a deployed function",
+        "properties": {
+          "name": {
+            "description": "The name of the function",
             "type": "string"
-          },
-          "updated_at": {
-            "description": "The time at which the function was updated",
-            "type": "string"
+          }
+        },
+        "title": "DescribeRequest",
+        "type": "object"
+      },
+      "DescribeResponse": {
+        "properties": {
+          "function": {
+            "description": "The function requested",
+            "properties": {
+              "branch": {
+                "description": "branch to deploy. defaults to master",
+                "type": "string"
+              },
+              "created": {
+                "description": "time of creation",
+                "type": "string"
+              },
+              "entrypoint": {
+                "description": "name of handler in source code",
+                "type": "string"
+              },
+              "env_vars": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "associated env vars",
+                "type": "object"
+              },
+              "id": {
+                "description": "id of the function",
+                "type": "string"
+              },
+              "name": {
+                "description": "function name\n limitation: must be unique across projects",
+                "type": "string"
+              },
+              "region": {
+                "description": "region to deploy in. defaults to europe-west1",
+                "type": "string"
+              },
+              "repo": {
+                "description": "git repo address",
+                "type": "string"
+              },
+              "runtime": {
+                "description": "runtime/language of the function e.g php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16, \n dotnet3, java11, ruby26, ruby27, go111, go113, go116,\n python37, python38, python39",
+                "type": "string"
+              },
+              "status": {
+                "description": "eg. ACTIVE, DEPLOY_IN_PROGRESS, OFFLINE etc",
+                "type": "string"
+              },
+              "subfolder": {
+                "description": "subfolder path to entrypoint",
+                "type": "string"
+              },
+              "updated": {
+                "description": "time it was updated",
+                "type": "string"
+              },
+              "url": {
+                "description": "unique url of the function",
+                "type": "string"
+              }
+            },
+            "type": "object"
           }
         },
         "title": "DescribeResponse",
@@ -315,6 +445,14 @@
       },
       "Func": {
         "properties": {
+          "branch": {
+            "description": "branch to deploy. defaults to master",
+            "type": "string"
+          },
+          "created": {
+            "description": "time of creation",
+            "type": "string"
+          },
           "entrypoint": {
             "description": "name of handler in source code",
             "type": "string"
@@ -326,12 +464,16 @@
             "description": "associated env vars",
             "type": "object"
           },
+          "id": {
+            "description": "id of the function",
+            "type": "string"
+          },
           "name": {
             "description": "function name\n limitation: must be unique across projects",
             "type": "string"
           },
-          "project": {
-            "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+          "region": {
+            "description": "region to deploy in. defaults to europe-west1",
             "type": "string"
           },
           "repo": {
@@ -339,7 +481,7 @@
             "type": "string"
           },
           "runtime": {
-            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+            "description": "runtime/language of the function e.g php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16, \n dotnet3, java11, ruby26, ruby27, go111, go113, go116,\n python37, python38, python39",
             "type": "string"
           },
           "status": {
@@ -349,6 +491,14 @@
           "subfolder": {
             "description": "subfolder path to entrypoint",
             "type": "string"
+          },
+          "updated": {
+            "description": "time it was updated",
+            "type": "string"
+          },
+          "url": {
+            "description": "unique url of the function",
+            "type": "string"
           }
         },
         "title": "Func",
@@ -356,12 +506,6 @@
       },
       "ListRequest": {
         "description": "List all the deployed functions",
-        "properties": {
-          "project": {
-            "description": "optional project name",
-            "type": "string"
-          }
-        },
         "title": "ListRequest",
         "type": "object"
       },
@@ -371,6 +515,14 @@
             "description": "List of functions deployed",
             "items": {
               "properties": {
+                "branch": {
+                  "description": "branch to deploy. defaults to master",
+                  "type": "string"
+                },
+                "created": {
+                  "description": "time of creation",
+                  "type": "string"
+                },
                 "entrypoint": {
                   "description": "name of handler in source code",
                   "type": "string"
@@ -382,12 +534,16 @@
                   "description": "associated env vars",
                   "type": "object"
                 },
+                "id": {
+                  "description": "id of the function",
+                  "type": "string"
+                },
                 "name": {
                   "description": "function name\n limitation: must be unique across projects",
                   "type": "string"
                 },
-                "project": {
-                  "description": "project of function, optional\n defaults to literal \"default\"\n used to namespace functions",
+                "region": {
+                  "description": "region to deploy in. defaults to europe-west1",
                   "type": "string"
                 },
                 "repo": {
@@ -395,7 +551,7 @@
                   "type": "string"
                 },
                 "runtime": {
-                  "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
+                  "description": "runtime/language of the function e.g php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16, \n dotnet3, java11, ruby26, ruby27, go111, go113, go116,\n python37, python38, python39",
                   "type": "string"
                 },
                 "status": {
@@ -404,6 +560,14 @@
                 },
                 "subfolder": {
                   "description": "subfolder path to entrypoint",
+                  "type": "string"
+                },
+                "updated": {
+                  "description": "time it was updated",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "unique url of the function",
                   "type": "string"
                 }
               },
@@ -415,38 +579,119 @@
         "title": "ListResponse",
         "type": "object"
       },
-      "UpdateRequest": {
-        "description": "Update a function",
+      "ProxyRequest": {
+        "description": "Return the backend url for proxying",
         "properties": {
-          "entrypoint": {
-            "description": "entry point, ie. handler name in the source code \n if not provided, defaults to the name parameter",
+          "id": {
+            "description": "id of the function",
             "type": "string"
-          },
-          "env_vars": {
-            "additionalProperties": {
+          }
+        },
+        "title": "ProxyRequest",
+        "type": "object"
+      },
+      "ProxyResponse": {
+        "properties": {
+          "url": {
+            "description": "backend url",
+            "type": "string"
+          }
+        },
+        "title": "ProxyResponse",
+        "type": "object"
+      },
+      "RegionsRequest": {
+        "description": "Return a list of supported regions",
+        "title": "RegionsRequest",
+        "type": "object"
+      },
+      "RegionsResponse": {
+        "properties": {
+          "regions": {
+            "items": {
               "type": "string"
             },
-            "description": "environment variables to pass in at runtime",
-            "type": "object"
+            "type": "array"
+          }
+        },
+        "title": "RegionsResponse",
+        "type": "object"
+      },
+      "Reservation": {
+        "description": "Reservation represents a reserved function",
+        "properties": {
+          "created": {
+            "description": "time of reservation",
+            "type": "string"
+          },
+          "expires": {
+            "description": "time reservation expires",
+            "type": "string"
           },
           "name": {
+            "description": "name of the app",
+            "type": "string"
+          },
+          "owner": {
+            "description": "owner id",
+            "type": "string"
+          },
+          "token": {
+            "description": "associated token",
+            "type": "string"
+          }
+        },
+        "title": "Reservation",
+        "type": "object"
+      },
+      "ReserveRequest": {
+        "description": "Reserve function names and resources beyond free quota",
+        "properties": {
+          "name": {
+            "description": "name of your app e.g helloworld",
+            "type": "string"
+          }
+        },
+        "title": "ReserveRequest",
+        "type": "object"
+      },
+      "ReserveResponse": {
+        "properties": {
+          "reservation": {
+            "description": "The app reservation",
+            "properties": {
+              "created": {
+                "description": "time of reservation",
+                "type": "string"
+              },
+              "expires": {
+                "description": "time reservation expires",
+                "type": "string"
+              },
+              "name": {
+                "description": "name of the app",
+                "type": "string"
+              },
+              "owner": {
+                "description": "owner id",
+                "type": "string"
+              },
+              "token": {
+                "description": "associated token",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "title": "ReserveResponse",
+        "type": "object"
+      },
+      "UpdateRequest": {
+        "description": "Update a function. Downloads the source, builds and redeploys",
+        "properties": {
+          "name": {
             "description": "function name",
-            "type": "string"
-          },
-          "project": {
-            "description": "project is used for namespacing your functions\n optional. defaults to \"default\".",
-            "type": "string"
-          },
-          "repo": {
-            "description": "github url to repo",
-            "type": "string"
-          },
-          "runtime": {
-            "description": "runtime/language of the function\n eg: php74,\n nodejs6, nodejs8, nodejs10, nodejs12, nodejs14, nodejs16\n dotnet3\n java11\n ruby26, ruby27\n go111, go113, go116\n python37, python38, python39",
-            "type": "string"
-          },
-          "subfolder": {
-            "description": "optional subfolder path",
             "type": "string"
           }
         },
@@ -637,6 +882,102 @@
           }
         ],
         "summary": "Function.List(ListRequest)"
+      }
+    },
+    "/function/Function/Proxy": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionProxyRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionProxyResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Proxy(ProxyRequest)"
+      }
+    },
+    "/function/Function/Regions": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionRegionsRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionRegionsResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Regions(RegionsRequest)"
+      }
+    },
+    "/function/Function/Reserve": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "Micro-Namespace",
+          "required": true,
+          "schema": {
+            "default": "micro",
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "requestBody": {
+          "$ref": "#/components/requestBodies/FunctionReserveRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/FunctionReserveResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/MicroAPIError"
+          }
+        },
+        "security": [
+          {
+            "MicroAPIToken": []
+          }
+        ],
+        "summary": "Function.Reserve(ReserveRequest)"
       }
     },
     "/function/Function/Update": {
