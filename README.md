@@ -142,7 +142,7 @@ Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
 Download the [m3o-cli](https://github.com/m3o/m3o-cli)
 
 ```
-m3o call helloworld Call '{"Name": "Alice"}'
+m3o helloworld call --name=Alice
 ```
 
 See the [examples](../examples) for more use cases.
