@@ -3,7 +3,7 @@
 		<img src="images/m3o.png" />
 	</a>
 </p>
-<p align="center"><h1>Next Generation Cloud</h1></p>
+<p><h1 align="center">Next Generation Cloud</h1></p>
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-now-green"></a>
