@@ -154,11 +154,6 @@ See the [examples](../examples) for more use cases.
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Read the [Blog](https://blog.m3o.com)
 
-## Rationale
-
-Cloud is a fairly complex beast which makes it hard for new developers to get started. In the past we needed VMs and file storage, but today with the Jamstack 
-and other modern development tools, the building blocks we're looking for are changing. We're mostly now consuming third party public APIs. M3O wants to aggregate all those APIs onto one platform as simpler programmable building blocks for a 10x developer experience.
-
 ## How it Works
 
 Read below to learn more about how it all works
