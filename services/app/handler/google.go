@@ -191,10 +191,11 @@ func (e *GoogleApp) Run(ctx context.Context, req *pb.RunRequest, rsp *pb.RunResp
 	if err == nil && len(recs) > 0 {
 		res := new(Reservation)
 		recs[0].Decode(res)
-		if res.Owner != id && res.Expires.After(time.Now()) {
-			return errors.BadRequest("app.run", "name %s is reserved", req.Name)
+
+		// if its the owners app and there's still time left
+		if res.Owner == id && res.Expires.After(time.Now()) {
+			reservedApp = true
 		}
-		reservedApp = true
 	}
 
 	var validRepo bool
@@ -259,7 +260,7 @@ func (e *GoogleApp) Run(ctx context.Context, req *pb.RunRequest, rsp *pb.RunResp
 	// set the id
 	appId := req.Name
 
-	// check the owner isn't already running it
+	// check the app isn't already running it
 	recs, err = store.Read(key, store.ReadLimit(1))
 
 	// if there's an existing service then generate a unique id
@@ -330,6 +331,18 @@ func (e *GoogleApp) Run(ctx context.Context, req *pb.RunRequest, rsp *pb.RunResp
 		}
 	}
 
+	// make copy
+	srv := new(pb.Service)
+	*srv = *service
+
+	// set the custom domain
+	if len(e.domain) > 0 {
+		srv.Url = fmt.Sprintf("https://%s.%s", srv.Id, e.domain)
+	}
+
+	// set the service in the response
+	rsp.Service = srv
+
 	go func(service *pb.Service) {
 		// generate a unique service account for the app
 		// https://jsoverson.medium.com/how-to-deploy-node-js-functions-to-google-cloud-8bba05e9c10a
@@ -397,9 +410,6 @@ func (e *GoogleApp) Run(ctx context.Context, req *pb.RunRequest, rsp *pb.RunResp
 			}
 		}
 	}(service)
-
-	// set the service in the response
-	rsp.Service = service
 
 	return nil
 }
@@ -552,6 +562,10 @@ func (e *GoogleApp) Delete(ctx context.Context, req *pb.DeleteRequest, rsp *pb.D
 
 	if err := recs[0].Decode(srv); err != nil {
 		return err
+	}
+
+	if srv.Status == "Deploying" {
+		return errors.BadRequest("app.run", "app is being deployed")
 	}
 
 	// execute the delete async
