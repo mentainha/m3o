@@ -30,7 +30,7 @@ import(
 
 type {{ title $service.Name }} interface {
 {{ range $key, $req := $service.Spec.Components.RequestBodies }}{{ $reqType := requestType $key }}
-{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}	{{ $endpointName }}(request *{{ requestType $key }}) (*{{ requestTypeToResponseType $key }}{{ if isStream $service.Spec $service.Name $reqType }}Stream{{ end }}, error)
+{{ $endpointName := requestTypeToEndpointName $key}}	{{ $endpointName }}(*{{ requestType $key }}) (*{{ requestTypeToResponseType $key }}{{ if isStream $service.Spec $service.Name $reqType }}Stream{{end}}, error)
 }
 {{end}}
 func New{{ title $service.Name }}Service(token string) *{{ title $service.Name }}Service {
