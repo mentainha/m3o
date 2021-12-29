@@ -28,6 +28,11 @@ import(
 	"go.m3o.com/client"
 )
 
+type {{ title $service.Name }} interface {
+{{ range $key, $req := $service.Spec.Components.RequestBodies }}{{ $reqType := requestType $key }}
+{{ $endpointName := requestTypeToEndpointName $key}}{{ if endpointComment $endpointName $service.Spec.Components.Schemas }}{{ endpointComment $endpointName $service.Spec.Components.Schemas }}{{ end }}	{{ $endpointName }}(request *{{ requestType $key }}) (*{{ requestTypeToResponseType $key }}{{ if isStream $service.Spec $service.Name $reqType }}Stream{{ end }}, error)
+}
+
 func New{{ title $service.Name }}Service(token string) *{{ title $service.Name }}Service {
 	return &{{ title $service.Name }}Service{
 		client: client.NewClient(&client.Options{
