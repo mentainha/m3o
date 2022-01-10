@@ -31,10 +31,6 @@ Here are the main features of M3O
 
 So far there are over 50+ services. Here are some of the highlights:
 
-### Coming soon
-
-- [**Search**](https://m3o.com/search) - Indexing and full text search
-
 ### Backend
 
 - [**Apps**](https://m3o.com/app) - Global app deployment
@@ -44,6 +40,7 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**User**](https://m3o.com/user) - User management and authentication
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
+- [**Search**](https://m3o.com/search) - Indexing and full text search
 
 ### Logistics
 
