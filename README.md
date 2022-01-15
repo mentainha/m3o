@@ -23,7 +23,7 @@ Here are the main features of M3O
 - **☝️ One Account** - Manage all your API usage with one account and one API token.
 - **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
 - **🆓 Pay As You Grow** - It's free to start and everything is priced per request.
-- **🚫 Anti AWS Billing** - We show you exactly what you use and don't hide any of the costs.
+- **🚫 Anti Cloud Billing** - Predictable pricing with no hidden costs.
 
 ## Services
 
