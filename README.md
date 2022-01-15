@@ -19,9 +19,9 @@ M3O is a next generation cloud platform. Explore and use free and paid public AP
 
 Here are the main features of M3O
 
-- **🔥 10x Dev UX** - Developers are first priority. We provide a slick UX with code generated clients for a 10x developer experience.
-- **☝️ One Token** - Use one account on one platform to fulfill all your API needs. Access multiple public APIs with a single API token.
-- **⚡ Fast Access** - Using a new API is easy - no need to learn yet another API, it's all the same developer experience.
+- **🔥 One Platform** - Discover, explore and consume public APIs all in one place. 
+- **☝️ One Account** - Manage all your API usage with one account and one API token.
+- **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
 - **🆓 Free to start** - It's a simple pay as you grow model and everything is priced per request. Top up your account and start making calls.
 - **🚫 Anti AWS Billing** - Don't get lost in a sea of infinite cloud billing. We show you exactly what you use and don't hide any of the costs.
 
