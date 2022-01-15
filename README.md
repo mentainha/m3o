@@ -32,7 +32,6 @@ So far there are over 50+ services. Here are some of the highlights:
 ### Backend
 
 - [**Apps**](https://m3o.com/app) - Global app deployment
-- [**Cache**](https://m3o.com/cache) - Quick access key-value storage
 - [**DB**](https://m3o.com/db) - Simple database service
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Functions**](https://m3o.com/function) - Serverless compute as a service
