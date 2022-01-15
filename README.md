@@ -47,11 +47,10 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
 - [**IP to Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
-### Web
+### Utility
 
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
-- [**NFTs**](https://m3o.com/nft) - Explore NFT assets and collections
 - [**OTP**](https://m3o.com/otp) - One time password generation
 - [**QR Codes**](https://m3o.com/qr) - QR code generator
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
