@@ -7,6 +7,8 @@
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
+	<a href="https://twitter.com/m3oservices"><img src="https://img.shields.io/badge/twitter-follow-blue"></a>
+	<iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
 </p>
 
 ---
