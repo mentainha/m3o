@@ -35,7 +35,8 @@ export interface {{ title $typeName }}{{ "{" }}
 {{end}}
 `
 
-const tsExampleTemplate = `{{ $service := .service }}const { {{ title $service.Name }}Service } = require('m3o/{{ $service.Name }}');
+const tsExampleTemplate = `// npm install m3o
+{{ $service := .service }}const { {{ title $service.Name }}Service } = require('m3o/{{ $service.Name }}');
 
 const {{ $service.Name }}Service = new {{ title $service.Name }}Service(process.env.M3O_API_TOKEN)
 
