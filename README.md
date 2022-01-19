@@ -9,8 +9,7 @@
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
 	<a href="https://twitter.com/m3oservices"><img src="https://img.shields.io/badge/twitter-follow-blue"></a>
 
-	<br>	
-	<iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+	<br><iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
 </p>
 
 ---
