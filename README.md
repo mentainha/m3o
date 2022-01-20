@@ -66,7 +66,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 
 ## Getting Started
 
-- Head to [m3o.com/register](https://m3o.com/register) and signup for a free account.
+- Head to [m3o.com](https://m3o.com) and signup for a free account.
 - Browse the APIs on the [Explore](https://m3o.com/explore) page.
 - Call any API using your token in the `Authorization: Bearer [Token]` header
 - All APIs are available through one endpoint: `https://api.m3o.com/v1/[service]/[endpoint]`.
