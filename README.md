@@ -23,7 +23,7 @@ Signup and start for free at [m3o.com](https://m3o.com).
 
 ## Features
 
-Here are the main features of M3O
+Here are the main features:
 
 - **🔥 One Platform** - Discover, explore and consume public APIs all in one place. 
 - **☝️ One Account** - Manage your API usage with one account and one token.
