@@ -17,8 +17,9 @@
 ## Overview
 
 M3O is a next generation cloud platform. Explore, discover and consume free and paid public APIs as simpler 
-programmable building blocks all on one platform for a 10x developer experience. Signup and start for free 
-at [m3o.com/register](https://m3o.com/register).
+programmable building blocks all on one platform for a 10x developer experience. 
+
+Signup and start for free at [m3o.com](https://m3o.com).
 
 ## Features
 
