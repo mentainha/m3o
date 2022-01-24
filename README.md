@@ -199,4 +199,4 @@ We provide the following dev UX for the consumption of Micro services:
 
 - **Write examples** - Create [examples](examples) built with M3O which we'll feature on the website soon
 - **Show support** - Join the community on [discord](https://discord.gg/TBR9bRjd6Z) or follow us on [twitter](https://twitter.com/m3oservices) for updates
-- **Build services** - Every API you build is rewarded $10 in credit. See the discussion thread https://github.com/m3o/m3o/discussions/92
+- **Build services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
