@@ -3,29 +3,32 @@ package main
 import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
-	db "github.com/m3o/m3o/services/db/proto"
+	"github.com/micro/micro/v3/service/store"
+
 	otp "github.com/m3o/m3o/services/otp/proto"
+	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
 	"github.com/m3o/m3o/services/pkg/tracing"
 	"github.com/m3o/m3o/services/user/handler"
 	proto "github.com/m3o/m3o/services/user/proto"
 )
 
 func main() {
-	service := service.New(
+	srv := service.New(
 		service.Name("user"),
 	)
-	service.Init()
+	srv.Init()
 
 	hd := handler.NewUser(
-		db.NewDbService("db", service.Client()),
-		otp.NewOtpService("otp", service.Client()),
+		store.DefaultStore,
+		otp.NewOtpService("otp", srv.Client()),
 	)
 
-	proto.RegisterUserHandler(service.Server(), hd)
+	proto.RegisterUserHandler(srv.Server(), hd)
+	adminpb.RegisterAdminHandler(srv.Server(), hd)
 	traceCloser := tracing.SetupOpentracing("user")
 	defer traceCloser.Close()
 
-	if err := service.Run(); err != nil {
+	if err := srv.Run(); err != nil {
 		logger.Fatal(err)
 	}
 }

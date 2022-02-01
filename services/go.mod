@@ -52,12 +52,12 @@ require (
 	github.com/teamwork/test v0.0.0-20200108114543-02621bae84ad // indirect
 	github.com/teamwork/utils v0.0.0-20211103135549-f7e7a68ba696 // indirect
 	github.com/teris-io/shortid v0.0.0-20171029131806-771a37caa5cf
+	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/tkuchiki/go-timezone v0.2.2
 	github.com/ttacon/builder v0.0.0-20170518171403-c099f663e1c2 // indirect
 	github.com/ttacon/libphonenumber v1.2.1 // indirect
 	go.mongodb.org/mongo-driver v1.7.2
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
-	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
 	golang.org/x/text v0.3.6
 	google.golang.org/api v0.59.0
