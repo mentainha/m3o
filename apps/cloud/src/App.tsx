@@ -14,10 +14,17 @@ import { AddAppScreen } from './services/apps/screens/AddAppScreen'
 import { FunctionsScreen } from './services/functions/screens/FunctionsScreen'
 import { DbScreen } from './services/database/screens/DbScreen'
 import { AddDbTableScreen } from './services/database/screens/AddDbTableScreen'
+import { useRedirectToLogin } from './hooks/useRedirectToLogin'
 
 const queryClient = new QueryClient({})
 
 function App() {
+  const { authenticated } = useRedirectToLogin()
+
+  if (!authenticated) {
+    return null
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
