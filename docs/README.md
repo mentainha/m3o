@@ -48,8 +48,6 @@ We provide the following dev UX for the consumption of Micro services:
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 - [m3o-cli](https://github.com/m3o/m3o-cli) - Command line interface for terminal access to services
 
-See [clients](clients.md) for more info
-
 ## TODO
 
 - [ ] Getting Started
