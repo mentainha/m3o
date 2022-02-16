@@ -7,17 +7,10 @@ together docs for more on architecture and usage for self hosting, local develop
 
 - [Getting Started](getting-started.md)
 - [Client Libraries](client.md)
-- [Roadmap](#roadmap)
+- [Roadmap](roadmap.md)
 - [Resources](#resources)
-- [Community](#community)
-- [Cloud Hosting](#cloud-hosting)
-- [Open Source](#open-source)
-- [M3O Development](#m3o-development)
+- [Development](#development)
 - [TODO](#todo)
-
-## Roadmap
-
-Check out the [roadmap](ROADMAP.md) and feel free to PR future features
 
 ## Resources
 
@@ -26,7 +19,8 @@ A few resources to look at in the mean time
 ### Community
 
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
-- Email [Support](mailto:support@m3o.com) for help
+- Follow us on [LinkedIn](https://www.linkedin.com/company/micro-services-inc/)
+- Follow us on [Instagram](https://instagram.com/m3oservices)
 - Follow us on [Twitter](https://twitter.com/m3oservices)
 
 ### Hosting
@@ -49,6 +43,11 @@ We provide the following dev UX for the consumption of Micro services:
 - [m3o-js](https://github.com/m3o/m3o-js) - JS client library with statically typed interfaces and examples
 - [m3o-go](https://github.com/m3o/m3o-go) - Go client library with code generated functions and examples
 - [m3o-cli](https://github.com/m3o/m3o-cli) - Command line interface for terminal access to services
+
+## Development
+
+The M3O platform is under heavy development by the core team. Any additional work for clients, services and so on we welcome 
+external contribution and reward developers with M3O credit. For anyone interested please find us on Discord.
 
 ## TODO
 
