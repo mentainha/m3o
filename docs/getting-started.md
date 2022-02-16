@@ -1,5 +1,7 @@
 # Getting Started
 
+A quick guide to getting started with M3O
+
 ## Sign Up
 
 [Sign up](https://m3o.com/register) or [Log in](https://m3o.com/login) to M3O so you can get a token. You can use password based log in or oauth.
