@@ -47,7 +47,9 @@ After familiarising yourself with an API by reading the API reference (e.g https
 
 ## Download the CLI
 
-M3O includes a command line interface from which you can explore and query services. Go to https://github.com/m3o/m3o/releases/latest to download the latest release binary.
+M3O includes a command line interface from which you can explore and query services. 
+
+Go to https://github.com/m3o/m3o/releases/latest to download the latest release binary.
 
 ## Account Billing
 The majority of our APIs are free, with a 1 million request per month quota. Third party APIs or calls that perform specific functions such as SMS or email are charged for and billed per request. Each account has a credit based balance. Any request made to a paid API will be debited from the balance in real time. When your balance is zero requests to paid APIs will return a blocked status.
