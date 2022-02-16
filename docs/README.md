@@ -5,6 +5,7 @@ together docs for more on architecture and usage for self hosting, local develop
 
 ## Contents
 
+- [Getting Started](getting-started)
 - [Roadmap](#roadmap)
 - [Resources](#resources)
 - [Community](#community)
@@ -50,7 +51,7 @@ We provide the following dev UX for the consumption of Micro services:
 
 ## TODO
 
-- [ ] Getting Started
+- [x] Getting Started
 - [ ] Architecture guide
 - [ ] Local development
 - [ ] Self hosting 
