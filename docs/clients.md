@@ -4,7 +4,7 @@ Below are a list of clients provided for M3O
 
 ## Clients
 
-- [web](#web) - install the [m3o-web](https://github.com/m3o/m3o-web) UI
+- [web](#web) - install the [m3o-web](https://github.com/m3o/m3o-web) dashboard
 - [cli](#cli) - install script for the [m3o-cli](https://github.com/m3o/m3o-cli)
 - [js](#js) - install the [m3o-js](https://github.com/m3o/m3o-js) client
 - [go](#go) - install the [m3o-go](https://github.com/m3o/m3o-go) client
@@ -15,7 +15,7 @@ A quick overview of how to use all the clients
 
 ### Web
 
-Install the m3o web UI
+Install the m3o web dashboard
 
 ```
 git clone https://github.com/m3o/m3o-web
