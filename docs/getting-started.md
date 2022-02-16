@@ -54,7 +54,9 @@ Go to https://github.com/m3o/m3o/releases/latest to download the latest release 
 ## Account Billing
 The majority of our APIs are free, with a 1 million request per month quota. Third party APIs or calls that perform specific functions such as SMS or email are charged for and billed per request. Each account has a credit based balance. Any request made to a paid API will be debited from the balance in real time. When your balance is zero requests to paid APIs will return a blocked status.
 
-Additional API calls beyond the free quota are charged at $0.000001 per request (aka $1 per 1 million requests). To check your balance and top-up your account head to the Billing page.
+Additional API calls beyond the free quota are charged at $0.000001 per request (aka $1 per 1 million requests). 
+
+To check your balance and top-up your account head to the Billing page.
 
 ## Fair Usage Policy
 
