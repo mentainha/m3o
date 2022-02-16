@@ -6,7 +6,7 @@ together docs for more on architecture and usage for self hosting, local develop
 ## Contents
 
 - [Getting Started](getting-started.md)
-- [Client Libraries](client.md)
+- [Client Libraries](clients.md)
 - [Roadmap](roadmap.md)
 - [Resources](#resources)
 - [Development](#development)
