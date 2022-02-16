@@ -5,7 +5,7 @@ together docs for more on architecture and usage for self hosting, local develop
 
 ## Contents
 
-- [Getting Started](getting-started)
+- [Getting Started](getting-started.md)
 - [Roadmap](#roadmap)
 - [Resources](#resources)
 - [Community](#community)
