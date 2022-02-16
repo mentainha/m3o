@@ -7,5 +7,6 @@ Here's what's coming in the near future
 - [x] M3O Multi-language clients
 - [x] Next.js version of dev UX
 - [x] EC2 like hosting service
-- [ ] Team based collaboration
+- [x] Subscriptions; Free, Pro, Team
+- [ ] Team tier + collaboration features
 - [ ] User defined features
