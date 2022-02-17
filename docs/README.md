@@ -52,7 +52,7 @@ external contribution and reward developers with M3O credit. For anyone interest
 ## TODO
 
 - [x] Getting Started
-- [ ] Architecture guide
+- [x] Architecture guide
 - [ ] Local development
 - [ ] Self hosting 
 - [ ] Writing services
