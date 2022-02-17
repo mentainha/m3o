@@ -1,4 +1,4 @@
-# M3O Docs
+# Docs
 
 A collection of docs, guides and resources for M3O
 
