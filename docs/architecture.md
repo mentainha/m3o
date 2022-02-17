@@ -1,4 +1,4 @@
-# M3O Architecture
+# Architecture
 
 Read below to learn more about how M3O works
 
