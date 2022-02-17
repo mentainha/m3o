@@ -159,4 +159,4 @@ See the [examples](../examples) for more use cases.
 
 - **Write snippets** - Share code [snippets](snippets) built with M3O which we'll feature on the website soon
 - **Build services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create clients** - We're always on the lookout for more client libraries so m3o-[lang] and help us make them official!
+- **Create clients** - Help us create more client libraries to work in many different languages
