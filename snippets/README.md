@@ -1,4 +1,4 @@
-# M3O Snippets
+# Snippets
 
 Snippets are reusable pieces of code that you can quickly copy/paste
 
