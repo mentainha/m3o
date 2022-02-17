@@ -1,4 +1,4 @@
-# M3O Client Libraries
+# Client Libraries
 
 Below are a list of clients provided for M3O
 
