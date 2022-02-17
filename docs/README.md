@@ -25,7 +25,7 @@ A few resources to look at in the mean time
 
 ### Hosting
 
-- [M3O)(https://m3o.com) - a serverless cloud platform
+- [M3O](https://m3o.com) - a serverless cloud platform
 
 ### Open Source
 
