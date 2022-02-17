@@ -70,7 +70,7 @@ jobs:
         run: |
           # build the client generator
           pwd
-          cd cmd/client-gen;
+          cd cmd/client-generator;
           go install
           cd ../../
           # delete existing cmd directory
@@ -90,7 +90,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           rm -rf clients examples
-          client-gen .
+          client-generator .
 
       - name: Generate beta package
         working-directory: services
@@ -100,7 +100,7 @@ jobs:
           IS_BETA: yup
         run: |
           rm -rf clients examples
-          client-gen .
+          client-generator .
 
       - name: Adjust generated things before pushing
         working-directory: services
