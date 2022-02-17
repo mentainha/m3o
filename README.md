@@ -72,9 +72,9 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 - All APIs are available through one endpoint: `https://api.m3o.com/v1/[service]/[endpoint]`.
 - Use [cli](https://github.com/m3o/m3o-cli), [js](https://github.com/m3o/m3o-js) and [go](https://github.com/m3o/m3o-go) clients for development
 
-## Examples
+## Usage
 
-Here's a simple helloworld
+Grab your API token from the dashboard and try out helloworld. 
 
 ### Curl
 
