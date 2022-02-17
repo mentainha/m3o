@@ -5,7 +5,7 @@ A collection of docs, guides and resources for M3O
 ## Contents
 
 - [Getting Started](getting-started.md)
-- [Client Libraries](clients.md)
+- [Client Libraries](client-libraries.md)
 - [Architecture](architecture.md)
 - [Roadmap](roadmap.md)
 - [Resources](#resources)
