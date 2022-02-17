@@ -25,15 +25,16 @@ A few resources to look at in the mean time
 
 ### Hosting
 
-- [m3o.com](https://m3o.com) - a fully managed offering of micro services
+- [M3O](https://m3o.com) - a serverless cloud platform
 
-### Platform
+### Open Source
 
 The core services, automation and the backend are all open source:
 
-- [services](services) - offered on the M3O platform
-- [platform](https://github.com/m3o/platform) - infrastructure automation
-- [backend](https://github.com/m3o/backend) - powering the M3O platform
+- [Micro](https://micro.dev) - a distributed cloud operating system
+- [Micro Services](https://github.com/micro/services) - offered on the M3O platform
+- [M3O Platform](https://github.com/m3o/platform) - infrastructure automation
+- [M3O Backend](https://github.com/m3o/backend) - control plane for the M3O platform
 
 ### Dev UX
 
