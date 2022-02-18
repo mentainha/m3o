@@ -94,7 +94,7 @@ https://api.m3o.com/v1/helloworld/Call
 
 ## Authorization
 
-All API calls require a valid API token. New tokens can be generated on the [API settings](https://m3o.com/settings/keys) page.
+All API calls require a valid API token. New tokens can be generated on the [API settings](https://m3o.com/account/keys) page.
 
 An API token should be passed in the `Authorization: Bearer` header
 
