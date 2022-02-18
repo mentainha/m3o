@@ -9,7 +9,7 @@ For language specific example usage of the API see the website or the client rep
 
 ## Contents
 
-- [Hellworld](helloworld) - in multiple languages
+- [Helloworld](helloworld) - in multiple languages
 
 ## Contributing
 
