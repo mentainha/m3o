@@ -2464,7 +2464,7 @@ pre { margin-top: 0; margin-bottom: 0; font-family: "SFMono-Regular", Consolas, 
 
 @media (max-width: 544px) { .hide-sm { display: none !important; } }
 @media (min-width: 544px) and (max-width: 768px) { .hide-md { display: none !important; } }
-@media (min-width: 768px) and (max-width: 1012px) { .hide-lg { display: none !important; } }
+@media (min-width: 768px) and (max-width: 1600px) { .hide-lg { display: none !important; } }
 @media (min-width: 1012px) { .hide-xl { display: none !important; } }
 /* Set the table-layout to fixed */
 .table-fixed { table-layout: fixed !important; }
