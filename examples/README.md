@@ -1,12 +1,20 @@
-# M3O Examples
+# Examples
 
 This directory contains examples built with M3O.
 
-For language specific example usage of the API see the 
-website or the client repos:.
+## Contents
 
-- Go: https://github.com/m3o/m3o-go/tree/main/examples
-- Javascript https://github.com/m3o/m3o-js/tree/main/examples
+- [Helloworld](helloworld) - in multiple languages
+- [Go Functions](go-function) - running a Go function using the [Function API](https://m3o.com/function)
+- [Netlify Functions](netlify-functions) - calling hellworld from a netlify function
+- [Reddit Clone](reddit-clone) - a social news site using the [DB](https://m3o.com/db) and [User](https://m3o.com/user) APIs
+
+## Clients
+
+For language specific examples see [m3o.com](https://m3o.com) or the client repos:
+
+- [Go](https://github.com/m3o/m3o-go/tree/main/examples)
+- [Javascript](https://github.com/m3o/m3o-js/tree/main/examples)
 
 ## Contributing
 
