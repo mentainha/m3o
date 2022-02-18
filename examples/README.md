@@ -5,6 +5,7 @@ This directory contains examples built with M3O.
 ## Contents
 
 - [Helloworld](helloworld) - in multiple languages
+- [Netlify Functions](netlify-functions) - calling hellworld from a netlify function
 
 ## Clients
 
