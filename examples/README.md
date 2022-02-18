@@ -18,5 +18,4 @@ For language specific examples see [m3o.com](https://m3o.com) or the client repo
 
 ## Contributing
 
-We're looking for more contributions of things built with 
-M3O so please issue a pull request if you are interested.
+We're looking for more contributions of things built with M3O so please issue a [pull request](https://github.com/m3o/m3o/pulls) if you are interested.
