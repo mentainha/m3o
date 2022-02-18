@@ -22,7 +22,7 @@ export const Layout: FC = () => {
             Support
           </h2>
           <a
-            href="mailto:support@m3o.com?subject=M3O Cloud Feedback"
+            href="mailto:contact@m3o.com?subject=M3O Cloud Feedback"
             className="h-12 flex items-center rounded-md text-sm p-4 text-gray-400"
           >
             Feedback
