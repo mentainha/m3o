@@ -1,4 +1,4 @@
-# M3O API
+# API
 
 The M3O API consists of a set of many public apis all consumed through a single gateway.
 
@@ -108,7 +108,7 @@ All request/responses are in JSON format and require a `Content-Type: applicatio
 
 ## OpenAPI Specs
 
-Find the OpenAPI specs in the [spec](spec) directory
+Find the OpenAPI specs in the [spec](https://github.com/m3o/m3o/tree/main/api/spec) directory
 
 ## Public APIs
 
