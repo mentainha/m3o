@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" style="margin-top: 50px;">
 	<a href="https://m3o.com" style="color: #333333;">
 		<img src="images/m3o.png" />
 	</a>
