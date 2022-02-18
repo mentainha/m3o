@@ -2,16 +2,16 @@
 
 This directory contains examples built with M3O.
 
+## Contents
+
+- [Helloworld](helloworld) - in multiple languages
+
 ## Clients
 
 For language specific examples see [m3o.com](https://m3o.com) or the client repos:
 
 - [Go](https://github.com/m3o/m3o-go/tree/main/examples)
 - [Javascript](https://github.com/m3o/m3o-js/tree/main/examples)
-
-## Contents
-
-- [Helloworld](helloworld) - in multiple languages
 
 ## Contributing
 
