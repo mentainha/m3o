@@ -5,6 +5,7 @@ This directory contains examples built with M3O.
 ## Contents
 
 - [Helloworld](helloworld) - in multiple languages
+- [Go Functions](go-function) - running a Go function using the [Function API](https://m3o.com/function)
 - [Netlify Functions](netlify-functions) - calling hellworld from a netlify function
 
 ## Clients
