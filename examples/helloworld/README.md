@@ -6,10 +6,6 @@ The most basic helloworld example
 
 - Head to [m3o.com](https://m3o.com) and signup for a free account. 
 - Generate an API key on the [Settings page](https://m3o.com/settings/keys).
+- Set your token as the environment variable `M3O_API_TOKEN`
+- Use one of the examples in the language of your choice
 
-## Calling the API
-
-All calls are http `POST` with Content-Type `application/json` and require an `Authorization: Bearer` header with your API token.
-
-- curl.sh demonstrates a straightforward curl
-- main.go demonstrates how to use Golang and net/http
