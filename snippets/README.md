@@ -10,3 +10,5 @@ Snippets are reusable pieces of code that you can quickly copy/paste
 
 - [m3o-database.js](m3o-database.js) - An easy way to use the database api
 
+<script src="https://gist.github.com/asim/b86bad126b8d7c21f71d7c66b88de400.js"></script>
+
