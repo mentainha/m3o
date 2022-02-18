@@ -69,7 +69,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 - Browse the APIs on the [Explore](https://m3o.com/explore) page.
 - Call any API using your token in the `Authorization: Bearer [Token]` header
 - All APIs are available through one endpoint: `https://api.m3o.com/v1/[service]/[endpoint]`.
-- Use [cli](https://github.com/m3o/m3o-cli), [js](https://github.com/m3o/m3o-js) and [go](https://github.com/m3o/m3o-go) clients for development
+- Use [m3o-cli](https://github.com/m3o/m3o-cli), [m3o-js](https://github.com/m3o/m3o-js) and [m3o-go](https://github.com/m3o/m3o-go) clients for development
 
 ## Usage
 
