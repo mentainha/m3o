@@ -1,8 +1,8 @@
 # Showcase
 
-We want to provide a place where users can showcase apps built with m3o. Logically it makes sense to 
-make that a website called [builtwithm3o.com](https://builtwithm3o.com). The best apps will earn 
-rewards. See [here](https://github.com/m3o/m3o/discussions/113) for more info.
+We want to provide a place where users can showcase apps built with m3o. The best apps will earn 
+rewards. See [here](https://github.com/m3o/m3o/discussions/113) for more info or join #showcase 
+on Discord.
 
 ## Getting Started
 
