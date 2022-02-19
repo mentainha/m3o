@@ -24,7 +24,7 @@ at [m3o.com](https://m3o.com).
 
 Here are the main features:
 
-- **🔥 One Platform** - Discover, explore and consume public APIs all in one place. 
+- **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
 - **☝️ One Account** - Manage your API usage with one account and one token.
 - **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
 - **🆓 Pay As You Grow** - It's free to start and everything is priced per request.
@@ -34,13 +34,13 @@ Here are the main features:
 
 So far there are over 50+ services. Here are some of the highlights:
 
-### Backend
+### Cloud
 
-- [**Apps**](https://m3o.com/app) - Global app deployment
-- [**DB**](https://m3o.com/db) - Simple database service
+- [**Apps**](https://m3o.com/app) - Serverless app deployment
+- [**Database**](https://m3o.com/db) - Serverless postgres database
+- [**Functions**](https://m3o.com/function) - Serverless lambda functions
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
-- [**Functions**](https://m3o.com/function) - Serverless compute as a service
-- [**User**](https://m3o.com/user) - User management and authentication
+- [**Users**](https://m3o.com/user) - User management and authentication
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
 - [**Search**](https://m3o.com/search) - Indexing and full text search
 
@@ -49,8 +49,9 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Address**](https://m3o.com/address) - Address lookup by postcode
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
 - [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
-- [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
-- [**IP to Geo**](https://m3o.com/ip) - IP to geolocation lookup
+- [**Places**](https://m3o.com/place) - Search for geographic points of interest
+- [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
+- [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
 ### Utility
 
