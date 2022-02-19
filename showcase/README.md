@@ -7,7 +7,7 @@ or join #showcase on Discord.
 
 ## Getting Started
 
-Build a web app using the M3O apis. Host is using the [M3O Apps](https://m3o.com/app) service for 
+Build a web app using the M3O APIs. Host it using the [M3O Apps](https://m3o.com/app) service for 
 free or a similar hosting provider. See [helloworld](https://github.com/m3o/helloworld) for an 
 example. Once you've built the app, submit it in a PR here including a screenshot and we'll feature 
 it on the website. That's it!
