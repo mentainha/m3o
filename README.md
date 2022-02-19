@@ -49,8 +49,8 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Address**](https://m3o.com/address) - Address lookup by postcode
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
 - [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
-- [**Routing**](https://m3o.com/routing) - Etas, routes and turn by turn directions
-- [**IP to Geo**](https://m3o.com/ip) - IP to geolocation lookup
+- [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
+- [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
 ### Utility
 
