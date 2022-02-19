@@ -25,7 +25,9 @@ programmable building blocks all on one platform for a 10x developer experience.
 
 ## Features
 
-Here are the main features:
+<p align="center">
+	Here are the main features:
+</p>
 
 - **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
 - **☝️ One Account** - Manage your API usage with one account and one token.
@@ -35,7 +37,9 @@ Here are the main features:
 
 ## Services
 
-So far there are over 50+ services. Here are some of the highlights:
+<p align="center">
+	So far there are over 50+ APIs. Here are some of the highlights:
+</p>
 
 ### Cloud
 
