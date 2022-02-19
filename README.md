@@ -34,10 +34,10 @@ Here are the main features:
 
 So far there are over 50+ services. Here are some of the highlights:
 
-### Backend
+### Cloud
 
-- [**Apps**](https://m3o.com/app) - Global app deployment
-- [**Database**](https://m3o.com/db) - Simple database service
+- [**Apps**](https://m3o.com/app) - Serverless app deployment
+- [**Database**](https://m3o.com/db) - Serverless postgres database
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Functions**](https://m3o.com/function) - Serverless compute as a service
 - [**User**](https://m3o.com/user) - User management and authentication
