@@ -80,10 +80,11 @@ Grab your API token from the dashboard and try out helloworld.
 ### Curl
 
 ```
-curl -H "Authorization: Bearer $M3O_API_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "John"}' \
-     https://api.m3o.com/v1/helloworld/call
+curl \
+  -H "Authorization: Bearer $M3O_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John"}' \
+  https://api.m3o.com/v1/helloworld/call
 ```
 
 Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
@@ -112,7 +113,7 @@ Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
 
 ### Javascript
 
-Install the m3o package
+Install the [m3o](https://www.npmjs.com/package/m3o) package
 
 ```
 npm install m3o
@@ -161,4 +162,4 @@ See the [examples](../examples) for more use cases.
 - **Showcase apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](showcase) for more info
 - **Write snippets** - Share code [snippets](snippets) built with M3O which we'll feature on the website soon
 - **Build services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create clients** - Help us create more client libraries to work in many different languages
+- **Create clients** - Help us create more [client libraries](docs/client-libraries) to work in many different languages
