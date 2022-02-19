@@ -3,7 +3,7 @@
 		<img src="images/xaas.jpeg" />
 	</a>
 </p>
-<p><h1 align="center">The Next Generation Cloud</h1></p>
+<p><h1 align="center">Next Generation Cloud</h1></p>
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
@@ -17,8 +17,9 @@
 ## Overview
 
 M3O is a next generation cloud platform. Explore, discover and consume free and paid public APIs as simpler 
-programmable building blocks all on one platform for a 10x developer experience. Signup and start for FREE 
-at [m3o.com](https://m3o.com).
+programmable building blocks all on one platform for a 10x developer experience. 
+
+<a href="https://m3o.com/register">Signup and start for FREE</a>
 
 ## Features
 
@@ -32,9 +33,9 @@ Here are the main features:
 
 ## Services
 
-So far there are over 50+ services. Here are some of the highlights:
+So far there are over 50+ APIs. Here are some of the highlights:
 
-### Cloud
+### ☁️ Cloud
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
@@ -44,7 +45,7 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
 - [**Search**](https://m3o.com/search) - Indexing and full text search
 
-### Logistics
+### 🗺️ Logistics
 
 - [**Address**](https://m3o.com/address) - Address lookup by postcode
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
@@ -53,7 +54,7 @@ So far there are over 50+ services. Here are some of the highlights:
 - [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
 - [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
-### Utility
+### ⚙️ Utility
 
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
@@ -69,7 +70,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 - Head to [m3o.com](https://m3o.com) and signup for a free account.
 - Browse the APIs on the [Explore](https://m3o.com/explore) page.
 - Call any API using your token in the `Authorization: Bearer [Token]` header
-- All APIs are available through one endpoint: `https://api.m3o.com/v1/[service]/[endpoint]`.
+- All APIs are available through one endpoint: `https://api.m3o.com/v1/*`.
 - Use [m3o-cli](https://github.com/m3o/m3o-cli), [m3o-js](https://github.com/m3o/m3o-js) and [m3o-go](https://github.com/m3o/m3o-go) clients for development
 
 ## Quick Start
