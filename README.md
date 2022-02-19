@@ -38,7 +38,7 @@ So far there are over 50+ services. Here are some of the highlights:
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
-- [**Functions**](https://m3o.com/function) - Serverless compute as a service
+- [**Functions**](https://m3o.com/function) - Serverless lambda functions
 - [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Users**](https://m3o.com/user) - User management and authentication
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
