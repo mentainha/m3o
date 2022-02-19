@@ -18,7 +18,7 @@ A few resources to look at in the mean time
 
 ### Community
 
-- Join the [Discord](https://discord.gg/TBR9bRjd6Z) channel
+- Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Follow us on [LinkedIn](https://www.linkedin.com/company/micro-services-inc/)
 - Follow us on [Instagram](https://instagram.com/m3oservices)
 - Follow us on [Twitter](https://twitter.com/m3oservices)

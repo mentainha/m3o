@@ -90,7 +90,7 @@ Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
 
 ### Go
 
-Import packages from `go.m3o.com`
+Import packages from [go.m3o.com](https://pkg.go.dev/go.m3o.com)
 
 ```go
 import "go.m3o.com/helloworld"
