@@ -78,7 +78,7 @@ Grab your API token from the dashboard and try out helloworld.
 
 ### Curl
 
-```
+```bash
 curl \
   -H "Authorization: Bearer $M3O_API_TOKEN" \
   -H "Content-Type: application/json" \
