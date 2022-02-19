@@ -7,13 +7,13 @@ export const Layout: FC = () => {
     <div className="pl-52">
       <aside className="bg-zinc-900 h-screen fixed top-0 left-0 w-52 border-r border-gray-700">
         <div className="p-6">
-          <Link
-            to="https://m3o.com"
+          <a
+            href="https://m3o.com"
             className="relative hover:no-underline flex items-center"
           >
             <img src="/logo-white.png" alt="m3o logo" className="w-8" />
             <p className="font-bold text-white ml-2">Cloud</p>
-          </Link>
+          </a>
         </div>
         <nav className="m-2">
           <h2 className="pl-4 pb-4 text-gray-500 uppercase text-sm">Manage</h2>
