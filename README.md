@@ -110,7 +110,7 @@ fmt.Println(rsp.Message)
 
 Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
 
-### JS
+### Javascript
 
 Install the m3o package
 
