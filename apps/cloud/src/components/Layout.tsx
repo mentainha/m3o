@@ -8,7 +8,7 @@ export const Layout: FC = () => {
       <aside className="bg-zinc-900 h-screen fixed top-0 left-0 w-52 border-r border-gray-700">
         <div className="p-6">
           <Link
-            to="/"
+            to="https://m3o.com"
             className="relative hover:no-underline flex items-center"
           >
             <img src="/logo-white.png" alt="m3o logo" className="w-8" />
