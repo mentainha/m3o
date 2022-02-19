@@ -113,7 +113,7 @@ Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
 
 ### Javascript
 
-Install the m3o package
+Install the [m3o](https://www.npmjs.com/package/m3o) package
 
 ```
 npm install m3o
