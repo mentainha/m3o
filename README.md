@@ -13,8 +13,7 @@
 </p>
 
 <p align="center" style="font-weight: bold">
-  Explore, discover and consume public APIs as simpler programmable building blocks.
-
+  Explore, discover and consume public APIs as simpler programmable building blocks
   <a href="https://m3o.com/register" id="signup">Signup and start for FREE</a>
 </p>
 
