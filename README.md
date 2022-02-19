@@ -1,6 +1,6 @@
 <p align="center">
 	<a href="https://m3o.com" style="color: #333333;">
-		<img src="images/xaas.jpeg" />
+		<img src="images/cloud.png" />
 	</a>
 </p>
 <p><h1 align="center">Next Generation Cloud</h1></p>
