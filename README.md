@@ -1,9 +1,9 @@
 <p align="center">
 	<a href="https://m3o.com" style="color: #333333;">
-		<img id="banner" src="images/xaas.jpeg" />
+		<img id="banner" src="" />
+                <p align="center"><img src="images/m3o.png" height=50px width=auto /></p>
 	</a>
 </p>
-<p><h1 align="center">Next Generation Cloud</h1></p>
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
@@ -12,13 +12,10 @@
 
 </p>
 
----
-
-## Overview
-
-M3O is a next generation cloud. Explore, discover and consume free and paid public APIs as simpler programmable building blocks all on one platform. 
-
 <p align="center" style="font-weight: bold">
+  Explore, discover and consume public APIs as simpler programmable building blocks. 
+  <br>
+
   <a href="https://m3o.com/register" id="signup">Signup and start for FREE</a>
 </p>
 

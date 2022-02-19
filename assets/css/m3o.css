@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-.markdown-body li {
+.markdown-body li, #signup {
   display: inline-block;
   margin: 10px;
   padding: 10px;
