@@ -40,7 +40,7 @@
 	    <div class="menu"></div>
 	    <div class="menu"></div>
 	</div>
-        <ul id="links" class="links" style="float: right; padding: 5px;">
+        <ul id="links" class="links" style="float: right; display: none; padding: 5px;">
 	  <li class="link"><a href="{{ site.baseurl }}/">Home</a></li>
 	  <li class="link"><a href="{{ site.baseurl }}/api">API</a></li>
 	  <li class="link"><a href="https://blog.m3o.com">Blog</a></li>
@@ -106,12 +106,10 @@
       window.onload = resize;
       window.onresize = resize;
 
-      window.onload = function() {
-        var banner = document.getElementById("banner");
-        if (banner != undefined) {
-          banner.src = "/images/cloud.png";
-        }
-      };
+      var banner = document.getElementById("banner");
+      if (banner != undefined) {
+        banner.src = "/images/cloud.png";
+      }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
