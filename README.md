@@ -35,7 +35,7 @@ Here are the main features:
 
 So far there are over 50+ APIs. Here are some of the highlights:
 
-### Cloud
+### ☁️ Cloud
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
@@ -45,7 +45,7 @@ So far there are over 50+ APIs. Here are some of the highlights:
 - [**Space**](https://m3o.com/space) - Infinite cloud storage
 - [**Search**](https://m3o.com/search) - Indexing and full text search
 
-### Logistics
+### 🗺️ Logistics
 
 - [**Address**](https://m3o.com/address) - Address lookup by postcode
 - [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
@@ -54,7 +54,7 @@ So far there are over 50+ APIs. Here are some of the highlights:
 - [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
 - [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
 
-### Utility
+### ⚙️ Utility
 
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
