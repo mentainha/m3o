@@ -159,7 +159,7 @@ See the [examples](../examples) for more use cases.
 
 ## Contributing
 
-- **Showcase apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](showcase) for more info
-- **Write snippets** - Share code [snippets](snippets) built with M3O which we'll feature on the website soon
-- **Build services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create clients** - Help us create more [client libraries](docs/client-libraries) to work in many different languages
+- **Showcase Apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](showcase) for more info
+- **Write Snippets** - Share code [snippets](snippets) built with M3O which we'll feature on the website soon
+- **Build Services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
+- **Create Clients** - Help us create more [client libraries](docs/client-libraries) to work in many different languages
