@@ -80,10 +80,11 @@ Grab your API token from the dashboard and try out helloworld.
 ### Curl
 
 ```
-curl -H "Authorization: Bearer $M3O_API_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "John"}' \
-     https://api.m3o.com/v1/helloworld/call
+curl \
+  -H "Authorization: Bearer $M3O_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John"}' \
+  https://api.m3o.com/v1/helloworld/call
 ```
 
 Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
