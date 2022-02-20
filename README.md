@@ -76,7 +76,11 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 
 ## Quick Start
 
-Grab your API token from the dashboard and try out helloworld. 
+Grab your API token from the dashboard and try out helloworld and export it as 
+
+```
+M3O_API_TOKEN=xxxxxxx
+```
 
 ### Curl
 
