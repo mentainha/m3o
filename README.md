@@ -1,7 +1,6 @@
 <p align="center">
 	<a href="https://m3o.com" style="color: #333333;">
-		<img id="banner" />
-                <p align="center"><img src="images/m3o.png" height=50px width=auto /></p>
+		<img id="banner" src="images/m3o.png" />
 	</a>
 </p>
 <p align="center">
@@ -17,6 +16,11 @@
 
   <p align="center"><a href="https://m3o.com/register" id="signup">Signup and start for FREE</a></p>
 </p>
+
+## Introduction
+
+M3O is a next generation cloud plaform. A single place to explore, discover and consume public APIs. 
+ONE platform, ONE account, ONE framework. 
 
 ## Features
 
