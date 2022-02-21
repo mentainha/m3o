@@ -571,7 +571,7 @@ func nodeIndexFile(workDir, tsPath string, services []service) {
 		os.Exit(1)
 	}
 
-	f, err = os.OpenFile(filepath.Join(tsPath, "index.ts"), os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0744)
+	f, err = os.OpenFile(filepath.Join(tsPath, "src", "index.ts"), os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0744)
 	if err != nil {
 		fmt.Println("Failed to open schema file", err)
 		os.Exit(1)

@@ -13,7 +13,7 @@ export class Client {
 	{{ $service.Name}}: {{ $service.ImportName }}.{{ title $service.Name}}Service;{{end}}
 }
 
-export default (token: string = process.env.M3O_API_TOKEN) => {
+export default (token = process.env.M3O_API_TOKEN as string) => {
 	return {
 		{{ range $service := .services }}
 		{{ $service.Name}}: new {{ $service.ImportName }}.{{ title $service.Name}}Service(token),{{end}}
