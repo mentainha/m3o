@@ -1,6 +1,9 @@
 import type { FC } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import { AppLinks } from './AppLinks'
+import {
+  SupportIcon
+} from '@heroicons/react/outline'
 
 export const Layout: FC = () => {
   return (
@@ -9,23 +12,20 @@ export const Layout: FC = () => {
         <div className="p-6">
           <a
             href="https://m3o.com"
-            className="relative hover:no-underline flex items-center"
+            className="relative hover:no-underline w-14 flex items-center"
           >
-            <img src="/logo-white.png" alt="m3o logo" className="w-8" />
-            <p className="font-bold text-white ml-2">Cloud</p>
+            <img src="/logo-white.png" alt="m3o logo" className="w-14" />
           </a>
         </div>
         <nav className="m-2">
-          <h2 className="pl-4 pb-4 text-gray-500 uppercase text-sm">Manage</h2>
+          <h1 className="pl-4 pb-4 font-bold">Cloud</h1>
           <AppLinks />
-          <h2 className="pl-4 pb-4 text-gray-500 uppercase text-sm mt-8">
-            Support
-          </h2>
+          <h1 className="pl-4 pb-4 pt-2 font-bold">Support</h1>
           <a
             href="mailto:contact@m3o.com?subject=M3O Cloud Feedback"
             className="h-12 flex items-center rounded-md text-sm p-4 text-gray-400"
           >
-            Feedback
+            <SupportIcon className="w-4 mr-2" /> Feedback
           </a>
         </nav>
       </aside>
