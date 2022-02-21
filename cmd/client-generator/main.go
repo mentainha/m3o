@@ -583,7 +583,7 @@ func nodeIndexFile(workDir, tsPath string, services []service) {
 		os.Exit(1)
 	}
 	cmd := exec.Command("prettier", "-w", "index.ts")
-	cmd.Dir = filepath.Join(tsPath)
+	cmd.Dir = filepath.Join(tsPath, "src")
 	outp, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println(fmt.Sprintf("Problem with prettifying clients index.ts '%v", string(outp)))
