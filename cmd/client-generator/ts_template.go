@@ -6,7 +6,7 @@ const tsIndexTemplate = `{{ range $service := .services }}import * as {{ $servic
 export class Client {
 	constructor(token: string) {
 		{{ range $service := .services }}
-		this.{{ $service.Name}} = new {{ $service.ImportName }}.{{ title $service.Name}}Service(token){{end}}
+		this.{{ $service.Name}} = new {{ $service.ImportName }}.{{ title $service.Name}}Service(token);{{end}}
 	}
 
 {{ range $service := .services }}
@@ -16,7 +16,7 @@ export class Client {
 export default (token: string = process.env.M3O_API_TOKEN) => {
 	return {
 		{{ range $service := .services }}
-		this.{{ $service.Name}} = new {{ $service.ImportName }}.{{ title $service.Name}}Service(token){{end}}
+		{{ $service.Name}}: new {{ $service.ImportName }}.{{ title $service.Name}}Service(token),{{end}}
 	}
 }
 `
