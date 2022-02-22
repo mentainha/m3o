@@ -131,15 +131,14 @@ const { HelloworldService } = require("m3o/helloworld");
 
 const helloworldService = new HelloworldService(process.env.M3O_API_TOKEN);
 
-// Call returns a personalised "Hello $name" response
-async function callTheHelloworldService() {
+async function callHelloworld() {
   const rsp = await helloworldService.call({
     name: "Alice",
   });
   console.log(rsp);
 }
 
-callTheHelloworldService();
+callHelloworld();
 ```
 
 Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
