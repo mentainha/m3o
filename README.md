@@ -1,6 +1,6 @@
 <p align="center">
 	<a href="https://m3o.com" style="color: #333333;">
-		<img id="banner" src="images/m3o.png" />
+		<img id="banner" src="assets/images/m3o.png" />
 	</a>
 </p>
 <p align="center">

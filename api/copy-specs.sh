@@ -15,7 +15,7 @@ for j in *; do
     continue
   fi
 
-  cd $j && make api && cp api-${j}.json $DIR/../api/spec/${j}.json && cd ..
+  cd $j && make api && cp api-${j}.json $DIR/api/spec/${j}.json && cd ..
 done
 
 cd $PWD
