@@ -11,14 +11,14 @@ func NewClient(token string) *Client {
 	return &Client{
 		token: token,
 		{{ range $service := .services }}
-		{{ title $service.Name }}Service: {{ $service.Name }}.New{{ title $service.Name}}Service(token),{{end}}
+		{{ title $service.Name }}: {{ $service.Name }}.New{{ title $service.Name}}Service(token),{{end}}
 	}
 }
 
 type Client struct {
 	token string
 {{ range $service := .services }}
-	{{ title $service.Name }}Service *{{ $service.Name }}.{{ title $service.Name }}Service{{end}}
+	{{ title $service.Name }} {{ $service.Name }}.{{ title $service.Name }}{{end}}
 }
 `
 
