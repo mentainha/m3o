@@ -4,10 +4,6 @@ on:
     paths:
       - 'www/**'
 
-defaults:
-  run:
-    working-directory: www
-
 jobs:
   build:
     name: Build, Push, Deploy
@@ -18,6 +14,7 @@ jobs:
 
       - name: Docker Build
         run: docker build -t m3o/cloud-next .
+        working-directory: www
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
