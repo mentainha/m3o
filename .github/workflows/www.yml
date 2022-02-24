@@ -1,8 +1,8 @@
-name: WWW - Build, Push, Deploy
+name: Web - Build, Push, Deploy
 on:
   push:
     paths:
-      - 'www/**'
+      - 'apps/web/**'
 
 jobs:
   build:
@@ -14,7 +14,6 @@ jobs:
 
       - name: Docker Build
         run: docker build -t m3o/cloud-next .
-        working-directory: www
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
