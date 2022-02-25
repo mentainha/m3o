@@ -26,7 +26,7 @@ const ExplorePage: NextPage<ExploreProps & WithAuthProps> = ({
       <MainLayout>
         <Explore
           {...exploreProps}
-          header={<ExploreHeader title="Explore APIs" />}
+          header={<ExploreHeader title="Explore" />}
         />
       </MainLayout>
     </>

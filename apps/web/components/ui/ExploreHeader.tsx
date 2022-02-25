@@ -10,7 +10,7 @@ export const ExploreHeader: FC<Props> = ({ title, subTitle }: Props) => {
   return (
     <div className="mb-6">
       <div className="flex items-center justify-between">
-        <h1 className="font-bold text-black text-2xl dark:text-white md:text-3xl pr-10">
+        <h1 className="gradient-text text-3xl md:text-5xl mb-6 pb-4 font-bold">
           {title}
         </h1>
       </div>
