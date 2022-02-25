@@ -17,3 +17,7 @@
 .circle-btn:disabled {
   @apply text-zinc-500;
 }
+
+option {
+  color: black;
+}
