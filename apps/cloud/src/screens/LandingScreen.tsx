@@ -23,7 +23,7 @@ export const LandingScreen: FC = () => {
           linkTo="/users"
         />
         <ApiBox
-          title="DB"
+          title="Database"
           subTitle="Manage your data"
           icon={DatabaseIcon}
           linkTo="/database"
