@@ -28,14 +28,14 @@ const LINKS: LinkItem[] = [
     text: 'Database'
   },
   {
-    icon: UserIcon,
-    to: '/users',
-    text: 'Users'
-  },
-  {
     icon: CodeIcon,
     to: '/functions',
     text: 'Functions'
+  },
+  {
+    icon: UserIcon,
+    to: '/users',
+    text: 'Users'
   }
 ]
 
