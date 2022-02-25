@@ -23,8 +23,8 @@ export const DbScreen: FC = () => {
   return (
     <section className="p-10">
       <header className="flex items-center justify-between mb-10">
-        <h1 className="font-bold text-4xl">DB</h1>
-        <AddButton name="DB" to="/database/add" />
+        <h1 className="font-bold text-4xl">Database</h1>
+        <AddButton name="Table" to="/database/add" />
       </header>
       <div className="grid grid-cols-4 gap-4">
         {data.map((item) => (

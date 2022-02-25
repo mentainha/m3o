@@ -25,7 +25,7 @@ const LINKS: LinkItem[] = [
   {
     icon: DatabaseIcon,
     to: '/database',
-    text: 'DB'
+    text: 'Database'
   },
   {
     icon: UserIcon,
