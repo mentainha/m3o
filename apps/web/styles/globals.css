@@ -80,3 +80,11 @@ a {
 option {
   @apply dark:text-black;
 }
+
+.sidebar {
+  max-height: 640px;
+  overflow: scroll;
+}
+.endpoint-caller {
+  max-height: 640px;
+}

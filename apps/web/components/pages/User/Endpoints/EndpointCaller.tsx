@@ -40,7 +40,7 @@ export const EndpointCaller: FC<Props> = ({
 
   return (
     <div className="w-full">
-      <div className="md:grid md:grid-cols-2">
+      <div className="md:grid md:grid-rows-2 endpoint-caller">
         <div>
           <div className="flex justify-between items-center p-4 border-zinc-300 border-solid border-b h-14 text-sm">
             Request
@@ -55,7 +55,7 @@ export const EndpointCaller: FC<Props> = ({
             <Editor
               value={stringifyAndFormatJSON(endpoint.request)}
               language="json"
-              height="600px"
+              height="250px"
               onChange={handleRequestChange}
               options={options}
               theme={theme === 'dark' ? 'vs-dark' : 'light'}
@@ -71,7 +71,7 @@ export const EndpointCaller: FC<Props> = ({
               <Editor
                 value={stringifyAndFormatJSON(response)}
                 language="json"
-                height="600px"
+                height="250px"
                 options={options}
                 theme={theme === 'dark' ? 'vs-dark' : 'light'}
               />

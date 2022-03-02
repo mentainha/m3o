@@ -75,7 +75,7 @@ export const Endpoints: FC<Props> = ({
         <Alert type="error">{callV1Api.error as string}</Alert>
       )}
       <div className="md:flex">
-        <aside className="border-zinc-300 border-solid border-b w-full md:w-3/12 p-4 md:border-b-0 md:border-r dark:border-zinc-600">
+        <aside className="border-zinc-300 border-solid border-b w-full md:w-3/12 p-4 md:border-b-0 md:border-r dark:border-zinc-600 sidebar">
           {formattedEndpoints.map(endpoint => (
             <Endpoint
               key={endpoint.title}
