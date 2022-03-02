@@ -1,57 +1,38 @@
 import type { FC } from 'react'
-import type { Column, CellProps } from 'react-table'
+import type { Column } from 'react-table'
 import type { Account } from 'm3o/user'
 import { useNavigate, Link } from 'react-router-dom'
 import format from 'date-fns/format'
-import { TrashIcon, PencilIcon, UserAddIcon } from '@heroicons/react/outline'
+import { UserAddIcon } from '@heroicons/react/outline'
 import { useMemo, useCallback } from 'react'
 import { Spinner } from '../../../components/Spinner'
 import { useListUsers } from '../hooks/useListUsers'
 import { Table } from '../../../components/Table/Table'
-import { useDeleteUser } from '../hooks/useDeleteUser'
 import { NoData } from '../../../components/NoData'
-import { useDeleteMultipleUsers } from '../hooks/useDeleteMultipleUsers'
-import { useSelectItems } from '../../../hooks/useSelectItems'
+import { useDeleteUsers } from '../hooks/useDeleteUsers'
 import { useUsersStateContext } from '../components/UsersStateProvider'
 
 type UserAccount = Required<Account>
 
 export const UsersScreen: FC = () => {
   const navigate = useNavigate()
-  const { selectedItems, onSelectItem, resetSelectedItems } =
-    useSelectItems<UserAccount>()
-  const { data = [], isFetching } = useListUsers()
+  const { data, isFetching } = useListUsers()
   const { setPageSize, pageSize } = useUsersStateContext()
+  const deleteUsersMutation = useDeleteUsers()
 
-  const { mutate: deleteMultipleUsers } = useDeleteMultipleUsers({
-    onSuccess: () => {
-      resetSelectedItems()
-    }
-  })
+  const handleDeleteClick = useCallback(
+    (items: string[]) => {
+      const message =
+        items.length === 1
+          ? 'Are you sure you would like to delete this user?'
+          : `Are you sure you would like to delete these ${items.length} users?`
 
-  const { mutate } = useDeleteUser({
-    onSuccess: () => {}
-  })
-
-  const onDeleteClick = useCallback(
-    (id: string) => {
-      if (window.confirm('Are you sure you would like to delete this user?')) {
-        mutate(id)
+      if (window.confirm(message)) {
+        deleteUsersMutation.mutate(items)
       }
     },
-    [mutate]
+    [deleteUsersMutation]
   )
-
-  const onDeleteMultiple = useCallback(() => {
-    const message =
-      selectedItems.length === 1
-        ? 'Are you sure you would like to delete this user?'
-        : `Are you sure you would like to delete these ${selectedItems.length} users?`
-
-    if (window.confirm(message)) {
-      deleteMultipleUsers(selectedItems)
-    }
-  }, [selectedItems, deleteMultipleUsers])
 
   const columns = useMemo<Column<UserAccount>[]>(() => {
     return [
@@ -71,61 +52,43 @@ export const UsersScreen: FC = () => {
         Header: 'Created',
         accessor: 'created',
         Cell: ({ value }) => {
-          return format(new Date(Number(value) * 1000), 'hh:mm do LLL yy')
+          return format(new Date(Number(value) * 1000), 'PPpp')
         }
       },
       {
         Header: 'Verified',
         accessor: 'verified',
         Cell: ({ value }) => {
-          return value ? '✅' : '❌'
+          return value ? 'true' : 'false'
         }
-      },
-      {
-        id: 'actions',
-        width: 80,
-        Cell: ({ row }: CellProps<UserAccount>) => (
-          <div className="hidden group-hover:block text-white text-right pr-4">
-            <button onClick={() => onDeleteClick(row.original.id!)}>
-              <TrashIcon className="w-4" />
-            </button>
-            <button
-              onClick={() => navigate(`/users/${row.original.id!}`)}
-              className="ml-3"
-            >
-              <PencilIcon className="w-4" />
-            </button>
-          </div>
-        )
       }
     ]
-  }, [onDeleteClick, navigate])
+  }, [navigate])
 
   if (isFetching) {
     return <Spinner />
   }
 
   return (
-    <div>
+    <>
       <div className="p-4 border-b border-zinc-600 flex items-center justify-between">
         <h1 className="font-bold text-white">Users</h1>
         <Link className="btn flex items-center" to="/users/add">
           <UserAddIcon className="w-4 mr-2" /> Add
         </Link>
       </div>
-      {data.length ? (
+      {data!.length ? (
         <Table<UserAccount>
           data={data as UserAccount[]}
           columns={columns}
-          onDeleteMultiple={onDeleteMultiple}
-          selectedItems={selectedItems}
-          setSelectedItems={onSelectItem}
+          onTrashClick={handleDeleteClick}
           onSetPageSize={setPageSize}
           statePageSize={pageSize}
+          rowClickPath="/users"
         />
       ) : (
         <NoData />
       )}
-    </div>
+    </>
   )
 }
