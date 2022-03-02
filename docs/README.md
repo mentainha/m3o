@@ -163,11 +163,11 @@ See the [examples](../examples) for more use cases.
 - Follow us on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Read the [Blog](https://blog.m3o.com) for content
-- See the [Docs](docs) for more info
+- See the [Docs](https://m3o.dev) for more info
 
 ## Contributing
 
-- **Showcase Apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](showcase) for more info
+- **Showcase Apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](https://m3o.dev/showcase) for more info
 - **Write Snippets** - Share code [snippets](snippets) built with M3O which we'll feature on the website soon
 - **Build Services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create Clients** - Help us create more [client libraries](docs/client-libraries) to work in many different languages
+- **Create Clients** - Help us create more [client libraries](https://m3o.dev/client-libraries) to work in many different languages
