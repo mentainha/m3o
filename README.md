@@ -163,7 +163,7 @@ See the [examples](../examples) for more use cases.
 - Follow us on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Read the [Blog](https://blog.m3o.com) for content
-- See the [Docs](https://m3o.dev/docs) for more info
+- See the [Docs](https://m3o.dev) for more info
 
 ## Contributing
 
