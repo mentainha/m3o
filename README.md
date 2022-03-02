@@ -155,7 +155,7 @@ Download the [m3o-cli](https://github.com/m3o/m3o-cli)
 m3o helloworld call --name=Alice
 ```
 
-See the [examples](../examples) for more use cases.
+See the [examples](examples) for more use cases.
 
 ## Learn More
 
