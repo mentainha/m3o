@@ -24,7 +24,7 @@ const SERVICE_LINKS: NavigationPropsLink[] = [
     pathname: '/[api]/api',
   },
   {
-    name: 'Try it out',
+    name: 'Explore',
     pathname: '/[api]/console',
   },
 ]
