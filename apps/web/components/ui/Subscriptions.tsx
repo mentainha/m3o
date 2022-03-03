@@ -53,7 +53,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Pro plus',
           '100 million requests per month',
-          'Shared projects and resources',
+          'Dedicated infra resources',
           'Premium support',
         ]}
         button={
