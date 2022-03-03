@@ -9,7 +9,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="Free to start"
         plan={SubscriptionPlans.Free}
-        description="For individuals and hackers"
+        description="For individuals and hobbyists"
         features={[
           'Access to 50+ public APIs',
           '1 million api calls per month',
@@ -20,7 +20,7 @@ export function Subscriptions(): ReactElement {
           <Link href="/register">
             <a
               className="btn block w-full text-center"
-              data-testid="subscription-solo-start-button">
+              data-testid="subscription-free-start-button">
               Start For Free
             </a>
           </Link>
@@ -29,7 +29,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="$25/month"
         plan={SubscriptionPlans.Pro}
-        description="For professionals and small business"
+        description="For professionals and small teams"
         features={[
           'Everything in Free plus',
           '20 million requests per month',
@@ -47,8 +47,8 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="$45/user/month"
-        plan={SubscriptionPlans.Team}
+        cost="$250/month"
+        plan={SubscriptionPlans.Business}
         description="For growing companies"
         features={[
           'Everything in Pro plus',
@@ -59,8 +59,8 @@ export function Subscriptions(): ReactElement {
         button={
           <a
             className="btn block w-full text-center"
-            data-testid="subscription-solo-start-button"
-            href="mailto:contact@m3o.com?subject=M3O Team Subscription">
+            data-testid="subscription-business-start-button"
+            href="mailto:contact@m3o.com?subject=M3O Business Plan">
             Contact Us
           </a>
         }

@@ -67,7 +67,7 @@ export enum BillingApiRoutes {
 export enum SubscriptionPlans {
   Free = 'free',
   Pro = 'pro',
-  Team = 'team',
+  Business = 'business',
 }
 
 export enum TimeSelections {
