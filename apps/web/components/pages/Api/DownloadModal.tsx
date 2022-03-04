@@ -43,7 +43,7 @@ export const DownloadModal: FC<Props> = ({
       <div className="px-2 py-6 flex justify-between items-center">
         <div className="w-9/12 pr-6">
           <h4 className="font-bold mb-2 text-black dark:text-white">
-            Open API JSON
+            OpenAPI JSON
           </h4>
           <p className="text-sm">
             Download the OpenAPI json for this API for importing to your

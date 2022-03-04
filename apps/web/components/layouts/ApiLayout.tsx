@@ -9,7 +9,6 @@ import { useDownloadFile, useGetRelatedApis, useRecentlyViewed } from '@/hooks'
 import { getDescription } from '@/utils/api'
 import { Routes } from '@/lib/constants'
 import { Footer, Header, Top10UsersButton } from '@/components/ui'
-import { RoundCircleCtas } from '../pages/Api/RoundCircleCtas'
 import { CategoryBubble } from '../ui/CategoryBubble'
 import { Navigation, RelatedItems, DownloadModal } from '@/components/pages/Api'
 import Link from 'next/link'
@@ -19,8 +18,6 @@ type ApiLayoutProps = WithAuthProps &
     displayName: string
     contentClassName?: string
   }
-
-export const CLOUD_APIS = ['app', 'user', 'db']
 
 export const ApiLayout: FC<ApiLayoutProps> = ({
   category,
@@ -70,17 +67,6 @@ export const ApiLayout: FC<ApiLayoutProps> = ({
       <Header />
       <div className="py-10 border-b tbc">
         <div className="m3o-container">
-          <div className="flex justify-between items-center mb-2">
-            {/*  */}
-            {/* <div className="flex items-center">
-              <Top10UsersButton apiName={router.query.api as string} /> */}
-            {/* {user && CLOUD_APIS.includes(name) && (
-                <a href="https://cloud.m3o.com/users" className="btn">
-                  Admin
-                </a>
-              )} */}
-            {/* </div> */}
-          </div>
           <div className="flex items-center justify-between">
             <div>
               <Link href="/explore">
@@ -97,10 +83,6 @@ export const ApiLayout: FC<ApiLayoutProps> = ({
               <p className="pb-6 text-lg text-zinc-700 dark:text-zinc-300">
                 {shortDescription}
               </p>
-              <RoundCircleCtas
-                apiName={name}
-                canManageOnCloud={CLOUD_APIS.includes(name)}
-              />
             </div>
             <div className="hidden md:block">
               <Link href={Routes.GettingStarted}>
