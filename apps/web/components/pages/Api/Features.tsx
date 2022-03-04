@@ -16,7 +16,7 @@ export const Features: FC<Props> = ({ features, serviceName }) => {
         Features
         <Link href={`/${serviceName}/api`}>
           <a className="text-sm font-light dark:text-indigo-300 underline flex items-center">
-            Full documentation <ChevronRightIcon className="w-4" />
+            API Reference <ChevronRightIcon className="w-4" />
           </a>
         </Link>
       </SubTitle>
