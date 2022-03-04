@@ -41,7 +41,7 @@ const GettingStarted: NextPage<Props> = ({ user, examples, requestSchema }) => {
         subTitle="Welcome to M3O! Follow this guide to get started."
       />
       <div className="bg-zinc-50 dark:bg-zinc-900">
-        <Section title="Sign Up" className="max-w-5xl">
+        <Section title="Sign Up">
           <p>
             <Link href={Routes.SignUp}>
               <a className="dark:text-blue-300">Sign up</a>
