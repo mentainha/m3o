@@ -18,14 +18,10 @@ export const Example: FC<Props> = ({ apiName, examples, requestSchema }) => {
   return (
     <>
       <SubTitle className="mt-6">Example</SubTitle>
-      <p className="mb-4">
-        Please see an example of how to get started with the{' '}
-        <span className="capitalize">{apiName}</span> api.
-      </p>
       <p className="mb-6">
-        For a more detailed view please see the{' '}
+        For a more examples see the{' '}
         <Link href={`/${apiName}/api`}>
-          <a>API page</a>
+          <a>API Reference</a>
         </Link>
       </p>
       <RequestBlock
