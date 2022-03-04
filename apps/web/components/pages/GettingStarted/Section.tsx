@@ -11,7 +11,7 @@ export const Section: FC<Props> = ({ children, title }) => {
         <h3 className="font-bold text-xl md:text-3xl mb-8 text-black dark:text-white">
           {title}
         </h3>
-        <div className="max-w-3xl">{children}</div>
+        <div className="max-w-5xl">{children}</div>
       </div>
     </section>
   )

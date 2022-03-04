@@ -41,7 +41,7 @@ const GettingStarted: NextPage<Props> = ({ user, examples, requestSchema }) => {
         subTitle="Welcome to M3O! Follow this guide to get started."
       />
       <div className="bg-zinc-50 dark:bg-zinc-900">
-        <Section title="Sign Up">
+        <Section title="Sign Up" className="max-w-5xl">
           <p>
             <Link href={Routes.SignUp}>
               <a className="dark:text-blue-300">Sign up</a>
@@ -62,7 +62,7 @@ const GettingStarted: NextPage<Props> = ({ user, examples, requestSchema }) => {
           <p className="mb-6">
             Here&apos;s a simple example to call the helloworld API:
           </p>
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <Example examples={examples} requestSchema={requestSchema} />
           </div>
         </Section>
@@ -76,7 +76,7 @@ const GettingStarted: NextPage<Props> = ({ user, examples, requestSchema }) => {
           </p>
         </Section>
         <Section title="Generate an API token">
-          <p className="max-w-3xl">
+          <p className="max-w-5xl">
             To create a new access token, visit{' '}
             <Link href={Routes.UserKeys}>
               <a className="dark:text-blue-300">API settings page</a>
