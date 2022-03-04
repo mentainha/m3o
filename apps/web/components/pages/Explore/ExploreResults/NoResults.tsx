@@ -11,7 +11,7 @@ export const NoResults: FC = () => {
         No matching APIs
       </h1>
       <p>We could not find any APIs based on your search.</p>
-      <p className="mt-2">
+      <p className="mt-2 mb-16">
         Can&apos;t find what you&apos;re looking for?{' '}
         <a
           href="https://forms.gle/RoYDNQk3myArHfZM9"
