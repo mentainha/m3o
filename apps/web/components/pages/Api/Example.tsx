@@ -19,7 +19,7 @@ export const Example: FC<Props> = ({ apiName, examples, requestSchema }) => {
     <>
       <SubTitle className="mt-6">Example</SubTitle>
       <p className="mb-6">
-        For a more examples see the{' '}
+        For more examples see the{' '}
         <Link href={`/${apiName}/api`}>
           <a>API Reference</a>
         </Link>
