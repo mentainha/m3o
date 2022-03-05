@@ -33,7 +33,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Free plus',
           '10 million requests per month',
-          '10x higher usage limits',
+          'Increased usage limits',
           'Email support',
         ]}
         button={
