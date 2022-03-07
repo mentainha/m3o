@@ -3,13 +3,6 @@
 		<img id="banner" src="assets/images/xaas.jpeg" />
 	</a>
 </p>
-<p align="center">
-	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
-	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
-	<a href="https://twitter.com/m3oservices"><img src="https://img.shields.io/badge/twitter-follow-blue"></a>
-	<a href="https://github.com/m3o/m3o"><img src="https://img.shields.io/badge/github-repo-yellow"></a>
-
-</p>
 
 <p align="center" style="font-weight: bold">
   <a href="https://m3o.com" style="color: #333333;">
