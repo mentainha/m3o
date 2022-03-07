@@ -167,6 +167,34 @@ m3o helloworld call --name=Alice
 
 See the [examples](examples) for more use cases.
 
+### Web
+
+```html
+<html>
+  <body>
+    <div id="client">
+      <form id="client-call" onsubmit="call()">
+        <div>
+          <input name="token" id="token" placeholder="M3O API TOKEN">
+        </div>
+        <div>
+          <input name="service" id="service" placeholder="service">
+        </div>
+        <div>
+          <input name="endpoint" name="endpoint" placeholder="endpoint">
+        </div>
+        <div>
+          <textarea rows=5 cols=30 name="request" id="request">{}</textarea>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+    <div id="response"></div>
+  </body>
+  <script src="https://web.m3o.com/client/index.js"></script>
+</html>
+```
+
 ## Learn More
 
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
