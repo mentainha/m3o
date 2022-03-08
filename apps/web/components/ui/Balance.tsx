@@ -22,7 +22,7 @@ export const Balance: FC = () => {
       )}
       <Link href={Routes.UserBilling}>
         <a className="block mt-4 text-xs bg-indigo-600 p-4 rounded-lg font-bold text-white align-middle text-center dark:text-white">
-          Add funds
+          Add credit
         </a>
       </Link>
     </div>

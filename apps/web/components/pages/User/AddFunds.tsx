@@ -17,7 +17,7 @@ export const AddFunds: FC = () => {
   return (
     <div className="mt-8 tbgc p-6 md:p-10 rounded-lg">
       <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
-        Add Funds
+        Add Credit
       </h3>
       <p className="ttc">Add funds to your account ($10 minimum).</p>
       <form
