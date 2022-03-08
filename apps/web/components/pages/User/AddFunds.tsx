@@ -19,7 +19,7 @@ export const AddFunds: FC = () => {
       <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
         Add Credit
       </h3>
-      <p className="ttc">Add funds to your account ($10 minimum).</p>
+      <p className="ttc">Add credit to your account ($10 minimum).</p>
       <form
         className="mt-4 md:grid md:grid-cols-5 md:gap-4 items-center max-w-3xl"
         onSubmit={handleSubmit((values: AddFundsFormFields) =>
