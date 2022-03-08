@@ -110,8 +110,8 @@ const GettingStarted: NextPage<Props> = ({ user, examples, requestSchema }) => {
           <p>
             M3O includes a command line interface from which you can explore and
             query services. Go to{' '}
-            <Link href="https://github.com/m3o/m3o/releases/latest">
-              <a className="dark:text-blue-300">https://github.com/m3o/m3o/releases/latest</a>
+            <Link href="https://github.com/m3o/m3o-cli/releases/latest">
+              <a className="dark:text-blue-300">https://github.com/m3o/m3o-cli/releases/latest</a>
             </Link>{' '}
             to download the latest release binary.
           </p>
