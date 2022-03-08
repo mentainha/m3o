@@ -17,7 +17,7 @@ export const CloudBanner: FC = () => {
         <Link href={Routes.SignUp}>
           <a className="btn inline-block my-6 mb-16">Get Started</a>
         </Link>
-        <div className="rounded-t-xl overflow-hidden max-w-6xl bg-zinc-900 dark:border dark:border-zinc-700 w-full -mb-10 px-6">
+        <div className="rounded-t-xl overflow-hidden bg-zinc-900 dark:border dark:border-zinc-700 w-full -mb-10 px-6 text-center">
           <img
             src="/cloud.png"
             className="h-full object-cover object-left w-full"
