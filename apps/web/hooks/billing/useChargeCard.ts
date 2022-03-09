@@ -46,7 +46,7 @@ export function useChargeCard() {
         }, 500)
 
         showToast({
-          message: `Successfully added $${variables.amount} to your balance`,
+          message: `Successfully added ${variables.amount} credits to your balance`,
           title: 'Success',
           type: ToastTypes.Success,
         })
