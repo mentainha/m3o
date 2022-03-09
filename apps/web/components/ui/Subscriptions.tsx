@@ -27,7 +27,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="$20/month"
+        cost="£20/month"
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
@@ -47,7 +47,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="$200/month"
+        cost="£200/month"
         plan={SubscriptionPlans.Business}
         description="For growing businesses"
         features={[
