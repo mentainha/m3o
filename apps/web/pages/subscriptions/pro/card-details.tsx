@@ -75,7 +75,7 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
       <h2 className="ttc border-b tbc pb-8 text-lg">
         Thank you for choosing M3O Pro. Please{' '}
         {cards.length ? 'select a card' : 'add a new card'}
-        {` `} to pay the first $25 of your subscription. You will be charged
+        {` `} to pay the first $20 of your subscription. You will be charged
         monthly from now till cancellation.
       </h2>
       {cards.length ? (
