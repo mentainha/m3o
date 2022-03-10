@@ -42,6 +42,16 @@ const EXAMPLES: Examples = {
     'Db.Read':
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/read/readRecords.sh',
   },
+  cli: {
+    'User.Login':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/user/login/logAUserIn.sh',
+    'User.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/user/create/createAnAccount.sh',
+    'Db.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/create/createARecord.sh',
+    'Db.Read':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/read/readRecords.sh',
+  },
 }
 
 export function useFetchExample({
