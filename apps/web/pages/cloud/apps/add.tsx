@@ -69,7 +69,6 @@ export default function CloudAddApp({ regions }: Props) {
           <div className="max-w-3xl">
             <FormProvider {...formMethods}>
               <form onSubmit={formMethods.handleSubmit(handleSubmit)}>
-                <h2 className="font-bold text-xl my-10">Configuration</h2>
                 <AppDetailsForm regions={regions} />
                 <h2 className="font-bold text-xl my-10">
                   Environment Variables

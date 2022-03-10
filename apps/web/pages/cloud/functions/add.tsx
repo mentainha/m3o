@@ -88,7 +88,6 @@ export default function CloudAddFunction({ regions, runtimes }: Props) {
                 onSubmit={formMethods.handleSubmit((values: DeployRequest) =>
                   addMutation.mutate(values as AddFunctionFormValues),
                 )}>
-                <h2 className="font-bold text-xl my-10">Configuration</h2>
                 <AddFunctionForm regions={regions} runtimes={runtimes} />
                 <h2 className="font-bold text-xl my-10">
                   Environment Variables
