@@ -6,15 +6,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import { MainLayout } from './MainLayout'
-import { Subscription, RecentlyViewed } from '@/components/pages/Home'
-import { Balance } from '@/components/ui'
 import { useWindowResizeTrigger, useBillingAccount } from '@/hooks'
 import { SubscriptionPlans } from '@/lib/constants'
 import {
   HomeIcon,
-  CloudIcon,
-  SearchIcon,
+  CodeIcon,
+  ServerIcon,
   ChartBarIcon,
+  UserGroupIcon,
+  DatabaseIcon,
   CashIcon,
   KeyIcon,
   SupportIcon,
@@ -46,6 +46,7 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    console.log(isMenuOpen)
     if (isMenuOpen) {
       const height = (menuRef.current?.firstChild as HTMLDivElement)
         .clientHeight
@@ -65,7 +66,7 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
       <button
         className="md:hidden w-full p-4 text-left flex justify-between"
         onClick={() => setIsMenuOpen(prev => !prev)}>
-        {link.text}
+        Navigation
         <ChevronDownIcon
           className={classNames('w-6', { 'rotate-180': isMenuOpen })}
         />
@@ -78,9 +79,9 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
           {items.map((item, i) => (
             <Fragment key={`section-${i}`}>
               {item.title && (
-                <h2 className="py-4 px-8 font-bold">{item.title}</h2>
+                <h2 className="py-4 px-8 font-medium">{item.title}</h2>
               )}
-              <ul className="mt-2 pb-6 md:pb-0">
+              <ul className="pb-6 md:pb-0 mb-2">
                 {item.items.map(
                   item =>
                     item && (
@@ -88,14 +89,9 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
                         <Link href={item.href}>
                           <a
                             className={classNames(
-                              'block py-2 px-8 border-l-4 text-zinc-900 text-sm dark:text-white',
-                              {
-                                'border-zinc-900 dark:border-zinc-50':
-                                  pathname === item.href,
-                                'border-transparent': pathname !== item.href,
-                              },
+                              'flex items-center py-2 px-12 text-zinc-900 text-sm dark:text-zinc-300',
                             )}>
-                            <item.icon className="w-5 mr-2 align-top inline" />
+                            <item.icon className="w-4 mr-2" />
                             {item.text}
                           </a>
                         </Link>
@@ -119,8 +115,8 @@ export function DashboardLayout({
 
   return (
     <MainLayout>
-      <section className="min-h-screen md:grid md:grid-cols-5">
-        <aside className="md:border-r tbc bg-white dark:bg-zinc-900 md:pt-6">
+      <section className="min-h-screen md:grid md:grid-cols-6">
+        <aside className=" bg-white dark:bg-zinc-900   md:pt-6 border-r tbc">
           <SidebarItems
             items={[
               {
@@ -131,16 +127,30 @@ export function DashboardLayout({
                     href: '/',
                     icon: HomeIcon,
                   },
+                ],
+              },
+              {
+                title: 'Cloud',
+                items: [
                   {
-                    text: 'Cloud',
-                    href: 'https://cloud.m3o.com',
-                    external: true,
-                    icon: CloudIcon,
+                    text: 'Apps',
+                    href: '/cloud/apps',
+                    icon: ServerIcon,
                   },
                   {
-                    text: 'Explore',
-                    href: '/explore',
-                    icon: SearchIcon,
+                    text: 'Database',
+                    href: '/cloud/database',
+                    icon: DatabaseIcon,
+                  },
+                  {
+                    text: 'Functions',
+                    href: '/cloud/functions',
+                    icon: CodeIcon,
+                  },
+                  {
+                    text: 'Users',
+                    href: '/cloud/users',
+                    icon: UserGroupIcon,
                   },
                 ],
               },
@@ -190,14 +200,7 @@ export function DashboardLayout({
             ]}
           />
         </aside>
-        <div className="col-span-4 bg-white dark:bg-zinc-900 p-4 md:p-10 xl:grid xl:grid-cols-3 gap-10">
-          <div className="col-span-2">{children}</div>
-          <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-4 md:mt-10 xl:mt-0">
-            <Subscription />
-            <Balance />
-            <RecentlyViewed />
-          </div>
-        </div>
+        <div className="col-span-5 bg-white dark:bg-zinc-900">{children}</div>
       </section>
     </MainLayout>
   )

@@ -17,6 +17,40 @@
       "title": "Account - Usage"
     }
   },
+  "cloud": {
+    "users": {
+      "main": {
+        "title": "Cloud - Users"
+      },
+      "add": {
+        "title": "Cloud - Users - Add"
+      }
+    },
+    "functions": {
+      "main": {
+        "title": "Cloud - Functions"
+      },
+      "add": {
+        "title": "Cloud - Functions - Add"
+      }
+    },
+    "database": {
+      "main": {
+        "title": "Cloud - Database"
+      },
+      "add": {
+        "title": "Cloud - Database - Add"
+      }
+    },
+    "apps": {
+      "main": {
+        "title": "Cloud - App"
+      },
+      "add": {
+        "title": "Cloud - App - Add"
+      }
+    }
+  },
   "dashboard": {
     "title": "Dashboard",
     "description": "Your M3O overview dashboard"

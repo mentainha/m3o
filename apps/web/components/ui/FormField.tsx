@@ -4,7 +4,7 @@ import classnames from 'classnames'
 export interface FormFieldProps {
   className?: string
   error?: string
-  label: string
+  label?: string
   labelClass?: string
   name: string
   required?: boolean
@@ -20,14 +20,16 @@ export const FormField: FC<FormFieldProps> = ({
   required,
 }) => {
   return (
-    <div className={classnames('pb-4 relative', className)}>
-      <label
-        htmlFor={name}
-        className={classnames('block mb-2 text-sm', labelClass)}>
-        {label} {required && <sup className="text-red-500">*</sup>}
-      </label>
+    <div className={classnames('pb-4', className)}>
+      {label && (
+        <label
+          htmlFor={name}
+          className={classnames('block mb-2 text-sm', labelClass)}>
+          {label} {required && <sup className="text-red-500">*</sup>}
+        </label>
+      )}
       {children}
-      {error && <p className="absolute text-red-700 text-sm mt-1">{error}</p>}
+      {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
     </div>
   )
 }

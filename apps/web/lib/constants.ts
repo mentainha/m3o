@@ -54,6 +54,10 @@ export enum LandingPageExampleNames {
 export enum QueryKeys {
   ApiKey = 'api-keys',
   BillingAccount = 'billing-account',
+  CloudApps = 'cloud-apps',
+  CloudUsers = 'cloud-users',
+  CloudFunctions = 'cloud-functions',
+  CloudDatabaseTables = 'cloud-database-tables',
   CurrentBalance = 'current-balance',
   History = 'history',
   SavedCards = 'saved-cards',
