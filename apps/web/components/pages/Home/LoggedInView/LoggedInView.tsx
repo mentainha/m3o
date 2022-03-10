@@ -13,9 +13,6 @@ interface LoggedInViewProps {
 export const LoggedInView: FC<LoggedInViewProps> = ({ apiToken, user }) => {
   return (
     <DashboardLayout>
-      <h1 className="p-6 md:p-10 text-3xl font-medium gradient-text">
-        Hello {user.name}
-      </h1>
       <div className="p-6 lg:p-10 md:grid gap-6 lg:grid-cols-3 xl:grid-cols-7">
         <div className="lg:col-span-2 xl:col-span-5">
           <APIKey apiToken={apiToken} />
