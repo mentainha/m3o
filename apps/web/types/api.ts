@@ -12,7 +12,7 @@ export interface ExampleItem {
   response: { [key: string]: unknown }
 }
 
-export type Languages = 'javascript' | 'bash' | 'go'
+export type Languages = 'javascript' | 'bash' | 'go' | 'cli'
 
 export interface ApiMethodExample {
   request: Record<string, any>
