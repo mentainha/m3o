@@ -16,6 +16,7 @@ type Extensions = Record<Languages, string>
 const URL = 'https://raw.githubusercontent.com/m3o'
 
 const EXTENSIONS: Extensions = {
+  cli: '.sh',
   bash: '.sh',
   go: '.go',
   javascript: '.js',
@@ -28,7 +29,7 @@ async function fetchCodeExample({
   path,
 }: FetchCodeExample) {
   const extension = EXTENSIONS[language]
-  const repo = `m3o-${extension.replace('.', '')}`
+  const repo = language == 'cli' ? 'm3o-cli' : `m3o-${extension.replace('.', '')}`
   const branch = 'main'
   const method = removeFullStopAtEnd(examplePath)
   const mainExtension = extension.includes('go') ? '/main' : ''

@@ -31,6 +31,7 @@ interface CompileCode {
 const LANGUAGES: LanguagesObject = {
   javascript: 'js',
   go: 'go',
+  cli: 'cli',
   bash: 'curl',
 }
 
