@@ -44,10 +44,10 @@
     },
     "apps": {
       "main": {
-        "title": "Cloud - App"
+        "title": "Cloud - Apps"
       },
       "add": {
-        "title": "Cloud - App - Add"
+        "title": "Cloud - Apps - Add"
       }
     }
   },
