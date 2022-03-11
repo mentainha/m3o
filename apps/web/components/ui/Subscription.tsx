@@ -44,6 +44,7 @@ export const Subscription: FC<Props> = ({
           {cost}
         </p>
       </div>
+      <div className="border-t dark:border-zinc-700 p-6">{button}</div>
       <div className="border-t dark:border-zinc-700 p-6 tgbc">
         <ul>
           {features.map(feature => (
@@ -58,7 +59,6 @@ export const Subscription: FC<Props> = ({
           ))}
         </ul>
       </div>
-      <div className="border-t dark:border-zinc-700 p-6">{button}</div>
     </div>
   )
 }
