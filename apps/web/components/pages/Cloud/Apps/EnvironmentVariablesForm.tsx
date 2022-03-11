@@ -70,17 +70,6 @@ export function EnvironmentVariablesForm(): ReactElement {
           </button>
         </div>
       ))}
-      {fields.length === 0 && (
-        <div className="p-6 tbgc mb-6 rounded-md text-center">
-          <p className="mb-6">No environment variables added</p>
-          <button
-            type="button"
-            className="btn"
-            onClick={() => append({ key: '', value: '' })}>
-            <PlusIcon className="w-4" />
-          </button>
-        </div>
-      )}
       <button
         type="button"
         className="btn mb-4 ml-auto self-start"

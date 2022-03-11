@@ -70,16 +70,16 @@ export default function CloudAddApp({ regions }: Props) {
             <FormProvider {...formMethods}>
               <form onSubmit={formMethods.handleSubmit(handleSubmit)}>
                 <AppDetailsForm regions={regions} />
-                <h2 className="font-bold text-xl my-10">
+                <p className="text-sm mb-4">
                   Environment Variables
-                </h2>
+                </p>
                 <EnvironmentVariablesForm />
                 <div className="border-t tbc">
                   <Button
                     className="mt-6 text-sm self-start"
                     type="submit"
                     loading={runAppMutation.isLoading}>
-                    Submit
+                    Run
                   </Button>
                 </div>
               </form>

@@ -111,7 +111,7 @@ export function Table<T extends ExpectedObject>({
   const tableInstance = useTable(
     {
       columns: columnsWithCheckboxes,
-      data,
+      data: data,
       defaultColumn,
       initialState: { pageSize: statePageSize || 20 },
     },

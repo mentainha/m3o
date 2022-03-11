@@ -89,16 +89,16 @@ export default function CloudAddFunction({ regions, runtimes }: Props) {
                   addMutation.mutate(values as AddFunctionFormValues),
                 )}>
                 <AddFunctionForm regions={regions} runtimes={runtimes} />
-                <h2 className="font-bold text-xl my-10">
+                <p className="text-sm mb-4">
                   Environment Variables
-                </h2>
+                </p>
                 <EnvironmentVariablesForm />
                 <div>
                   <Button
                     className="mt-6 text-sm"
                     type="submit"
                     loading={addMutation.isLoading}>
-                    Complete
+                    Deploy
                   </Button>
                 </div>
               </form>

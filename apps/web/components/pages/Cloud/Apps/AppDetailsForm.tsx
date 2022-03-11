@@ -56,6 +56,7 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
             {...field}
             label="Port"
             type="number"
+            placeholder="8080"
             error={fieldState.error?.message}
           />
         )}
@@ -68,6 +69,7 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
           <TextInput
             {...field}
             label="Branch"
+            placeholder="main"
             error={fieldState.error?.message}
           />
         )}
