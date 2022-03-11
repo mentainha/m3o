@@ -10,7 +10,9 @@ import { useWindowResizeTrigger, useBillingAccount } from '@/hooks'
 import { SubscriptionPlans } from '@/lib/constants'
 import {
   HomeIcon,
+  HeartIcon,
   CodeIcon,
+  SearchIcon,
   ServerIcon,
   ChartBarIcon,
   UserGroupIcon,
@@ -126,6 +128,16 @@ export function DashboardLayout({
                     text: 'Home',
                     href: '/',
                     icon: HomeIcon,
+                  },
+                  {
+                    text: 'Explore',
+                    href: '/explore',
+                    icon: SearchIcon,
+                  },
+                  {
+                    text: 'Status',
+                    href: 'https://status.m3o.com',
+                    icon: HeartIcon,
                   },
                 ],
               },

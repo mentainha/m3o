@@ -9,6 +9,10 @@ interface MenuItem {
 
 export const LOGGED_IN_MENU_ITEMS: MenuItem[] = [
   {
+    link: Routes.Home,
+    text: 'Home',
+  },
+  {
     link: Routes.UserUsage,
     text: 'Usage',
   },
@@ -43,18 +47,4 @@ export const LOGGED_OUT_HEADER_LINKS: HeaderLink[] = [
   },
 ]
 
-export const LOGGED_IN_HEADER_LINKS: HeaderLink[] = [
-  {
-    link: Routes.Home,
-    text: 'Home',
-  },
-  {
-    link: Routes.Explore,
-    text: 'Explore',
-  },
-  {
-    link: 'https://status.m3o.com',
-    text: 'Status',
-    external: true,
-  },
-]
+export const LOGGED_IN_HEADER_LINKS: HeaderLink[] = []
