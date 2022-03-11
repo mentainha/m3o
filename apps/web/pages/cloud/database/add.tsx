@@ -82,9 +82,8 @@ export default function CloudDatabaseAdd() {
             Back to database
           </BackButtonLink>
           <h1 className="text-3xl font-medium mb-6 gradient-text">
-            Add Database
+            Add Table
           </h1>
-          <h2 className="font-medium mb-6">Details</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Controller
               name="table"
@@ -98,14 +97,14 @@ export default function CloudDatabaseAdd() {
               }}
               render={({ field, fieldState }) => (
                 <TextInput
-                  label="Table Name"
+                  label="Name"
                   {...field}
                   error={fieldState.error?.message}
                 />
               )}
             />
-            <h2 className="mb-6 mt-10 font-medium">
-              Please enter the fields for your first database item
+            <h2 className="mb-6 mt-6 font-medium">
+              Create a first record by specifying key-value pairs
             </h2>
             {fields.map((field, i) => {
               return (

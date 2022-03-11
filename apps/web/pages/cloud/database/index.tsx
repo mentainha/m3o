@@ -37,7 +37,7 @@ export default function CloudDatabase() {
           </LinkButton>
         </div>
         <div className="p-6">
-          <h2 className="mb-4">Please select table:</h2>
+          <h2 className="mb-4">Tables</h2>
           {isFetching ? (
             <Spinner />
           ) : (
