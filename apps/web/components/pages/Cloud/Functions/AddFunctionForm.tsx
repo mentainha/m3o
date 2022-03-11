@@ -88,6 +88,7 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
           />
         )}
       />
+      {/*
       <Controller
         control={control}
         name="region"
@@ -104,6 +105,7 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
           />
         )}
       />
+     */}
     </>
   )
 }

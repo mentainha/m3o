@@ -83,10 +83,6 @@ export default function CloudApps() {
         accessor: 'branch',
       },
       {
-        Header: 'Region',
-        accessor: 'region',
-      },
-      {
         Header: 'URL',
         accessor: 'url',
         Cell: ({ value }) => <a href={value}>{value}</a>,

@@ -44,7 +44,6 @@ const APP_FIELDS: (keyof Service)[] = [
   'name',
   'id',
   'branch',
-  'region',
   'port',
   'repo',
 ]
