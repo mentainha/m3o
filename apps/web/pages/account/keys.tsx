@@ -46,7 +46,6 @@ const Keys: NextPage<KeysProps> = () => {
           <h1 className="gradient-text text-3xl mb-6 pb-4 font-medium">
             API Keys
           </h1>
-          <KeysApiUsage />
           <PersonalToken />
           <ApiKeys
             onDeleteClick={setDeleteKeyId}
