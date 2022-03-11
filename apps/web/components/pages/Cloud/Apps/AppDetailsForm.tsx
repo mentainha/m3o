@@ -49,6 +49,19 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
       />
       <Controller
         control={control}
+        name="branch"
+        rules={{ required: 'Please provide a branch' }}
+        render={({ field, fieldState }) => (
+          <TextInput
+            {...field}
+            label="Branch"
+            placeholder="main"
+            error={fieldState.error?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
         name="port"
         rules={{ required: 'Please provide a port number' }}
         render={({ field, fieldState }) => (
@@ -57,19 +70,6 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
             label="Port"
             type="number"
             placeholder="8080"
-            error={fieldState.error?.message}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="branch"
-        rules={{ required: 'Please provide a branch' }}
-        render={({ field, fieldState }) => (
-          <TextInput
-            {...field}
-            label="Branch"
-            placeholder="main"
             error={fieldState.error?.message}
           />
         )}
