@@ -49,7 +49,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£200/month"
+        cost="Scale as you grow"
         plan={SubscriptionPlans.Business}
         description="For growing businesses"
         features={[
