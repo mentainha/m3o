@@ -72,11 +72,10 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
           {error as string}
         </Alert>
       )}
-      <h2 className="ttc border-b tbc pb-8 text-lg">
-        Thank you for choosing M3O Pro. Please{' '}
-        {cards.length ? 'select a card' : 'add a new card'}
-        {` `} to pay the first $20 of your subscription. You will be charged
-        monthly from now till cancellation.
+      <h2 className="ttc tbc border-b pb-8 text-lg">
+        Please{' '}
+        {cards.length ? 'select a card' : 'add a new card'}.
+        You will be charged monthly from now until cancellation.
       </h2>
       {cards.length ? (
         <>
@@ -89,7 +88,7 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
             disabled={!cardId}
             onClick={() => subscribe(cardId)}
             loading={isCompleting}>
-            Complete
+            Upgrade
           </Button>
         </>
       ) : (
