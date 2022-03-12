@@ -52,6 +52,22 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
       />
       <Controller
         control={control}
+        name="runtime"
+        rules={{ required: 'Please select a runtime' }}
+        render={({ field, fieldState }) => (
+          <Select
+            {...field}
+            label="Runtime"
+            error={fieldState.error?.message}
+            options={[
+              ...runtimes.map(item => ({ name: item, value: item })),
+            ]}
+          />
+        )}
+      />
+      {/*
+      <Controller
+        control={control}
         name="subfolder"
         render={({ field, fieldState }) => (
           <TextInput
@@ -72,22 +88,6 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
           />
         )}
       />
-      <Controller
-        control={control}
-        name="runtime"
-        rules={{ required: 'Please select a runtime' }}
-        render={({ field, fieldState }) => (
-          <Select
-            {...field}
-            label="Runtime"
-            error={fieldState.error?.message}
-            options={[
-              ...runtimes.map(item => ({ name: item, value: item })),
-            ]}
-          />
-        )}
-      />
-      {/*
       <Controller
         control={control}
         name="region"
