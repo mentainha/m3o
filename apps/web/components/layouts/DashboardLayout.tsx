@@ -91,9 +91,9 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
                         <Link href={item.href}>
                           <a
                             className={classNames(
-                              'flex items-center py-2 px-12 text-zinc-900 text-sm dark:text-zinc-300',
+                              'flex items-center py-2 px-12 text-zinc-900 dark:text-zinc-300',
                             )}>
-                            <item.icon className="w-4 mr-2" />
+                            <item.icon className="w-6 mr-2" />
                             {item.text}
                           </a>
                         </Link>
@@ -122,7 +122,7 @@ export function DashboardLayout({
           <SidebarItems
             items={[
               {
-                title: 'Menu',
+                title: 'Public',
                 items: [
                   {
                     text: 'Home',
