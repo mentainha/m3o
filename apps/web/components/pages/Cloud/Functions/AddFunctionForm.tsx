@@ -46,6 +46,7 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
           <TextInput
             {...field}
             label="Branch"
+            placeholder="main"
             error={fieldState.error?.message}
           />
         )}
