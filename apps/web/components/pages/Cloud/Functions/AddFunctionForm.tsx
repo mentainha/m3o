@@ -82,7 +82,6 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
             label="Runtime"
             error={fieldState.error?.message}
             options={[
-              { name: 'Please select', value: '' },
               ...runtimes.map(item => ({ name: item, value: item })),
             ]}
           />
@@ -99,7 +98,6 @@ export function AddFunctionForm({ regions, runtimes }: Props): ReactElement {
             label="Region"
             error={fieldState.error?.message}
             options={[
-              { name: 'Please select', value: '' },
               ...regions.map(item => ({ name: item, value: item })),
             ]}
           />
