@@ -91,7 +91,7 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
                         <Link href={item.href}>
                           <a
                             className={classNames(
-                              'flex items-center py-2 px-12 text-zinc-900 dark:text-zinc-300',
+                              'flex items-center py-2 px-12 text-sm text-zinc-900 dark:text-zinc-300',
                             )}>
                             <item.icon className="w-6 mr-2" />
                             {item.text}
@@ -118,7 +118,7 @@ export function DashboardLayout({
   return (
     <MainLayout>
       <section className="min-h-screen md:grid md:grid-cols-6">
-        <aside className=" bg-white dark:bg-zinc-900   md:pt-6 border-r tbc">
+        <aside className=" bg-white dark:bg-zinc-900  md:pt-6 border-r tbc">
           <SidebarItems
             items={[
               {
