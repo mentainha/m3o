@@ -8,7 +8,7 @@ export const Balance: FC = () => {
   const { data = 0, isLoading } = useGetCurrentBalance()
 
   return (
-    <div className="mb-6 bg-zinc-900 dark:bg-zinc-800 text-white">
+    <div className="bg-zinc-900 dark:bg-zinc-800 text-white">
       <h5 className="font-bold text-xl ">Balance</h5>
       <p className="mt-2 font-light mb-4 text-zinc-400">
         Your current account balance

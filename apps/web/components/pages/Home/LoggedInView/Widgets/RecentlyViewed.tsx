@@ -20,7 +20,7 @@ export const RecentlyViewed: FC = () => {
   const { recentlyViewedApis, isLoading } = useRecentlyViewed()
 
   return (
-    <div className="mt-10 text-white">
+    <div className="text-white">
       <h5 className="font-bold text-xl mb-4">Recently Viewed</h5>
       {isLoading ? <Spinner /> : renderRecentlyViewed(recentlyViewedApis)}
     </div>

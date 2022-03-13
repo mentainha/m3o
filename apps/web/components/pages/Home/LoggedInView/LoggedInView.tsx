@@ -14,14 +14,20 @@ export const LoggedInView: FC<LoggedInViewProps> = ({ apiToken, user }) => {
   return (
     <DashboardLayout>
       <div className="p-6 lg:p-10 md:grid gap-6 lg:grid-cols-3 xl:grid-cols-7">
-        <div className="lg:col-span-2 xl:col-span-5">
+        <div className="lg:col-span-2 xl:col-span-5 md:px-12">
           <APIKey apiToken={apiToken} />
           <LegacyUsage />
         </div>
-        <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 xl:col-span-2 mt-6 md:mt-0">
-          <Subscription />
-          <Balance />
-          <RecentlyViewed />
+        <div className="rounded-lg xl:col-span-2 mt-6 md:mt-0">
+          <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-6 md:mt-0 mb-6">
+            <Subscription />
+          </div>
+          <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-6 md:mt-0 mb-6">
+            <Balance />
+          </div>
+          <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-6 md:mt-0 mb-6">
+            <RecentlyViewed />
+          </div>
         </div>
       </div>
       {/* <Usage /> */}

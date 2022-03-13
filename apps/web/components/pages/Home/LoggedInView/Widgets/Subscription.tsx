@@ -8,7 +8,7 @@ export const Subscription: FC = () => {
   const { subscriptionLevel } = useBillingAccount()
 
   return (
-    <div className="text-white mb-10">
+    <div className="text-white">
       <h5 className="font-bold text-xl mb-4">Subscription Plan</h5>
       {subscriptionLevel && (
         <SubscriptionPlanBubble
