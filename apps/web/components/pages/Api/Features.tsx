@@ -13,7 +13,7 @@ export const Features: FC<Props> = ({ features, serviceName }) => {
   return (
     <>
       <SubTitle className="flex justify-between">
-        Features
+        Endpoints
         <Link href={`/${serviceName}/api`}>
           <a className="text-sm font-light dark:text-indigo-300 underline flex items-center">
             API Reference <ChevronRightIcon className="w-4" />
@@ -24,7 +24,7 @@ export const Features: FC<Props> = ({ features, serviceName }) => {
         <thead className="border-b border-solid border-zinc dark:border-zinc-700">
           <tr>
             <th className="text-left text-xs font-medium tracking-wider py-3 text-zinc-400">
-              Endpoint
+              Name
             </th>
             <th className="text-left text-xs font-medium tracking-wider py-3 text-zinc-400 px-4">
               Description
