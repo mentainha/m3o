@@ -65,7 +65,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
             Subscription Plans
           </h2>
           <Subscriptions />
-          <h2 className="font-bold text-xl md:text-4xl md:mt-16">
+          <h2 className="font-bold text-xl md:text-4xl md:mt-16 mt-8">
             API Pricing
           </h2>
           <div className="my-10">
