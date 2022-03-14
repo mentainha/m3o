@@ -151,7 +151,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
         <Section title="Fair Usage Policy">
           <p>
             Our free tier is rate limited to 10 requests per second. This can be
-            unlocked to 100 requests/second by upgrading to the Pro subscription.
+            unlocked by upgrading to the Pro subscription.
             We also invoke fair usage limits on compute and storage. During the
             beta period no hard limits are enforced, we will reach out if there
             are any issues.
