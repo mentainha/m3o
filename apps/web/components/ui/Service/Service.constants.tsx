@@ -51,6 +51,7 @@ export const ICONS: Icons = {
   answer: QuestionMarkCircleIcon,
   app: TerminalIcon,
   avatar: UserCircleIcon,
+  bitcoin: MoonIcon,
   cache: DatabaseIcon,
   carbon: CloudIcon,
   chat: ChatAltIcon,
