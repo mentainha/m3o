@@ -177,7 +177,6 @@ See the [examples](examples) for more use cases.
 
 ## Contributing
 
-- **Showcase Apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](https://m3o.dev/showcase) for more info
 - **Build Services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
 - **Create Clients** - Help us create more [client libraries](https://m3o.dev/client-libraries) to work in many different languages
 
