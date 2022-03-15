@@ -12,7 +12,7 @@ export function Subscriptions(): ReactElement {
         description="For hackers and hobbyists"
         features={[
           'Access to 50+ public APIs',
-          '10,000 requests per month',
+          '100,000 requests per month',
           'Top-up to pay as you grow',
           'Community support',
         ]}
