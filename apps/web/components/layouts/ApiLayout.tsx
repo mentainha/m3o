@@ -94,7 +94,7 @@ export const ApiLayout: FC<ApiLayoutProps> = ({
           </div>
         </div>
       </div>
-      <div className="border-b tbc bg-zinc-100 dark:bg-zinc-800 mb-8">
+      <div className="bg-zinc-100 dark:bg-zinc-800 mb-8">
         <div className="m3o-container">
           <Navigation onDownloadsClick={() => setShowDownloadsModal(true)} />
         </div>
