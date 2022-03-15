@@ -175,11 +175,6 @@ See the [examples](examples) for more use cases.
 - Read the [Blog](https://blog.m3o.com) for content
 - See the [Docs](https://m3o.dev) for more info
 
-## Contributing
-
-- **Build Services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create Clients** - Help us create more [client libraries](https://m3o.dev/client-libraries) to work in many different languages
-
 ## Development
 
 Go into `apps/web` and run `npm install && npm run dev`. The site will be available on `localhost:3000`. 
