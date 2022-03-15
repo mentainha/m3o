@@ -157,9 +157,3 @@ See the [examples](https://github.com/m3o/m3o/tree/main/examples) for more use c
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 - Read the [Blog](https://blog.m3o.com) for content
 - See the [Docs](docs) for more info
-
-## Contributing
-
-- **Showcase Apps** - Show off your work and win up to $100 in swag and prizes. See [showcase](showcase) for more info
-- **Build Services** - Every API you build is rewarded $10 in credit. See the discussion [thread](https://github.com/m3o/m3o/discussions/92)
-- **Create Clients** - Help us create more [client libraries](client-libraries) to work in many different languages
