@@ -1,8 +1,4 @@
-<p align="center">
-	<a href="https://m3o.com" style="color: #333333;">
-		<img id="banner" src="docs/assets/images/xaas.jpeg" />
-	</a>
-</p>
+
 <p align="center">
 	<a href="https://discord.gg/TBR9bRjd6Z"><img src="https://img.shields.io/badge/join-discord-purple"></a>
 	<a href="https://m3o.com"><img src="https://img.shields.io/badge/signup-free-green"></a>
