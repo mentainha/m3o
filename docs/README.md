@@ -112,18 +112,17 @@ npm install m3o
 Call helloworld like so
 
 ```javascript
-const { HelloworldService } = require("m3o/helloworld");
+const m3o = require("m3o")(process.env.M3O_API_TOKEN);
 
-const helloworldService = new HelloworldService(process.env.M3O_API_TOKEN);
-
-async function callHelloworld() {
-  const rsp = await helloworldService.call({
-    name: "Alice",
+// Call returns a personalised "Hello $name" response
+async function main() {
+  let rsp = await m3o.helloworld.call({
+    name: "John",
   });
   console.log(rsp);
 }
 
-callHelloworld();
+main();
 ```
 
 Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
