@@ -7,7 +7,7 @@ import(
 {{ end }}
 )
 
-func NewClient(token string) *Client {
+func New(token string) *Client {
 	return &Client{
 		token: token,
 		{{ range $service := .services }}
@@ -87,16 +87,17 @@ import(
 	"fmt"
 	"os"
 
+	"go.m3o.com"
 	"go.m3o.com/{{ $service.Name}}"
 )
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func main() {
-	{{ $service.Name }}Service := {{ $service.Name }}.New{{ title $service.Name }}Service(os.Getenv("M3O_API_TOKEN"))
-	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := {{ $service.Name }}Service.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+	client := m3o.New(os.Getenv("M3O_API_TOKEN"))
+	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := client.{{ $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
 	})
 	fmt.Println(rsp, err){{ end -}}
-	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := {{ $service.Name }}Service.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := client.{{ $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
 	})
 	if err != nil {
