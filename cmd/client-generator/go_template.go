@@ -93,11 +93,11 @@ import(
 
 {{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func main() {
 	client := m3o.New(os.Getenv("M3O_API_TOKEN"))
-	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := client.{{ $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := client.{{ title $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
 	})
 	fmt.Println(rsp, err){{ end -}}
-	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := client.{{ $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
+	{{ if isStream $service.Spec $service.Name $reqType }}stream, err := client.{{ title $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}
 	})
 	if err != nil {
