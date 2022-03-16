@@ -3,6 +3,7 @@ import {
   AnnotationIcon,
   ClockIcon,
   CodeIcon,
+  ChartBarIcon,
   ChatIcon,
   ChatAltIcon,
   CloudIcon,
@@ -48,6 +49,7 @@ type Icons = Record<string, ComponentType<ComponentProps<'svg'>> | undefined>
 
 export const ICONS: Icons = {
   address: LocationMarkerIcon,
+  analytics: ChartBarIcon,
   answer: QuestionMarkCircleIcon,
   app: TerminalIcon,
   avatar: UserCircleIcon,
