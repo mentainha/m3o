@@ -96,19 +96,22 @@ Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
 Import packages from [go.m3o.com](https://pkg.go.dev/go.m3o.com)
 
 ```go
-import "go.m3o.com/helloworld"
+import (
+        "go.m3o.com"
+        "go.m3o.com/helloworld"
+)
 ```
 
 Create a new client with your API token and call it
 
 ```go
-helloworldService := helloworld.NewHelloworldService(os.Getenv("M3O_API_TOKEN"))
+client := m3o.New(os.Getenv("M3O_API_TOKEN"))
 
-rsp, err := helloworldService.Call(&helloworld.CallRequest{
-	"Name": "Alice",
+rsp, err := client.Helloworld.Call(&helloworld.CallRequest{
+	Name: "John",
 })
 
-fmt.Println(rsp.Message)
+fmt.Println(rsp, err)
 ```
 
 Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
