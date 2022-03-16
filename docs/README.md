@@ -1,19 +1,4 @@
-<p align="center">
-	<a href="https://m3o.com" style="color: #333333;">
-		<img id="banner" src="assets/images/xaas.jpeg" />
-	</a>
-</p>
-
-<p align="center" style="font-weight: bold">
-  <a href="https://m3o.com" style="color: #333333;">
-    <img id="banner" src="assets/images/m3o.png" style="width: 100px; height: auto;"/>
-  </a>
-  <br>
-  Next generation cloud
-  <p align="center"><a href="https://m3o.com/register" id="signup">Signup and start for FREE</a></p>
-</p>
-
-## Introduction
+# Introduction
 
 M3O is a next generation cloud plaform. Explore, discover and consume public APIs as simpler programmable building blocks.
 
