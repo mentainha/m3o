@@ -13,7 +13,6 @@
   </a>
   <br>
   Next generation cloud
-  <p align="center"><a href="https://m3o.com/register" id="signup">Signup and start for FREE</a></p>
 </p>
 
 ---
