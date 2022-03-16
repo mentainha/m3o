@@ -91,7 +91,7 @@ import(
 	"go.m3o.com/{{ $service.Name}}"
 )
 
-{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}func main() {
+func main() {
 	client := m3o.New(os.Getenv("M3O_API_TOKEN"))
 	{{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}rsp, err := client.{{ title $service.Name }}.{{ title .endpoint }}(&{{ $service.Name }}.{{ title .endpoint }}Request{
 		{{ goExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}

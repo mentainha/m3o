@@ -37,7 +37,7 @@ export interface {{ title $typeName }}{{ "{" }}
 
 const tsExampleTemplate = `{{ $service := .service }}const m3o = require('m3o')(process.env.M3O_API_TOKEN)
 
-{{ if endpointComment .endpoint $service.Spec.Components.Schemas }}{{ endpointComment .endpoint $service.Spec.Components.Schemas }}{{ end }}async function main() {
+async function main() {
         let rsp = await m3o.{{ $service.Name }}.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
         {{ $reqType := requestType .endpoint }}{{ if isNotStream $service.Spec $service.Name $reqType }}console.log(rsp)
         {{ end }}{{ if isStream $service.Spec $service.Name $reqType }}rsp.onMessage(msg => {
