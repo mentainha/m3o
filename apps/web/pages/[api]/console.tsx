@@ -7,6 +7,7 @@ import { withAuth, WithAuthProps } from '@/lib/api/m3o/withAuth'
 import { FormattedService, FormattedEndpoint } from '@/types'
 import { lowercaseFirstLetter } from '@/utils/helpers'
 import { schemaToJSON, returnFormattedEndpointName } from '@/utils/api'
+import { CategoryBubble } from '@/components/ui'
 
 interface Props extends WithAuthProps, FormattedService {
   formattedEndpoints: FormattedEndpoint[]
@@ -80,8 +81,13 @@ const Console: NextPage<Props> = ({
       name={name}
       category={category}
       summaryDescription={description}
-      contentClassName="pt-4 pb-6"
       user={user}>
+      <div className="pb-8 md:pb-0 font-medium mt-6">
+        <CategoryBubble className="inline-block mb-4">
+          {category}
+        </CategoryBubble>
+        <h1 className="font-medium text-2xl md:text-3xl">{display_name}</h1>
+      </div>
       <Endpoints
         onEndpointClick={setSelectedEndpoint}
         selectedEndpoint={selectedEndpoint}

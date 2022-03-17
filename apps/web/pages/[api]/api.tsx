@@ -9,6 +9,7 @@ import {
   returnFormattedEndpointName,
   getPrice,
 } from '@/utils/api'
+import { CategoryBubble } from '@/components/ui'
 import { lowercaseFirstLetter } from '@/utils/helpers'
 import { withAuth, WithAuthProps } from '@/lib/api/m3o/withAuth'
 import { Languages, FormattedService } from '@/types'
@@ -66,9 +67,14 @@ const Api: NextPage<Props> = ({
       displayName={display_name}
       name={name}
       category={category}
-      contentClassName="pt-6 pb-6"
       summaryDescription={summaryDescription}
       user={user}>
+      <div className="pb-8 md:pb-0 font-medium mt-6 md:mb-10">
+        <CategoryBubble className="inline-block mb-4">
+          {category}
+        </CategoryBubble>
+        <h1 className="font-medium text-2xl md:text-3xl">{display_name}</h1>
+      </div>
       {endpoints.map(endpoint => {
         return (
           <EndpointCard

@@ -28,11 +28,11 @@ a {
 }
 
 .tab {
-  @apply border-transparent text-zinc-600 dark:text-zinc-300 py-4 mr-8 border-b-2 border-solid block text-sm;
+  @apply border-transparent text-zinc-600 dark:text-zinc-300 py-2 mr-8 border-b-2 border-solid block text-sm;
 }
 
 .tab.selected {
-  @apply border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400;
+  @apply border-indigo-600 text-zinc-600 dark:text-zinc-300 dark:border-indigo-400 font-bold;
 }
 
 .gradient-text {
@@ -87,4 +87,14 @@ option {
 }
 .endpoint-caller {
   max-height: 640px;
+}
+
+.api-max-width {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.endpoint-card {
+  @apply border-t dark:border-zinc-700 pt-6 md:py-10;
 }
