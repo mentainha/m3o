@@ -30,7 +30,6 @@ import {
   NewspaperIcon,
   QuestionMarkCircleIcon,
   QrcodeIcon,
-  CurrencyDollarIcon,
   TerminalIcon,
   TicketIcon,
   TrendingUpIcon,
