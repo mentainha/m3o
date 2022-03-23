@@ -1,4 +1,5 @@
 import type { DeployRequest } from 'm3o/function'
+import type { EditorProps } from '@monaco-editor/react'
 import type { AddFunctionFormValues } from '@/types'
 import { NextSeo } from 'next-seo'
 import { useForm, FormProvider } from 'react-hook-form'
@@ -16,10 +17,28 @@ import {
   EnvironmentVariablesForm,
 } from '@/components/pages/Cloud'
 
-interface Props {
+type Props = {
+  user: Account
   runtimes: string[]
   regions: string[]
-  user: Account
+}
+
+const options: EditorProps['options'] = {
+  automaticLayout: true,
+  contextmenu: false,
+  folding: false,
+  glyphMargin: false,
+  lineNumbers: 'on',
+  lineDecorationsWidth: 40,
+  lineNumbersMinChars: 0,
+  renderLineHighlight: 'none',
+  minimap: {
+    enabled: false,
+  },
+  scrollbar: {
+    vertical: 'hidden',
+    horizontal: 'hidden',
+  },
 }
 
 export const getServerSideProps = withAuth(async ({ req }) => {
@@ -41,14 +60,17 @@ export const getServerSideProps = withAuth(async ({ req }) => {
 
   return {
     props: {
-      runtimes,
-      regions,
       user: req.user,
+      regions,
+      runtimes,
     } as Props,
   }
 })
 
-export default function CloudAddFunction({ regions, runtimes }: Props) {
+export default function CloudAddFunctionFromSource({
+  regions,
+  runtimes,
+}: Props) {
   const router = useRouter()
   const m3o = useM3OClient()
   const formMethods = useForm<DeployRequest>()
@@ -89,9 +111,7 @@ export default function CloudAddFunction({ regions, runtimes }: Props) {
                   addMutation.mutate(values as AddFunctionFormValues),
                 )}>
                 <AddFunctionForm regions={regions} runtimes={runtimes} />
-                <p className="text-sm mb-4">
-                  Environment Variables
-                </p>
+                <p className="text-sm mb-4">Environment Variables</p>
                 <EnvironmentVariablesForm />
                 <div>
                   <Button
