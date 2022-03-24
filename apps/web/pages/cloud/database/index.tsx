@@ -34,9 +34,9 @@ export default function CloudDatabase() {
           <h1 className="text-2xl md:text-3xl font-medium gradient-text">
             Database
           </h1>
-          <LinkButton href="/cloud/database/add" className="text-sm">
+          {/* <LinkButton href="/cloud/database/add" className="text-sm">
             Add
-          </LinkButton>
+          </LinkButton> */}
         </div>
         <div className="p-6">
           <h2 className="mb-4">Tables</h2>
