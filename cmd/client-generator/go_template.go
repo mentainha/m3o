@@ -121,7 +121,6 @@ const curlExampleTemplate = `{{ $reqType := requestType .endpoint }}{{ $service 
 {{ .example.ShellRequest }}
 {{ else if isNotStream $service.Spec $service.Name $reqType }}
 curl "https://api.m3o.com/v1/{{ $service.Name }}/{{ title .endpoint }}" \
--X POST \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $M3O_API_TOKEN" \
 -d '{{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }}'
