@@ -7,7 +7,6 @@ import seo from '@/lib/seo.json'
 import {
   AboutUs,
   AWSComparison,
-  Investors,
   Banner,
   OfferApiBanner,
   SellingPoints,
@@ -30,7 +29,6 @@ const About: NextPage = () => {
         <SellingPoints />
         <AboutUs />
         <AWSComparison />
-        <Investors />
         <OfferApiBanner />
       </MainLayout>
     </>
