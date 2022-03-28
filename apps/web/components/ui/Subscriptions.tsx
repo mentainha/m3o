@@ -5,7 +5,7 @@ import { SubscriptionPlans } from '@/lib/constants'
 
 export function Subscriptions(): ReactElement {
   return (
-    <div className="grid md:grid-cols-4 mt-10 text-left gap-4">
+    <div className="grid xl:grid-cols-4 mt-10 text-left gap-4">
       <Subscription
         cost="Free to start"
         plan={SubscriptionPlans.Free}
