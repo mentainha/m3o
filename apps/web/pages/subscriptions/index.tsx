@@ -1,16 +1,11 @@
-import type { NextPage } from 'next'
 import type { WithAuthProps } from '@/lib/api/m3o/withAuth'
 import { useRouter } from 'next/router'
 import { Elements } from '@stripe/react-stripe-js'
 import { useEffect, useState } from 'react'
 import { withAuth } from '@/lib/api/m3o/withAuth'
-import { Routes, SessionStorageKeys } from '@/lib/constants'
+import { Routes, SubscriptionPlans } from '@/lib/constants'
 import { SubscriptionsLayout } from '@/components/layouts'
-import {
-  useLocalStripe,
-  useGetSavedCards,
-  useSubscribeToProTier,
-} from '@/hooks'
+import { useLocalStripe, useGetSavedCards, useSubscribeToTier } from '@/hooks'
 import {
   CardDetailsCheckoutForm,
   Spinner,
@@ -18,6 +13,10 @@ import {
   Alert,
 } from '@/components/ui'
 import { PaymentMethods } from '@/components/pages/subscriptions'
+
+interface Props extends WithAuthProps {
+  tier: SubscriptionPlans
+}
 
 export const getServerSideProps = withAuth(async context => {
   if (!context.req.user) {
@@ -31,29 +30,26 @@ export const getServerSideProps = withAuth(async context => {
 
   return {
     props: {
+      tier: context.query.tier,
       user: context.req.user,
     },
   }
 })
 
-const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
+export default function SubscriptionsCardDetails({ user, tier }: Props) {
   const [cardId, setCardId] = useState('')
   const router = useRouter()
   const {
-    subscribe,
+    mutate,
     isLoading: isCompleting,
     error,
-  } = useSubscribeToProTier({
+  } = useSubscribeToTier({
     onSuccess: () => {
-      router.push(Routes.SubscriptionProSuccess)
+      router.push(Routes.SubscriptionSuccess)
     },
   })
   const { cards, isLoading } = useGetSavedCards()
   const stripePromise = useLocalStripe(user!)
-
-  useEffect(() => {
-    window.sessionStorage.removeItem(SessionStorageKeys.SubscriptionFlow)
-  }, [])
 
   useEffect(() => {
     if (cards.length === 1) {
@@ -65,6 +61,10 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
     return <Spinner />
   }
 
+  const handleSubscribe = () => {
+    return mutate({ card_id: cardId, id: tier })
+  }
+
   return (
     <SubscriptionsLayout>
       {error && (
@@ -72,10 +72,9 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
           {error as string}
         </Alert>
       )}
-      <h2 className="ttc tbc border-b pb-8 text-lg">
-        Please{' '}
-        {cards.length ? 'select a card' : 'add a new card'}.
-        You will be charged monthly from now until cancellation.
+      <h2 className="ttc tbc border-b pb-8 md:text-lg">
+        Please {cards.length ? 'select a card' : 'add a new card'}. You will be
+        charged monthly from now until cancellation.
       </h2>
       {cards.length ? (
         <>
@@ -86,18 +85,16 @@ const SubscriptionsProCardDetails: NextPage<WithAuthProps> = ({ user }) => {
           />
           <Button
             disabled={!cardId}
-            onClick={() => subscribe(cardId)}
+            onClick={handleSubscribe}
             loading={isCompleting}>
             Upgrade
           </Button>
         </>
       ) : (
         <Elements stripe={stripePromise.current}>
-          <CardDetailsCheckoutForm handleSubscribe={subscribe} />
+          <CardDetailsCheckoutForm handleSubscribe={handleSubscribe} />
         </Elements>
       )}
     </SubscriptionsLayout>
   )
 }
-
-export default SubscriptionsProCardDetails
