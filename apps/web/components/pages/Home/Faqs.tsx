@@ -73,10 +73,7 @@ const FAQs: FAQItem[] = [
     content: (
       <>
         <p className="mb-6">
-          The majority of our APIs are free, with a 1000 request per month
-          quota on the free tier. Third party APIs or calls that perform
-          specific functions such as SMS or email are charged for and billed per
-          request. Each account has a credit based balance. Any request made to
+          Each account has a credit based balance. Any request made to
           a paid API will be debited from the balance in real time. When your
           balance is zero requests to paid APIs will return a blocked status.
         </p>
@@ -91,12 +88,20 @@ const FAQs: FAQItem[] = [
   {
     title: 'What is included in the free tier?',
     content: (
-      <p>
-        Our free tier is rate limited to 10 requests per second. This can be
-        unlocked by upgrading to the Pro subscription. We also invoke fair usage
-        limits on compute and storage. During the beta period no hard limits are
-        enforced, we will reach out if there are any issues.
-      </p>
+      <>
+        <p className="mb-6">
+          The majority of our APIs are free, with a 1000 request per month
+          quota on the free tier. Third party APIs or calls that perform
+          specific functions such as SMS or email are charged for and billed per
+          request.
+        </p>
+        <p>
+          Our free tier is rate limited to 10 requests per second. This can be
+          unlocked by upgrading to the Pro subscription. We also invoke fair usage
+          limits on compute and storage. During the beta period no hard limits are
+          enforced, we will reach out if there are any issues.
+        </p>
+      </>
     ),
   },
   {

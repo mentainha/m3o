@@ -15,7 +15,7 @@ export function AccordionItem({
   onClick,
 }: PropsWithChildren<Props>): ReactElement {
   return (
-    <div className="border-b border-zinc-800 overflow-hidden ">
+    <div className="border-b border-zinc-800 overflow-hidden max-w-2xl m-auto">
       <button
         className="text-left flex w-full justify-between items-center py-8 font-bold"
         onClick={onClick}>
