@@ -130,7 +130,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
         </Section>
         <Section title="Account Billing">
           <p>
-            The majority of our APIs are free, with a 1000 request per
+            The majority of our APIs are free, with a 10,000 request per
             month quota on the free tier. Third party APIs or calls that perform specific
             functions such as SMS or email are charged for and billed per
             request. Each account has a credit based balance. Any request made

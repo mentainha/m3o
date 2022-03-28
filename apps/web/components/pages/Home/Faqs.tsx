@@ -90,7 +90,7 @@ const FAQs: FAQItem[] = [
     content: (
       <>
         <p className="mb-6">
-          The majority of our APIs are free, with a 1000 request per month
+          The majority of our APIs are free, with a 10,000 request per month
           quota on the free tier. Third party APIs or calls that perform
           specific functions such as SMS or email are charged for and billed per
           request.
