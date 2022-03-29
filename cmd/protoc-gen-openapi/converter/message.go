@@ -222,7 +222,8 @@ func (c *Converter) convertField(curPkg *ProtoPackage, desc *descriptor.FieldDes
 						continue
 					}
 					fieldName := parts[1]
-					if strings.ToLower(fieldName) == *desc.Name {
+
+					if strings.ToLower(fieldName) == strings.Replace(*desc.Name, "_", "", -1) {
 						isList = f.Desc.IsList()
 						field = f
 					}
