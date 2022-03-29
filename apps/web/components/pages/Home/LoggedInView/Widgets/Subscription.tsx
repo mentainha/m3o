@@ -8,7 +8,7 @@ type SubscriptionUpgradeLinksProps = {
   level: SubscriptionPlans
 }
 
-const LINK_CLASSES = 'text-sm flex items-center mb-2 last:mb-0'
+const LINK_CLASSES = 'text-sm ml-2 mb-2 last:mb-0 inline-block capitalize rounded-full bg-zinc-200 dark:bg-zinc-700 p-1 px-4'
 
 type Link = {
   tier: SubscriptionPlans
@@ -17,22 +17,23 @@ type Link = {
 
 const LINKS: Link[] = [
   {
-    tier: SubscriptionPlans.Pro,
-  },
-  {
     tier: SubscriptionPlans.Solo,
     show: tier => tier !== SubscriptionPlans.Solo,
+  },
+  {
+    tier: SubscriptionPlans.Pro,
   },
 ]
 
 function SubscriptionUpgradeLinks({ level }: SubscriptionUpgradeLinksProps) {
   return (
     <div className="mt-4">
+      Upgrade to
       {LINKS.map(link => {
         if (!link.show || link.show(level)) {
           return (
             <Link href={`/subscriptions?tier=${link.tier}`}>
-              <a className={LINK_CLASSES}>Upgrade to {link.tier}</a>
+              <a className={LINK_CLASSES}>{link.tier}</a>
             </Link>
           )
         }

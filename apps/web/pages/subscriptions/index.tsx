@@ -72,9 +72,12 @@ export default function SubscriptionsCardDetails({ user, tier }: Props) {
           {error as string}
         </Alert>
       )}
+      <h2 className="ttc pb-8 md:text-lg">
+        Thanks for choosing to upgrade to the {tier} tier.
+      </h2>
       <h2 className="ttc tbc border-b pb-8 md:text-lg">
-        Please {cards.length ? 'select a card' : 'add a new card'}. You will be
-        charged monthly from now until cancellation.
+        Please {cards.length ? 'select a card' : 'add a new card'}.
+        You will be charged monthly from now until cancellation.
       </h2>
       {cards.length ? (
         <>
@@ -87,7 +90,7 @@ export default function SubscriptionsCardDetails({ user, tier }: Props) {
             disabled={!cardId}
             onClick={handleSubscribe}
             loading={isCompleting}>
-            Upgrade
+            Upgrade to {tier}
           </Button>
         </>
       ) : (
