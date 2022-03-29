@@ -7,8 +7,10 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 
+	"github.com/fatih/camelcase"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/stoewer/go-strcase"
 )
@@ -42,10 +44,14 @@ func (c *cliG) ExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title s
 	}
 	b := bytes.Buffer{}
 	buf := bufio.NewWriter(&b)
+
+	command := strings.Join(camelcase.Split(endpoint), " ")
+
 	err = templ.Execute(buf, map[string]interface{}{
 		"service":  service,
 		"example":  example,
 		"endpoint": endpoint,
+		"command":  strings.ToLower(command),
 		"funcName": strcase.UpperCamelCase(title),
 	})
 
