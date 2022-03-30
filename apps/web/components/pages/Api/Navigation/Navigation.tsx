@@ -52,20 +52,6 @@ export const Navigation: FC<Props> = ({ onDownloadsClick }) => {
           </li>
         ))}
       </ul>
-      <div className="md:flex hidden">
-        <Button
-          onClick={onDownloadsClick}
-          className="ml-8 flex items-center font-regular dark:text-zinc-300">
-          Downloads
-          <DownloadIcon className="w-4 ml-1" />
-        </Button>
-        {/* <Button onClick={onDownloadsClick} className="mr-8 flex items-center">
-          Share
-        </Button>
-        <Button onClick={onDownloadsClick} className="flex items-center">
-          Add to favourites
-        </Button> */}
-      </div>
     </div>
   )
 }
