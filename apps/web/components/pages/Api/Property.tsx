@@ -9,7 +9,7 @@ interface Props {
 
 export const Property: FC<Props> = ({ description = '', title, type }) => {
   return (
-    <div className="mb-4 last:mb-0">
+    <div className="my-6 last:mb-0">
       <p className="text-black font-medium mb-1 text-sm dark:text-white">
         {title}
         <span className="ml-1 inline-block text-zinc-500 font-light text-xs">
@@ -17,7 +17,7 @@ export const Property: FC<Props> = ({ description = '', title, type }) => {
           {type}
         </span>
       </p>
-      <p className="mb-2 font-light text-sm max-w-md text-zinc-500 dark:text-zinc-400">
+      <p className="mb-4 font-light text-sm max-w-md text-zinc-500 dark:text-zinc-400">
         {description}
       </p>
     </div>
