@@ -12,7 +12,7 @@ export function Subscriptions(): ReactElement {
         description="For testing and hacking"
         features={[
           'Access to 50+ public APIs',
-          '10,000 requests per month',
+          '1000 requests per month',
           'Top-up to pay as you grow',
           'Community support',
         ]}
@@ -32,7 +32,7 @@ export function Subscriptions(): ReactElement {
         description="For creators and developers"
         features={[
           'Everything in Free plus',
-          '100,000 requests per month',
+          '10,000 requests per month',
           'Unlock paid APIs and features',
           'Increased rate limits',
         ]}
@@ -52,7 +52,7 @@ export function Subscriptions(): ReactElement {
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
-          '1 million requests per month',
+          '100,000 requests per month',
           'Higher SLAs & response times',
           'Email support',
         ]}
