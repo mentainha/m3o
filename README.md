@@ -1,11 +1,3 @@
-<p align="center" style="font-weight: bold">
-  <a href="https://m3o.com" style="color: #333333;">
-    <img id="banner" src="docs/assets/images/m3o.png" style="width: 100px; height: auto;"/>
-  </a>
-  <br>
-  Next generation cloud
-</p>
-
 ---
 
 <p align="center">
