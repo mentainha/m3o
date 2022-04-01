@@ -7,12 +7,12 @@ export function Subscriptions(): ReactElement {
   return (
     <div className="grid xl:grid-cols-4 mt-10 text-left gap-4">
       <Subscription
-        cost="Free to start"
+        cost="Pay as you grow"
         plan={SubscriptionPlans.Free}
         description="For testing and hacking"
         features={[
           'Access to 50+ public APIs',
-          '1 million requests per month',
+          '1M requests per credit',
           'Top-up to pay as you grow',
           'Community support',
         ]}
@@ -32,7 +32,7 @@ export function Subscriptions(): ReactElement {
         description="For creators and developers"
         features={[
           'Everything in Free plus',
-          '5 million requests per month',
+          '5M requests per month',
           'Unlock paid APIs and features',
           'Increased rate limits',
         ]}
@@ -52,7 +52,7 @@ export function Subscriptions(): ReactElement {
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
-          '10 million requests per month',
+          '10M requests per month',
           'Higher SLAs & response times',
           'Email support',
         ]}
@@ -67,12 +67,12 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="Scale as you grow"
+        cost="£200/month"
         plan={SubscriptionPlans.Business}
         description="For growing businesses"
         features={[
           'Everything in Pro plus',
-          'Unlimited requests per month',
+          '100M requests per month',
           'Dedicated infrastructure',
           'Premium support',
         ]}
