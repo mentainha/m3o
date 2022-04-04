@@ -13,8 +13,9 @@ export function Subscriptions(): ReactElement {
         features={[
           'Access to 50+ public APIs',
           '1M requests per credit',
-          'Top-up to pay as you grow',
-          'Community support',
+          '100 User accounts',
+          '1000 DB records',
+          '1GB Space storage',
         ]}
         button={
           <Link href="/register">
@@ -33,8 +34,10 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Free plus',
           '5M requests per month',
-          'Unlock paid APIs and features',
-          'Increased rate limits',
+          '1000 User accounts',
+          '10,000 DB records',
+          '10GB Space storage',
+          'Community support',
         ]}
         button={
           <Link href="/register?subscription=solo">
@@ -52,8 +55,11 @@ export function Subscriptions(): ReactElement {
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
+          'Increased rate limits',
           '10M requests per month',
-          'Higher SLAs & response times',
+          '10,000 User accounts',
+          '100,000 DB records',
+          '100GB Space storage',
           'Email support',
         ]}
         button={
@@ -73,7 +79,9 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Pro plus',
           '100M requests per month',
-          'Dedicated infrastructure',
+          '100,000 user accounts',
+          '1M DB records',
+          '1TB Space storage',
           'Premium support',
         ]}
         button={
