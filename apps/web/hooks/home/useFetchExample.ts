@@ -52,6 +52,16 @@ const EXAMPLES: Examples = {
     'Db.Read':
       'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/read/readRecords.sh',
   },
+  dart: {
+    'User.Login':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/user/login/logAUserIn/main.dart',
+    'User.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/user/create/createAnAccount/main.dart',
+    'Db.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/db/create/createARecord/main.dart',
+    'Db.Read':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/db/read/readRecords/main.dart',
+  },
 }
 
 export function useFetchExample({

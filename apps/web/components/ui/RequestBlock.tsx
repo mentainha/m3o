@@ -29,13 +29,14 @@ interface CompileCode {
 }
 
 const LANGUAGES: LanguagesObject = {
+  dart: 'dart',
   javascript: 'js',
   go: 'go',
   cli: 'cli',
   bash: 'curl',
 }
 
-const STRING_KEY_LANGUAGES: Languages[] = ['javascript', 'go']
+const STRING_KEY_LANGUAGES: Languages[] = ['javascript', 'go', 'dart']
 
 function returnDropdownButtonClass(selected: boolean) {
   return classnames(
