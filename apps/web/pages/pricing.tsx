@@ -70,11 +70,8 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
           </h2>
           <div className="my-10">
             <p className="mb-4">
-              The majority of our API&apos;s are{' '}
-              <strong className="font-bold text-black dark:text-white">
-                FREE
-              </strong>{' '}
-              to use, with a monthly quota to get you started.
+              Each tier comes with a free request quota per month.
+              1000 for free, 10,000 for solo, 100,000 for pro and 1,000,000 for business.
             </p>
             <p className="mb-4 text-sm">
               Additional requests are charged at 0.000001 credit per request or in
@@ -89,7 +86,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
                 Paid APIs
               </h1>
               <p className="mb-4">
-                Please see below for a list of our exclusively paid API&apos;s.
+                See below for exclusively paid API&apos;s charged directly from your account credit.
               </p>
               {prices.map(price => (
                 <ApiPriceBreakdown key={price.id} {...price} />
