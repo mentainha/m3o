@@ -13,11 +13,24 @@ export const CodeBlock: FC<Props> = ({ code, language = 'javascript' }) => {
       language={language}
       showLineNumbers={false}
       style={nord}
+      wrapLines={true}
+      codeTagProps={{
+        style: {
+          overflowY: 'scroll',
+        },
+      }}
+      lineProps={{
+        style: {
+          wordBreak: 'break-all',
+          whiteSpace: 'pre-wrap',
+        },
+      }}
       customStyle={{
         fontSize: 14,
         marginTop: 0,
         paddingLeft: 30,
         background: 'transparent',
+        overflowY: 'scroll',
       }}>
       {code}
     </SyntaxHighlighter>
