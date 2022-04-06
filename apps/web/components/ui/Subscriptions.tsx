@@ -33,7 +33,7 @@ export function Subscriptions(): ReactElement {
         description="For creators and developers"
         features={[
           'Everything in Free plus',
-          '5M requests per month',
+          '5M requests in credit',
           '1000 User accounts',
           '10,000 DB records',
           '10GB Space storage',
@@ -56,7 +56,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Solo plus',
           'Increased rate limits',
-          '10M requests per month',
+          '10M requests in credit',
           '10,000 User accounts',
           '100,000 DB records',
           '100GB Space storage',
@@ -78,8 +78,8 @@ export function Subscriptions(): ReactElement {
         description="For growing businesses"
         features={[
           'Everything in Pro plus',
-          '100M requests per month',
-          '100,000 user accounts',
+          '100M requests in credit',
+          '100,000 User accounts',
           '1M DB records',
           '1TB Space storage',
           'Premium support',
