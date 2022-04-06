@@ -28,7 +28,6 @@ const About: NextPage = () => {
         <Banner />
         <SellingPoints />
         <AboutUs />
-        <AWSComparison />
         <OfferApiBanner />
       </MainLayout>
     </>
