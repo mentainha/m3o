@@ -17,10 +17,6 @@ type Link = {
 
 const LINKS: Link[] = [
   {
-    tier: SubscriptionPlans.Solo,
-    show: tier => tier !== SubscriptionPlans.Solo,
-  },
-  {
     tier: SubscriptionPlans.Pro,
   },
 ]
