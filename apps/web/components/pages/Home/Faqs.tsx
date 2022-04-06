@@ -74,8 +74,8 @@ const FAQs: FAQItem[] = [
       <>
         <p className="mb-6">
           Each account has a credit based balance. Any request made to
-          a paid API will be debited from the balance in real time. When your
-          balance is zero requests to paid APIs will return a blocked status.
+          a an API will be debited from the balance in real time. When your
+          balance is zero requests to any API will return a blocked status.
         </p>
         <p>
           Additional API calls beyond the free quota are charged at 0.000001
