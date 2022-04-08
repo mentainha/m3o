@@ -1,7 +1,6 @@
 # Introduction
 
-M3O is a next generation cloud. Explore, discover and consume public APIs as simpler programmable building blocks 
-all on one platform.
+Explore, discover and consume public APIs as simpler programmable building blocks all on one platform.
 
 ## Features
 
