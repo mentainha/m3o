@@ -4,8 +4,6 @@ M3O is a next generation cloud platform. One platform, one account and one frame
 
 ## Features
 
-Here are the main features:
-
 - **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
 - **☝️ One Account** - Manage your API usage with one account and one token.
 - **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
@@ -14,7 +12,7 @@ Here are the main features:
 
 ## Services
 
-So far there are over 50+ APIs. Here are some of the highlights:
+So far there are over 60+ APIs. Here are some of the highlights:
 
 ### ☁️ Cloud
 
