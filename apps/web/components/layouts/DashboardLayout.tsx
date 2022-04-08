@@ -92,7 +92,7 @@ export function SidebarItems({ items }: SidebarItemsProps): ReactElement {
                             className={classNames(
                               'flex items-center py-2 px-12 text-sm text-zinc-900 dark:text-zinc-300',
                             )}>
-                            <item.icon className="w-6 mr-2" />
+                            {item.icon && <item.icon className="w-6 mr-2" />}
                             {item.text}
                           </a>
                         </Link>
