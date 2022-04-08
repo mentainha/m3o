@@ -4,7 +4,7 @@ FROM node:14-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json ./
-COPY package-lock.json
+COPY package-lock.json ./
 RUN npm install
 
 # Rebuild the source code only when needed
