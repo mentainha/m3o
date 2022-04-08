@@ -67,10 +67,10 @@ export const Footer: FC = () => {
               <li>
                 <a
                   className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm"
-                  href="https://cloud.m3o.com"
+                  href="https://m3o.com/playground"
                   target="_blank"
                   rel="noreferrer">
-                  Cloud
+                  Client
                 </a>
               </li>
               <li>
