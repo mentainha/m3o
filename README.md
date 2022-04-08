@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Explore, discover and consume public APIs as simpler programmable building blocks all on one platform. 
+M3O is a next generation cloud platform. Explore, discover and consume public APIs as simpler programmable building blocks all in one place. 
 
 ## Features
 
