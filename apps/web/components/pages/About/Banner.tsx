@@ -11,9 +11,8 @@ export const Banner: FC = () => {
           Next Generation Cloud
         </h1>
         <h2 className="text-md md:text-lg max-w-xl mx-auto text-zinc-700 dark:text-zinc-400 font-medium">
-          We are building a new cloud platform for the next generation of
-          developers. Consume public APIs as simpler programmable building
-          blocks for a 10x developer experience.
+          Explore, discover and consume public APIs as simpler programmable building
+          blocks all on one platform for a 10x developer experience.
         </h2>
         <div className="mt-6">
           <Link href={Routes.SignUp}>
