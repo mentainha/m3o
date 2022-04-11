@@ -11,7 +11,7 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Free}
         description="For testing and hacking"
         features={[
-          'Free to get started',
+          'Unlimited API calls',
           '1M requests per credit',
           '100 User accounts',
           '1000 DB records',
