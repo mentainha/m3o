@@ -22,6 +22,7 @@ import {
   SupportIcon,
   UsersIcon,
   MailIcon,
+  TerminalIcon,
 } from '@heroicons/react/outline'
 
 interface SidebarItem {
@@ -127,6 +128,11 @@ export function DashboardLayout({
                     text: 'Home',
                     href: '/',
                     icon: HomeIcon,
+                  },
+                  {
+                    text: 'Client',
+                    href: '/client',
+                    icon: TerminalIcon,
                   },
                   {
                     text: 'Explore',

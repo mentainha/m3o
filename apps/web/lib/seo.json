@@ -51,6 +51,10 @@
       }
     }
   },
+  "client": {
+    "title": "Client",
+    "description": "M3O API Client"
+  },
   "dashboard": {
     "title": "Dashboard",
     "description": "Your M3O overview dashboard"
