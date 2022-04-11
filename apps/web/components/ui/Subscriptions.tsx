@@ -7,7 +7,7 @@ export function Subscriptions(): ReactElement {
   return (
     <div className="grid xl:grid-cols-4 mt-10 text-left gap-4">
       <Subscription
-        cost="£5 top-up"
+        cost="Pay as you grow"
         plan={SubscriptionPlans.Free}
         description="For testing and hacking"
         features={[
