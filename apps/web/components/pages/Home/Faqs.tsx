@@ -24,8 +24,11 @@ const FAQs: FAQItem[] = [
       <>
         <p className="mb-6">
           M3O APIs can be accessed via the url
-          "https://api.m3o.com/v1/[service]/[endpoint] ". All API calls require
-          an API token to be provided. You can specify the token in one of three
+          https://api.m3o.com/v1/*.
+        </p>
+        <p className="mb-6">
+          All requests require
+          an API token. You can specify the token in one of three
           ways:
         </p>
         <ul className="list-disc mb-6">
@@ -42,15 +45,8 @@ const FAQs: FAQItem[] = [
           </li>
         </ul>
         <p className="mb-6">
-          Our APIs provide a JSON based request/response format and also require
+          APIs provide a JSON based request/response and require
           a 'Content-Type: application/json' header for each request.
-        </p>
-        <p>
-          After familiarising yourself with an API by reading the API reference
-          (e.g{' '}
-          <a href="https://m3o.com/db/api#Read">https://m3o.com/db/api#Read</a>)
-          you probably want to start calling the API. M3O APIs can be called via
-          HTTP in any language or using our node.js and Golang specific clients.
         </p>
       </>
     ),
@@ -77,7 +73,7 @@ const FAQs: FAQItem[] = [
           will be debited from the balance in real time. When your balance is
           zero requests to any API will return a blocked status.
         </p>
-        <p>
+        <p className="mb-6">
           API calls are charged at 0.000001 credit per request (aka £1 per 1 
           million requests). Premium calls are priced higher, see the pricing 
           page for more info.

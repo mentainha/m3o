@@ -88,7 +88,11 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
         <Section title="Using an API">
           <p className="mt-4 mb-4">
             M3O APIs can be accessed via the url
-            &#34;https://api.m3o.com/v1/[service]/[endpoint] &#34;. All API
+            https://api.m3o.com/v1/*.
+          </p>
+
+          <p className="mt-4 mb-4">
+	    All API
             calls require an API token to be provided. You can specify the token in one of three ways:
             <ul className="list-disc mt-2">
               <li>via the &#34;Authorization&#34; header. Prepend your API token with the string &#34;Bearer&#34;
@@ -103,19 +107,8 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
           </p>
 
           <p className="mt-4">
-            Our APIs provide a JSON based request/response format and also require a `Content-Type: application/json`
+            APIs provide a JSON based request/response and also a `Content-Type: application/json`
             header for each request.
-          </p>
-
-          <p className="mt-4">
-            After familiarising yourself with an API by reading the API
-            reference (e.g{' '}
-            <Link href="/db/api#Read">
-              <a className="dark:text-blue-300">https://m3o.com/db/api#Read</a>
-            </Link>
-            ) you probably want to start calling the API. M3O APIs can be
-            called via HTTP in any language or using our node.js and Golang
-            specific clients.
           </p>
         </Section>
         <Section title="Download the CLI">
