@@ -40,9 +40,6 @@ export const Usage: FC<Props> = ({ showAllResults = false }) => {
         <h5 className="font-bold text-xl text-black dark:text-white">
           Your API Usage
         </h5>
-        <p className="my-2 ttc text-sm mb-6">
-          Free quota remaining: {10000000} requests
-        </p>
         {Object.values(TimeSelections).map(value => (
           <button
             onClick={() => setTimeSelection(value)}
