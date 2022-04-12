@@ -78,9 +78,12 @@ const FAQs: FAQItem[] = [
           zero requests to any API will return a blocked status.
         </p>
         <p>
-          Additional API calls beyond the free quota are charged at 0.000001
-          credit per request (aka £1 per 1 million requests). To check your
-          balance and top-up your account head to the Billing page.
+          API calls are charged at 0.000001 credit per request (aka £1 per 1 
+          million requests). Premium calls are priced higher, see the pricing 
+          page for more info.
+        </p>
+        <p>
+          To check your balance and top-up your account head to the Billing page.
         </p>
       </>
     ),

@@ -136,8 +136,12 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
             status.
           </p>
           <p className="mt-4">
-            Additional API calls beyond the free quota are charged at 0.000001
-            credit per request (aka £1 per 1 million requests). To check your balance
+            API calls are charged at 0.000001 credit per request (aka £1 per 
+            1 million requests). Premium APIs are charged differently. See the 
+            pricing page for more info.
+          </p>
+          <p className="mt-4">
+            To check your balance
             and top-up your account head to the{' '}
             <Link href={user ? Routes.UserBilling : Routes.Login}>
               <a className="dark:text-blue-300">Billing page</a>
