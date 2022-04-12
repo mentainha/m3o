@@ -89,24 +89,6 @@ const FAQs: FAQItem[] = [
     ),
   },
   {
-    title: 'What is included in the free tier?',
-    content: (
-      <>
-        <p className="mb-6">
-          The majority of our APIs are free, with a 1000 request per month quota
-          on the free tier. Third party APIs or calls that perform specific
-          functions such as SMS or email are charged for and billed per request.
-        </p>
-        <p>
-          Our free tier is rate limited to 10 requests per second. This can be
-          unlocked by upgrading to the Pro subscription. We also invoke fair
-          usage limits on compute and storage. During the beta period no hard
-          limits are enforced, we will reach out if there are any issues.
-        </p>
-      </>
-    ),
-  },
-  {
     title: 'What is the best way to contact M3O?',
     content: (
       <p>
