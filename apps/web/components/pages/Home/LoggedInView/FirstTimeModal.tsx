@@ -11,15 +11,17 @@ export const FirstTimeModal: FC<ModalProps> = props => {
       </h1>
       <p className="mb-4 dark:text-zinc-400">
         Thanks for signing up, it&apos;s great to have you onboard.
-        If you've signed up to the Free tier you're welcome to try the 
-        service for 7 days, no credit card needed. After which you should 
-        either top-up your account balance or upgrade to the Solo or Pro 
-        subscription plans.
+        If you&apos;re not on a subscription the first thing you&apos;ll 
+        need to do is go to the{' '}
+        <Link href="/account/billing">
+          <a target="_blank">Account Billing</a>
+        </Link>{' '}
+        page and add credit before making any API calls.
       </p>
       <p className="my-4 dark:text-zinc-400">
-        To learn more head to the{' '}
+        To learn more about the platform go to the{' '}
         <Link href="/getting-started">
-          <a target="_blank">getting started</a> guide.
+          <a target="_blank">Getting Started</a> guide.
         </Link>
       </p>
       <Button onClick={props.closeModal}>Close</Button>
