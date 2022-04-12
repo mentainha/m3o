@@ -11,7 +11,7 @@ import {
 } from '@/components/pages/Home'
 import { MainLayout } from '@/components/layouts'
 import { ServicesGrid } from '@/components/ui'
-
+import { OfferApiBanner } from '@/components/pages/About'
 interface Props extends BannerProps {
   services: ExploreAPI[]
 }
@@ -34,7 +34,8 @@ export function Landing({
           <Faqs />
         </div>
       </section>
+      <OfferApiBanner /> 
       <SubscribeSection />
-    </MainLayout>
+   </MainLayout>
   )
 }

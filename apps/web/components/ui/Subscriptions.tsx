@@ -75,7 +75,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="£200/month"
         plan={SubscriptionPlans.Business}
-        description="For growing businesses"
+        description="Sell APIs on M3O"
         features={[
           'Everything in Pro plus',
           '100M requests in credit',

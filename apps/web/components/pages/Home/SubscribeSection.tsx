@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 export const SubscribeSection: FC = () => {
   return (
-    <section className="bg-white dark:bg-zinc-800">
+    <section>
       <div className="m3o-container sm py-36 text-left">
         <h4 className="font-bold text-4xl text-white">
           Subscribe to the latest updates
