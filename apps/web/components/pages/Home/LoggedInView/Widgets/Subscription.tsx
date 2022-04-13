@@ -23,7 +23,7 @@ const LINKS: Link[] = [
 
 function SubscriptionUpgradeLinks({ level }: SubscriptionUpgradeLinksProps) {
   return (
-    <div className="mt-4">
+    <div className="mt-2">
       Upgrade to
       {LINKS.map(link => {
         if (!link.show || link.show(level)) {

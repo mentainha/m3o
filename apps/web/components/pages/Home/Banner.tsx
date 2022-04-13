@@ -15,8 +15,8 @@ export interface BannerProps {
 
 const BANNER_LINKS: BannerLink[] = [
   {
-    text: 'Explore APIs',
-    link: Routes.Explore,
+    text: 'Get Started',
+    link: Routes.SignUp,
   },
 ]
 
