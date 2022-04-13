@@ -13,6 +13,7 @@ export function Subscriptions(): ReactElement {
         features={[
           '10k requests for free',
           '1M requests per credit',
+          '10 requests a second',
           '100 User accounts',
           '1000 DB records',
           '1GB Space storage',
@@ -34,6 +35,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Free plus',
           '5M requests in credit',
+          '100 requests a second',
           '1000 User accounts',
           '10,000 DB records',
           '10GB Space storage',
@@ -55,8 +57,8 @@ export function Subscriptions(): ReactElement {
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
-          'Increased rate limits',
           '10M requests in credit',
+          '1000 requests a second',
           '10,000 User accounts',
           '100,000 DB records',
           '100GB Space storage',
@@ -79,6 +81,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Pro plus',
           '100M requests in credit',
+          '10,000 requests a second',
           '100,000 User accounts',
           '1M DB records',
           '1TB Space storage',
