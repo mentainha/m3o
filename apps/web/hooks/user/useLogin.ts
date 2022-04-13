@@ -1,3 +1,4 @@
+import type { AxiosError } from 'axios'
 import { useRouter } from 'next/router'
 import { useMutation } from 'react-query'
 import { loginUser } from '@/lib/api/local/user'

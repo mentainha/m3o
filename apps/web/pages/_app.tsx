@@ -1,10 +1,12 @@
 import type { AppProps } from 'next/app'
+import type { AxiosError } from 'axios'
 import { DefaultSeo } from 'next-seo'
+import { Toaster, toast } from 'react-hot-toast'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ThemeProvider } from 'next-themes'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider, MutationCache } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
 import { CookiesProvider } from 'react-cookie'
 import { UserProvider, ToastProvider } from '@/providers'
@@ -27,6 +29,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             retry: false,
           },
         },
+        mutationCache: new MutationCache({
+          onError: error => {
+            const e = error as AxiosError
+
+            if ((e.response?.data as ApiError).detail) {
+              toast.error(e.response?.data.detail)
+            }
+          },
+        }),
       }),
   )
 
@@ -72,6 +83,14 @@ function MyApp({ Component, pageProps }: AppProps) {
               </Hydrate>
               <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>
+            <Toaster
+              toastOptions={{
+                style: {
+                  background: '#333',
+                  color: '#fff',
+                },
+              }}
+            />
           </ToastProvider>
         </CookiesProvider>
       </UserProvider>
