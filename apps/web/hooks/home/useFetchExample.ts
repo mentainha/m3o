@@ -13,6 +13,10 @@ type Examples = Record<Languages, Record<LandingPageExampleNames, string>>
 // Easier for the moment.
 const EXAMPLES: Examples = {
   javascript: {
+    'Cache.Get':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/cache/get/getAValue.js',
+    'Cache.Set':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/cache/set/setAValue.js',
     'Db.Create':
       'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/create/createARecord.js',
     'Db.Read':
@@ -23,6 +27,10 @@ const EXAMPLES: Examples = {
       'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/login/logAUserIn.js',
   },
   go: {
+    'Cache.Get':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/cache/get/getAValue/main.go',
+    'Cache.Set':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/cache/set/setAValue/main.go',
     'User.Login':
       'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/login/logAUserIn/main.go',
     'User.Create':
@@ -33,6 +41,10 @@ const EXAMPLES: Examples = {
       'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/read/readRecords/main.go',
   },
   bash: {
+    'Cache.Get':
+      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/cache/get/getAValue.sh',
+    'Cache.Set':
+      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/cache/set/setAValue.sh',
     'User.Login':
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/user/login/logAUserIn.sh',
     'User.Create':
@@ -43,6 +55,10 @@ const EXAMPLES: Examples = {
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/read/readRecords.sh',
   },
   cli: {
+    'Cache.Get':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/cache/get/getAValue.sh',
+    'Cache.Set':
+      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/cache/set/setAValue.sh',
     'User.Login':
       'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/user/login/logAUserIn.sh',
     'User.Create':
@@ -53,6 +69,10 @@ const EXAMPLES: Examples = {
       'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/read/readRecords.sh',
   },
   dart: {
+    'Cache.Get':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/cache/get/getAValue/main.dart',
+    'Cache.Set':
+      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/cache/set/setAValue/main.dart',
     'User.Login':
       'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/user/login/logAUserIn/main.dart',
     'User.Create':

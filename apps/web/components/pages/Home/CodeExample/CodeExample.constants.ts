@@ -4,6 +4,19 @@ import { LandingPageExampleNames } from '@/lib/constants'
 
 export const SIDEBAR_ITEMS: SidebarItem[] = [
   {
+    title: 'Cache',
+    items: [
+      {
+        text: 'Set a value',
+        example: LandingPageExampleNames.CacheSet,
+      },
+      {
+        text: 'Get a value',
+        example: LandingPageExampleNames.CacheGet,
+      },
+    ],
+  },
+  {
     title: 'DB',
     items: [
       {
