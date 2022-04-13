@@ -139,11 +139,6 @@ export function DashboardLayout({
                     href: '/explore',
                     icon: SearchIcon,
                   },
-                  {
-                    text: 'Status',
-                    href: 'https://status.m3o.com',
-                    icon: HeartIcon,
-                  },
                 ],
               },
               // {
