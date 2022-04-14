@@ -196,27 +196,16 @@ export default function Playground({ user }: WithAuthProps) {
                 </div>
                 {selectedEndpoint && (
                   <>
-                    <div className="flex justify-between border-b border-zinc-800 items-center px-6 py-2">
-                      <div>
-                        <p className="text-sm text-zinc-400">
-                          <span className="inline-block mr-3 bg-zinc-800 p-2 rounded-md text-indigo-300 text-xs">
-                            POST
-                          </span>
-                          {process.env.NEXT_PUBLIC_API_URL}/{selectedApi}/
-                          {selectedEndpoint.split('.')[1]}
-                        </p>
-                      </div>
-                      <Button
-                        className="font-mono text-sm"
-                        onClick={() => run.mutate(api?.name)}
-                        loading={run.isLoading}
-                        disabled={isFetchingApi}>
-                        Run Request
-                      </Button>
-                    </div>
-                    <div className="grid grid-cols-4 overflow-hidden flex-grow">
-                      <div className="border-r border-zinc-800 p-6">
-                        <h2 className="font-bold mb-4">Params</h2>
+                    <div className="grid grid-cols-6 overflow-hidden flex-grow">
+                      <div className="col-span-2 border-r border-zinc-800 p-6">
+                          <Button
+                            className="font-mono text-sm float-right"
+                            onClick={() => run.mutate(api?.name)}
+                            loading={run.isLoading}
+                            disabled={isFetchingApi}>
+                            Submit
+                          </Button>
+                        <h2 className="font-bold mb-8 mt-4">Request</h2>
                         {selectedEndpoint && api && (
                           <EndpointParams
                             key={selectedEndpoint}
@@ -227,7 +216,7 @@ export default function Playground({ user }: WithAuthProps) {
                           />
                         )}
                       </div>
-                      <div className="col-span-3 overflow-scroll flex flex-col">
+                      <div className="col-span-4 overflow-scroll flex flex-col">
                         <Output
                           data={run.data}
                           error={

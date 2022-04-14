@@ -22,7 +22,6 @@ export function Output({ data, currentTab, onTabClick, error }: Props) {
           <CodeBlock code={JSON.stringify(data, null, 2)} language="json" />
         </div>
       )}
-      {currentTab === OutputTypes.CodeSnippets && <p>Coming soon</p>}
     </div>
   )
 }
