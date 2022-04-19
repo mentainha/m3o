@@ -15,10 +15,10 @@ jobs:
     name: Generate Clients
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go 1.13
+      - name: Set up Go 1.17
         uses: actions/setup-go@v2
         with:
-          go-version: 1.13
+          go-version: 1.17
         id: go
 
       - name: Install Protoc
@@ -134,7 +134,7 @@ jobs:
         id: extract_branch
 
       - name: Push Go files
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: m3o/commit-action@main
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -148,7 +148,7 @@ jobs:
           commit_message: 'Commit from m3o/m3o action'
 
       - name: Push JS files
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: m3o/commit-action@main
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -162,7 +162,7 @@ jobs:
           commit_message: 'Commit from m3o/m3o action'
 
       - name: Push shell files
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: m3o/commit-action@main
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
