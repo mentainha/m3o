@@ -53,7 +53,7 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
           aria-labelledby="menu-button"
           tabIndex={-1}>
           <div className="border-b p-4 text-sm dark:border-zinc-600">
-            <p>Signed in as:</p>
+            <p>Signed in as</p>
             <p className="font-bold overflow-hidden text-ellipsis">
               {user.name}
             </p>
@@ -67,7 +67,7 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
             )}
           </div>
           <div className="px-4 py-2 tbc border-b text-sm text-zinc-700">
-            <p className="dark:text-white">Current Balance:</p>
+            <p className="dark:text-white">Current Balance</p>
             {currentBalance.isLoading ? (
               <PulseLoader />
             ) : (
