@@ -95,8 +95,7 @@ function EndpointParams({
         createParamsTree(item.properties!)
       ) : (
         <div className="bg-zinc-800 p-6 rounded-md text-sm">
-          <p className="font-bold mb-2">Empty payload required:</p>
-          {`{}`}
+          <p className="font-bold">No params required</p>
         </div>
       )}
     </div>
