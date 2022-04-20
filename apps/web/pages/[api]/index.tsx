@@ -109,7 +109,7 @@ const Overview: NextPage<Props> = ({
           <div className="max-w-lg">
             <OverviewDescription>{description}</OverviewDescription>
           </div>
-          <h2 className="text-white text-xl mb-4 mt-10 font-bold">Endpoints</h2>
+          <h2 className="text-white text-xl mb-4 mt-10 font-bold">Features</h2>
           {features.map(feature => (
             <div className="mb-5">
               <h3>

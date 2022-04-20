@@ -38,6 +38,9 @@ export const EndpointCard: FC<Props> = ({
     <div className="endpoint-card" id={title.replace(/ /g, '')}>
       <div className="md:grid md:grid-cols-2">
         <div className="pb-4">
+          <p className="mr-6 mt-4 float-right text-xs text-indigo-400">
+            Credits: {price === 'Free' ? '0.000001' : price}
+          </p>
           <h3 className="font-medium text-black text-3xl dark:text-white mb-2">
             {splitEndpointTitle(title)}
           </h3>
