@@ -155,3 +155,7 @@ See the [examples](examples) for more use cases.
 ## Development
 
 Go into `apps/web` and run `npm install && npm run dev`. The site will be available on `localhost:3000`. 
+
+## Self Hosting
+
+Details on self hosting coming soon. See [m3o/platform](https://github.com/m3o/platform) for pulumi automation.
