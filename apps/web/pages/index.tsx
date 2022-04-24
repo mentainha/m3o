@@ -54,7 +54,7 @@ export default function Home({
         <LoggedInView user={user} apiToken={apiToken} />
       ) : (
         <Landing
-          heading="Everything as a Service"
+          heading="Universal public API gateway"
           services={services}
           subHeading="Explore, discover and consume public APIs as simpler programmable
           building blocks all on one platform for a 10x developer experience."
