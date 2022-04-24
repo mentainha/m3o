@@ -61,15 +61,15 @@
   },
   "explore": {
     "title": "Explore",
-    "description": "Explore and consume free and paid public APIs as simpler programmable building blocks for a 10x better developer experience."
+    "description": "Explore the public API catalog."
   },
   "gettingStarted": {
     "title": "Getting Started",
     "description": "A guide to using the Micro APIs"
   },
   "home": {
-    "description": "M3O is a next generation cloud platform. Explore, discover and consume public APIs as simpler programmable building blocks for a 10x better developer experience.",
-    "title": "Everything as a Service"
+    "description": "Explore, discover and consume public APIs as simpler programmable building blocks for a 10x better developer experience.",
+    "title": "Universal public API gateway"
   },
   "login": {
     "description": "Login to Micro to start using our public APIs",
@@ -77,7 +77,7 @@
   },
   "pricing": {
     "title": "Pricing",
-    "description": "The majority of our API's are FREE to use. Please see our pricing page for the pricing of our paid APIs"
+    "description": "Subscription plans and API pricing information"
   },
   "register": {
     "title": "Register",
