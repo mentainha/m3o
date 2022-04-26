@@ -20,8 +20,6 @@ Here are the main features:
 - **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
 - **☝️ One Account** - Manage your API usage with one account and one token.
 - **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
-- **🆓 Pay As You Grow** - It's free to start and everything is priced per request.
-- **🚫 Anti Cloud Billing** - Predictable pricing with no hidden costs.
 
 ## Services
 
