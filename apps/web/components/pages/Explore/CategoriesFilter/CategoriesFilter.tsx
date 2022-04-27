@@ -23,9 +23,12 @@ function CategoryLink({
   return (
     <Link href={href}>
       <a
-        className={classNames('block capitalize mb-4 !text-white', {
-          'font-bold': selected,
-        })}
+        className={classNames(
+          'block capitalize mb-4 !text-white py-2 px-4 text-sm rounded-md',
+          {
+            'bg-zinc-800 font-medium': selected,
+          },
+        )}
         onClick={onClick}>
         {children}
       </a>
@@ -47,7 +50,7 @@ export function CategoriesFilter({
         selected={router.pathname === '/explore'}>
         All APIs
       </CategoryLink>
-      <h3 className="text-zinc-800 mb-4 font-bold dark:text-indigo-400">
+      <h3 className="text-zinc-800 mb-4 font-bold dark:text-indigo-400 text-lg mt-6">
         Categories
       </h3>
       {categories.map(category => (
