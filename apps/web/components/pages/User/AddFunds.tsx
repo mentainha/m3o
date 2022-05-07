@@ -19,7 +19,7 @@ export const AddFunds: FC = () => {
       <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
         Add Credit
       </h3>
-      <p className="ttc">Add credit to your account (£5 minimum).</p>
+      <p className="ttc">Add credit to your account - 1 credit = £1 (10% fees)</p>
       <form
         className="mt-4 md:grid md:grid-cols-5 md:gap-4 items-center max-w-3xl"
         onSubmit={handleSubmit((values: AddFundsFormFields) =>
@@ -29,11 +29,11 @@ export const AddFunds: FC = () => {
           <Controller
             control={control}
             name="amount"
-            defaultValue={5}
+            defaultValue={10}
             rules={{
               min: {
-                value: 5,
-                message: 'Please specify an amount of 5 or above',
+                value: 10,
+                message: 'Please specify an amount of 10 or above',
               },
             }}
             render={({ field: { ref, ...fieldProps }, fieldState }) => (

@@ -29,7 +29,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£10/month"
+        cost="£20/month"
         plan={SubscriptionPlans.Solo}
         description="For creators and developers"
         features={[
@@ -52,7 +52,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£20/month"
+        cost="£40/month"
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
@@ -75,7 +75,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£200/month"
+        cost="£500/month"
         plan={SubscriptionPlans.Business}
         description="For growing companies"
         features={[
