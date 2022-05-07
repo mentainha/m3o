@@ -46,7 +46,7 @@ export function Subscriptions(): ReactElement {
             <a
               className="btn block w-full text-center"
               data-testid="subscription-solo-start-button">
-              Buy Solo
+              Choose Solo
             </a>
           </Link>
         }
@@ -69,7 +69,7 @@ export function Subscriptions(): ReactElement {
             <a
               className="btn block w-full text-center"
               data-testid="subscription-pro-start-button">
-              Buy Pro
+              Choose Pro
             </a>
           </Link>
         }
