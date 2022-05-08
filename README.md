@@ -10,7 +10,9 @@
 
 ## Introduction
 
-M3O is a universal public API interface. Explore, discover and consume public 
+M3O is a universal public API interface. 
+
+Explore, discover and consume public 
 APIs as simpler programmable building blocks all on one platform. 
 
 ## Features
