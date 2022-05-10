@@ -35,6 +35,7 @@ export interface FormattedService {
   openApiString: string
   postmanString: string
   pricing?: PublicAPI['pricing']
+  quotas?: PublicAPI['quotas']
   schemas: SchemaObject
   paths: PathsObject
 }
