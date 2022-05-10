@@ -22,6 +22,7 @@ interface PublicAPI {
   icon: string
   category: string
   pricing: Record<string, string>
+  quotas: Record<string, string>
   postman_json: string
 }
 
