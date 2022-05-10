@@ -58,6 +58,7 @@ export async function fetchSingleService(
     summaryDescription: summary.description,
     paths: openApi.paths,
     pricing: api.pricing || {},
+    quotas: api.quotas || {},
     postmanString: api.postman_json,
     openApiString: api.open_api_json,
   }

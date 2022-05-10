@@ -43,6 +43,7 @@ export const getServerSideProps = withAuth(async context => {
       display_name,
       examples,
       endpoints,
+      quotas,
       pricing,
       name: apiName,
       summaryDescription,
@@ -60,7 +61,7 @@ export const getServerSideProps = withAuth(async context => {
         displayName: display_name,
         description,
         user: context.req.user,
-        features: createFeaturesTableData({ endpoints, schemas, pricing }),
+        features: createFeaturesTableData({ endpoints, schemas, pricing, quotas }),
         examples,
         name: apiName,
         requestSchema: schemas[`${endpointName}Request`],
@@ -128,6 +129,7 @@ const Overview: NextPage<Props> = ({
               <tr>
                 <th className="text-left font-normal">Endpoint</th>
                 <th className="text-left font-normal">Credits</th>
+                <th className="text-left font-normal">Quotas</th>
               </tr>
             </thead>
             <tbody>
@@ -135,6 +137,7 @@ const Overview: NextPage<Props> = ({
               <tr className="border-t border-zinc-700">
                 <td className="py-2 w-10/12 text-sm">{feature.title}</td>
                 <td className="py-2 w-2/12 text-sm">{feature.price === 'Free' ? 'Base' : feature.price}</td>
+                <td className="py-2 w-2/12 text-sm">{feature.quota}</td>
               </tr>
           ))}
             </tbody>

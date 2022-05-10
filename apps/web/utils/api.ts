@@ -7,6 +7,11 @@ export interface GetPriceArguments {
   key: string
 }
 
+export interface GetQuotasArguments {
+  quotas?: Record<string, string>
+  key: string
+}
+
 export function capitalizeAndAddSpace(str: string): string {
   return str.replace(/\b\w/g, l => l.toUpperCase())
 }
@@ -19,6 +24,12 @@ export function getPrice({ pricing = {}, key }: GetPriceArguments): string {
   return pricing[key] && pricing[key] !== '0'
     ? `${parseInt(pricing[key]) / 1000000}`
     : 'Free'
+}
+
+export function getQuota({ quotas = {}, key }: GetQuotasArguments): string {
+  return quotas[key] && quotas[key] !== '0'
+    ? `${quotas[key]}`
+    : 'None'
 }
 
 export function getEndpointName(str: string): string {
@@ -152,7 +163,8 @@ export function createFeaturesTableData({
   endpoints,
   schemas,
   pricing,
-}: Pick<FormattedService, 'endpoints' | 'schemas' | 'pricing'>): FeatureItem[] {
+  quotas,
+}: Pick<FormattedService, 'endpoints' | 'schemas' | 'pricing' | 'quotas' >): FeatureItem[] {
   return endpoints.map(endpoint => {
     const { description = '' } = schemas![
       `${getEndpointName(endpoint.name)}Request`
@@ -162,6 +174,7 @@ export function createFeaturesTableData({
       description,
       title: returnFormattedEndpointName(endpoint.name),
       price: getPrice({ pricing, key: endpoint.name }),
+      quota: getQuota({ quotas, key: endpoint.name }),
     }
   })
 }
