@@ -24,6 +24,7 @@ import {
   PhotographIcon,
   LinkIcon,
   HandIcon,
+  PuzzleIcon,
   ShareIcon,
   SunIcon,
   ChatAlt2Icon,
@@ -116,6 +117,7 @@ export const ICONS: Icons = {
   url: LinkIcon,
   user: UserIcon,
   weather: SunIcon,
+  wordle: PuzzleIcon,
   vehicle: TruckIcon,
   youtube: VideoCameraIcon,
 }
