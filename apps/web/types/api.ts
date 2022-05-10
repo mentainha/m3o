@@ -3,6 +3,7 @@ import type { SchemaObject, PathsObject } from 'openapi3-ts'
 export interface FeatureItem {
   description: string
   price: string
+  quota: string
   title: string
 }
 

@@ -8,6 +8,9 @@ export interface PricingItem {
   pricing: {
     [key: string]: string
   }
+  quotas: {
+    [key: string]: string
+  }
 }
 
 export interface SubscriptionItem {
