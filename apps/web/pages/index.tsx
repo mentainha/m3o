@@ -54,7 +54,7 @@ export default function Home({
         <LoggedInView user={user} apiToken={apiToken} />
       ) : (
         <Landing
-          heading="Universal Public API Interface"
+          heading="Unified Public API Catalog"
           services={services}
           subHeading="Explore, discover and consume public APIs as simple programmable
           building blocks"
