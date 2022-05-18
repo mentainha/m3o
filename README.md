@@ -154,9 +154,9 @@ See the [examples](examples) for more use cases.
 
 ## Development
 
-Go into `apps/web` and run `npm install && npm run dev`. 
+Go into `apps/web` and run `npm install && npm run dev`
 
-The site will be available on `localhost:3000`. 
+The site will be available on `localhost:3000`
 
 ## Self Hosting
 
