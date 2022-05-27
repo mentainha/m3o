@@ -75,7 +75,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£500/month"
+        cost="Custom pricing"
         plan={SubscriptionPlans.Business}
         description="For growing companies"
         features={[
