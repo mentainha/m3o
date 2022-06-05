@@ -1,6 +1,6 @@
 # Introduction
 
-M3O is a universal public api interface. 
+M3O is a universal public api gateway. 
 
 Explore, discover and consume public APIs as simpler programmable building blocks all on one platform.
 
