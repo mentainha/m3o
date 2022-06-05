@@ -2,7 +2,7 @@
 
 M3O is a universal public api gateway. 
 
-Explore, discover and consume public APIs as simpler programmable building blocks all on one platform.
+Explore, discover and consume public APIs as simpler programmable building blocks all through one platform.
 
 ## Features
 
