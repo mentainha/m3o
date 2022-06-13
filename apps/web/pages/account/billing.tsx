@@ -56,7 +56,7 @@ const Billing: NextPage<Props> = ({ user }) => {
         <DashboardLayout>
           <div className="p-6 md:p-10">
             <h1 className="gradient-text text-3xl mb-6 pb-4 font-medium">
-              Billing &amp; Plans
+              Billing
             </h1>
             <div className="mt-8 tbgc p-6 md:p-10 rounded-lg">
               <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">

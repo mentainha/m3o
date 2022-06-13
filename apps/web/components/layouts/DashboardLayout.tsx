@@ -175,7 +175,7 @@ export function DashboardLayout({
                     icon: ChartBarIcon,
                   },
                   {
-                    text: 'Billing & Plans',
+                    text: 'Billing',
                     href: '/account/billing',
                     icon: CashIcon,
                   },
