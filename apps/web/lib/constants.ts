@@ -73,6 +73,7 @@ export enum BillingApiRoutes {
 }
 
 export enum SubscriptionPlans {
+  Dev = 'dev',
   Free = 'free',
   Solo = 'solo',
   Pro = 'pro',
