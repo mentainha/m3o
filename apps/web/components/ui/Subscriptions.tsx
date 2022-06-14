@@ -31,7 +31,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="£20/month"
         plan={SubscriptionPlans.Solo}
-        description="For creators and developers"
+        description="For creators and individuals"
         features={[
           'Everything in Free plus',
           '5M requests in credit',
