@@ -11,8 +11,8 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Dev}
         description="For small projects"
         features={[
-          '10k requests to start',
-          '1M requests per credit',
+          'Top-up via credit card',
+          '10k requests for free',
           '10 requests a second',
           '100 User accounts',
           '1000 DB records',
