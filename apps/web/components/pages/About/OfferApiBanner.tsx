@@ -9,7 +9,7 @@ export const OfferApiBanner: FC = () => {
         </h1>
         <p className="mb-4 pt-6">
           <a
-            href="https://forms.gle/9SQV6DdLNDzSRQ477"
+            href="mailto:contact@m3o.com?subject=M3O API Publisher Programme"
             className="btn"
             target="_blank"
             rel="noreferrer">
