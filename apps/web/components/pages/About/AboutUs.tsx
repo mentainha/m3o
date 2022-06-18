@@ -37,8 +37,8 @@ export const AboutUs: FC = () => {
         <div className="text-center mt-6 max-w-4xl mx-auto px-4 py-6 rounded-md border border-zinc-300 dark:border-zinc-600">
           <p>
             👉 If you&apos;re interested in what we&apos;re doing,{' '}
-            <Link href="/register">
-              <a className="text-indigo-500 underline">sign up</a>
+            <Link href="https://discord.gg/TBR9bRjd6Z">
+              <a className="text-indigo-500 underline">request access</a>
             </Link>
             , kick the tyres and send us some feedback.
           </p>
