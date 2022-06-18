@@ -16,7 +16,7 @@ export const Banner: FC = () => {
         <div className="mt-6">
           <Link href="https://discord.gg/TBR9bRjd6Z">
             <a className="inline-flex items-center btn">
-              Get Started <ArrowRightIcon className="w-4 ml-2" />
+              Request Access <ArrowRightIcon className="w-4 ml-2" />
             </a>
           </Link>
         </div>
