@@ -1,6 +1,5 @@
 import type { FC } from 'react'
 import Link from 'next/link'
-import ArrowRightIcon from '@heroicons/react/outline/ArrowRightIcon'
 
 export const Banner: FC = () => {
   return (
@@ -16,7 +15,7 @@ export const Banner: FC = () => {
         <div className="mt-6">
           <Link href="https://discord.gg/TBR9bRjd6Z">
             <a className="inline-flex items-center btn">
-              Request Access <ArrowRightIcon className="w-4 ml-2" />
+              Request Access
             </a>
           </Link>
         </div>
