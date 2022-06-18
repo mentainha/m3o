@@ -19,9 +19,9 @@ APIs as simpler programmable building blocks all through one platform.
 
 Here are the main features:
 
-- **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
-- **☝️ One Account** - Manage your API usage with one account and one token.
-- **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
+- **1️⃣ ONE Platform** - Discover, explore and consume public APIs all in one place. 
+- **☝️ ONE Account** - Manage your API usage with one account and one token.
+- **⚡ ONE Framework** - Learn, develop and integrate using one set of docs and libraries.
 
 ## Services
 
