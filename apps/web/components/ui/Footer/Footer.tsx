@@ -12,7 +12,7 @@ interface ExternalLink {
 const EXTERNAL_LINKS_1: ExternalLink[] = [
   {
     name: 'About',
-    link: 'https://m3o.com/about',
+    link: '/about',
   },
   {
     name: 'Blog',

@@ -38,9 +38,8 @@ export const AboutUs: FC = () => {
           <p>
             👉 If you&apos;re interested in what we&apos;re doing,{' '}
             <Link href="https://discord.gg/TBR9bRjd6Z">
-              <a className="text-indigo-500 underline">request access</a>
+              <a className="text-indigo-500 underline">join the community</a>
             </Link>
-            , kick the tyres and send us some feedback.
           </p>
         </div>
       </div>

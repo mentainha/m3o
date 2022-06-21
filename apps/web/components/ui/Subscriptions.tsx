@@ -19,11 +19,11 @@ export function Subscriptions(): ReactElement {
           '1GB Space storage',
         ]}
         button={
-          <Link href="https://discord.gg/TBR9bRjd6Z">
+          <Link href="/register">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-free-start-button">
-              Request Access
+              Get Started
             </a>
           </Link>
         }

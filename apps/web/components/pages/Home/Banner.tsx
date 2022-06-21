@@ -14,8 +14,8 @@ export interface BannerProps {
 
 const BANNER_LINKS: BannerLink[] = [
   {
-    text: 'Request Access',
-    link: 'https://discord.gg/TBR9bRjd6Z',
+    text: 'Get Started',
+    link: '/pricing',
   },
 ]
 
