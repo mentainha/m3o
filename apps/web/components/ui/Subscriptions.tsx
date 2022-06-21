@@ -42,11 +42,11 @@ export function Subscriptions(): ReactElement {
           'Community support',
         ]}
         button={
-          <Link href="https://discord.gg/TBR9bRjd6Z">
+          <Link href="/register?subscription=solo">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-solo-start-button">
-              Request Access
+              Choose Solo
             </a>
           </Link>
         }
@@ -65,11 +65,11 @@ export function Subscriptions(): ReactElement {
           'Email support',
         ]}
         button={
-          <Link href="https://discord.gg/TBR9bRjd6Z">
+          <Link href="/register?subscription=pro">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-pro-start-button">
-              Request Access
+              Choose Pro
             </a>
           </Link>
         }
