@@ -7,7 +7,7 @@ export const PersonalToken: FC = () => {
   return (
     <div className="mt-8 tbgc p-8 md:p-10 rounded-lg">
       <h1 className="font-bold text-xl text-black md:text-2xl dark:text-white">
-        Personal Token
+        Personal Key
       </h1>
       <p className="my-4 ttc text-sm md:text-base">
         Note: This token expires on logout. For long term use we recommend
