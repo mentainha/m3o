@@ -23,9 +23,6 @@ export const LoggedInView: FC<LoggedInViewProps> = ({ apiToken, user }) => {
             <Balance />
           </div>
           <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-6 md:mt-0 mb-6">
-            <Subscription />
-          </div>
-          <div className="bg-zinc-900 dark:bg-zinc-800 rounded-lg p-8 mt-6 md:mt-0 mb-6">
             <RecentlyViewed />
           </div>
         </div>
