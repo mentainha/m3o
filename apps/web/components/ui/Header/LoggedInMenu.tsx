@@ -62,12 +62,12 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
                 className={classNames('capitalize', {
                   'gradient-text font-bold': subscriptionLevel === 'pro',
                 })}>
-                {subscriptionLevel}
+                {subscriptionLevel == 'free' ? 'dev' : subscriptionLevel}
               </p>
             )}
           </div>
           <div className="px-4 py-2 tbc border-b text-sm text-zinc-700">
-            <p className="dark:text-white">Current Balance</p>
+            <p className="dark:text-white">Balance</p>
             {currentBalance.isLoading ? (
               <PulseLoader />
             ) : (
