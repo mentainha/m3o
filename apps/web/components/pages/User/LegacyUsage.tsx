@@ -74,13 +74,13 @@ export const LegacyUsage: FC<Props> = ({ showAllResults = false }) => {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h5 className="font-bold text-xl text-black dark:text-white">
-            API Usage
+            Your Usage
           </h5>
         </div>
         {!showAllResults && (
           <Link href={Routes.UserUsage}>
             <a className="md:flex items-center text-sm hidden">
-              See all API usage <ArrowRightIcon className="w-4 ml-2" />
+              See all usage <ArrowRightIcon className="w-4 ml-2" />
             </a>
           </Link>
         )}
