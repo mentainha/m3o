@@ -30,7 +30,7 @@ export const LOGGED_IN_MENU_ITEMS: MenuItem[] = [
   },
   {
     link: Routes.UserKeys,
-    text: 'API Keys',
+    text: 'Tokens',
   },
 ]
 

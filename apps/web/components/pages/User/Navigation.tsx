@@ -14,8 +14,8 @@ const USER_LINKS: NavigationPropsLink[] = [
     pathname: '/account/billing',
   },
   {
-    name: 'API keys',
-    pathname: '/account/keys',
+    name: 'Tokens',
+    pathname: '/account/tokens',
   },
 ]
 

@@ -36,7 +36,7 @@ export enum Routes {
   Login = '/login',
   SignUp = '/register',
   UserSettings = '/account/settings',
-  UserKeys = '/account/keys',
+  UserKeys = '/account/tokens',
   UserBilling = '/account/billing',
   UserUsage = '/account/usage',
   Playground = '/playground',

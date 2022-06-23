@@ -180,8 +180,8 @@ export function DashboardLayout({
                     icon: CashIcon,
                   },
                   {
-                    text: 'API Keys',
-                    href: '/account/keys',
+                    text: 'Tokens',
+                    href: '/account/tokens',
                     icon: KeyIcon,
                   },
                 ],

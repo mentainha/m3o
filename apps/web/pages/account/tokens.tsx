@@ -44,7 +44,7 @@ const Keys: NextPage<KeysProps> = () => {
       <DashboardLayout>
         <div className="p-6 md:p-10">
           <h1 className="gradient-text text-3xl mb-6 pb-4 font-medium">
-            API Keys
+            Tokens
           </h1>
           <PersonalToken />
           <ApiKeys
