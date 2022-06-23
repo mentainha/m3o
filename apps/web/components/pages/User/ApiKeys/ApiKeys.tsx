@@ -17,7 +17,7 @@ export const ApiKeys: FC<Props> = ({ onDeleteClick, onAddClick }) => {
   return (
     <div className="mt-8 tbgc p-6 md:p-10 rounded-lg">
       <h1 className="font-bold text-xl text-black md:text-2xl dark:text-white flex items-center justify-between">
-        API Tokens
+        Access Tokens
         <Button className="text-sm" onClick={onAddClick}>
           Add
         </Button>
