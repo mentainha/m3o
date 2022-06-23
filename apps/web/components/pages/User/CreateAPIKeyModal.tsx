@@ -34,7 +34,7 @@ export const CreateAPIKeyModal: FC<ModalProps> = props => {
   return (
     <Modal {...props}>
       <h1 className="font-black text-black text-lg mb-4 dark:text-white">
-        Create new API key
+        Generate a token
       </h1>
       {!createKey.data && (
         <>
@@ -56,7 +56,7 @@ export const CreateAPIKeyModal: FC<ModalProps> = props => {
             disabled={!description}
             onClick={onCreate}
             loading={createKey.isLoading}>
-            Create
+            Generate
           </Button>
         </>
       )}
@@ -70,7 +70,7 @@ export const CreateAPIKeyModal: FC<ModalProps> = props => {
             {createKey.data.api_key}
           </div>
           <Button className="mt-4" onClick={props.closeModal}>
-            Complete
+            Done
           </Button>
         </>
       )}
