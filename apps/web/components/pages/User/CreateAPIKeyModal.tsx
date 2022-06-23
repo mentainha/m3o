@@ -52,7 +52,7 @@ export const CreateAPIKeyModal: FC<ModalProps> = props => {
             onScopeSelect={onScopeSelect}
           />
           <Button
-            className="mt-4"
+            className="mt-4 dark:text-white"
             disabled={!description}
             onClick={onCreate}
             loading={createKey.isLoading}>

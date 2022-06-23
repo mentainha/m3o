@@ -20,7 +20,7 @@ export const DeleteKeyConfirmationModal: FC<Props> = ({
   return (
     <Modal {...props}>
       <h2 className="font-black text-black text-xl mb-4 dark:text-white">
-        Are you sure you would like to delete this key?
+        Are you sure you want to delete this token?
       </h2>
       <Button
         onClick={() => revokeKey.mutate(deleteKeyId)}
