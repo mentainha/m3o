@@ -13,12 +13,20 @@ export const LOGGED_IN_MENU_ITEMS: MenuItem[] = [
     text: 'Home',
   },
   {
+    link: Routes.Client,
+    text: 'Client',
+  },
+  {
+    link: Routes.Explore,
+    text: 'Explore',
+  },
+  {
     link: Routes.UserUsage,
     text: 'Usage',
   },
   {
     link: Routes.UserBilling,
-    text: 'Billing & Plans',
+    text: 'Billing',
   },
   {
     link: Routes.UserKeys,
@@ -31,6 +39,10 @@ export const LOGGED_OUT_HEADER_LINKS: HeaderLink[] = [
     link: 'https://blog.m3o.com',
     text: 'Blog',
     external: true,
+  },
+  {
+    link: Routes.Client,
+    text: 'Client',
   },
   {
     link: Routes.Explore,
