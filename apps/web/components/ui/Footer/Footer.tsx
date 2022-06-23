@@ -24,7 +24,7 @@ const EXTERNAL_LINKS_1: ExternalLink[] = [
   },
   {
     name: 'Github',
-    link: 'https://github.com/m3o/m3o',
+    link: 'https://github.com/m3o',
   },
 ]
 
