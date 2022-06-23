@@ -14,7 +14,7 @@ export const Balance: FC = () => {
         <Spinner />
       ) : (
         <p className="text-3xl dark:text-white">
-          {data.toFixed(6)}
+          {data.toFixed(6)} M3O
         </p>
       )}
       <Link href={Routes.UserBilling}>
