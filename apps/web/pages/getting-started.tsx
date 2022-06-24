@@ -68,7 +68,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
         </Section>
         <Section title="Discover APIs">
           <p>
-            Browse all of our public APIs on the{' '}
+            Browse all of our APIs on the{' '}
             <Link href={Routes.Explore}>
               <a className="dark:text-blue-300">Explore page</a>
             </Link>
@@ -79,7 +79,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
           <p className="max-w-5xl">
             To create a new access token, visit{' '}
             <Link href={Routes.UserKeys}>
-              <a className="dark:text-blue-300">API settings page</a>
+              <a className="dark:text-blue-300">Tokens page</a>
             </Link>
             . You can specify which APIs the token can call or leave scopes
             blank to create a token that has access to all the APIs.
@@ -116,7 +116,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
             M3O includes a command line interface from which you can explore and
             query services. Go to{' '}
             <Link href="https://github.com/m3o/m3o-cli/releases/latest">
-              <a className="dark:text-blue-300">https://github.com/m3o/m3o-cli/releases/latest</a>
+              <a className="dark:text-blue-300">GitHub</a>
             </Link>{' '}
             to download the latest release binary.
           </p>
@@ -129,8 +129,8 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
             status.
           </p>
           <p className="mt-4">
-            API calls are charged at 0.000001 credit per request (aka £1 per 
-            1 million requests). Premium APIs are charged differently. See the 
+            API calls are charged at 0.000001 credit per request (£1 per 
+            credit). Premium APIs are charged differently. See the 
             pricing page for more info.
           </p>
           <p className="mt-4">

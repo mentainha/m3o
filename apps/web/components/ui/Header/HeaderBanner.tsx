@@ -34,7 +34,7 @@ export function HeaderBanner() {
         href="https://discord.gg/TBR9bRjd6Z"
         className="text-white text-xs md:text-sm w-full flex items-center px-6 py-2 dark:text-white">
         <DiscordIcon />
-        Join the discord server to request access
+        Join the discord server
       </a>
       <button onClick={hideBanner} className="mr-6">
         <XIcon className="w-4 text-white" />
