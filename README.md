@@ -158,6 +158,10 @@ Go into `apps/web` and run `npm install && npm run dev`
 
 The site will be available on `localhost:3000`
 
-## Self Hosting
+## Infrastructure
 
-Details on self hosting coming soon. See [m3o/platform](https://github.com/m3o/platform) for pulumi automation.
+See [m3o/cloud](https://github.com/m3o/cloud) for infrastructure automation.
+
+## Backend
+
+See [m3o/backend](https://github.com/m3o/backend) for the M3O backend that powers the site.
