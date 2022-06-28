@@ -71,7 +71,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
           <div className="my-10">
             <p className="mb-4">
               Requests are charged at 0.000001 credit per request or in
-              plain english £1 per million requests.
+              plain english £1 per credit.
             </p>
           </div>
         </div>
