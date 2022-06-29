@@ -38,7 +38,7 @@ export function Banner({ heading, subHeading }: BannerProps): ReactElement {
             </Link>
           ))}
         </div>
-        <p className="mt-6 text-sm">
+        <p className="mt-4 text-sm">
           Powered by{' '}
           <a href="https://micro.dev" target="_blank" rel="noreferrer">
             Micro
