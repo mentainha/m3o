@@ -24,7 +24,6 @@ export const Banner: FC = () => {
           <a href="https://micro.dev" target="_blank" rel="noreferrer">
             Micro
           </a>
-          .
         </p>
       </div>
     </section>
