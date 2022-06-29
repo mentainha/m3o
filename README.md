@@ -164,4 +164,4 @@ See [m3o/cloud](https://github.com/m3o/cloud) for infrastructure automation.
 
 ## Backend
 
-See [m3o/backend](https://github.com/m3o/backend) for the M3O backend that powers the site.
+See [m3o/backend](https://github.com/m3o/backend) for the M3O API backend.
