@@ -37,9 +37,10 @@ export const AboutUs: FC = () => {
         <div className="text-center mt-6 max-w-4xl mx-auto px-4 py-6 rounded-md border border-zinc-300 dark:border-zinc-600">
           <p>
             👉 If you&apos;re interested in what we&apos;re doing,{' '}
-            <Link href="https://discord.gg/TBR9bRjd6Z">
-              <a className="text-indigo-500 underline">join the community</a>
+            <Link href="/register">
+              <a className="text-indigo-500 underline">signup</a>
             </Link>
+            {' ' }now.
           </p>
         </div>
       </div>
