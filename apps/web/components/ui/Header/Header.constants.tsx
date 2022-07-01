@@ -41,10 +41,6 @@ export const LOGGED_OUT_HEADER_LINKS: HeaderLink[] = [
     external: true,
   },
   {
-    link: Routes.Client,
-    text: 'Client',
-  },
-  {
     link: Routes.Explore,
     text: 'Explore',
   },
