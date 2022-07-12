@@ -52,12 +52,12 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£40/month"
+        cost="£100/month"
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
-          '10M requests in credit',
+          '25M requests in credit',
           '1000 requests a second',
           '10,000 User accounts',
           '100,000 DB records',
