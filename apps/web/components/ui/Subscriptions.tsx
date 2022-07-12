@@ -33,7 +33,7 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Solo}
         description="For creators and individuals"
         features={[
-          'Everything in Free plus',
+          'Everything in Dev plus',
           '5M requests in credit',
           '100 requests a second',
           '1000 User accounts',
