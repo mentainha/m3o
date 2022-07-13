@@ -3,8 +3,10 @@ package api
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -28,6 +30,8 @@ type Options struct {
 	// set a request timeout
 	Timeout time.Duration
 }
+
+type Handler func(ctx context.Context, req interface{}, rsp interface{}) error
 
 // Request is the request of the generic `api-client` call
 type Request struct {
@@ -59,6 +63,20 @@ type Client struct {
 type Stream struct {
 	conn              *websocket.Conn
 	service, endpoint string
+}
+
+// Service handles api requests
+type Service struct {
+	// name of service
+	Name string
+}
+
+func marshalRequest(service, endpoint string, v interface{}) ([]byte, error) {
+	return json.Marshal(v)
+}
+
+func unmarshalResponse(body []byte, v interface{}) error {
+	return json.Unmarshal(body, &v)
 }
 
 // NewClient returns a generic micro client that connects to live by default
@@ -97,25 +115,6 @@ func (client *Client) SetToken(t string) {
 // SetTimeout sets the http client's timeout
 func (client *Client) SetTimeout(d time.Duration) {
 	client.options.Timeout = d
-}
-
-// Handle is a http handler for serving requests to the API
-func (client *Client) Handle(service, endpoint string) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		r.ParseForm()
-		b, err := ioutil.ReadAll(r.Body)
-		if err != nil {
-			http.Error(w, "Error reading body", 500)
-			return
-		}
-		var resp json.RawMessage
-		err = client.Call(service, endpoint, json.RawMessage(b), &resp)
-		if err != nil {
-			http.Error(w, "Error reading body", 500)
-			return
-		}
-		w.Write(resp)
-	})
 }
 
 // Call enables you to access any endpoint of any service on Micro
@@ -225,10 +224,39 @@ func (s *Stream) Send(v interface{}) error {
 	return s.conn.WriteMessage(websocket.TextMessage, b)
 }
 
-func marshalRequest(service, endpoint string, v interface{}) ([]byte, error) {
-	return json.Marshal(v)
+// Handle is a http handler for serving requests to the API
+func (service *Service) Handle(endpoint string, handler Handler) {
+	path := fmt.Sprintf("/%s/%s", service, endpoint)
+
+	http.HandleFunc(path, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		r.ParseForm()
+		b, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			http.Error(w, "Error reading body", 500)
+			return
+		}
+
+		var req interface{}
+		json.Unmarshal(b, &req)
+
+		var resp json.RawMessage
+
+		if err := handler(r.Context(), req, &resp); err != nil {
+			http.Error(w, "Error handling request", 500)
+			return
+		}
+
+		w.Write(resp)
+	}))
 }
 
-func unmarshalResponse(body []byte, v interface{}) error {
-	return json.Unmarshal(body, &v)
+func (service *Service) Run(address string) error {
+	return http.ListenAndServe(address, nil)
+}
+
+// NewService returns a new api service
+func NewService(name string) *Service {
+	return &Service{
+		Name: name,
+	}
 }
