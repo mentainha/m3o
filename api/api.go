@@ -55,14 +55,9 @@ type Response struct {
 	Status string `json:"status"`
 }
 
-// Client enables generic calls to micro
+// Client enables calls to the micro api
 type Client struct {
 	options Options
-}
-
-type Stream struct {
-	conn              *websocket.Conn
-	service, endpoint string
 }
 
 // Service handles api requests
@@ -70,6 +65,13 @@ type Service struct {
 	// name of service
 	Name string
 }
+
+// Stream is for streaming request/response
+type Stream struct {
+	conn              *websocket.Conn
+	service, endpoint string
+}
+
 
 func marshalRequest(service, endpoint string, v interface{}) ([]byte, error) {
 	return json.Marshal(v)
