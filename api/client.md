@@ -1,6 +1,6 @@
-# Micro API Client [![godoc](https://godoc.org/github.com/micro/micro/v3/client?status.svg)](https://godoc.org/github.com/micro/micro/v3/client) 
+# M3O API Client [![godoc](https://godoc.org/github.com/m3o/m3o/api?status.svg)](https://godoc.org/github.com/m3o/m3o/api) 
 
-This is the Go client to access APIs on the Micro Platform
+This is the Go client to access APIs on the M3O Platform
 
 ## Usage
 
@@ -11,7 +11,7 @@ import (
     "fmt"
     "os"
 
-    "github.com/micro/micro/v3/client/api"
+    "github.com/m3o/m3o/api"
 )
 
 type Request struct {
@@ -57,7 +57,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/micro/micro/v3/client/api"
+	"github.com/m3o/m3o/api"
 )
 
 type Request struct {
