@@ -2,7 +2,7 @@ import type { Track } from '@/types'
 import { m3oInstance } from '../api'
 
 export function track(payload: Track) {
-  return m3oInstance.post('/onboarding/signup/Track', payload)
+  return m3oInstance.post('/signup/Track', payload)
 }
 
 export function trackRegistration() {

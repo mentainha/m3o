@@ -12,6 +12,6 @@ export function useFetchRecoveryCode(): UseMutationResult<
   const m3oApi = useM3OApi()
 
   return useMutation(async (email: string) =>
-    m3oApi.post('/onboarding/signup/recover', { email }),
+    m3oApi.post('/signup/recover', { email }),
   )
 }

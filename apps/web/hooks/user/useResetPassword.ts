@@ -18,7 +18,7 @@ export function useResetPassword(): UseMutationResult<
   const m3oApi = useM3OApi()
 
   return useMutation(
-    payload => m3oApi.post('/onboarding/signup/resetPassword', payload),
+    payload => m3oApi.post('/signup/resetPassword', payload),
     {
       onSuccess: () => {
         router.push(Routes.Login)

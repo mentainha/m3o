@@ -22,7 +22,7 @@ export default async function handler(
     const {
       data: { authToken },
     } = await m3oInstance.post<VerifySignUpResponse>(
-      '/onboarding/signup/CompleteSignup',
+      '/signup/Verify',
       req.body,
     )
 

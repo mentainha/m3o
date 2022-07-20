@@ -57,8 +57,8 @@ export enum UserEndpoints {
   GoogleAuthLogin = '/oauth/Oauth/GoogleLogin',
   GithubAuth = '/oauth/Oauth/GithubURL',
   GithubAuthLogin = '/oauth/Oauth/GithubLogin',
-  Recover = '/onboarding/signup/recover',
-  ResetPassword = '/onboarding/signup/resetPassword',
+  Recover = '/signup/recover',
+  ResetPassword = '/signup/resetPassword',
 }
 
 export async function inspectUser({
@@ -196,5 +196,5 @@ export function resetPassword(payload: ResetPasswordPayload) {
 }
 
 export function sendVerificationEmail(payload: SendVerificationEmailPayload) {
-  return m3oInstance.post('/onboarding/signup/SendVerificationEmail', payload)
+  return m3oInstance.post('/signup/User', payload)
 }
