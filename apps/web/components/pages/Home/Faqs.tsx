@@ -9,17 +9,7 @@ type FAQItem = {
 
 const FAQs: FAQItem[] = [
   {
-    title: 'How do I generate an API token?',
-    content: (
-      <p>
-        To create a new access token, visit API settings page. You can specify
-        which APIs the token can call or leave scopes blank to create a token
-        that has access to all the APIs.
-      </p>
-    ),
-  },
-  {
-    title: 'How do I use an API?',
+    title: 'How do I use a M3O API?',
     content: (
       <>
         <p className="mb-6">
@@ -52,7 +42,17 @@ const FAQs: FAQItem[] = [
     ),
   },
   {
-    title: 'How do I download the M3O CLI?',
+    title: 'How do I generate an API token?',
+    content: (
+      <p>
+        To create a new access token, visit API settings page. You can specify
+        which APIs the token can call or leave scopes blank to create a token
+        that has access to all the APIs.
+      </p>
+    ),
+  },
+  {
+    title: 'Can I use M3O from the terminal?',
     content: (
       <p>
         M3O includes a command line interface from which you can explore and
@@ -60,7 +60,7 @@ const FAQs: FAQItem[] = [
         <a href="https://github.com/m3o/m3o-cli/releases/latest">
           https://github.com/m3o/m3o-cli/releases/latest
         </a>{' '}
-        to download the latest release binary.
+        to download the latest release.
       </p>
     ),
   },
