@@ -12,8 +12,8 @@ export const HowToGetStarted: FC = () => {
           Let&apos;s get started...
         </h4>
         <h5 className="mt-2 max-w-xl mx-auto text-lg text-zinc-600 dark:text-zinc-300">
-          Each API comes with ready to use code examples and pre-generated
-          client libraries for easy integration.
+          Each service comes with code examples and pre-generated
+          clients for simple and easy integration.
         </h5>
         {process.browser && <CodeExample />}
       </div>
