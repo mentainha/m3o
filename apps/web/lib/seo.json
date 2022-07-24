@@ -68,6 +68,10 @@
     "description": "A guide to using the Micro APIs"
   },
   "home": {
+    "description": "Your personal dashboard",
+    "title": "Home"
+  },
+  "landing": {
     "description": "Explore, discover and consume public APIs as simpler programmable building blocks for a 10x better developer experience.",
     "title": "Universal Micro Services"
   },

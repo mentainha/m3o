@@ -46,8 +46,8 @@ export default function Home({
   return (
     <>
       <NextSeo
-        title={seo.home.title}
-        description={seo.home.description}
+        title={user ? seo.home.title : seo.landing.title}
+        description={user ? seo.home.description : seo.landing.description}
         canonical="https://m3o.com"
       />
       {user ? (
