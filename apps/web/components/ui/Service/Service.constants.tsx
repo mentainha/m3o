@@ -7,6 +7,7 @@ import {
   ChatIcon,
   ChatAltIcon,
   CloudIcon,
+  CreditCardIcon
   CurrencyDollarIcon,
   DesktopComputerIcon,
   IdentificationIcon,
@@ -116,6 +117,7 @@ export const ICONS: Icons = {
   twitter: DesktopComputerIcon,
   url: LinkIcon,
   user: UserIcon,
+  wallet: CreditCardIcon,
   weather: SunIcon,
   wordle: PuzzleIcon,
   vehicle: TruckIcon,
