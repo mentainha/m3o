@@ -7,7 +7,7 @@ import {
   ChatIcon,
   ChatAltIcon,
   CloudIcon,
-  CreditCardIcon
+  CreditCardIcon,
   CurrencyDollarIcon,
   DesktopComputerIcon,
   IdentificationIcon,
