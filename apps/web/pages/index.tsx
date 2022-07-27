@@ -56,7 +56,7 @@ export default function Home({
         <Landing
           heading="Universal Micro Services"
           services={services}
-          subHeading="Explore, discover and consume public APIs as simpler programmable
+          subHeading="Explore, discover and consume public APIs as simpler
           building blocks"
         />
       )}
