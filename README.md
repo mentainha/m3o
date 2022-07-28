@@ -158,7 +158,7 @@ For app development go into `apps/web` and run `npm install && npm run dev`
 
 The site will be available on `localhost:3000`
 
-For service development go into services/[name] and do `micro run .`
+For service development go into `services/[name]` and do `micro run .`
 
 ## Infrastructure
 
