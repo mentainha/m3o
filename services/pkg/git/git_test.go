@@ -41,32 +41,32 @@ func TestParseSource(t *testing.T) {
 		{
 			source: "github.com/m3o/m3o/services/helloworld",
 			expected: &Source{
-				Repo:   "github.com/m3o/m3o/services",
-				Folder: "helloworld",
+				Repo:   "github.com/m3o/m3o",
+				Folder: "services/helloworld",
 				Ref:    "latest",
 			},
 		},
 		{
 			source: "github.com/m3o/m3o/services/helloworld",
 			expected: &Source{
-				Repo:   "github.com/m3o/m3o/services",
-				Folder: "helloworld",
+				Repo:   "github.com/m3o/m3o",
+				Folder: "services/helloworld",
 				Ref:    "latest",
 			},
 		},
 		{
 			source: "github.com/m3o/m3o/services/helloworld@v1.12.1",
 			expected: &Source{
-				Repo:   "github.com/m3o/m3o/services",
-				Folder: "helloworld",
+				Repo:   "github.com/m3o/m3o",
+				Folder: "services/helloworld",
 				Ref:    "v1.12.1",
 			},
 		},
 		{
 			source: "github.com/m3o/m3o/services/helloworld@branchname",
 			expected: &Source{
-				Repo:   "github.com/m3o/m3o/services",
-				Folder: "helloworld",
+				Repo:   "github.com/m3o/m3o",
+				Folder: "services/helloworld",
 				Ref:    "branchname",
 			},
 		},
