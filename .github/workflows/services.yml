@@ -1,7 +1,11 @@
 name: Run Services Test
-on: [push, pull_request]
-  paths:
-    - 'services/**'
+on:
+  push:
+    paths:
+      - 'services/**'
+  pull_request:
+    paths:
+      - 'services/**'
 
 jobs:
   test:
