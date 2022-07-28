@@ -154,9 +154,11 @@ See the [examples](examples) for more use cases.
 
 ## Development
 
-Go into `apps/web` and run `npm install && npm run dev`
+For app development go into `apps/web` and run `npm install && npm run dev`
 
 The site will be available on `localhost:3000`
+
+For service development go into services/[name] and go `micro run .`
 
 ## Infrastructure
 
