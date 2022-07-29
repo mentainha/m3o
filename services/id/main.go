@@ -6,9 +6,9 @@ import (
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/id/handler"
-	pb "github.com/m3o/m3o/services/id/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
+	"m3o.dev/services/id/handler"
+	pb "m3o.dev/services/id/proto"
+	"m3o.dev/services/pkg/tracing"
 )
 
 func init() {

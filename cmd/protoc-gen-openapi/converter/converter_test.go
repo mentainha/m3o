@@ -10,9 +10,9 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 	plugin "github.com/golang/protobuf/protoc-gen-go/plugin"
-	"github.com/m3o/m3o/cmd/protoc-gen-openapi/converter/testdata"
 	"github.com/stretchr/testify/assert"
 	prot "google.golang.org/protobuf/compiler/protogen"
+	"m3o.dev/cmd/protoc-gen-openapi/converter/testdata"
 )
 
 const (

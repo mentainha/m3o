@@ -15,7 +15,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 
 	// it's standard to import the services own proto under the alias pb
-	pb "github.com/m3o/m3o/services/test/chat/proto"
+	pb "m3o.dev/services/test/chat/proto"
 )
 
 const (

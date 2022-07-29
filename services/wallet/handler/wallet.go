@@ -13,9 +13,9 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	"github.com/m3o/m3o/services/pkg/redis"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	pb "github.com/m3o/m3o/services/wallet/proto"
+	"m3o.dev/services/pkg/redis"
+	"m3o.dev/services/pkg/tenant"
+	pb "m3o.dev/services/wallet/proto"
 )
 
 const (

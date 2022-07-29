@@ -18,7 +18,7 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	log "github.com/micro/micro/v3/service/logger"
 
-	evchargers "github.com/m3o/m3o/services/evchargers/proto"
+	evchargers "m3o.dev/services/evchargers/proto"
 )
 
 const (

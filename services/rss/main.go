@@ -6,11 +6,11 @@ import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	admin "github.com/m3o/m3o/services/pkg/service/proto"
+	admin "m3o.dev/services/pkg/service/proto"
 
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/rss/handler"
-	pb "github.com/m3o/m3o/services/rss/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/rss/handler"
+	pb "m3o.dev/services/rss/proto"
 )
 
 func main() {

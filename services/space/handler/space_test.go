@@ -13,7 +13,7 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/store"
 	"github.com/micro/micro/v3/service/store/memory"
-	pb "github.com/m3o/m3o/services/space/proto"
+	pb "m3o.dev/services/space/proto"
 
 	. "github.com/onsi/gomega"
 )

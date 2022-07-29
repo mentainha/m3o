@@ -8,9 +8,9 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/pkg/api"
-	"github.com/m3o/m3o/services/sunnah/domain"
-	pb "github.com/m3o/m3o/services/sunnah/proto"
+	"m3o.dev/services/pkg/api"
+	"m3o.dev/services/sunnah/domain"
+	pb "m3o.dev/services/sunnah/proto"
 )
 
 var (

@@ -13,8 +13,8 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/o1egl/govatar"
 
-	pb "github.com/m3o/m3o/services/avatar/proto"
-	imagePb "github.com/m3o/m3o/services/image/proto"
+	pb "m3o.dev/services/avatar/proto"
+	imagePb "m3o.dev/services/image/proto"
 )
 
 type avatar struct {

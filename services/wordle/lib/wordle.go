@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/m3o/m3o/services/wordle/proto"
+	pb "m3o.dev/services/wordle/proto"
 )
 
 //go:embed words.txt

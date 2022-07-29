@@ -7,11 +7,11 @@ import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/location/domain"
-	loc "github.com/m3o/m3o/services/location/proto"
-	"github.com/m3o/m3o/services/location/subscriber"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
+	"m3o.dev/services/location/domain"
+	loc "m3o.dev/services/location/proto"
+	"m3o.dev/services/location/subscriber"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
 )
 
 type Location struct{}

@@ -9,9 +9,9 @@ import (
 	"github.com/asim/mq/broker"
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/mq/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
 	"google.golang.org/protobuf/types/known/structpb"
+	pb "m3o.dev/services/mq/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 type Mq struct{}

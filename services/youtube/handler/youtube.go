@@ -7,9 +7,9 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/youtube/proto"
 	"google.golang.org/api/option"
 	"google.golang.org/api/youtube/v3"
+	pb "m3o.dev/services/youtube/proto"
 )
 
 type Youtube struct {

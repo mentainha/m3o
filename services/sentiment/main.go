@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/sentiment/handler"
-	pb "github.com/m3o/m3o/services/sentiment/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/sentiment/handler"
+	pb "m3o.dev/services/sentiment/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

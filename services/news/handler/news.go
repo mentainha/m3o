@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/news/proto"
-	"github.com/m3o/m3o/services/pkg/api"
+	pb "m3o.dev/services/news/proto"
+	"m3o.dev/services/pkg/api"
 )
 
 type News struct {

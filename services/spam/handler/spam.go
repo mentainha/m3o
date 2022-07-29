@@ -10,8 +10,8 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
-	spam "github.com/m3o/m3o/services/spam/proto"
 	"gopkg.in/gomail.v2"
+	spam "m3o.dev/services/spam/proto"
 )
 
 type conf struct {

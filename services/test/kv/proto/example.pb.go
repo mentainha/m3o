@@ -96,7 +96,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("github.com/m3o/m3o/services/test/kv/proto/example.proto", fileDescriptor_c4c395a09e1b1991)
+	proto.RegisterFile("m3o.dev/services/test/kv/proto/example.proto", fileDescriptor_c4c395a09e1b1991)
 }
 
 var fileDescriptor_c4c395a09e1b1991 = []byte{

@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	"github.com/m3o/m3o/services/stock/handler"
-	pb "github.com/m3o/m3o/services/stock/proto"
+	"m3o.dev/services/stock/handler"
+	pb "m3o.dev/services/stock/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/config"

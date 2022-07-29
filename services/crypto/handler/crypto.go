@@ -12,8 +12,8 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/crypto/proto"
 	"github.com/patrickmn/go-cache"
+	pb "m3o.dev/services/crypto/proto"
 )
 
 var (

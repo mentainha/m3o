@@ -7,11 +7,11 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/otp/proto"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	"github.com/m3o/m3o/services/pkg/cache"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	pb "m3o.dev/services/otp/proto"
+	pauth "m3o.dev/services/pkg/auth"
+	"m3o.dev/services/pkg/cache"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 
 	"github.com/pquerna/otp"
 	"github.com/pquerna/otp/totp"

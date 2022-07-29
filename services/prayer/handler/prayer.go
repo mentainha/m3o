@@ -8,9 +8,9 @@ import (
 	"github.com/hablullah/go-prayer"
 	"github.com/micro/micro/v3/service/client"
 	"github.com/micro/micro/v3/service/errors"
-	geocode "github.com/m3o/m3o/services/geocoding/proto"
-	pb "github.com/m3o/m3o/services/prayer/proto"
-	timepb "github.com/m3o/m3o/services/time/proto"
+	geocode "m3o.dev/services/geocoding/proto"
+	pb "m3o.dev/services/prayer/proto"
+	timepb "m3o.dev/services/time/proto"
 )
 
 type Prayer struct {

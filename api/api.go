@@ -72,7 +72,6 @@ type Stream struct {
 	service, endpoint string
 }
 
-
 func marshalRequest(service, endpoint string, v interface{}) ([]byte, error) {
 	return json.Marshal(v)
 }

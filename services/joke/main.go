@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/m3o/m3o/services/joke/handler"
-	"github.com/m3o/m3o/services/joke/model"
-	pb "github.com/m3o/m3o/services/joke/proto"
+	"m3o.dev/services/joke/handler"
+	"m3o.dev/services/joke/model"
+	pb "m3o.dev/services/joke/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

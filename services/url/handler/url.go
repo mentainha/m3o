@@ -15,12 +15,12 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	cachepb "github.com/m3o/m3o/services/cache/proto"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	url "github.com/m3o/m3o/services/url/proto"
 	"github.com/teris-io/shortid"
+	cachepb "m3o.dev/services/cache/proto"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
+	url "m3o.dev/services/url/proto"
 )
 
 const hostPrefix = "https://m3o.one/u/"

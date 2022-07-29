@@ -72,7 +72,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("github.com/m3o/m3o/services/test/pubsub/proto/pubsub.proto", fileDescriptor_59fce66331057326)
+	proto.RegisterFile("m3o.dev/services/test/pubsub/proto/pubsub.proto", fileDescriptor_59fce66331057326)
 }
 
 var fileDescriptor_59fce66331057326 = []byte{

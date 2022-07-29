@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/translate/handler"
-	pb "github.com/m3o/m3o/services/translate/proto"
+	"m3o.dev/services/translate/handler"
+	pb "m3o.dev/services/translate/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

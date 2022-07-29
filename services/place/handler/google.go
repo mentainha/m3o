@@ -10,7 +10,7 @@ import (
 	"github.com/micro/micro/v3/service/logger"
 	"googlemaps.github.io/maps"
 
-	pb "github.com/m3o/m3o/services/place/proto"
+	pb "m3o.dev/services/place/proto"
 )
 
 var (

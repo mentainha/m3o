@@ -11,12 +11,12 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/lists/proto"
-	streamPb "github.com/m3o/m3o/services/mq/proto"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
 	"google.golang.org/protobuf/types/known/structpb"
+	pb "m3o.dev/services/lists/proto"
+	streamPb "m3o.dev/services/mq/proto"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 // New returns an initialized Lists

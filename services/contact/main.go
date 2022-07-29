@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/micro/micro/v3/service/store"
-	admin "github.com/m3o/m3o/services/pkg/service/proto"
+	admin "m3o.dev/services/pkg/service/proto"
 
-	"github.com/m3o/m3o/services/contact/domain"
-	"github.com/m3o/m3o/services/contact/handler"
-	pb "github.com/m3o/m3o/services/contact/proto"
+	"m3o.dev/services/contact/domain"
+	"m3o.dev/services/contact/handler"
+	pb "m3o.dev/services/contact/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

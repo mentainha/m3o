@@ -5,7 +5,7 @@ import (
 
 	"github.com/enescakir/emoji"
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/emoji/proto"
+	pb "m3o.dev/services/emoji/proto"
 )
 
 type Emoji struct{}

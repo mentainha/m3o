@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/cache/handler"
-	pb "github.com/m3o/m3o/services/cache/proto"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
+	"m3o.dev/services/cache/handler"
+	pb "m3o.dev/services/cache/proto"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tracing"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

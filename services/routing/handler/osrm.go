@@ -7,8 +7,8 @@ import (
 
 	"github.com/gojuno/go.osrm"
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/routing/proto"
 	"github.com/paulmach/go.geo"
+	pb "m3o.dev/services/routing/proto"
 )
 
 type OSRM struct {

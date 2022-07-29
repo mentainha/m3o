@@ -16,13 +16,13 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	pb "github.com/m3o/m3o/services/search/proto"
 	open "github.com/opensearch-project/opensearch-go"
 	openapi "github.com/opensearch-project/opensearch-go/opensearchapi"
 	"google.golang.org/protobuf/types/known/structpb"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
+	pb "m3o.dev/services/search/proto"
 )
 
 var (

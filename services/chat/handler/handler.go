@@ -10,8 +10,8 @@ import (
 	"github.com/micro/micro/v3/service/events"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/chat/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	pb "m3o.dev/services/chat/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 const (

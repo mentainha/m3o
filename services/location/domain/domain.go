@@ -6,8 +6,8 @@ import (
 
 	geo "github.com/hailocab/go-geoindex"
 	"github.com/micro/micro/v3/service/errors"
-	common "github.com/m3o/m3o/services/location/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	common "m3o.dev/services/location/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 var (

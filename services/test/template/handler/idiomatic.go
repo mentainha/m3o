@@ -5,7 +5,7 @@ import (
 
 	log "github.com/micro/micro/v3/service/logger"
 
-	idiomatic "github.com/m3o/m3o/services/test/template/proto"
+	idiomatic "m3o.dev/services/test/template/proto"
 )
 
 type Idiomatic struct{}

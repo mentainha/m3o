@@ -7,9 +7,9 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/twitter/proto"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
+	pb "m3o.dev/services/twitter/proto"
 )
 
 type Twitter struct {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/ip/proto"
 	geoip2 "github.com/oschwald/geoip2-golang"
+	pb "m3o.dev/services/ip/proto"
 )
 
 type Ip struct {

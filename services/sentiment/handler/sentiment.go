@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/micro/micro/v3/service/errors"
-	"github.com/m3o/m3o/services/sentiment/model"
-	pb "github.com/m3o/m3o/services/sentiment/proto"
+	"m3o.dev/services/sentiment/model"
+	pb "m3o.dev/services/sentiment/proto"
 )
 
 type Sentiment struct{}

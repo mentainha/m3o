@@ -9,11 +9,11 @@ import (
 	"github.com/mattheath/kala/snowflake"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/id/proto"
 	"github.com/oklog/ulid"
 	"github.com/rs/xid"
 	"github.com/segmentio/ksuid"
 	"github.com/teris-io/shortid"
+	pb "m3o.dev/services/id/proto"
 	"math/rand"
 	"time"
 )

@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/m3o/m3o/services/routing/handler"
-	pb "github.com/m3o/m3o/services/routing/proto"
 	"github.com/stretchr/testify/assert"
 	"googlemaps.github.io/maps"
+	"m3o.dev/services/routing/handler"
+	pb "m3o.dev/services/routing/proto"
 )
 
 const response = `{

@@ -304,7 +304,7 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("github.com/m3o/m3o/services/test/template/proto/idiomatic.proto", fileDescriptor_62f877917a7b488e)
+	proto.RegisterFile("m3o.dev/services/test/template/proto/idiomatic.proto", fileDescriptor_62f877917a7b488e)
 }
 
 var fileDescriptor_62f877917a7b488e = []byte{

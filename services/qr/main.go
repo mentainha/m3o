@@ -1,10 +1,10 @@
 package main
 
 import (
-	admin "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/qr/handler"
-	pb "github.com/m3o/m3o/services/qr/proto"
+	admin "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/qr/handler"
+	pb "m3o.dev/services/qr/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

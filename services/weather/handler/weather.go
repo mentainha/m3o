@@ -12,7 +12,7 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/weather/proto"
+	pb "m3o.dev/services/weather/proto"
 )
 
 type Weather struct {

@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/email/handler"
-	pb "github.com/m3o/m3o/services/email/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
+	"m3o.dev/services/email/handler"
+	pb "m3o.dev/services/email/proto"
+	"m3o.dev/services/pkg/tracing"
 )
 
 func main() {

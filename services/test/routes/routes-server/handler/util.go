@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	pb "github.com/m3o/m3o/services/test/routes/proto"
+	pb "m3o.dev/services/test/routes/proto"
 )
 
 func toRadians(num float64) float64 {

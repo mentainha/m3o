@@ -12,10 +12,10 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	file "github.com/m3o/m3o/services/file/proto"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	file "m3o.dev/services/file/proto"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 const pathPrefix = "files"

@@ -1,4 +1,4 @@
-module github.com/m3o/m3o/services
+module m3o.dev/services
 
 go 1.17
 

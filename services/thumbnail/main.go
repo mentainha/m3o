@@ -1,10 +1,10 @@
 package main
 
 import (
-	iproto "github.com/m3o/m3o/services/image/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/thumbnail/handler"
-	pb "github.com/m3o/m3o/services/thumbnail/proto"
+	iproto "m3o.dev/services/image/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/thumbnail/handler"
+	pb "m3o.dev/services/thumbnail/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/quran/handler"
-	pb "github.com/m3o/m3o/services/quran/proto"
+	"m3o.dev/services/quran/handler"
+	pb "m3o.dev/services/quran/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

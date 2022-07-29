@@ -7,7 +7,7 @@ import (
 	"github.com/likexian/doh-go/dns"
 
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/dns/proto"
+	pb "m3o.dev/services/dns/proto"
 )
 
 type Dns struct{}

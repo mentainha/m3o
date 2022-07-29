@@ -10,8 +10,8 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/memegen/proto"
-	"github.com/m3o/m3o/services/pkg/api"
+	pb "m3o.dev/services/memegen/proto"
+	"m3o.dev/services/pkg/api"
 )
 
 type Memegen struct {

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/micro/micro/v3/service/errors"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	"github.com/m3o/m3o/services/stream/domain"
-	pb "github.com/m3o/m3o/services/stream/proto"
+	"m3o.dev/services/pkg/tenant"
+	"m3o.dev/services/stream/domain"
+	pb "m3o.dev/services/stream/proto"
 )
 
 type Stream struct{}

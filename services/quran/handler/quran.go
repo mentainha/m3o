@@ -7,9 +7,9 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/pkg/api"
-	"github.com/m3o/m3o/services/quran/domain"
-	pb "github.com/m3o/m3o/services/quran/proto"
+	"m3o.dev/services/pkg/api"
+	"m3o.dev/services/quran/domain"
+	pb "m3o.dev/services/quran/proto"
 )
 
 const (

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/evchargers/handler"
-	pb "github.com/m3o/m3o/services/evchargers/proto"
+	"m3o.dev/services/evchargers/handler"
+	pb "m3o.dev/services/evchargers/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"

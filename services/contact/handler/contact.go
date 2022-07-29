@@ -7,12 +7,12 @@ import (
 	"github.com/google/uuid"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 
-	"github.com/m3o/m3o/services/contact/domain"
-	pb "github.com/m3o/m3o/services/contact/proto"
+	"m3o.dev/services/contact/domain"
+	pb "m3o.dev/services/contact/proto"
 )
 
 type contact struct {

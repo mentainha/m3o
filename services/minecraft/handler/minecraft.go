@@ -5,7 +5,7 @@ import (
 
 	"github.com/iverly/go-mcping/mcping"
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/minecraft/proto"
+	pb "m3o.dev/services/minecraft/proto"
 )
 
 type Minecraft struct{}

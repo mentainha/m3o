@@ -10,8 +10,8 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/function/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	pb "m3o.dev/services/function/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 var (

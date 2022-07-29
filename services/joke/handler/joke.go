@@ -4,8 +4,8 @@ import (
 	"context"
 	"math/rand"
 
-	"github.com/m3o/m3o/services/joke/model"
-	pb "github.com/m3o/m3o/services/joke/proto"
+	"m3o.dev/services/joke/model"
+	pb "m3o.dev/services/joke/proto"
 )
 
 type Joke struct{}

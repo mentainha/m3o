@@ -1,4 +1,4 @@
-module github.com/m3o/m3o
+module m3o.dev
 
 go 1.15
 

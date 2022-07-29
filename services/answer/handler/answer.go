@@ -5,7 +5,7 @@ import (
 
 	"github.com/m3o/goduckgo/goduckgo"
 	"github.com/micro/micro/v3/service/errors"
-	pb "github.com/m3o/m3o/services/answer/proto"
+	pb "m3o.dev/services/answer/proto"
 )
 
 type Answer struct{}

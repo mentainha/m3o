@@ -10,7 +10,7 @@ import (
 	"golang.org/x/text/language"
 	"google.golang.org/api/option"
 
-	pb "github.com/m3o/m3o/services/translate/proto"
+	pb "m3o.dev/services/translate/proto"
 
 	"cloud.google.com/go/translate"
 )

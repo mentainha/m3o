@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/m3o/m3o/services/pkg/tenant"
+	"m3o.dev/services/pkg/tenant"
 )
 
 func getStoreKeyPrefix(ctx context.Context) string {

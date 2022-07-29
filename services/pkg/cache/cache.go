@@ -14,8 +14,8 @@ import (
 	"github.com/hashicorp/golang-lru"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	"github.com/m3o/m3o/services/pkg/tenant"
 	"github.com/peterbourgon/diskv/v3"
+	"m3o.dev/services/pkg/tenant"
 )
 
 type Cache interface {

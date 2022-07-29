@@ -14,8 +14,8 @@ import (
 	"github.com/micro/micro/v3/service/client"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	iproto "github.com/m3o/m3o/services/image/proto"
-	thumbnail "github.com/m3o/m3o/services/thumbnail/proto"
+	iproto "m3o.dev/services/image/proto"
+	thumbnail "m3o.dev/services/thumbnail/proto"
 )
 
 const screenshotPath = "/usr/src/app"

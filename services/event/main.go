@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/event/handler"
-	pb "github.com/m3o/m3o/services/event/proto"
+	"m3o.dev/services/event/handler"
+	pb "m3o.dev/services/event/proto"
 )
 
 func main() {

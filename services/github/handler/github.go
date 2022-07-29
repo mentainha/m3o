@@ -19,11 +19,11 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	github "github.com/m3o/m3o/services/github/proto"
-	"github.com/m3o/m3o/services/pkg/auth"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	github "m3o.dev/services/github/proto"
+	"m3o.dev/services/pkg/auth"
+	pauth "m3o.dev/services/pkg/auth"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 type conf struct {

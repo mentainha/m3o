@@ -4,8 +4,8 @@ import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/sunnah/handler"
-	pb "github.com/m3o/m3o/services/sunnah/proto"
+	"m3o.dev/services/sunnah/handler"
+	pb "m3o.dev/services/sunnah/proto"
 )
 
 func main() {

@@ -12,7 +12,7 @@ import (
 EOF
 
 for service in ${SERVICES[@]}; do
-	echo -e "\t\"github.com/m3o/m3o/services/${service}/proto\""
+	echo -e "\t\"m3o.dev/services/${service}/proto\""
 done
 
 cat << EOF

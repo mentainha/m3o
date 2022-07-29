@@ -5,11 +5,11 @@ import (
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
 
-	otp "github.com/m3o/m3o/services/otp/proto"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/user/handler"
-	proto "github.com/m3o/m3o/services/user/proto"
+	otp "m3o.dev/services/otp/proto"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/user/handler"
+	proto "m3o.dev/services/user/proto"
 )
 
 func main() {

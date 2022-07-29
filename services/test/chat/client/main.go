@@ -13,8 +13,8 @@ import (
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/context/metadata"
 	"github.com/micro/micro/v3/service/logger"
-	chat "github.com/m3o/m3o/services/test/chat/proto"
 	"google.golang.org/protobuf/types/known/timestamppb"
+	chat "m3o.dev/services/test/chat/proto"
 )
 
 var (

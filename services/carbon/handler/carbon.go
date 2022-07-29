@@ -6,10 +6,10 @@ import (
 	"github.com/micro/micro/v3/service/config"
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/m3o/m3o/services/carbon/domain"
-	"github.com/m3o/m3o/services/pkg/api"
+	"m3o.dev/services/carbon/domain"
+	"m3o.dev/services/pkg/api"
 
-	pb "github.com/m3o/m3o/services/carbon/proto"
+	pb "m3o.dev/services/carbon/proto"
 )
 
 type Carbon struct {

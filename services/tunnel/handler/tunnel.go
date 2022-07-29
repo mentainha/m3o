@@ -16,7 +16,7 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/tunnel/proto"
+	pb "m3o.dev/services/tunnel/proto"
 )
 
 type Tunnel struct {

@@ -11,8 +11,8 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/app/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
+	pb "m3o.dev/services/app/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 type App struct{}

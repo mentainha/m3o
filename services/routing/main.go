@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/pkg/tracing"
-	"github.com/m3o/m3o/services/routing/handler"
-	pb "github.com/m3o/m3o/services/routing/proto"
+	"m3o.dev/services/pkg/tracing"
+	"m3o.dev/services/routing/handler"
+	pb "m3o.dev/services/routing/proto"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/config"

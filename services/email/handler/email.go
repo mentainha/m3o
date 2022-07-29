@@ -16,9 +16,9 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	pb "github.com/m3o/m3o/services/email/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	spampb "github.com/m3o/m3o/services/spam/proto"
+	pb "m3o.dev/services/email/proto"
+	"m3o.dev/services/pkg/tenant"
+	spampb "m3o.dev/services/spam/proto"
 )
 
 const (

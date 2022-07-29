@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/m3o/m3o/services/location/domain"
-	proto "github.com/m3o/m3o/services/location/proto"
+	"m3o.dev/services/location/domain"
+	proto "m3o.dev/services/location/proto"
 )
 
 var (

@@ -10,9 +10,9 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	"github.com/m3o/m3o/services/pkg/tenant"
-	"github.com/m3o/m3o/services/wordle/lib"
-	pb "github.com/m3o/m3o/services/wordle/proto"
+	"m3o.dev/services/pkg/tenant"
+	"m3o.dev/services/wordle/lib"
+	pb "m3o.dev/services/wordle/proto"
 )
 
 type Wordle struct {

@@ -6,9 +6,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/m3o/m3o/services/ip/handler"
-	pb "github.com/m3o/m3o/services/ip/proto"
-	"github.com/m3o/m3o/services/pkg/tracing"
+	"m3o.dev/services/ip/handler"
+	pb "m3o.dev/services/ip/proto"
+	"m3o.dev/services/pkg/tracing"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/config"

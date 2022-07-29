@@ -21,14 +21,14 @@ import (
 	"github.com/micro/micro/v3/service/errors"
 	log "github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
-	"github.com/m3o/m3o/services/app/domain"
-	pb "github.com/m3o/m3o/services/app/proto"
-	github "github.com/m3o/m3o/services/github/proto"
-	pauth "github.com/m3o/m3o/services/pkg/auth"
-	"github.com/m3o/m3o/services/pkg/git"
-	adminpb "github.com/m3o/m3o/services/pkg/service/proto"
-	"github.com/m3o/m3o/services/pkg/tenant"
 	"github.com/teris-io/shortid"
+	"m3o.dev/services/app/domain"
+	pb "m3o.dev/services/app/proto"
+	github "m3o.dev/services/github/proto"
+	pauth "m3o.dev/services/pkg/auth"
+	"m3o.dev/services/pkg/git"
+	adminpb "m3o.dev/services/pkg/service/proto"
+	"m3o.dev/services/pkg/tenant"
 )
 
 var (

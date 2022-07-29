@@ -16,8 +16,8 @@ import (
 	"github.com/micro/micro/v3/service/logger"
 	"github.com/micro/micro/v3/service/store"
 
-	"github.com/m3o/m3o/services/pkg/cache"
-	user "github.com/m3o/m3o/services/user/proto"
+	"m3o.dev/services/pkg/cache"
+	user "m3o.dev/services/user/proto"
 
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"

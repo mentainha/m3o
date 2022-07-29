@@ -6,9 +6,9 @@ import (
 
 	"github.com/micro/micro/v3/service/errors"
 	"github.com/micro/micro/v3/service/logger"
-	pb "github.com/m3o/m3o/services/google/proto"
 	"google.golang.org/api/customsearch/v1"
 	"google.golang.org/api/option"
+	pb "m3o.dev/services/google/proto"
 )
 
 type Google struct {

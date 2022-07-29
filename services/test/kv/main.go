@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/m3o/m3o/services/test/kv/handler"
+	"m3o.dev/services/test/kv/handler"
 
 	"github.com/micro/micro/v3/service"
 )
