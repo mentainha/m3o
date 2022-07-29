@@ -39,7 +39,7 @@ type parseCase struct {
 func TestParseSource(t *testing.T) {
 	cases := []parseCase{
 		{
-			source: "m3o.dev/services/helloworld",
+			source: "github.com/m3o/m3o/services/helloworld",
 			expected: &Source{
 				Repo:   "github.com/m3o/m3o",
 				Folder: "services/helloworld",
@@ -47,7 +47,7 @@ func TestParseSource(t *testing.T) {
 			},
 		},
 		{
-			source: "m3o.dev/services/helloworld",
+			source: "github.com/m3o/m3o/services/helloworld",
 			expected: &Source{
 				Repo:   "github.com/m3o/m3o",
 				Folder: "services/helloworld",
@@ -55,7 +55,7 @@ func TestParseSource(t *testing.T) {
 			},
 		},
 		{
-			source: "m3o.dev/services/helloworld@v1.12.1",
+			source: "github.com/m3o/m3o/services/helloworld@v1.12.1",
 			expected: &Source{
 				Repo:   "github.com/m3o/m3o",
 				Folder: "services/helloworld",
@@ -63,7 +63,7 @@ func TestParseSource(t *testing.T) {
 			},
 		},
 		{
-			source: "m3o.dev/services/helloworld@branchname",
+			source: "github.com/m3o/m3o/services/helloworld@branchname",
 			expected: &Source{
 				Repo:   "github.com/m3o/m3o",
 				Folder: "services/helloworld",
