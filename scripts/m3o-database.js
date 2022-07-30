@@ -62,22 +62,8 @@ export function update(table, record) {
   })
 }
 
-// todos.js
-import { create } from './db'
-
-async function createTodo(todo) {
-  const response = await create('todos', {
-    todo,
-    checked: false
-  })
-
-  console.log(response)
-}
-
-createTodo('Use M3O')
-
 // ------------------------------
-// Example 2 -> Class
+// Database Class
 // ------------------------------
 
 class Database {
@@ -137,8 +123,9 @@ class Database {
   }
 }
 
+// Example usage
 // todo.js
-
+/*
 import { Database } from './db'
 
 const todos = new Database('todos')
@@ -147,3 +134,4 @@ todos.create({
   todo,
   checked: false
 })
+*/

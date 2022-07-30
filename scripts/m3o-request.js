@@ -33,12 +33,12 @@ async function m3oRequest(apiName, apiMethod, data) {
 }
 
 // 3. Make a request to any of the M3O apis. In this example we will use weather:
-async function weatherNow() {
-  const response = await m3oRequest('weather', 'Now', {
-    location: 'London'
-  })
+/*
+  async function currentWeather() {
+    const response = await m3oRequest('weather', 'Now', {
+      location: 'London'
+    })
 
-  console.log(response)
-}
-
-weatherNow()
+    console.log(response)
+  }
+*/
