@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script builds a top level client for services
+# This script copies services from the upstream
 
 DIR=`pwd`
 
