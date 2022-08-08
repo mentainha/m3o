@@ -2,47 +2,29 @@
 
 # This script builds a top level client for services
 
+DIR=`pwd`
+
+rm -rf /tmp/services
+git clone https://github.com/micro/services /tmp/services
+cd /tmp/services
+
 SERVICES=`find . -maxdepth 2 -type d -name proto | cut -f 2 -d / | sort`
 
-cat << EOF
-package services
+## rename everything
+grep -r github.com/micro/services | cut -f 1 -d : | sort | uniq | xargs sed -i 's@github.com/micro/services@m3o.dev/services@g'
 
-import (
-	"github.com/micro/micro/v3/service/client"
-EOF
-
+## copy everything first
 for service in ${SERVICES[@]}; do
-	echo -e "\t\"m3o.dev/services/${service}/proto\""
+	if [ ! -d $DIR/$service ]; then
+		mkdir $DIR/$service
+	fi
+
+	rsync -q -avz --delete $service/ $DIR/$service/
 done
 
-cat << EOF
-)
-EOF
+## copy any top level go files
+cp *.go $DIR/
 
-cat << EOF
+cd $DIR
 
-type Client struct { 
-EOF
-
-for service in ${SERVICES[@]}; do
-	echo -e "\t${service^} ${service}.${service^}Service"
-done
-
-cat << EOF
-}
-
-EOF
-
-cat << EOF
-func NewClient(c client.Client) *Client {
-	return &Client{
-EOF
-
-for service in ${SERVICES[@]}; do
-	echo -e "\t\t${service^}: ${service}.New${service^}Service(\"${service}\", c),"
-done
-
-cat << EOF
-	}
-}
-EOF
+go fmt ./...
