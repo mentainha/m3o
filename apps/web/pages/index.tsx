@@ -13,8 +13,8 @@ interface Props extends WithAuthProps {
 }
 
 const SERVICES_NAMES = [
+  'bitcoin',
   'crypto',
-  'currency',
   'nft',
   'cache',
   'user',
