@@ -23,7 +23,7 @@ Here are the main features:
 
 ## Services
 
-So far there are over 60+ APIs. Here are some of the highlights:
+So far there are over 60+ services. Here are some of the highlights:
 
 ### ☁️ Cloud
 
