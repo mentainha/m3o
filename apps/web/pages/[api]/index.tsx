@@ -145,12 +145,7 @@ const Overview: NextPage<Props> = ({
           <p className="text-zinc-400 text-sm max-w-lg">Base request price is 0.000001 credits per request</p>
         </div>
         <div className="flex flex-col">
-          <LinkButton
-            href="/login"
-            className="block md:float-right mb-10 order-1 text-center mt-10 md:order-0 md:inline-block md:ml-auto">
-            Get Started
-          </LinkButton>
-          <div className="md:order-1">
+          <div className="md:mt-20 md:order-1">
             <h2 className="text-white text-xl mb-6 font-bold md:hidden">
               Example
             </h2>
