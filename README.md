@@ -150,13 +150,11 @@ See the [examples](examples) for more use cases.
 - Read the [Blog](https://blog.m3o.com) for content
 - See the [Docs](https://m3o.dev) for more info
 
-## Development
+## Web Development
 
 For app development go into `apps/web` and run `npm install && npm run dev`
 
 The site will be available on `localhost:3000`
-
-For service development go into `services/[name]` and do `micro run .`
 
 ## Infrastructure
 
@@ -165,3 +163,7 @@ See [m3o/cloud](https://github.com/m3o/cloud) for infrastructure automation.
 ## Backend
 
 See [m3o/backend](https://github.com/m3o/backend) for the M3O API backend.
+
+## Services
+
+For service source code go into `services/[name]`
