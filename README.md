@@ -166,4 +166,4 @@ See [m3o/backend](https://github.com/m3o/backend) for the M3O API backend.
 
 ## Services
 
-For service source code go into `services/[name]`
+See [m3o/services](https://github.com/m3o/m3o/tree/main/services) for service source code.
