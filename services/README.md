@@ -105,10 +105,7 @@ Call it from the api
 curl http://api.m3o.com/v1/helloworld/Call
 ```
 
-## Contribute
+## Development 
 
-We welcome contributions of additional services:
-
-- Services must be built using the [Micro](https://micro.dev) platform
-- Any dependency must be configured using the Micro Config
-- All services must include a README.md and be well commented
+Services are copied from the upstream [micro/services](https://github.com/micro/services). 
+For any changes please PR into upstream repo.
