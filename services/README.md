@@ -109,3 +109,5 @@ curl http://api.m3o.com/v1/helloworld/Call
 
 Services are copied from the upstream [micro/services](https://github.com/micro/services). 
 For any changes please PR into upstream repo.
+
+To pull upstream changes run `./upstream.sh`
