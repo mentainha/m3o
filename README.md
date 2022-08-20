@@ -10,7 +10,7 @@
 
 ## Introduction
 
-M3O is a universal micro services platform. Explore, discover and consume public 
+M3O is a universal micro services gateway. Explore, discover and consume public 
 APIs as simpler programmable building blocks all in one place. 
 
 ## Features
