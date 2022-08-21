@@ -12,7 +12,7 @@ export function Subscriptions(): ReactElement {
         description="For small projects"
         features={[
           'Top-up via credit card',
-          '1 requests per credit',
+          '1M requests per credit',
           '1 app deploy',
           '5 lambda functions',
           '10 requests a second',
