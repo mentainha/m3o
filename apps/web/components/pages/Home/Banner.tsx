@@ -32,7 +32,7 @@ export function Banner({ heading, subHeading }: BannerProps): ReactElement {
         <div className="mt-10 md:flex items-center max-w-lg mx-auto">
           {BANNER_LINKS.map(service => (
             <Link href={service.link} key={service.link}>
-              <a className="inline-flex items-center justify-center btn w-full text-center mb-4 md:w-auto md:mx-auto">
+              <a className="inline-flex items-center justify-center btn w-full text-center mb-4  md:w-auto md:mx-auto">
                 {service.text}
               </a>
             </Link>

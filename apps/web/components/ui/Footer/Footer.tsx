@@ -67,16 +67,16 @@ export const Footer: FC = () => {
               <li>
                 <a
                   className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm"
-                  href="https://m3o.com/client"
+                  href="/cloud"
                   target="_blank"
                   rel="noreferrer">
-                  Client
+                  Cloud
                 </a>
               </li>
               <li>
                 <Link href="/explore">
                   <a className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm">
-                    Explore
+                    Services
                   </a>
                 </Link>
               </li>

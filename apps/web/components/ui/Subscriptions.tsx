@@ -12,7 +12,9 @@ export function Subscriptions(): ReactElement {
         description="For small projects"
         features={[
           'Top-up via credit card',
-          '1M requests per credit',
+          '1 requests per credit',
+          '1 app deploy',
+          '5 lambda functions',
           '10 requests a second',
           '100 User accounts',
           '1000 DB records',
@@ -35,6 +37,8 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Dev plus',
           '5M requests in credit',
+          '5 app deploys',
+          '20 lambda functions',
           '100 requests a second',
           '1000 User accounts',
           '10,000 DB records',
@@ -58,6 +62,8 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Solo plus',
           '25M requests in credit',
+          '20 app deploys',
+          '100 lambda functions',
           '1000 requests a second',
           '10,000 User accounts',
           '100,000 DB records',
@@ -81,6 +87,8 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Pro plus',
           '100M requests in credit',
+          '100 app deploys',
+          '1000 lambda functions',
           '10,000 requests a second',
           '100,000 User accounts',
           '1M DB records',
