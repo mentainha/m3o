@@ -18,6 +18,8 @@
     }
   },
   "cloud": {
+    "title": "Cloud",
+    "description": "Serverless cloud for developers",
     "users": {
       "main": {
         "title": "Cloud - Users"

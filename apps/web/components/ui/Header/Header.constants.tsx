@@ -13,12 +13,12 @@ export const LOGGED_IN_MENU_ITEMS: MenuItem[] = [
     text: 'Home',
   },
   {
-    link: Routes.Client,
-    text: 'Client',
+    link: Routes.Cloud,
+    text: 'Cloud',
   },
   {
     link: Routes.Explore,
-    text: 'Explore',
+    text: 'Services',
   },
   {
     link: Routes.UserUsage,

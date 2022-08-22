@@ -30,6 +30,7 @@ export enum RegisterFlows {
 
 export enum Routes {
   Home = '/',
+  Cloud = "/cloud",
   Client = "/client",
   Explore = '/explore',
   GettingStarted = '/getting-started',
