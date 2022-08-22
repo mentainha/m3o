@@ -1,4 +1,4 @@
-# M3O API Client [![godoc](https://godoc.org/github.com/m3o/m3o/api?status.svg)](https://godoc.org/github.com/m3o/m3o/api) 
+# M3O API Client [![godoc](https://godoc.org/github.com/m3o/m3o/api/client?status.svg)](https://godoc.org/github.com/m3o/m3o/api/client) 
 
 This is the Go client to access APIs on the M3O Platform
 
@@ -11,7 +11,7 @@ import (
     "fmt"
     "os"
 
-    "github.com/m3o/m3o/api"
+    "github.com/m3o/m3o/api/client"
 )
 
 type Request struct {
@@ -27,7 +27,7 @@ var (
 )
 
 func main() {
-	c := api.NewClient(nil)
+	c := client.NewClient(nil)
 
 	// set your api token
 	c.SetToken(token)

@@ -1,12 +1,11 @@
-// Package api provides a micro api client
-package api
+// Package client provides a micro api client
+package client
 
 import (
 	"bytes"
 	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -19,7 +18,7 @@ import (
 
 const (
 	// Address for api
-	DefaultAddress = "http://localhost:8080"
+	DefaultAddress = "https://api.m3o.com/v1"
 )
 
 // Options of the Client
@@ -59,12 +58,6 @@ type Response struct {
 // Client enables calls to the micro api
 type Client struct {
 	options Options
-}
-
-// Service handles api requests
-type Service struct {
-	// name of service
-	Name string
 }
 
 // Stream is for streaming request/response
@@ -224,41 +217,4 @@ func (s *Stream) Send(v interface{}) error {
 		return err
 	}
 	return s.conn.WriteMessage(websocket.TextMessage, b)
-}
-
-// Handle is a http handler for serving requests to the API
-func (service *Service) Handle(endpoint string, handler Handler) {
-	path := fmt.Sprintf("/%s/%s", service, endpoint)
-
-	http.HandleFunc(path, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		r.ParseForm()
-		b, err := ioutil.ReadAll(r.Body)
-		if err != nil {
-			http.Error(w, "Error reading body", 500)
-			return
-		}
-
-		var req interface{}
-		json.Unmarshal(b, &req)
-
-		var resp json.RawMessage
-
-		if err := handler(r.Context(), req, &resp); err != nil {
-			http.Error(w, "Error handling request", 500)
-			return
-		}
-
-		w.Write(resp)
-	}))
-}
-
-func (service *Service) Run(address string) error {
-	return http.ListenAndServe(address, nil)
-}
-
-// NewService returns a new api service
-func NewService(name string) *Service {
-	return &Service{
-		Name: name,
-	}
 }
