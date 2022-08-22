@@ -1,17 +1,12 @@
----
+# M3O
 
-<p align="center">
-	<a href="https://discord.gg/TBR9bRjd6Z">
-		<img src="https://discordapp.com/api/guilds/861917584437805127/widget.png?style=banner2" alt="Discord Banner"/>
-	</a>
-</p>
+M3O is a universal micro services gateway
 
----
+## Overview
 
-## Introduction
-
-M3O is a universal micro services gateway. Explore, discover and consume public 
-APIs as simpler programmable building blocks all in one place. 
+M3O is a cloud platform which turns existing public APIs into smaller easier to use Micro services which you can explore, discover and consume 
+as simpler programmable building blocks all in one place. The platform generates unified api docs, clients and examples which makes it vastly 
+easier to use all the APIs out there.
 
 ## Features
 
