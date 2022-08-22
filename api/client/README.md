@@ -57,7 +57,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/m3o/m3o/api"
+	"github.com/m3o/m3o/api/client"
 )
 
 type Request struct {
@@ -73,7 +73,7 @@ var (
 )
 
 func main() {
-	c := api.NewClient(nil)
+	c := client.NewClient(nil)
 
 	// set your api token
 	c.SetToken(token)
