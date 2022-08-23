@@ -5,7 +5,7 @@ M3O is a universal micro services gateway
 ## Overview
 
 M3O turns existing public APIs into smaller easier to use Micro services which you can explore, discover and consume 
-as simpler programmable building blocks all in one place. The platform generates unified api docs, clients and examples which makes it vastly 
+as programmable building blocks. The platform generates unified api docs, clients and examples which makes it vastly 
 easier to use all the APIs out there.
 
 ## Features
