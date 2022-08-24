@@ -1,11 +1,3 @@
-<p align="center">
-	<a href="https://discord.gg/TBR9bRjd6Z">
-		<img src="https://discordapp.com/api/guilds/861917584437805127/widget.png?style=banner2" alt="Discord Banner"/>
-	</a>
-</p>
-
----
-
 # M3O CLI
 
 The command line for M3O
@@ -21,10 +13,10 @@ curl -fssl https://install.m3o.com/cli | /bin/bash
 From source
 
 ```
-go get github.com/m3o/m3o-cli/cmd/m3o
+go get m3o.dev/cmd/m3o
 ```
 
-Otherwise download the latest [release](https://github.com/m3o/m3o-cli/releases/latest) binary.
+Otherwise download the latest [release](https://github.com/m3o/m3o/releases/latest) binary.
 
 ## Usage
 
