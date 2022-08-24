@@ -69,3 +69,5 @@ gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=
 gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b h1:h8qDotaEPuJATrMmW04NCwg7v22aHH28wwpauUhK9Oo=
 gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
+m3o.dev/api/client v0.0.0-20220824140920-ed04861d0249 h1:oQ0y1mIl382J0yWq9iPrYFBhFqbMZKrbWnNMfbB7Zuo=
+m3o.dev/api/client v0.0.0-20220824140920-ed04861d0249/go.mod h1:RGTbdsT0+OP5yKM6Ez1F8GHqDZJ21+63Ii2Mvyi5kNw=
