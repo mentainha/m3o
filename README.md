@@ -1,6 +1,6 @@
 # M3O
 
-M3O is a universal micro services gateway
+M3O is a universal micro services platform
 
 ## Overview
 
