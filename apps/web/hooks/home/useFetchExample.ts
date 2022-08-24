@@ -54,34 +54,6 @@ const EXAMPLES: Examples = {
     'Db.Read':
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/read/readRecords.sh',
   },
-  cli: {
-    'Cache.Get':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/cache/get/getAValue.sh',
-    'Cache.Set':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/cache/set/setAValue.sh',
-    'User.Login':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/user/login/logAUserIn.sh',
-    'User.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/user/create/createAnAccount.sh',
-    'Db.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/create/createARecord.sh',
-    'Db.Read':
-      'https://raw.githubusercontent.com/m3o/m3o-cli/main/examples/db/read/readRecords.sh',
-  },
-  dart: {
-    'Cache.Get':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/cache/get/getAValue/main.dart',
-    'Cache.Set':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/cache/set/setAValue/main.dart',
-    'User.Login':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/user/login/logAUserIn/main.dart',
-    'User.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/user/create/createAnAccount/main.dart',
-    'Db.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/db/create/createARecord/main.dart',
-    'Db.Read':
-      'https://raw.githubusercontent.com/m3o/m3o-dart/main/example/db/read/readRecords/main.dart',
-  },
 }
 
 export function useFetchExample({

@@ -8,7 +8,7 @@ interface Props {
   selectedLanguage: Languages
 }
 
-const LANGUAGES_ARRAY: Languages[] = ['javascript', 'go', 'bash', 'dart']
+const LANGUAGES_ARRAY: Languages[] = ['javascript', 'go', 'bash']
 
 export const LanguageButtons: FC<Props> = ({
   handleButtonClick,
