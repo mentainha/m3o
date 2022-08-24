@@ -1,6 +1,6 @@
 # M3O
 
-M3O is a universal micro services gateway
+M3O is a universal micro services platform
 
 ## Overview
 
@@ -129,7 +129,19 @@ Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
 
 ### CLI
 
-Download the [m3o-cli](https://github.com/m3o/m3o-cli)
+Install the cli
+
+```
+curl -fssl https://install.m3o.com/cli | /bin/bash
+```
+
+Or
+
+```
+go install m3o.dev/cmd/m3o@latest
+```
+
+Example call
 
 ```
 m3o helloworld call --name=Alice
