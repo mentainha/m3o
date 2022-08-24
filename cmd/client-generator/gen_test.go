@@ -171,7 +171,7 @@ func TestTsGen(t *testing.T) {
 	// @todo fix tests to be up to date
 	return
 	for _, c := range cases {
-		spec := &openapi3.Swagger{}
+		spec := &openapi3.T{}
 		err := json.Unmarshal([]byte(c.openapi), &spec)
 		if err != nil {
 			t.Fatal(err)
@@ -185,7 +185,7 @@ func TestTsGen(t *testing.T) {
 }
 
 func TestTimeExample(t *testing.T) {
-	spec := &openapi3.Swagger{}
+	spec := &openapi3.T{}
 	err := json.Unmarshal([]byte(timeExample), &spec)
 	if err != nil {
 		t.Fatal(err)
@@ -318,7 +318,7 @@ const timeExp = `Location: London,
 
 func TestExample(t *testing.T) {
 
-	spec := &openapi3.Swagger{}
+	spec := &openapi3.T{}
 	err := json.Unmarshal([]byte(arrayExample), &spec)
 	if err != nil {
 		t.Fatal(err)
@@ -346,7 +346,7 @@ func TestExample(t *testing.T) {
 		t.Log(res, arrayExp)
 	}
 
-	spec = &openapi3.Swagger{}
+	spec = &openapi3.T{}
 	err = json.Unmarshal([]byte(simpleExample), &spec)
 	if err != nil {
 		t.Log(err)

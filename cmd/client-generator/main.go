@@ -25,7 +25,7 @@ import (
 )
 
 type service struct {
-	Spec *openapi3.Swagger
+	Spec *openapi3.T
 	Name string
 	//  overwrite import name of service when it's a keyword ie function in javascript
 	ImportName string
@@ -46,7 +46,7 @@ var (
 )
 
 func funcMap() map[string]interface{} {
-	isStream := func(spec *openapi3.Swagger, serviceName, requestType string) bool {
+	isStream := func(spec *openapi3.T, serviceName, requestType string) bool {
 		// eg. "/notes/Notes/Events":
 		path := fmt.Sprintf("/%v/%v/%v", serviceName, strings.Title(serviceName), strings.Replace(requestType, "Request", "", -1))
 		var p *openapi3.PathItem
@@ -84,7 +84,7 @@ func funcMap() map[string]interface{} {
 			return strings.Join(parts[1:], "")
 		},
 		"isStream": isStream,
-		"isNotStream": func(spec *openapi3.Swagger, serviceName, requestType string) bool {
+		"isNotStream": func(spec *openapi3.T, serviceName, requestType string) bool {
 			return !isStream(spec, serviceName, requestType)
 		},
 		"requestTypeToResponseType": func(requestType string) string {
@@ -217,7 +217,7 @@ func nodeTopReadme(serviceName, examplesPath string, service service) {
 	}
 }
 
-func apiSpec(serviceFiles []os.FileInfo, serviceDir string) (*openapi3.Swagger, bool) {
+func apiSpec(serviceFiles []os.FileInfo, serviceDir string) (*openapi3.T, bool) {
 	// detect openapi json file
 	apiJSON := ""
 	skip := false
@@ -241,7 +241,7 @@ func apiSpec(serviceFiles []os.FileInfo, serviceDir string) (*openapi3.Swagger, 
 		fmt.Println("Failed to read json spec", err)
 		os.Exit(1)
 	}
-	spec := &openapi3.Swagger{}
+	spec := &openapi3.T{}
 	err = json.Unmarshal(js, &spec)
 	if err != nil {
 		fmt.Println("Failed to unmarshal", err)

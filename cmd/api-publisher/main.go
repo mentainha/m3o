@@ -139,7 +139,7 @@ func main() {
 				}
 			}
 
-			spec := &openapi3.Swagger{}
+			spec := &openapi3.T{}
 
 			// we have to read an openapi spec otherwise we can't publish
 			if err := json.Unmarshal(js, &spec); err != nil {
