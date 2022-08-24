@@ -154,7 +154,6 @@ See the [examples](examples) for more use cases.
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
 - Follow us on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
-- Read the [Blog](https://blog.m3o.com) for content
 
 ## Web Development
 
