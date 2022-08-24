@@ -11,7 +11,7 @@ import (
     "fmt"
     "os"
 
-    "github.com/m3o/m3o/api/client"
+    "m3o.dev/api/client"
 )
 
 type Request struct {
@@ -57,7 +57,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/m3o/m3o/api/client"
+	"m3o.dev/api/client"
 )
 
 type Request struct {
