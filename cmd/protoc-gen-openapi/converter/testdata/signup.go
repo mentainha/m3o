@@ -573,8 +573,8 @@ const Signup = `{
   },
   "servers": [
     {
-      "url": "https://api.m3o.com/v1",
-      "description": "M3O platform"
+      "description": "M3O platform",
+      "url": "https://api.m3o.com/v1"
     }
   ]
 }`
