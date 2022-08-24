@@ -19,7 +19,7 @@ type Request struct {
 }
 
 type Response struct {
-	Msg string `json:"msg"`
+	Message string `json:"message"`
 }
 
 var (
