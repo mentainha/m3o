@@ -133,9 +133,11 @@ Install the cli
 
 ```
 curl -fssl https://install.m3o.com/cli | /bin/bash
+```
 
-or
+Or
 
+```
 go install m3o.dev/cmd/m3o@latest
 ```
 
