@@ -191,7 +191,7 @@ jobs:
         working-directory: services
         if: github.ref == 'refs/heads/main'
         run: |
-          api-publisher
+          api-publisher .
         env:
           MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
 
