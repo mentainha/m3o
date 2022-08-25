@@ -68,7 +68,12 @@ jobs:
         run: |
           go install
 
-      - name: Install generator
+      - name: Install api publisher
+        working-directory: m3o/cmd/api-publisher
+        run: |
+          go install
+
+      - name: Install client generator
         working-directory: m3o
         run: |
           # build the client generator
@@ -186,7 +191,7 @@ jobs:
         working-directory: services
         if: github.ref == 'refs/heads/main'
         run: |
-          go run cmd/api-publisher/main.go .
+          api-publisher
         env:
           MICRO_ADMIN_TOKEN: ${{ secrets.MICRO_ADMIN_TOKEN }}
 
