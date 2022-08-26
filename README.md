@@ -76,7 +76,7 @@ curl \
   https://api.m3o.com/v1/helloworld/call
 ```
 
-Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
+Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
 
 ### Go
 
