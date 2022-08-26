@@ -152,7 +152,7 @@ See the [examples](examples) for more use cases.
 ## Learn More
 
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
-- Follow us on [Twitter](https://twitter.com/m3oservices) for updates
+- Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 
 ## Web Development
