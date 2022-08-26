@@ -60,7 +60,7 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 
 ## Quick Start
 
-Grab your API token from the dashboard and try out helloworld and export it
+Grab your API token from the dashboard and export it
 
 ```
 export M3O_API_TOKEN=xxxxxxx
@@ -76,7 +76,7 @@ curl \
   https://api.m3o.com/v1/helloworld/call
 ```
 
-Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
+Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
 
 ### Go
 
@@ -101,7 +101,7 @@ fmt.Println(rsp, err)
 
 Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
 
-### Javascript
+### JS
 
 Install the [m3o](https://www.npmjs.com/package/m3o) package
 
@@ -152,7 +152,7 @@ See the [examples](examples) for more use cases.
 ## Learn More
 
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
-- Follow us on [Twitter](https://twitter.com/m3oservices) for updates
+- Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
 
 ## Web Development
