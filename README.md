@@ -4,7 +4,7 @@ M3O is a serverless cloud gateway
 
 ## Overview
 
-M3O transforms public APIs into Micro services which you can explore, discover and consume 
+M3O transforms public APIs into smaller Micro services which you can explore, discover and consume 
 as serverless building blocks. The platform generates unified api docs, clients and examples.
 The API gateway manages access using a pay per request billing model taken from credit in your 
 account.
