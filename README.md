@@ -1,12 +1,13 @@
 # M3O
 
-M3O is a universal micro services platform
+M3O is a serverless cloud gateway
 
 ## Overview
 
-M3O turns public APIs into smaller easier to use Micro services which you can explore, discover and consume 
-as programmable building blocks. The platform generates unified api docs, clients and examples which makes it vastly 
-easier to use all the APIs out there.
+M3O transforms public APIs into smaller easier to use Micro services which you can explore, discover and consume 
+as serverless building blocks. The platform generates unified api docs, clients and examples.
+
+The API gateway manages access using a pay per request billing model taken from credit on account.
 
 ## Features
 
