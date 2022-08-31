@@ -5,7 +5,7 @@ M3O is a serverless cloud gateway
 ## Overview
 
 M3O transforms public APIs into smaller easier to use Micro services which you can explore, discover and consume 
-as serverless building blocks. The platform generates unified api docs, clients and examples.
+as serverless building blocks. The platform generates unified api docs, client libraries and examples.
 
 The API gateway manages access using a pay per request billing model taken from credit on account.
 
@@ -155,21 +155,3 @@ See the [examples](examples) for more use cases.
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
 - Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
-
-## Web Development
-
-For app development go into `apps/web` and run `npm install && npm run dev`
-
-The site will be available on `localhost:3000`
-
-## Infrastructure
-
-See [m3o/cloud](https://github.com/m3o/cloud) for infrastructure automation.
-
-## Backend
-
-See [m3o/backend](https://github.com/m3o/backend) for the M3O API backend.
-
-## Services
-
-See [m3o/services](https://github.com/m3o/m3o/tree/main/services) for service source code.

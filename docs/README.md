@@ -1,17 +1,25 @@
 # Introduction
 
-M3O is a universal micro services gateway. Explore, discover and consume public APIs 
-as simpler programmable building blocks all through one platform.
+M3O is a serverless cloud gateway
+
+## Overview
+
+M3O transforms public APIs into smaller easier to use Micro services which you can explore, discover and consume 
+as serverless building blocks. The platform generates unified api docs, client libraries and examples.
+
+The API gateway manages access using a pay per request billing model taken from credit on account.
 
 ## Features
 
-- **1️⃣ One Platform** - Discover, explore and consume public APIs all in one place. 
-- **☝️ One Account** - Manage your API usage with one account and one token.
-- **⚡ One Framework** - Learn, develop and integrate using one set of docs and libraries.
+Here are the main features:
+
+- **1️⃣ ONE Platform** - Discover, explore and consume public APIs all in one place. 
+- **☝️ ONE Account** - Manage your API usage with one account and one token.
+- **⚡ ONE Framework** - Learn, develop and integrate using one set of docs and libraries.
 
 ## Services
 
-So far there are over 60+ APIs. Here are some of the highlights:
+So far there are over 60+ services. Here are some of the highlights:
 
 ### ☁️ Cloud
 
@@ -46,17 +54,17 @@ See the full list at [m3o.com/explore](https://m3o.com/explore).
 ## Getting Started
 
 - Head to [m3o.com](https://m3o.com) and signup for a free account.
-- Browse the APIs on the [Explore](https://m3o.com/explore) page.
-- Call any API using your token in the `Authorization: Bearer [Token]` header
-- All APIs are available through one endpoint: `https://api.m3o.com/v1/*`.
+- Browse services on the [Explore](https://m3o.com/explore) page.
+- Call any service using your token in the `Authorization: Bearer [Token]` header
+- All services are available through one API endpoint: `https://api.m3o.com/v1/*`.
 - Use [m3o-cli](https://github.com/m3o/m3o-cli), [m3o-js](https://github.com/m3o/m3o-js) and [m3o-go](https://github.com/m3o/m3o-go) clients for development
 
 ## Quick Start
 
-Grab your API token from the dashboard and try out helloworld and export it as 
+Grab your API token from the dashboard and export it
 
 ```
-M3O_API_TOKEN=xxxxxxx
+export M3O_API_TOKEN=xxxxxxx
 ```
 
 ### Curl
@@ -69,7 +77,7 @@ curl \
   https://api.m3o.com/v1/helloworld/call
 ```
 
-Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
+Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
 
 ### Go
 
@@ -86,17 +94,15 @@ Create a new client with your API token and call it
 
 ```go
 client := m3o.New(os.Getenv("M3O_API_TOKEN"))
-
 rsp, err := client.Helloworld.Call(&helloworld.CallRequest{
 	Name: "John",
 })
-
 fmt.Println(rsp, err)
 ```
 
 Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
 
-### Javascript
+### JS
 
 Install the [m3o](https://www.npmjs.com/package/m3o) package
 
@@ -124,18 +130,46 @@ Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
 
 ### CLI
 
-Download the [m3o-cli](https://github.com/m3o/m3o-cli)
+Install the cli
+
+```
+curl -fssl https://install.m3o.com/cli | /bin/bash
+```
+
+Or
+
+```
+go install m3o.dev/cmd/m3o@latest
+```
+
+Example call
 
 ```
 m3o helloworld call --name=Alice
 ```
 
-See the [examples](https://github.com/m3o/m3o/tree/main/examples) for more use cases.
+See the [examples](examples) for more use cases.
 
 ## Learn More
 
 - Checkout the [Getting Started](https://m3o.com/getting-started) guide
-- Follow us on [Twitter](https://twitter.com/m3oservices) for updates
+- Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
-- Read the [Blog](https://blog.m3o.com) for content
-- See the [Docs](docs) for more info
+
+## Web Development
+
+For app development go into `apps/web` and run `npm install && npm run dev`
+
+The site will be available on `localhost:3000`
+
+## Infrastructure
+
+See [m3o/cloud](https://github.com/m3o/cloud) for infrastructure automation.
+
+## Backend
+
+See [m3o/backend](https://github.com/m3o/backend) for the M3O API backend.
+
+## Services
+
+See [m3o/services](https://github.com/m3o/m3o/tree/main/services) for service source code.
