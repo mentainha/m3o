@@ -8,7 +8,7 @@ before:
   hooks:
     - go mod download
 builds:
-- binary: m3o
+- binary: api-publisher
   env:
     - CGO_ENABLED=0
     - GO111MODULE=on
@@ -23,7 +23,39 @@ builds:
   - arm64
   goarm:
   - 7
-  main: ./cmd/m3o
+  main: ./cmd/api-publisher
+- binary: client-generator
+  env:
+    - CGO_ENABLED=0
+    - GO111MODULE=on
+  goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - 386
+  - amd64
+  - arm
+  - arm64
+  goarm:
+  - 7
+  main: ./cmd/client-generator
+- binary: protoc-gen-openapi
+  env:
+    - CGO_ENABLED=0
+    - GO111MODULE=on
+  goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - 386
+  - amd64
+  - arm
+  - arm64
+  goarm:
+  - 7
+  main: ./cmd/protoc-gen-openapi
 archives:
 - name_template: '{{.ProjectName}}-{{.Tag}}-{{.Os}}-{{.Arch}}{{if .Arm}}{{.Arm}}{{end}}'
   replacements:
