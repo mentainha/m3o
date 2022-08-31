@@ -8,11 +8,11 @@ The M3O API Gateway is a single entrypoint for apps, functions and more. It mana
 
 ## Apps
 
-Apps are given a unique id and subdomain using m3o.app e.g helloworld.m3o.app resolves to the app id helloworld.
+Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](https://helloworld.m3o.app) resolves to the app id helloworld.
 
 ## Functions
 
-Functions are given a unique id and subdomain much like apps using m3o.sh e.g helloworld.m3o.sh resolves to the 
+Functions are given a unique id and subdomain much like apps using m3o.sh e.g [helloworld.m3o.sh](https://helloworld.m3o.sh/) resolves to the 
 function helloworld. It provides basic http proxying.
 
 ## URL
