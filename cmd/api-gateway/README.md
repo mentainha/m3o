@@ -27,8 +27,6 @@ as a single entrypoint at https://m3o.one. We don't serve directly because of ti
 
 ## Usage
 
-To deploy the url service
-
 Set the host prefix
 
 ```
