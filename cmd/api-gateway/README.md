@@ -1,0 +1,45 @@
+# API Gateway
+
+One gateway to rule them all
+
+## Overview
+
+The M3O API Gateway is a single URL proxy for a variety of our custom domains including m3o.one (short urls) and m3o.app (app urls).
+
+## Apps
+
+Apps are given a unique id and subdomain using m3o.app e.g helloworld.m3o.app resolves to the app id helloworld.
+
+## Functions
+
+Functions are given a unique id and subdomain much like apps using m3o.sh e.g helloworld.m3o.sh resolves to the 
+function helloworld. It provides basic http proxying.
+
+## URL
+
+The [url](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
+as a single entrypoint at https://m3o.one. We don't serve directly because of time wasted on ssl certs, etc.
+
+- Assumes url is of format `https://m3o.one/u/AArfeZE`
+- Will call `https://api.m3o.com/url/proxy?shortURL=https://m3o.one/u/AArfeZE`
+- URL service should return `destinationURL=https://foobar.com/example`
+- Proxy will issue a 301 redirect
+
+## Usage
+
+To deploy the url service
+
+Set the host prefix
+
+```
+micro config set micro.url.host_prefix https://m3o.one/u/
+micro config set micro.app.domain m3o.app
+```
+
+Deploy the url, function, app services
+
+```
+micro run github.com/micro/services/app
+micro run github.com/micro/services/function
+micro run github.com/micro/services/url
+```
