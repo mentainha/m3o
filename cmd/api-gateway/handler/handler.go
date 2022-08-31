@@ -17,7 +17,7 @@ import (
 
 var (
 	// API Key
-	APIKey = os.Getenv("M3O_API_KEY")
+	APIKey = os.Getenv("M3O_API_TOKEN")
 
 	// API Url
 	APIHost = "https://api.m3o.com"
