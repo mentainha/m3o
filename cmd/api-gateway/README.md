@@ -25,13 +25,19 @@ as a single entrypoint at https://m3o.one. We don't serve directly because of ti
 - URL service should return `destinationURL=https://foobar.com/example`
 - Proxy will issue a 301 redirect
 
+## Users
+
+User email verification is performed via the User Verify Email endpoint. The gateway serves user.m3o.com for this purpose.
+
 ## Usage
 
 Set the host prefix
 
 ```
-micro config set micro.url.host_prefix https://m3o.one/u/
 micro config set micro.app.domain m3o.app
+micro config set micro.app.domain m3o.sh
+micro config set micro.url.host_prefix https://m3o.one/u/
+micro config set micro.user.verify_email_url https://user.m3o.com
 ```
 
 Deploy the url, function, app services
