@@ -31,8 +31,6 @@ type Options struct {
 	Timeout time.Duration
 }
 
-type Handler func(ctx context.Context, req interface{}, rsp interface{}) error
-
 // Request is the request of the generic `api-client` call
 type Request struct {
 	// eg. "helloworld"
