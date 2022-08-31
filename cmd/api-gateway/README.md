@@ -13,7 +13,7 @@ Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](
 ## Functions
 
 Functions are given a unique id and subdomain much like apps using m3o.sh e.g [helloworld.m3o.sh](https://helloworld.m3o.sh/) resolves to the 
-function helloworld. It provides basic http proxying.
+function helloworld. 
 
 ## URL
 
