@@ -31,7 +31,11 @@ User email verification is performed via the User Verify Email endpoint. The gat
 
 ## Usage
 
-Set the host prefix
+Specify `M3O_API_TOKEN` to the binary and run the ingress
+
+### Micro Services
+
+Set the config values 
 
 ```
 micro config set micro.app.domain m3o.app
