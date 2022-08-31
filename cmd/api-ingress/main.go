@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/gorilla/handlers"
-	"m3o.dev/cmd/api-gateway/handler"
+	"m3o.dev/cmd/api-ingress/handler"
 )
 
 func main() {
