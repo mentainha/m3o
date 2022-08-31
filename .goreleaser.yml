@@ -9,6 +9,7 @@ before:
     - go mod download
 builds:
 - binary: api-publisher
+  id: api-publisher
   env:
     - CGO_ENABLED=0
     - GO111MODULE=on
@@ -25,6 +26,7 @@ builds:
   - 7
   main: ./cmd/api-publisher
 - binary: client-generator
+  id: client-generator
   env:
     - CGO_ENABLED=0
     - GO111MODULE=on
@@ -41,6 +43,7 @@ builds:
   - 7
   main: ./cmd/client-generator
 - binary: protoc-gen-openapi
+  id: protoc-gen-openapi
   env:
     - CGO_ENABLED=0
     - GO111MODULE=on
