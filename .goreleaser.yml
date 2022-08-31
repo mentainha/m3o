@@ -8,8 +8,8 @@ before:
   hooks:
     - go mod download
 builds:
-- binary: api-gateway
-  id: api-gateway
+- binary: api-ingress
+  id: api-ingress
   env:
     - CGO_ENABLED=0
     - GO111MODULE=on
@@ -24,7 +24,7 @@ builds:
   - arm64
   goarm:
   - 7
-  main: ./cmd/api-gateway
+  main: ./cmd/api-ingress
 - binary: api-publisher
   id: api-publisher
   env:
