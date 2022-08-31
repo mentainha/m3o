@@ -40,10 +40,11 @@ micro config set micro.url.host_prefix https://m3o.one/u/
 micro config set micro.user.verify_email_url https://user.m3o.com
 ```
 
-Deploy the url, function, app services
+Deploy the url, function, app, user services
 
 ```
 micro run github.com/micro/services/app
 micro run github.com/micro/services/function
 micro run github.com/micro/services/url
+micro run github.com/micro/services/user
 ```
