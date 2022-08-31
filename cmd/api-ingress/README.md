@@ -1,10 +1,10 @@
-# API Gateway
+# API Ingress
 
 Ingress for apps and functions
 
 ## Overview
 
-The M3O API Gateway is a single entrypoint for apps, functions and more. It manages the usage of custom domains.
+The M3O API Ingress is a single entrypoint for apps, functions and more. It manages the usage of custom domains.
 
 ## Apps
 
