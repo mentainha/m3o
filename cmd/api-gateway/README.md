@@ -1,10 +1,10 @@
 # API Gateway
 
-One gateway to rule them all
+Ingress for apps and functions
 
 ## Overview
 
-The M3O API Gateway is a single URL proxy for a variety of our custom domains including m3o.one (short urls) and m3o.app (app urls).
+The M3O API Gateway is a single entrypoint for apps, functions and more. It manages the usage of custom domains.
 
 ## Apps
 
