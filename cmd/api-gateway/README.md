@@ -21,7 +21,7 @@ The [url](https://github.com/micro/services/tree/master/url) service provides li
 as a single entrypoint at https://m3o.one. We don't serve directly because of time wasted on ssl certs, etc.
 
 - Assumes url is of format `https://m3o.one/u/AArfeZE`
-- Will call `https://api.m3o.com/url/proxy?shortURL=https://m3o.one/u/AArfeZE`
+- Will call `https://api.m3o.com/url/resolve?shortURL=https://m3o.one/u/AArfeZE`
 - URL service should return `destinationURL=https://foobar.com/example`
 - Proxy will issue a 301 redirect
 
