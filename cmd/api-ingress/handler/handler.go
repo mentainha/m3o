@@ -341,10 +341,17 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
+	var id string
+
 	// if it's /api then use the v1 proxy
 	if strings.HasPrefix(r.URL.Path, "/api/") {
 		h.v1Proxy(w, r)
 		return
+	}
+
+	// check url prefix
+	if strings.HasPrefix(r.URL.Path, "/url/") {
+		id = strings.TrimPrefix(r.URL.Path, "/url/")
 	}
 
 	uri := url.URL{
@@ -376,9 +383,17 @@ func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
 		apiURL = APIHost + "/v1/url/resolve"
 	}
 
+	var params string
+
+	if len(id) > 0 {
+		params = "?id=" + id
+	} else {
+		params = "?shortURL=" + uri.String()
+	}
+
 	// make new request
-	log.Printf("[url/proxy] Calling: %v", apiURL+"?shortURL="+uri.String())
-	req, err := http.NewRequest("GET", apiURL+"?shortURL="+uri.String(), nil)
+	log.Printf("[url/proxy] Calling: %v", apiURL+params)
+	req, err := http.NewRequest("GET", apiURL+params, nil)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
@@ -520,6 +535,11 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if strings.HasPrefix(r.URL.Path, "/api/") {
 		h.v1Proxy(w, r)
 		return
+	}
+
+	// if it's /url then resolve by id
+	if strings.HasPrefix(r.URL.Path, "/url/") {
+		h.urlProxy(w, r)
 	}
 }
 
