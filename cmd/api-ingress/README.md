@@ -48,10 +48,14 @@ The `/api` endpoint supports both HTTP params and JSON body where `Content-Type:
 
 Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](https://helloworld.m3o.app) resolves to the app id helloworld.
 
+The `/v1/app/Resolve` endpoint is called with the ID specified to resolve the backend URL for the app
+
 ## Functions
 
 Functions are given a unique id and subdomain much like apps using m3o.sh e.g [helloworld.m3o.sh](https://helloworld.m3o.sh/) resolves to the 
 function helloworld. 
+
+The `/v1/function/Proxy` endpoint is called with the ID specified to resolve the backend URL for the function
 
 ## URL Shortener
 
