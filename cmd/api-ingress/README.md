@@ -28,8 +28,9 @@ Which will route to:
 https://api.m3o.com/v1/[service]/[endpoint]
 ```
 
-Where `Authorization: Bearer XXX` is present it will be passed through to the client. Otherwise we provide GET/POST 
-access to the /v1/* API via `api_key=xxx` http param.
+Where `Authorization: Bearer XXX` is present it will be passed through to the client. 
+
+Otherwise we provide GET/POST access to the /v1/* API via `api_key=xxx` http param.
 
 Example URL
 
