@@ -51,7 +51,7 @@ as a single entrypoint at https://m3o.one.
 
 ## User Verification
 
-User email verification is performed via the User Verify Email endpoint. The gateway serves user.m3o.com for this purpose.
+User email verification is performed via the /v1/user/VerifyEmail endpoint. The gateway serves user.m3o.com for this purpose.
 
 ## Usage
 
