@@ -500,6 +500,22 @@ func (h *Handler) userProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	// if it's /api then use the v1 proxy
+	if strings.HasPrefix(r.URL.Path, "/api/") {
+		h.v1Proxy(w, r)
+		return
+	}
+
+	// if it's /url then resolve by id
+	if strings.HasPrefix(r.URL.Path, "/url/") {
+		h.urlProxy(w, r)
+	}
+
+	// if it's /user then use user proxy
+	if strings.HasPrefix(r.URL.Path, "/user/") {
+		h.userProxy(w, r)
+	}
+
 	// m3o.app
 	if strings.HasSuffix(r.Host, AppHost) {
 		h.appProxy(w, r)
@@ -518,20 +534,10 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// if it's /api then use the v1 proxy
-	if strings.HasPrefix(r.URL.Path, "/api/") {
-		h.v1Proxy(w, r)
-		return
-	}
-
-	// if it's /url then resolve by id
-	if strings.HasPrefix(r.URL.Path, "/url/") {
+	// m3o.one
+	if r.Host == URLHost {
 		h.urlProxy(w, r)
-	}
 
-	// if it's /user then use user proxy
-	if strings.HasPrefix(r.URL.Path, "/user/") {
-		h.userProxy(w, r)
 	}
 }
 
