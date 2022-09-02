@@ -32,7 +32,7 @@ Where `Authorization: Bearer XXX` is present it will be passed through to the cl
 
 Otherwise we provide GET/POST access to the /v1/* API via `api_key=xxx` http param.
 
-Example URL
+### Example URL
 
 ```
 https://m3o.one/api/helloworld/call?api_key=xxxx
