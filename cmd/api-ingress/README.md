@@ -4,7 +4,7 @@ Ingress for apps and functions
 
 ## Overview
 
-The M3O API Ingress is a single entrypoint for apps, functions and more
+The M3O API Ingress is a single entrypoint for apps, functions and more hosted on the M3O platform 
 
 - [api](#api)
 - [apps](#apps)
