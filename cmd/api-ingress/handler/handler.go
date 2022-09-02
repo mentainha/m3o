@@ -341,25 +341,6 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
-	var id string
-
-	// if it's /api then use the v1 proxy
-	if strings.HasPrefix(r.URL.Path, "/api/") {
-		h.v1Proxy(w, r)
-		return
-	}
-
-	// if it's /user then use the user proxy
-	if strings.HasPrefix(r.URL.Path, "/user/") {
-		h.userProxy(w, r)
-		return
-	}
-
-	// check url prefix
-	if strings.HasPrefix(r.URL.Path, "/url/") {
-		id = strings.TrimPrefix(r.URL.Path, "/url/")
-	}
-
 	uri := url.URL{
 		Scheme: r.URL.Scheme,
 		Host:   r.URL.Host,
@@ -389,7 +370,12 @@ func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
 		apiURL = APIHost + "/v1/url/resolve"
 	}
 
-	var params string
+	var id, params string
+
+	// check url prefix
+	if strings.HasPrefix(r.URL.Path, "/url/") {
+		id = strings.TrimPrefix(r.URL.Path, "/url/")
+	}
 
 	if len(id) > 0 {
 		params = "?id=" + id
@@ -514,12 +500,6 @@ func (h *Handler) userProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// m3o.one
-	if strings.HasSuffix(r.Host, URLHost) {
-		h.urlProxy(w, r)
-		return
-	}
-
 	// m3o.app
 	if strings.HasSuffix(r.Host, AppHost) {
 		h.appProxy(w, r)
@@ -532,6 +512,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// user.m3o.com
 	if r.Host == UserHost {
 		h.userProxy(w, r)
 		return
@@ -548,7 +529,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		h.urlProxy(w, r)
 	}
 
-	// user verification proxy
+	// if it's /user then use user proxy
 	if strings.HasPrefix(r.URL.Path, "/user/") {
 		h.userProxy(w, r)
 	}
