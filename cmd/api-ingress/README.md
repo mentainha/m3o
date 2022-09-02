@@ -6,6 +6,29 @@ Ingress for apps and functions
 
 The M3O API Ingress is a single entrypoint for apps, functions and more. It manages the usage of custom domains.
 
+- [api](#api)
+- [apps](#apps)
+- [functions](#functions)
+- [url](#url-proxy)
+
+## API
+
+We provide GET/POST access to the /v1/* API via `api_key=xxx` param rather than Authorization: Bearer xxx
+
+Example URL
+
+```
+https://m3o.one/api/helloworld/call?api_key=xxxx
+```
+
+Routes to the below URL with `Authorization: Bearer XXX` set.
+
+```
+https://api.m3o.com/v1/helloworld/call
+```
+
+The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
+
 ## Apps
 
 Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](https://helloworld.m3o.app) resolves to the app id helloworld.
@@ -24,16 +47,6 @@ as a single entrypoint at https://m3o.one.
 - Will call `https://api.m3o.com/url/resolve?shortURL=https://m3o.one/u/AArfeZE`
 - URL service should return `destinationURL=https://foobar.com/example`
 - Proxy will issue a 301 redirect
-
-Additionally we provide GET/POST access to the /v1/* API via `api_key=xxx` param rather than Authorization: Bearer xxx
-
-Example URL
-
-```
-http://m3o.one/api/helloworld/call?api_key=xxxx
-```
-
-The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 
 ## User Verification
 
