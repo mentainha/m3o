@@ -105,7 +105,6 @@ func (h *Handler) v1Proxy(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-
 	// write the resposne
 	w.Write(rsp)
 }
@@ -334,6 +333,12 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
+	// if it's /api then use the v1 proxy
+	if strings.HasPrefix(r.URL.Path, "/api/") {
+		h.v1Proxy(w, r)
+		return
+	}
+
 	uri := url.URL{
 		Scheme: r.URL.Scheme,
 		Host:   r.URL.Host,
