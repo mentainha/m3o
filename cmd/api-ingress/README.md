@@ -15,9 +15,9 @@ Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](
 Functions are given a unique id and subdomain much like apps using m3o.sh e.g [helloworld.m3o.sh](https://helloworld.m3o.sh/) resolves to the 
 function helloworld. 
 
-## URL
+## URL Proxy
 
-The [url](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
+The [URL](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
 as a single entrypoint at https://m3o.one. We don't serve directly because of time wasted on ssl certs, etc.
 
 - Assumes url is of format `https://m3o.one/u/AArfeZE`
@@ -25,7 +25,15 @@ as a single entrypoint at https://m3o.one. We don't serve directly because of ti
 - URL service should return `destinationURL=https://foobar.com/example`
 - Proxy will issue a 301 redirect
 
-## Users
+Additionally we provide GET/POST access to the /v1 API via `api_key=xxx` param rather than Authorization: Bearer xxx
+
+Example
+
+```
+curl http://m3o.one/api/helloworld/call?api_key=xxxx
+```
+
+## User Verification
 
 User email verification is performed via the User Verify Email endpoint. The gateway serves user.m3o.com for this purpose.
 
