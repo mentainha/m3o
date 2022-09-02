@@ -40,6 +40,8 @@ https://m3o.one/api/helloworld/call?api_key=xxxx
 
 Routes to `https://api.m3o.com/v1/helloworld/call` with `Authorization: Bearer XXX` set.
 
+### Request Params
+
 The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 
 ## Apps
