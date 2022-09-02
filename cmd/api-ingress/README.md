@@ -27,11 +27,13 @@ as a single entrypoint at https://m3o.one.
 
 Additionally we provide GET/POST access to the /v1/* API via `api_key=xxx` param rather than Authorization: Bearer xxx
 
-Example
+Example URL
 
 ```
-curl http://m3o.one/api/helloworld/call?api_key=xxxx
+http://m3o.one/api/helloworld/call?api_key=xxxx
 ```
+
+The m3o.one/api supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 
 ## User Verification
 
