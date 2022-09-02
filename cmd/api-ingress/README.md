@@ -16,7 +16,20 @@ Supported endpoints below:
 
 ## API
 
-We provide GET/POST access to the /v1/* API via `api_key=xxx` param rather than Authorization: Bearer xxx
+We provide a proxy to the /v1/* API endpoints. Which can be called via the following endpoint:
+
+```
+https://m3o.one/api/[service]/[endpoint]
+```
+
+Which will route to:
+
+```
+https://api.m3o.com/v1/[service]/[endpoint]
+```
+
+Where `Authorization: Bearer XXX` is present it will be passed through to the client. Otherwise we provide GET/POST 
+access to the /v1/* API via `api_key=xxx` http param.
 
 Example URL
 
@@ -24,11 +37,7 @@ Example URL
 https://m3o.one/api/helloworld/call?api_key=xxxx
 ```
 
-Routes to the below URL with `Authorization: Bearer XXX` set.
-
-```
-https://api.m3o.com/v1/helloworld/call
-```
+Routes to `https://api.m3o.com/v1/helloworld/call` with `Authorization: Bearer XXX` set.
 
 The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 

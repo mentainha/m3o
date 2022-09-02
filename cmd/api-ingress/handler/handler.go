@@ -60,6 +60,14 @@ func (h *Handler) v1Proxy(w http.ResponseWriter, r *http.Request) {
 	// strip the api key
 	r.Form.Del("api_key")
 
+	// try authorization header
+	if len(key) == 0 {
+		auth := r.Header.Get("Authorization")
+		if strings.HasPrefix(auth, "Bearer ") {
+			key = strings.TrimPrefix(auth, "Bearer ")
+		}
+	}
+
 	if len(key) == 0 {
 		http.Error(w, "Missing api key", 401)
 		return
