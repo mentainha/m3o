@@ -9,7 +9,7 @@ The M3O API Ingress is a single entrypoint for apps, functions and more hosted o
 - [api](#api)
 - [apps](#apps)
 - [functions](#functions)
-- [url proxy](#url-proxy)
+- [url shortener](#url-shortener)
 - [user verification](#user-verification)
 
 ## API
@@ -39,7 +39,7 @@ Apps are given a unique id and subdomain using m3o.app e.g [helloworld.m3o.app](
 Functions are given a unique id and subdomain much like apps using m3o.sh e.g [helloworld.m3o.sh](https://helloworld.m3o.sh/) resolves to the 
 function helloworld. 
 
-## URL Proxy
+## URL Shortener
 
 The [URL](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
 as a single entrypoint at https://m3o.one. 
