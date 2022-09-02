@@ -11,7 +11,7 @@ Supported endpoints below:
 - [api](#api)
 - [apps](#apps)
 - [functions](#functions)
-- [url shortener](#url-shortener)
+- [url generator](#url-generator)
 - [user verification](#user-verification)
 
 ## API
@@ -57,7 +57,7 @@ function helloworld.
 
 The `/v1/function/Proxy` endpoint is called with the ID specified to resolve the backend URL for the function
 
-## URL Shortener
+## URL Generator
 
 The [URL](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
 as a single entrypoint at https://m3o.one. 
