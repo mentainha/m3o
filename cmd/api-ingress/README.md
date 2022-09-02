@@ -9,7 +9,8 @@ The M3O API Ingress is a single entrypoint for apps, functions and more
 - [api](#api)
 - [apps](#apps)
 - [functions](#functions)
-- [url](#url-proxy)
+- [url proxy](#url-proxy)
+- [user verification](#user-verification)
 
 ## API
 
