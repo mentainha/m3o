@@ -33,7 +33,7 @@ Example URL
 http://m3o.one/api/helloworld/call?api_key=xxxx
 ```
 
-The m3o.one/api supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
+The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 
 ## User Verification
 
