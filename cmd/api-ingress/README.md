@@ -1,6 +1,6 @@
 # API Ingress
 
-Ingress for apps and functions
+Ingress for M3O services
 
 ## Overview
 
