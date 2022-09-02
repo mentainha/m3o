@@ -349,6 +349,12 @@ func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// if it's /user then use the user proxy
+	if strings.HasPrefix(r.URL.Path, "/user/") {
+		h.userProxy(w, r)
+		return
+	}
+
 	// check url prefix
 	if strings.HasPrefix(r.URL.Path, "/url/") {
 		id = strings.TrimPrefix(r.URL.Path, "/url/")
@@ -540,6 +546,11 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// if it's /url then resolve by id
 	if strings.HasPrefix(r.URL.Path, "/url/") {
 		h.urlProxy(w, r)
+	}
+
+	// user verification proxy
+	if strings.HasPrefix(r.URL.Path, "/user/") {
+		h.userProxy(w, r)
 	}
 }
 

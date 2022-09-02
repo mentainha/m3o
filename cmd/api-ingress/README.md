@@ -71,7 +71,9 @@ URLs can also be served via `/url/[id]` e.g `https://m3o.one/url/xyz`
 
 ## User Verification
 
-User email verification is performed via the `/v1/user/VerifyEmail` endpoint. The gateway serves user.m3o.com for this purpose.
+User email verification is performed via the `/v1/user/VerifyEmail` endpoint. The ingress serves `user.m3o.com` for this purpose.
+
+This is also available via the `/user/[email]` endpoint
 
 ## Usage
 
