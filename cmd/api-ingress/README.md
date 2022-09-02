@@ -18,14 +18,14 @@ function helloworld.
 ## URL Proxy
 
 The [URL](https://github.com/micro/services/tree/master/url) service provides link shortening and sharing. The URL Proxy fronts those urls 
-as a single entrypoint at https://m3o.one. We don't serve directly because of time wasted on ssl certs, etc.
+as a single entrypoint at https://m3o.one. 
 
 - Assumes url is of format `https://m3o.one/u/AArfeZE`
 - Will call `https://api.m3o.com/url/resolve?shortURL=https://m3o.one/u/AArfeZE`
 - URL service should return `destinationURL=https://foobar.com/example`
 - Proxy will issue a 301 redirect
 
-Additionally we provide GET/POST access to the /v1 API via `api_key=xxx` param rather than Authorization: Bearer xxx
+Additionally we provide GET/POST access to the /v1/* API via `api_key=xxx` param rather than Authorization: Bearer xxx
 
 Example
 
