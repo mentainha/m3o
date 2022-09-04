@@ -1,6 +1,6 @@
 # Tools
 
-Command line tools used to generate and publish APIs
+Command line tools used to serve, generate and publish APIs
 
 - [api-ingress](api-ingress) - Manages ingress for apps and functions
 - [api-publisher](api-publisher) - Publishes the API specs to the publicapi service
