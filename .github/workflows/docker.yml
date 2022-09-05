@@ -1,0 +1,38 @@
+name: Docker Images
+on:
+  # This workflow should be triggered by pushes to micro/micro main branch
+  # It builds the docker images as required by m3o
+  repository_dispatch:
+    types: [micro_release]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.18
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.18
+        id: go
+
+      - name: Clone micro repo
+        uses: actions/checkout@v2
+        with:
+          repository: "micro/micro"
+
+      - name: Fetch tags
+        run: git fetch --prune --unshallow
+
+      - name: Build profile
+        run: |
+          go mod edit -replace google.golang.org/grpc=google.golang.org/grpc@v1.26.0
+          GOFLAGS=-mod=mod go run . init --package=github.com/micro/micro/profile/platform --output=profile.go
+          GOPROXY=direct go get
+
+      - name: Publish to platform image to registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: m3o/platform
+          username: ${{ secrets.GHCR_ACTOR }}
+          password: ${{ secrets.GHCR_PAT }}
+          snapshot: true
+          registry: ghcr.io
