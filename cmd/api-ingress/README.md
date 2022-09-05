@@ -19,7 +19,7 @@ Supported endpoints below:
 We provide a proxy to the /v1/* API endpoints. Which can be called via the following endpoint:
 
 ```
-https://m3o.one/api/[service]/[endpoint]
+/api/[service]/[endpoint]
 ```
 
 Which will route to:
@@ -35,7 +35,7 @@ Otherwise we provide GET/POST access to the /v1/* API via `api_key=xxx` http par
 ### Example URL
 
 ```
-https://m3o.one/api/helloworld/call?api_key=xxxx
+/api/helloworld/call?api_key=xxxx
 ```
 
 Routes to `https://api.m3o.com/v1/helloworld/call` with `Authorization: Bearer XXX` set.
