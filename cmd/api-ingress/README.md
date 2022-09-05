@@ -59,15 +59,12 @@ The `/v1/function/Proxy` endpoint is called with the ID specified to resolve the
 
 ## URL Generator
 
-The [URL](https://github.com/micro/services/tree/master/url) service provides link generation and sharing. The URL Proxy fronts those urls 
-as a single entrypoint at https://m3o.one. 
+The [URL](https://github.com/micro/services/tree/master/url) service provides link generation and sharing. 
 
-- Assumes url is of format `https://m3o.one/u/AArfeZE`
-- Will call `https://api.m3o.com/url/resolve?shortURL=https://m3o.one/u/AArfeZE`
+- Assumes url is of format `/url/AArfeZE`
+- Will call `https://api.m3o.com/url/resolve?id=AArfeZE`
 - URL service should return `destinationURL=https://foobar.com/example`
 - The ingress URL proxy handler will issue a 302 redirect
-
-URLs can also be served via `/url/[id]` e.g `https://m3o.one/url/xyz`
 
 ## User Verification
 
