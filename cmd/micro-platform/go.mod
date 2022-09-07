@@ -6,8 +6,8 @@ replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
 	github.com/gorilla/websocket v1.5.0
-	github.com/micro/micro/profile/platform v0.0.0-20220907092602-772c5bbe89d8
-	github.com/micro/micro/v3 v3.12.4-0.20220907102343-a0e2f95e0e1d
+	github.com/micro/micro/profile/platform v0.0.0-20220907131243-de47fcd3ea8c
+	github.com/micro/micro/v3 v3.12.4-0.20220907131243-de47fcd3ea8c
 	github.com/urfave/cli/v2 v2.3.0
 )
 
@@ -90,7 +90,7 @@ require (
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	google.golang.org/genproto v0.0.0-20200806141610-86f49bd18e98 // indirect
 	google.golang.org/grpc v1.40.0 // indirect
-	google.golang.org/protobuf v1.26.0 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/square/go-jose.v2 v2.4.1 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
