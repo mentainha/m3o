@@ -35,10 +35,10 @@ jobs:
 
       - name: Publish to platform image to registry
         uses: elgohr/Publish-Docker-Github-Action@master
-        working-directory: cmd/micro-platform
         with:
           name: m3o/platform
           username: ${{ secrets.GHCR_ACTOR }}
           password: ${{ secrets.GHCR_PAT }}
           snapshot: true
           registry: ghcr.io
+          workdir: cmd/micro-platform
