@@ -1,15 +1,14 @@
-module github.com/m3o/m3o/cmd/micro-platform
+module m3o.dev/cmd/micro-platform
 
 go 1.18
-
-replace m3o.dev => ../../
 
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
+	github.com/gorilla/websocket v1.5.0
 	github.com/micro/micro/profile/platform v0.0.0-20220907092602-772c5bbe89d8
 	github.com/micro/micro/v3 v3.12.4-0.20220907102343-a0e2f95e0e1d
-	m3o.dev v0.0.0-00010101000000-000000000000
+	github.com/urfave/cli/v2 v2.3.0
 )
 
 require (
@@ -40,7 +39,6 @@ require (
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
-	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	github.com/improbable-eng/grpc-web v0.13.0 // indirect
@@ -79,7 +77,6 @@ require (
 	github.com/teris-io/shortid v0.0.0-20171029131806-771a37caa5cf // indirect
 	github.com/uber/jaeger-client-go v2.29.1+incompatible // indirect
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
-	github.com/urfave/cli/v2 v2.3.0 // indirect
 	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
 	go.etcd.io/etcd v0.5.0-alpha.5.0.20200425165423-262c93980547 // indirect

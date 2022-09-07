@@ -4,12 +4,11 @@ import (
 	"net/http"
 	"strings"
 
-	"m3o.dev/api/v1"
-
 	"github.com/micro/micro/v3/plugin"
 	"github.com/micro/micro/v3/service/api/handler"
 	"github.com/micro/micro/v3/service/api/server"
 	"github.com/urfave/cli/v2"
+	"m3o.dev/cmd/micro-platform/v1"
 )
 
 var (
