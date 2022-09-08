@@ -6,8 +6,8 @@ replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
 	github.com/gorilla/websocket v1.5.0
-	github.com/micro/micro/profile/platform v0.0.0-20220907131243-de47fcd3ea8c
-	github.com/micro/micro/v3 v3.12.4-0.20220907131243-de47fcd3ea8c
+	github.com/micro/micro/profile/platform v0.0.0-20220908191442-e94933d0f426
+	github.com/micro/micro/v3 v3.12.4-0.20220908191442-e94933d0f426
 	github.com/urfave/cli/v2 v2.3.0
 )
 
@@ -50,7 +50,7 @@ require (
 	github.com/micro/micro/plugin/etcd/v3 v3.0.0-20220816083658-7f875afc6a39 // indirect
 	github.com/micro/micro/plugin/postgres/v3 v3.0.0-20210825142032-d27318700a59 // indirect
 	github.com/micro/micro/plugin/prometheus/v3 v3.0.0-20201217215412-2f7ad18595ff // indirect
-	github.com/micro/micro/plugin/redis/blocklist/v3 v3.0.0-20210818101332-9a333769a3d7 // indirect
+	github.com/micro/micro/plugin/redis/blocklist/v3 v3.0.0-20220908113659-758df06ca38b // indirect
 	github.com/micro/micro/plugin/redis/broker/v3 v3.0.0-20210622092058-b12502169757 // indirect
 	github.com/micro/micro/plugin/redis/stream/v3 v3.0.0-20210622092058-b12502169757 // indirect
 	github.com/micro/micro/plugin/s3/v3 v3.0.0-20220203170347-2c86e5fb6d13 // indirect
