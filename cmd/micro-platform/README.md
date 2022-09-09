@@ -12,7 +12,9 @@ the extra network hop plus internal routing should speedup requests.
 
 Use [M3O Cloud](https://github.com/m3o/cloud) pulumi automation to boot the platform
 
-Set the following for v1 routing
+### V1 Routing
+
+Set the following for v1 routing. Otherwise we use `v1.micro:8080`
 
 ```
 micro config set micro.v1.address [address of v1 service]
