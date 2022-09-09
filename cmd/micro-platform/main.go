@@ -12,14 +12,8 @@ import (
 
 	// load platform profile
 	_ "github.com/micro/micro/profile/platform"
-
-	// load the v1 handler
-	"m3o.dev/cmd/micro-platform/v1/plugin"
 )
 
 func main() {
-	// register the v1 plugin
-	plugin.Register()
-
 	cmd.Run()
 }
