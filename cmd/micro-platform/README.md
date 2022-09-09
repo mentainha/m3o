@@ -12,9 +12,6 @@ the extra network hop plus internal routing should speedup requests.
 
 Use [M3O Cloud](https://github.com/m3o/cloud) pulumi automation to boot the platform
 
-Alternatively start the server with `MICRO_PROFILE=platform` if the [platform](https://github.com/micro/micro/blob/master/profile/platform/platform.go) 
-profile dependencies are available. 
-
 Set the following for v1 routing
 
 ```
