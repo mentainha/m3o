@@ -42,10 +42,10 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
-func serveStream(ctx context.Context, w http.ResponseWriter, r *http.Request, c client.Client, address ...string) {
+func serveStream(ctx context.Context, w http.ResponseWriter, r *http.Request, c client.Client, address string) {
 	// serve as websocket if thats the case
 	if isWebSocket(r) {
-		serveWebsocket(ctx, w, r, c, address...)
+		serveWebsocket(ctx, w, r, c, address)
 		return
 	}
 
@@ -93,10 +93,14 @@ func serveStream(ctx context.Context, w http.ResponseWriter, r *http.Request, c 
 	w.Header().Set("Content-Type", ct)
 
 	// create custom router
-	callOpt := client.WithAddress(address...)
+	var callOpts []client.CallOption
+
+	if len(address) > 0 {
+		callOpts = append(callOpts, client.WithAddress(address))
+	}
 
 	// create a new stream
-	stream, err := c.Stream(ctx, req, callOpt)
+	stream, err := c.Stream(ctx, req, callOpts...)
 	if err != nil {
 		if logger.V(logger.ErrorLevel, logger.DefaultLogger) {
 			logger.Error(err)
@@ -339,7 +343,7 @@ func (s *stream) bufToClientLoop(cancel context.CancelFunc, wg *sync.WaitGroup, 
 }
 
 // serveWebsocket will stream rpc back over websockets assuming json
-func serveWebsocket(ctx context.Context, w http.ResponseWriter, r *http.Request, c client.Client, address ...string) {
+func serveWebsocket(ctx context.Context, w http.ResponseWriter, r *http.Request, c client.Client, address string) {
 	var rspHdr http.Header
 	// we use Sec-Websocket-Protocol to pass auth headers so just accept anything here
 	if prots := r.Header.Values("Sec-WebSocket-Protocol"); len(prots) > 0 {
@@ -367,9 +371,15 @@ func serveWebsocket(ctx context.Context, w http.ResponseWriter, r *http.Request,
 		ct = "application/json"
 	}
 
+	var callOpts []client.CallOption
+
+	if len(address) > 0 {
+		callOpts = append(callOpts, client.WithAddress(address))
+	}
+
 	// create stream
 	req := c.NewRequest("v1", "V1.Endpoint", nil, client.WithContentType(ct), client.StreamingRequest())
-	str, err := c.Stream(ctx, req, client.WithAddress(address...))
+	str, err := c.Stream(ctx, req, callOpts...)
 	if err != nil {
 		if logger.V(logger.ErrorLevel, logger.DefaultLogger) {
 			logger.Error(err)

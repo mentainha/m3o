@@ -7,6 +7,7 @@ import (
 	"github.com/micro/micro/v3/plugin"
 	"github.com/micro/micro/v3/service/api/handler"
 	"github.com/micro/micro/v3/service/api/server"
+	"github.com/micro/micro/v3/service/config"
 	"github.com/urfave/cli/v2"
 	"m3o.dev/cmd/micro-platform/v1"
 )
@@ -20,7 +21,14 @@ type v1Plugin struct {
 }
 
 func (p *v1Plugin) Init(ctx *cli.Context) error {
-	p.v1 = v1.NewHandler("v1.micro:8080")
+	var address string
+
+	val, err := config.Get("micro.v1.address")
+	if err == nil {
+		address = val.String("v1.micro:8080")
+	}
+
+	p.v1 = v1.NewHandler(address)
 
 	// register the v1 handler
 	server.Register("v1", p.v1)
