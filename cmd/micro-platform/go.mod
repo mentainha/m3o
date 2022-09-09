@@ -6,8 +6,8 @@ replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
 	github.com/gorilla/websocket v1.5.0
-	github.com/micro/micro/profile/platform v0.0.0-20220909100343-1262bd36f53c
-	github.com/micro/micro/v3 v3.12.4-0.20220909100208-f9d586c40375
+	github.com/micro/micro/profile/platform v0.0.0-20220909105755-0c78d91a1c5d
+	github.com/micro/micro/v3 v3.12.4-0.20220909105755-0c78d91a1c5d
 	github.com/urfave/cli/v2 v2.3.0
 )
 
