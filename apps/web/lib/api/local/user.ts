@@ -2,7 +2,6 @@ import type { AxiosResponse } from 'axios'
 import type { NextRouter } from 'next/router'
 import { SessionStorageKeys, RegisterFlows, Routes } from '@/lib/constants'
 import { apiInstance } from './api'
-import { redirectToCloud } from '@/lib/redirect'
 
 export interface LoginUserPayload {
   email: string
@@ -50,9 +49,7 @@ export function handleSuccessfulOAuthLogin(router: NextRouter) {
 
   sessionStorage.removeItem(SessionStorageKeys.RedirectToAfterLogin)
 
-  if (redirectTo === 'cloud') {
-    redirectToCloud()
-  } else if (redirectTo?.charAt(0) === '/') {
+  if (redirectTo?.charAt(0) === '/') {
     router.push(redirectTo)
   } else {
     router.push(Routes.Home)
