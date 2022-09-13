@@ -4,7 +4,6 @@ import { useMutation } from 'react-query'
 import { loginUser } from '@/lib/api/local/user'
 import { sessionStorage } from '@/utils/storage'
 import { GET_STARTED_STORAGE_KEY, SessionStorageKeys } from '@/lib/constants'
-import { shouldRedirectOnLogin } from '@/lib/redirect'
 
 export function useLogin() {
   const router = useRouter()
@@ -22,10 +21,8 @@ export function useLogin() {
         return
       }
 
-      if (shouldRedirectOnLogin()) {
-        router.push(pathToReturnTo ? pathToReturnTo : '/')
-        sessionStorage.deleteItem(GET_STARTED_STORAGE_KEY)
-      }
+      router.push(pathToReturnTo ? pathToReturnTo : '/')
+      sessionStorage.deleteItem(GET_STARTED_STORAGE_KEY)
     },
   })
 }
