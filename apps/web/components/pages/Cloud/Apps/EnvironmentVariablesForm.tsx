@@ -34,8 +34,8 @@ export function EnvironmentVariablesForm(): ReactElement {
             rules={{
               required: { value: true, message: 'Please provide a key name' },
               pattern: {
-                value: /^[A-Z]+(?:_[A-Z]+)*$/,
-                message: 'Only uppercase and underscores permitted',
+                value: /^[A-Z0-9]+(?:_[A-Z0-9]+)*$/,
+                message: 'Only uppercase letters, numbers and underscores permitted',
               },
             }}
             render={({ field, fieldState }) => (
