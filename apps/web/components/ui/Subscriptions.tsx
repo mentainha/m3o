@@ -16,7 +16,7 @@ export function Subscriptions(): ReactElement {
           '1 app deployment',
           '5 lambda functions',
           '100 User accounts',
-          '1000 DB records',
+          '1k DB records',
           '1GB Space storage',
         ]}
         button={
@@ -38,9 +38,8 @@ export function Subscriptions(): ReactElement {
           '5M API requests',
           '5 app deployments',
           '20 lambda functions',
-          '100 requests a second',
-          '1000 User accounts',
-          '10,000 DB records',
+          '1k User accounts',
+          '10k DB records',
           '10GB Space storage',
           'Community support',
         ]}
@@ -63,9 +62,8 @@ export function Subscriptions(): ReactElement {
           '25M API requests',
           '20 app deployments',
           '100 lambda functions',
-          '1000 requests a second',
-          '10,000 User accounts',
-          '100,000 DB records',
+          '10k User accounts',
+          '100k DB records',
           '100GB Space storage',
           'Email support',
         ]}
@@ -88,8 +86,7 @@ export function Subscriptions(): ReactElement {
           '100M API requests',
           '100 app deployments',
           '1000 lambda functions',
-          '10,000 requests a second',
-          '100,000 User accounts',
+          '100k User accounts',
           '1M DB records',
           '1TB Space storage',
           'Premium support',
