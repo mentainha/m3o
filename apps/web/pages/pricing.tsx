@@ -58,7 +58,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
       <MainLayout>
         <PageHeader
           title="Pricing"
-          subTitle="Simple, straight forward, pay-as-you grow pricing"
+          subTitle="Simple, pay-as-you grow pricing"
         />
         <div className="m3o-container pt-8">
           <h2 className="font-bold text-xl md:text-4xl md:mt-8">
