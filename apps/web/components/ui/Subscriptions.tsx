@@ -35,7 +35,7 @@ export function Subscriptions(): ReactElement {
         description="For creators and individuals"
         features={[
           '5 app deployments',
-          '20 lambda functions',
+          '10 lambda functions',
           '1k User accounts',
           '10k DB records',
           '5M API requests',
@@ -57,8 +57,8 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
-          '20 app deployments',
-          '100 lambda functions',
+          '10 app deployments',
+          '20 lambda functions',
           '10k User accounts',
           '100k DB records',
           '25M API requests',
@@ -80,8 +80,8 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Enterprise}
         description="For growing companies"
         features={[
-          '100 app deployments',
-          '1000 lambda functions',
+          '20 app deployments',
+          '100 lambda functions',
           '100k User accounts',
           '1M DB records',
           '100M API requests',
