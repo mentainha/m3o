@@ -11,7 +11,7 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Dev}
         description="For small projects"
         features={[
-          'Top-up via credit card',
+          'Free to get started',
           '1 app deployment',
           '5 lambda functions',
           '100 User accounts',
@@ -34,7 +34,6 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Solo}
         description="For creators and individuals"
         features={[
-          'Everything in Dev plus',
           '5 app deployments',
           '20 lambda functions',
           '1k User accounts',
@@ -58,7 +57,6 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
-          'Everything in Solo plus',
           '20 app deployments',
           '100 lambda functions',
           '10k User accounts',
@@ -82,7 +80,6 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Enterprise}
         description="For growing companies"
         features={[
-          'Everything in Pro plus',
           '100 app deployments',
           '1000 lambda functions',
           '100k User accounts',
