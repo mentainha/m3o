@@ -66,7 +66,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
           </h2>
           <Subscriptions />
           <h2 className="font-bold text-xl md:text-4xl md:mt-16 mt-8">
-            API Requests
+            API Credits
           </h2>
           <div className="my-10">
             <p className="mb-4">
@@ -81,7 +81,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
                 Premium APIs
               </h1>
               <p className="mb-4">
-                The APIs below are charged above the base request pricing
+                The APIs below are exclusively paid requiring credit on account 
               </p>
               {prices.map(price => (
                 <ApiPriceBreakdown key={price.id} {...price} />
