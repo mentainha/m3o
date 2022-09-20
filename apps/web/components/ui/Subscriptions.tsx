@@ -12,11 +12,11 @@ export function Subscriptions(): ReactElement {
         description="For small projects"
         features={[
           'Top-up via credit card',
-          '1M API requests',
           '1 app deployment',
           '5 lambda functions',
           '100 User accounts',
           '1k DB records',
+          '1M API requests',
           '1GB Space storage',
         ]}
         button={
@@ -35,11 +35,11 @@ export function Subscriptions(): ReactElement {
         description="For creators and individuals"
         features={[
           'Everything in Dev plus',
-          '5M API requests',
           '5 app deployments',
           '20 lambda functions',
           '1k User accounts',
           '10k DB records',
+          '5M API requests',
           '10GB Space storage',
           'Community support',
         ]}
@@ -59,11 +59,11 @@ export function Subscriptions(): ReactElement {
         description="For professionals and teams"
         features={[
           'Everything in Solo plus',
-          '25M API requests',
           '20 app deployments',
           '100 lambda functions',
           '10k User accounts',
           '100k DB records',
+          '25M API requests',
           '100GB Space storage',
           'Email support',
         ]}
@@ -83,11 +83,11 @@ export function Subscriptions(): ReactElement {
         description="For growing companies"
         features={[
           'Everything in Pro plus',
-          '100M API requests',
           '100 app deployments',
           '1000 lambda functions',
           '100k User accounts',
           '1M DB records',
+          '100M API requests',
           '1TB Space storage',
           'Premium support',
         ]}
