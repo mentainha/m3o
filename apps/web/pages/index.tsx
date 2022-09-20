@@ -13,15 +13,15 @@ interface Props extends WithAuthProps {
 }
 
 const SERVICES_NAMES = [
-  'bitcoin',
-  'ethereum',
-  'nft',
-  'currency',
+  'app',
+  'function',
   'db',
+  'user',
   'email',
   'sms',
-  'user',
-  'wallet',
+  'geocoding',
+  'search',
+  'space',
 ]
 
 export const getServerSideProps = withAuth(async context => {
@@ -56,7 +56,7 @@ export default function Home({
         <Landing
           heading="Universal Micro Services"
           services={services}
-          subHeading="Explore, discover and consume public APIs as simpler
+          subHeading="Explore, discover and consume the cloud as serverless
           building blocks"
         />
       )}
