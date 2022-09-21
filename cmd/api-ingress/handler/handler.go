@@ -3,6 +3,7 @@ package handler
 import (
 	"bytes"
 	"encoding/json"
+	"html/template"
 	"io"
 	"io/ioutil"
 	"log"
@@ -31,7 +32,7 @@ var (
 	URLHost = "m3o.one"
 
 	// host to proxy for Apps
-	AppHost = "m3o.app"
+	AppHost = "penguin.linux.test:8080"
 
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
@@ -40,17 +41,50 @@ var (
 	UserHost = "user.m3o.com"
 )
 
+type App struct {
+	Name string
+	Url  string
+}
+
 type Handler struct {
 	mtx    sync.RWMutex
 	appMap map[string]*backend
 
 	ftx     sync.RWMutex
 	funcMap map[string]*backend
+
+	client      *client.Client
+	lastUpdated time.Time
+	appList     []*App
 }
 
 type backend struct {
 	url     *url.URL
 	created time.Time
+}
+
+func (h *Handler) listApps() ([]*App, error) {
+	var rsp map[string]interface{}
+	req := map[string]interface{}{}
+
+	if err := h.client.Call("app", "list", req, &rsp); err != nil {
+		return nil, err
+	}
+
+	appList := []*App{}
+	apps, _ := rsp["services"].([]interface{})
+
+	for _, v := range apps {
+		app := v.(map[string]interface{})
+		name := app["name"].(string)
+		url := app["url"].(string)
+		appList = append(appList, &App{
+			Name: name,
+			Url:  url,
+		})
+	}
+
+	return appList, nil
 }
 
 // v1Proxy manages requests to the /v1 api by converting an api key param to authorization header
@@ -229,10 +263,39 @@ func (h *Handler) functionProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
-	// no subdomain
+	// load the landing page
 	if r.Host == AppHost {
+		h.mtx.RLock()
+		lastUpdated := h.lastUpdated
+		appList := h.appList
+		h.mtx.RUnlock()
+
+		if lastUpdated.IsZero() || time.Since(lastUpdated) < time.Minute {
+			newList, err := h.listApps()
+			if err == nil {
+				h.mtx.Lock()
+				h.appList = appList
+				h.lastUpdated = time.Now()
+				appList = newList
+				h.mtx.Unlock()
+			}
+		}
+
+		// parse the web template
+		t, err := template.New("template").Parse(WebTemplate)
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+
+		// load the index template with app data
+		if err := t.ExecuteTemplate(w, "template", appList); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
+
 		return
 	}
+
 
 	// lookup the app map
 	h.mtx.RLock()
@@ -545,6 +608,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func New() *Handler {
 	h := &Handler{
+		client:  client.NewClient(&client.Options{Token: APIKey}),
 		appMap:  make(map[string]*backend),
 		funcMap: make(map[string]*backend),
 	}
