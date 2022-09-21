@@ -34,7 +34,7 @@ export function HeaderBanner() {
       <a
         className="text-white text-xs md:text-sm w-full flex items-center px-6 py-2 dark:text-white"
         href="https://m3o.org">
-        Join the waitlist for M3O.org, a community for remote work</a>
+        Join M3O.org, a community for remote work</a>
       <button onClick={hideBanner} className="mr-6">
         <XIcon className="w-4 text-white" />
       </button>
