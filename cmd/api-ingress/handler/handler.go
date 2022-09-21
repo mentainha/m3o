@@ -198,6 +198,19 @@ func (h *Handler) functionProxy(w http.ResponseWriter, r *http.Request) {
 	httputil.NewSingleHostReverseProxy(uri).ServeHTTP(w, r)
 }
 
+func (h *Handler) loadApps() error {
+	newList, err := h.listApps()
+	if err != nil {
+		return err
+	}
+
+	h.mtx.Lock()
+	h.appList = newList
+	h.lastUpdated = time.Now()
+	h.mtx.Unlock()
+	return nil
+}
+
 func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 	// load the landing page
 	if r.Host == AppHost {
@@ -206,15 +219,9 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 		appList := h.appList
 		h.mtx.RUnlock()
 
-		if lastUpdated.IsZero() || time.Since(lastUpdated) > time.Minute {
-			newList, err := h.listApps()
-			if err == nil {
-				h.mtx.Lock()
-				h.appList = newList
-				h.lastUpdated = time.Now()
-				appList = newList
-				h.mtx.Unlock()
-			}
+		// refresh app list every minute
+		if time.Since(lastUpdated) > time.Minute {
+			go h.loadApps()
 		}
 
 		// if home app exists load it
@@ -568,6 +575,9 @@ func New() *Handler {
 		client:  client.NewClient(&client.Options{Token: APIKey}),
 		appMap:  make(map[string]*backend),
 		funcMap: make(map[string]*backend),
+	}
+	if err := h.loadApps(); err != nil {
+		log.Printf("Error loading apps: %v", err)
 	}
 	return h
 }
