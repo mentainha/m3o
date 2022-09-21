@@ -274,7 +274,7 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 			newList, err := h.listApps()
 			if err == nil {
 				h.mtx.Lock()
-				h.appList = appList
+				h.appList = newList
 				h.lastUpdated = time.Now()
 				appList = newList
 				h.mtx.Unlock()
