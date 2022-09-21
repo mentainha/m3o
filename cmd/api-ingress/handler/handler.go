@@ -206,7 +206,7 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 		appList := h.appList
 		h.mtx.RUnlock()
 
-		if lastUpdated.IsZero() || time.Since(lastUpdated) < time.Minute {
+		if lastUpdated.IsZero() || time.Since(lastUpdated) > time.Minute {
 			newList, err := h.listApps()
 			if err == nil {
 				h.mtx.Lock()
