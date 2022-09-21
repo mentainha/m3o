@@ -24,8 +24,6 @@ var WebTemplate = `
 	border-radius: 10px;
 	padding: 25px;
 	background: white;
-      }
-      .app a {
 	color: black;
 	text-decoration: none;
       }
@@ -34,9 +32,7 @@ var WebTemplate = `
   <body>
     <div class="container">
     {{range .}}
-      <div class="app">
-        <a href="{{.Url}}">{{.Name}}</a>
-      </div>
+      <a class="app" href="{{.Url}}">{{.Name}}</a>
     {{end}}
     </div>
   </body>
