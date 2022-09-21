@@ -217,21 +217,48 @@ func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
+		// if home app exists load it
+		var home *App
+		for _, app := range appList {
+			if app.Name == "home" {
+				home = app
+				break
+			}
+		}
+
+		// we have a home app that will load instead of the index
+		if home != nil {
+			u, err := url.Parse(home.Url)
+			if err != nil {
+				http.Error(w, err.Error(), 500)
+				return
+			}
+			rx := httputil.NewSingleHostReverseProxy(u)
+			r.URL.Host = u.Host
+			r.URL.Scheme = u.Scheme
+			r.Header.Set("X-Forwarded-Host", r.Header.Get("host"))
+			r.Host = u.Host
+			rx.ServeHTTP(w, r)
+			return
+
+		}
+
+		// load the default index
+
 		// parse the web template
-		t, err := template.New("template").Parse(WebTemplate)
+		t, err := template.New("index").Parse(WebTemplate)
 		if err != nil {
 			http.Error(w, err.Error(), 500)
 			return
 		}
 
 		// load the index template with app data
-		if err := t.ExecuteTemplate(w, "template", appList); err != nil {
+		if err := t.ExecuteTemplate(w, "index", appList); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
 
 		return
 	}
-
 
 	// lookup the app map
 	h.mtx.RLock()
