@@ -8,41 +8,10 @@ The M3O API Ingress is a single entrypoint for apps, functions and more hosted o
 
 Supported endpoints below:
 
-- [api](#api)
 - [apps](#apps)
 - [functions](#functions)
 - [url generator](#url-generator)
 - [user verification](#user-verification)
-
-## API
-
-We provide a proxy to the /v1/* API endpoints. Which can be called via the following endpoint:
-
-```
-/api/[service]/[endpoint]
-```
-
-Which will route to:
-
-```
-https://api.m3o.com/v1/[service]/[endpoint]
-```
-
-Where `Authorization: Bearer XXX` is present it will be passed through to the client. 
-
-Otherwise we provide GET/POST access to the /v1/* API via `api_key=xxx` http param.
-
-### Example URL
-
-```
-/api/helloworld/call?api_key=xxxx
-```
-
-Routes to `https://api.m3o.com/v1/helloworld/call` with `Authorization: Bearer XXX` set.
-
-### Request Params
-
-The `/api` endpoint supports both HTTP params and JSON body where `Content-Type: application/json` is specified.
 
 ## Apps
 

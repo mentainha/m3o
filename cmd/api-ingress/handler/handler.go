@@ -87,70 +87,6 @@ func (h *Handler) listApps() ([]*App, error) {
 	return appList, nil
 }
 
-// v1Proxy manages requests to the /v1 api by converting an api key param to authorization header
-func (h *Handler) v1Proxy(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	key := r.Form.Get("api_key")
-	// strip the api key
-	r.Form.Del("api_key")
-
-	// try authorization header
-	if len(key) == 0 {
-		auth := r.Header.Get("Authorization")
-		if strings.HasPrefix(auth, "Bearer ") {
-			key = strings.TrimPrefix(auth, "Bearer ")
-		}
-	}
-
-	if len(key) == 0 {
-		http.Error(w, "Missing api key", 401)
-		return
-	}
-
-	c := client.NewClient(nil)
-	c.SetToken(key)
-
-	parts := strings.Split(r.URL.Path, "/")
-	if len(parts) != 4 {
-		http.Error(w, "Bad url format", 400)
-		return
-	}
-
-	service := parts[2]
-	endpoint := parts[3]
-
-	var req interface{}
-
-	if ct := r.Header.Get("Content-Type"); ct == "application/json" {
-		b, err := ioutil.ReadAll(r.Body)
-		if err != nil {
-			http.Error(w, err.Error(), 500)
-			return
-		}
-		if len(b) == 0 {
-			b = []byte(`{}`)
-		}
-		req = json.RawMessage(b)
-	} else {
-		vals := map[string]string{}
-		for k := range r.Form {
-			vals[k] = r.Form.Get(k)
-		}
-		req = vals
-	}
-
-	var rsp json.RawMessage
-
-	err := c.Call(service, endpoint, req, &rsp)
-	if err != nil {
-		http.Error(w, err.Error(), 500)
-		return
-	}
-
-	// write the resposne
-	w.Write(rsp)
-}
-
 func (h *Handler) functionProxy(w http.ResponseWriter, r *http.Request) {
 	// no subdomain
 	if r.Host == FunctionHost {
@@ -578,12 +514,6 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// user.m3o.com
 	if r.Host == UserHost {
 		h.userProxy(w, r)
-		return
-	}
-
-	// if it's /api then use the v1 proxy
-	if strings.HasPrefix(r.URL.Path, "/api/") {
-		h.v1Proxy(w, r)
 		return
 	}
 
