@@ -32,7 +32,7 @@ var (
 	URLHost = "m3o.one"
 
 	// host to proxy for Apps
-	AppHost = "penguin.linux.test:8080"
+	AppHost = "m3o.app"
 
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
