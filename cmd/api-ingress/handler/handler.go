@@ -520,7 +520,13 @@ func (h *Handler) Proxy(backend *url.URL, w http.ResponseWriter, r *http.Request
 	rx := httputil.NewSingleHostReverseProxy(backend)
 	r.URL.Host = backend.Host
 	r.URL.Scheme = backend.Scheme
-	r.Header.Set("X-Forwarded-Host", r.Header.Get("host"))
+
+	if v := r.Header.Get("Host"); len(v) > 0 {
+		r.Header.Set("X-Forwarded-Host", v)
+	} else {
+		r.Header.Set("X-Forwarded-Host", r.Host)
+	}
+
 	r.Host = backend.Host
 	rx.ServeHTTP(w, r)
 }
