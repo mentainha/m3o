@@ -1,6 +1,6 @@
 # M3O
 
-M3O is a serverless cloud gateway
+M3O is a serverless cloud provider
 
 ## Overview
 
