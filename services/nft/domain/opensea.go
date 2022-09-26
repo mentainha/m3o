@@ -55,7 +55,7 @@ type Contract struct {
 	// payout address
 	PayoutAddress string `json:"payout_address,omitempty"`
 	// seller fees
-	SellerFees string `json:"seller_fees_basis_points,omitempty"`
+	SellerFees interface{} `json:"seller_fees_basis_points,omitempty"`
 }
 
 type Collection struct {
@@ -68,7 +68,7 @@ type Collection struct {
 
 	ExternalLink            string                 `json:"external_link,omitempty"`
 	BannerImageUrl          string                 `json:"banner_image_url,omitempty"`
-	DevSellerFeeBasisPoints string                 `json:"dev_seller_fee_basis_points,omitempty"`
+	DevSellerFeeBasisPoints interface{}            `json:"dev_seller_fee_basis_points,omitempty"`
 	SafelistRequestStatus   string                 `json:"safelist_request_status,omitempty"`
 	PrimaryAssetContracts   []Contract             `json:"primary_asset_contracts,omitempty"`
 	Traits                  map[string]interface{} `json:"traits,omitempty"`
@@ -104,14 +104,14 @@ type Sale struct {
 }
 
 type Transaction struct {
-	Id               int32  `json:"id,omitempty"`
-	Timestamp        string `json:"timestamp,omitempty"`
-	BlockHash        string `json:"block_hash,omitempty"`
-	BlockNumber      string `json:"block_number,omitempty"`
-	FromAccount      *User  `json:"from_account,omitempty"`
-	ToAccount        *User  `json:"to_account,omitempty"`
-	TransactionHash  string `json:"transaction_hash,omitempty"`
-	TransactionIndex string `json:"transaction_index,omitempty"`
+	Id               int32       `json:"id,omitempty"`
+	Timestamp        string      `json:"timestamp,omitempty"`
+	BlockHash        string      `json:"block_hash,omitempty"`
+	BlockNumber      interface{} `json:"block_number,omitempty"`
+	FromAccount      *User       `json:"from_account,omitempty"`
+	ToAccount        *User       `json:"to_account,omitempty"`
+	TransactionHash  string      `json:"transaction_hash,omitempty"`
+	TransactionIndex interface{} `json:"transaction_index,omitempty"`
 }
 
 type Token struct {

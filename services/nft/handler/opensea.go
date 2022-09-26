@@ -93,14 +93,24 @@ func (o *OpenSea) Assets(ctx context.Context, req *pb.AssetsRequest, rsp *pb.Ass
 	}
 
 	for _, asset := range resp.Assets {
+		// check name length
+		if len(asset.Name) > 2048 {
+			asset.Name = asset.Name[:2048]
+		}
+
 		// check description length
 		if len(asset.Description) > 2048 {
 			asset.Description = asset.Description[:2048]
 		}
 
+		if asset.Contract != nil && len(asset.Contract.Description) > 2048 {
+			asset.Contract.Description = asset.Contract.Description[:2048]
+		}
+
 		if asset.Collection != nil && len(asset.Collection.Description) > 2048 {
 			asset.Collection.Description = asset.Collection.Description[:2048]
 		}
+
 		rsp.Assets = append(rsp.Assets, assetToPb(asset))
 	}
 	rsp.Next = resp.Next
@@ -140,7 +150,7 @@ func contractToPb(contract *domain.Contract) *pb.Contract {
 		Schema:        contract.Schema,
 		Symbol:        contract.Symbol,
 		PayoutAddress: contract.PayoutAddress,
-		SellerFees:    contract.SellerFees,
+		SellerFees:    fmt.Sprintf("%v", contract.SellerFees),
 	}
 }
 
@@ -157,7 +167,7 @@ func collectionToPb(collection *domain.Collection) *pb.Collection {
 		PayoutAddress:         collection.PayoutAddress,
 		ExternalLink:          collection.ExternalLink,
 		BannerImageUrl:        collection.BannerImageUrl,
-		SellerFees:            collection.DevSellerFeeBasisPoints,
+		SellerFees:            fmt.Sprintf("%v", collection.DevSellerFeeBasisPoints),
 		SafelistRequestStatus: collection.SafelistRequestStatus,
 		PrimaryAssetContracts: func() []*pb.Contract {
 			cons := make([]*pb.Contract, len(collection.PrimaryAssetContracts))
@@ -241,7 +251,7 @@ func assetToPb(asset *domain.Asset) *pb.Asset {
 				Id:          asset.LastSale.Transaction.Id,
 				Timestamp:   asset.LastSale.Transaction.Timestamp,
 				BlockHash:   asset.LastSale.Transaction.BlockHash,
-				BlockNumber: asset.LastSale.Transaction.BlockNumber,
+				BlockNumber: fmt.Sprintf("%v", asset.LastSale.Transaction.BlockNumber),
 				FromAccount: &pb.User{
 					Username:   asset.LastSale.Transaction.FromAccount.User.Username,
 					ProfileUrl: asset.LastSale.Transaction.FromAccount.ProfileUrl,
@@ -253,7 +263,7 @@ func assetToPb(asset *domain.Asset) *pb.Asset {
 					Address:    asset.LastSale.Transaction.ToAccount.Address,
 				},
 				TransactionHash:  asset.LastSale.Transaction.TransactionHash,
-				TransactionIndex: asset.LastSale.Transaction.TransactionIndex,
+				TransactionIndex: fmt.Sprintf("%v", asset.LastSale.Transaction.TransactionIndex),
 			},
 			PaymentToken: paymentTokenToPb(asset.LastSale.PaymentToken),
 		}
