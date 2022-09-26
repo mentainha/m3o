@@ -42,7 +42,7 @@ const CloudPage: NextPage<WithAuthProps> = ({
           </h2>
         </div>
         <div className="md:max-w-4xl lg:max-w-7xl mx-auto w-11/12 mb-10">
-          <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-6">
 	    <div className="mb-6 md:mb-0 text-left relative card hover:shadow-lg transition-shadow tbc">
 	      <Link href={`/cloud/apps`}>
 		<a className="absolute top-0 left-0 w-full h-full z-30"></a>
