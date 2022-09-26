@@ -144,8 +144,12 @@ m3o helloworld call --name=Alice
 
 See the [examples](examples) for more use cases.
 
+## Self Hosting
+
+M3O is entirely open source but self hosting has not yet been tackled
+
 ## Learn More
 
-- Checkout the [Getting Started](https://m3o.com/getting-started) guide
+- Checkout the [Getting Started](ttps://m3o.com/getting-started) guide
 - Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
