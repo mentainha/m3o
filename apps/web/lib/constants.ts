@@ -48,8 +48,6 @@ export enum Routes {
 }
 
 export enum LandingPageExampleNames {
-  CacheSet = 'Cache.Set',
-  CacheGet = 'Cache.Get',
   DbCreate = 'Db.Create',
   DbDelete = 'Db.Delete',
   DbList = 'Db.Read',
