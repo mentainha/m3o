@@ -4,10 +4,10 @@ import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 interface Props {
   code: string
-  language?: 'javascript' | 'json' | 'bash' | 'go' 
+  language?: 'bash' | 'javascript' | 'json' | 'go' 
 }
 
-export const CodeBlock: FC<Props> = ({ code, language = 'javascript' }) => {
+export const CodeBlock: FC<Props> = ({ code, language = 'bash' }) => {
   return (
     <SyntaxHighlighter
       language={language}
@@ -31,8 +31,7 @@ export const CodeBlock: FC<Props> = ({ code, language = 'javascript' }) => {
         paddingLeft: 30,
         background: 'transparent',
         overflowY: 'scroll',
-      }}>
-      {code}
+      }}>{code}
     </SyntaxHighlighter>
   )
 }

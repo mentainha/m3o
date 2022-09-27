@@ -51,9 +51,11 @@ export enum LandingPageExampleNames {
   CacheSet = 'Cache.Set',
   CacheGet = 'Cache.Get',
   DbCreate = 'Db.Create',
+  DbDelete = 'Db.Delete',
   DbList = 'Db.Read',
   UserCreate = 'User.Create',
   UserLogin = 'User.Login',
+  UserList = 'User.List',
 }
 
 export enum QueryKeys {

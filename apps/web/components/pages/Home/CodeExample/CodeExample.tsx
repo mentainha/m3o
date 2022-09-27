@@ -10,7 +10,7 @@ import styles from './CodeExample.module.css'
 import { Step } from './Step'
 
 export const CodeExample: FC = () => {
-  const { language, onLanguageChange } = useSelectLanguage('javascript')
+  const { language, onLanguageChange } = useSelectLanguage('bash')
   const [selectedExample, setSelectedExample] = useState(
     LandingPageExampleNames.DbCreate,
   )

@@ -34,7 +34,7 @@ const LANGUAGES: LanguagesObject = {
   bash: 'curl',
 }
 
-const STRING_KEY_LANGUAGES: Languages[] = ['javascript', 'go']
+const STRING_KEY_LANGUAGES: Languages[] = ['bash', 'javascript', 'go']
 
 function returnDropdownButtonClass(selected: boolean) {
   return classnames(

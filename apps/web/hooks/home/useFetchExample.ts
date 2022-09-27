@@ -12,39 +12,9 @@ type Examples = Record<Languages, Record<LandingPageExampleNames, string>>
 
 // Easier for the moment.
 const EXAMPLES: Examples = {
-  javascript: {
-    'Cache.Get':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/cache/get/getAValue.js',
-    'Cache.Set':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/cache/set/setAValue.js',
-    'Db.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/create/createARecord.js',
-    'Db.Read':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/read/readRecords.js',
-    'User.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/create/createAnAccount.js',
-    'User.Login':
-      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/login/logAUserIn.js',
-  },
-  go: {
-    'Cache.Get':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/cache/get/getAValue/main.go',
-    'Cache.Set':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/cache/set/setAValue/main.go',
-    'User.Login':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/login/logAUserIn/main.go',
-    'User.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/create/createAnAccount/main.go',
-    'Db.Create':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/create/createARecord/main.go',
-    'Db.Read':
-      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/read/readRecords/main.go',
-  },
   bash: {
-    'Cache.Get':
-      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/cache/get/getAValue.sh',
-    'Cache.Set':
-      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/cache/set/setAValue.sh',
+    'User.List':
+      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/user/list/listAllUsers.sh',
     'User.Login':
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/user/login/logAUserIn.sh',
     'User.Create':
@@ -53,7 +23,37 @@ const EXAMPLES: Examples = {
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/create/createARecord.sh',
     'Db.Read':
       'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/read/readRecords.sh',
+    'Db.Delete':
+      'https://raw.githubusercontent.com/m3o/m3o-sh/main/examples/db/delete/deleteARecord.sh',
   },
+  javascript: {
+    'Db.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/create/createARecord.js',
+    'Db.Read':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/read/readRecords.js',
+    'Db.Delete':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/db/delete/deleteARecord.js',
+    'User.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/create/createAnAccount.js',
+    'User.Login':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/login/logAUserIn.js',
+    'User.List':
+      'https://raw.githubusercontent.com/m3o/m3o-js/main/examples/user/list/listAllUsers.js',
+  },
+  go: {
+    'User.List':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/list/listAllUsers/main.go',
+    'User.Login':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/login/logAUserIn/main.go',
+    'User.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/user/create/createAnAccount/main.go',
+    'Db.Create':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/create/createARecord/main.go',
+    'Db.Read':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/read/readRecords/main.go',
+    'Db.Delete':
+      'https://raw.githubusercontent.com/m3o/m3o-go/main/examples/db/delete/deleteARecord/main.go',
+  }
 }
 
 export function useFetchExample({

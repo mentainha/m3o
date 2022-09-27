@@ -4,19 +4,6 @@ import { LandingPageExampleNames } from '@/lib/constants'
 
 export const SIDEBAR_ITEMS: SidebarItem[] = [
   {
-    title: 'Cache',
-    items: [
-      {
-        text: 'Set a value',
-        example: LandingPageExampleNames.CacheSet,
-      },
-      {
-        text: 'Get a value',
-        example: LandingPageExampleNames.CacheGet,
-      },
-    ],
-  },
-  {
     title: 'DB',
     items: [
       {
@@ -26,6 +13,10 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
       {
         text: 'List records',
         example: LandingPageExampleNames.DbList,
+      },
+      {
+        text: 'Delete a record',
+        example: LandingPageExampleNames.DbDelete,
       },
     ],
   },
@@ -39,6 +30,10 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
       {
         text: 'Login a user',
         example: LandingPageExampleNames.UserLogin,
+      },
+      {
+        text: 'List users',
+        example: LandingPageExampleNames.UserList,
       },
     ],
   },
