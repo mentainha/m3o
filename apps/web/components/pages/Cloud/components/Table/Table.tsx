@@ -7,6 +7,7 @@ import {
   useGlobalFilter,
   useAsyncDebounce,
   usePagination,
+  useSortBy,
 } from 'react-table'
 import { Pagination } from './Pagination'
 import { ActionsBar } from './ActionsBar'
@@ -119,6 +120,7 @@ export function Table<T extends ExpectedObject>({
     },
     useFlexLayout,
     useGlobalFilter,
+    useSortBy,
     usePagination,
   )
 
@@ -183,7 +185,7 @@ export function Table<T extends ExpectedObject>({
               <div {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
                   <div
-                    {...column.getHeaderProps()}
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
                     className="text-left p-2 text-sm overflow-hidden text-ellipsis tbgc">
                     {column.render('Header')}
                   </div>
