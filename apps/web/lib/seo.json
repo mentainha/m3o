@@ -19,7 +19,7 @@
   },
   "cloud": {
     "title": "Cloud",
-    "description": "Serverless cloud for developers",
+    "description": "Serverless cloud built for developers",
     "users": {
       "main": {
         "title": "Cloud - Users"
@@ -75,7 +75,7 @@
   },
   "landing": {
     "description": "Explore, discover and consume the cloud as serverless building blocks",
-    "title": "Universal Micro Services"
+    "title": "Serverless Micro Services"
   },
   "login": {
     "description": "Login to Micro to start using our public APIs",
