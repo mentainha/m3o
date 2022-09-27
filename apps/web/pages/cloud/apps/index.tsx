@@ -21,7 +21,7 @@ export const getServerSideProps = withAuth(async context => {
   if (!context.req.user) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/login',
         permanent: true,
       },
     }
