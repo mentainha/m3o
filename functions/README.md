@@ -1,8 +1,10 @@
-# Scripts
+# Functions
 
-Scripts are reusable pieces of code that you can quickly copy/paste
+Functions are reusable pieces of code that you can quickly copy/paste
 
-## Popular Scripts
+## Overview
+
+A list of current functions
 
 - [m3o-request.js](m3o-request.js) - Make a http request using the [fetch api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [m3o-database.js](m3o-database.js) - An easy way to use the database api
