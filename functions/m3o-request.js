@@ -7,12 +7,12 @@
  */
 
 // 1. Retrieve your m3o key. This should come from an environment variable to keep secret from the public
-const key = process.env.M3O_KEY
+const key = process.env.M3O_API_TOKEN
 
 // 2. Use this code to make requests to the m3o api
-async function m3oRequest(apiName, apiEndpoint, data) {
+async function m3oRequest(service, endpoint, data) {
   const response = await fetch(
-    `https://api.m3o.com/v1/${apiName}/${apiEndpoint}`,
+    `https://api.m3o.com/v1/${service}/${endpoint}`,
     {
       method: 'POST',
       body: JSON.stringify(data),
