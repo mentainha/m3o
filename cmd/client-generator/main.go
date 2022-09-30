@@ -804,30 +804,31 @@ func main() {
 
 			exam, err := ioutil.ReadFile(filepath.Join(workDir, serviceName, "examples.json"))
 			if err != nil {
+				// try read config/examples.json
+				exam, err = ioutil.ReadFile(filepath.Join(workDir, serviceName, "config", "examples.json"))
+			}
+			if err != nil {
 				fmt.Println(err)
 				os.Exit(1)
 			}
-			if err == nil {
-				m := map[string][]example{}
-				err = json.Unmarshal(exam, &m)
-				if err != nil {
-					fmt.Println(string(exam), err)
-					os.Exit(1)
-				}
-				if len(service.Spec.Paths) != len(m) {
-					fmt.Printf("Service has %v endpoints, but only %v examples\n", len(service.Spec.Paths), len(m))
-				}
-				for endpoint, examples := range m {
-					for _, example := range examples {
-						title := regexp.MustCompile("[^a-zA-Z0-9]+").ReplaceAllString(strcase.LowerCamelCase(strings.Replace(example.Title, " ", "_", -1)), "")
 
-						goExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
-						nodeExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
-						curlExample(examplesPath, serviceName, endpoint, title, service, example)
-					}
+			m := map[string][]example{}
+			err = json.Unmarshal(exam, &m)
+			if err != nil {
+				fmt.Println(string(exam), err)
+				os.Exit(1)
+			}
+			if len(service.Spec.Paths) != len(m) {
+				fmt.Printf("Service has %v endpoints, but only %v examples\n", len(service.Spec.Paths), len(m))
+			}
+			for endpoint, examples := range m {
+				for _, example := range examples {
+					title := regexp.MustCompile("[^a-zA-Z0-9]+").ReplaceAllString(strcase.LowerCamelCase(strings.Replace(example.Title, " ", "_", -1)), "")
+
+					goExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
+					nodeExampleAndReadmeEdit(examplesPath, serviceName, endpoint, title, service, example)
+					curlExample(examplesPath, serviceName, endpoint, title, service, example)
 				}
-			} else {
-				fmt.Println(err)
 			}
 		}
 	}

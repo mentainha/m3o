@@ -151,7 +151,14 @@ func main() {
 			publicApi := new(PublicAPI)
 
 			// if we find a public api definition we load it
-			if b, err := ioutil.ReadFile(filepath.Join(serviceDir, "publicapi.json")); err == nil {
+			b, err := ioutil.ReadFile(filepath.Join(serviceDir, "publicapi.json"))
+			if err != nil {
+				// try reading config/publicapi.json
+				b, err = ioutil.ReadFile(filepath.Join(serviceDir, "config", "publicapi.json"))
+			}
+
+			// if there's data read it
+			if len(b) > 0 {
 				// unpack the info if we read the file
 				json.Unmarshal(b, &publicApi)
 			}
@@ -169,6 +176,10 @@ func main() {
 
 			// load the examples
 			examples, err := ioutil.ReadFile(filepath.Join(serviceDir, "examples.json"))
+			if err != nil {
+				examples, err = ioutil.ReadFile(filepath.Join(serviceDir, "config", "examples.json"))
+			}
+
 			if err != nil || len(examples) == 0 {
 				fmt.Printf("Failed to find examples file for %s\n", serviceDir)
 				os.Exit(1)
