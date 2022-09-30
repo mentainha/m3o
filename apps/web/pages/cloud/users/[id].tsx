@@ -6,6 +6,7 @@ import { FullSpinner, BackButtonLink } from '@/components/ui'
 import { useM3OClient } from '@/hooks'
 import { DashboardLayout } from '@/components/layouts'
 import { UserDetailRow } from '@/components/pages/Cloud'
+import { withAuth } from '@/lib/api/m3o/withAuth'
 
 type UserAccount = {
   created: string
@@ -17,6 +18,23 @@ type UserAccount = {
   verificationDate: string
   verified: boolean
 }
+
+export const getServerSideProps = withAuth(async context => {
+  if (!context.req.user) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: true,
+      },
+    }
+  }
+
+  return {
+    props: {
+      user: context.req.user,
+    },
+  }
+})
 
 export default function UserPage() {
   const router = useRouter()
