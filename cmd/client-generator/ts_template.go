@@ -42,7 +42,7 @@ export interface {{ title $typeName }}{{ "{" }}
 {{end}}
 `
 
-const tsExampleTemplate = `{{ $service := .service }}const m3o = require('m3o')(process.env.M3O_API_TOKEN)
+const tsExampleTemplate = `{{ $service := .service }}const m3o = require('m3o').default(process.env.M3O_API_TOKEN)
 
 async function main() {
 	let rsp = await m3o.{{ $service.Name }}.{{ .endpoint }}({{ tsExampleRequest $service.Name .endpoint $service.Spec.Components.Schemas .example.Request }})
