@@ -17,9 +17,10 @@ interface Props extends Func {
 }
 
 export function FunctionCreateFromSource({
-  source = '',
+  source = 'exports.handler = (req, res) => {\n  res.send({ message: \'hello world!\' });\n}',
   onSubmit,
-  name = '',
+  name = 'helloworld',
+  entrypoint = 'handler',
   runtime,
 }: Props) {
   const submitButtonRef = useRef<HTMLButtonElement>(null)
@@ -32,7 +33,7 @@ export function FunctionCreateFromSource({
       submitButtonRef.current?.click()
     }
   }, [])
-
+  
   useEffect(() => {
     document.addEventListener('keydown', handleKeyboardSave)
 
@@ -91,6 +92,7 @@ export function FunctionCreateFromSource({
                     {...field}
                     label="Runtime"
                     error={fieldState.error?.message}
+                    disabled={true}
                     options={[
                       ...runTimes.map(item => ({
                         name: item,
@@ -100,6 +102,17 @@ export function FunctionCreateFromSource({
                   />
                 )}
               />
+	      <Controller
+		control={form.control}
+		name="entrypoint"
+                defaultValue={entrypoint || 'handler'}
+		render={({ field, fieldState }) => (
+		  <TextInput
+		    {...field}
+		    type="hidden"
+		  />
+		)}
+	      />
             </div>
           </div>
           <Button loading={false} className="w-full my-6 md:w-auto md:my-0">
