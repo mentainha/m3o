@@ -1,6 +1,6 @@
 import functions from '@google-cloud/functions-framework';
 import m3o from 'm3o';
-import { handler } from './handler';
+import { handler } from './handler/index.js';
 
 global.m3o = m3o(process.env.NODE_ENV);
 
