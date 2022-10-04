@@ -54,7 +54,7 @@ export default function Home({
         <LoggedInView user={user} apiToken={apiToken} />
       ) : (
         <Landing
-          heading="Serverless Micro Services"
+          heading="Universal Micro Services"
           services={services}
           subHeading="Explore, discover and consume the cloud as serverless
           building blocks"
