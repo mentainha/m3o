@@ -28,7 +28,7 @@ export default function CloudDatabase() {
 
   return (
     <>
-      <NextSeo {...seo.cloud.functions.main} />
+      <NextSeo {...seo.cloud.database.main} />
       <DashboardLayout>
         <div className="px-6 py-4 border-b tbc flex items-center justify-between">
           <h1 className="text-2xl md:text-3xl font-medium gradient-text">
