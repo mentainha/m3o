@@ -38,7 +38,7 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
     <div className="relative text-left ml-4 hidden lg:inline-block">
       <button
         type="button"
-        className="flex items-center rounded-full border px-4 py-4 dark:bg-zinc-800 font-medium text-zinc-900 tbc dark:text-white"
+        className="flex items-center rounded-full border px-2 py-2 dark:bg-zinc-800 font-medium text-zinc-900 tbc dark:text-white"
         aria-haspopup="true"
         onClick={() => setOpen(!open)}>
         <UserIcon className="w-4" />

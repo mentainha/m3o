@@ -36,7 +36,7 @@ export const Header: FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <a className="relative hover:no-underline w-14 flex items-center">
+              <a className="relative hover:no-underline w-12 flex items-center">
                 <Logo />
               </a>
             </Link>
