@@ -5,58 +5,56 @@
  * This is a snippet of how you may want to consume the db api.
  */
 
-import { m3oRequest } from '..'
-
-const DB_API_NAME = 'db'
+import { call } from '..'
 
 // ------------------------------
 // Example 1 -> Individual Functions
 // ------------------------------
 
 export function count(table) {
-  return m3oRequest(DB_API_NAME, 'Count', {
+  return call('db', 'Count', {
     table
   })
 }
 
 export function create(table, record) {
-  return m3oRequest(DB_API_NAME, 'Create', {
+  return call('db', 'Create', {
     table,
     record
   })
 }
 
 export function deleteItem(table, id) {
-  return m3oRequest(DB_API_NAME, 'Delete', {
+  return call('db', 'Delete', {
     table,
     id
   })
 }
 
 export function dropTable(table) {
-  return m3oRequest(DB_API_NAME, 'DropTable', { table })
+  return call('db', 'DropTable', { table })
 }
 
 export function read(table, query) {
-  return m3oRequest(DB_API_NAME, 'Read', {
+  return call('db', 'Read', {
     table,
     query
   })
 }
 
 export function rename(from, to) {
-  return m3oRequest(DB_API_NAME, 'Rename', {
+  return call('db', 'Rename', {
     from,
     to
   })
 }
 
 export function truncate(table) {
-  return m3oRequest(DB_API_NAME, 'Truncate', { table })
+  return call('db', 'Truncate', { table })
 }
 
 export function update(table, record) {
-  return m3oRequest(DB_API_NAME, 'Update', {
+  return call('db', 'Update', {
     table,
     record
   })
@@ -72,38 +70,38 @@ class Database {
   }
 
   count() {
-    return m3oRequest(DB_API_NAME, 'Count', {
+    return call('db', 'Count', {
       table: this.table
     })
   }
 
   create(record) {
-    return m3oRequest(DB_API_NAME, 'Create', {
+    return call('db', 'Create', {
       table: this.table,
       record
     })
   }
 
   deleteItem(id) {
-    return m3oRequest(DB_API_NAME, 'Delete', {
+    return call('db', 'Delete', {
       table: this.table,
       id
     })
   }
 
   dropTable() {
-    return m3oRequest(DB_API_NAME, 'DropTable', { table: this.table })
+    return call('db', 'DropTable', { table: this.table })
   }
 
   read(query) {
-    return m3oRequest(DB_API_NAME, 'Read', {
+    return call('db', 'Read', {
       table: this.table,
       query
     })
   }
 
   async rename(to) {
-    await m3oRequest(DB_API_NAME, 'Rename', {
+    await call('db', 'Rename', {
       from: this.table,
       to
     })
@@ -112,11 +110,11 @@ class Database {
   }
 
   truncate() {
-    return m3oRequest(DB_API_NAME, 'Truncate', { table: this.table })
+    return call('db', 'Truncate', { table: this.table })
   }
 
   update(record) {
-    return m3oRequest(DB_API_NAME, 'Update', {
+    return call('db', 'Update', {
       table: this.table,
       record
     })

@@ -10,7 +10,7 @@
 const key = process.env.M3O_API_TOKEN
 
 // 2. Use this code to make requests to the m3o api
-async function m3oRequest(service, endpoint, data) {
+async function call(service, endpoint, data) {
   const response = await fetch(
     `https://api.m3o.com/v1/${service}/${endpoint}`,
     {

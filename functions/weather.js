@@ -5,10 +5,10 @@
  * Get the current weather
  */
 
-import { m3oRequest } from '..'
+import { call } from '..'
 
 async function currentWeather(loc) {
-  const response = await m3oRequest('weather', 'Now', {
+  const response = await call('weather', 'Now', {
     location: loc
   })
 
