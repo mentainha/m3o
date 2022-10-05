@@ -1,6 +1,5 @@
 import type { FC } from 'react'
 import Link from 'next/link'
-import { ServiceEndpoints } from './ServiceEndpoints'
 import { CategoryBubble } from '@/components/ui'
 import { ICONS } from './Service.constants'
 import { readme } from './Service.utils'
@@ -33,11 +32,10 @@ export const Service: FC<ExploreAPI> = ({
             </a>
           </Link>
         </h3>
-        <p className="truncate text-zinc-500 dark:text-zinc-300">
+        <p className="truncate text-zinc-500 dark:text-zinc-300 mb-6">
           {readme(name, description)}
         </p>
       </div>
-      <ServiceEndpoints serviceName={name} endpoints={endpoints} />
     </div>
   )
 }
