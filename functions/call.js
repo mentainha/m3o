@@ -35,7 +35,7 @@ async function call(service, endpoint, data) {
 // 3. Make a request to any of the M3O apis. In this example we will use weather:
 /*
   async function currentWeather() {
-    const response = await m3oRequest('weather', 'Now', {
+    const response = await call('weather', 'Now', {
       location: 'London'
     })
 
