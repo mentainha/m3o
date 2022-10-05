@@ -3,7 +3,6 @@ import { FC, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 import { WithAuthProps } from '@/lib/api/m3o/withAuth'
-import { ArrowLeftIcon } from '@heroicons/react/outline'
 import { useDownloadFile, useGetRelatedApis, useRecentlyViewed } from '@/hooks'
 import { getDescription } from '@/utils/api'
 import { Footer, Header } from '@/components/ui'
@@ -56,11 +55,6 @@ export const ApiLayout: FC<ApiLayoutProps> = ({
       />
       <Header />
       <div className="my-10 max-w-7xl mx-auto w-11/12">
-        <Link href="/explore">
-          <a className="flex mb-6 items-center text-xs">
-            <ArrowLeftIcon className="w-4 mr-3" /> Back to explore
-          </a>
-        </Link>
         <Navigation onDownloadsClick={() => console.log()} />
         {children}
       </div>
