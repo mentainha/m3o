@@ -12,9 +12,10 @@ export function HeaderBanner() {
   useEffect(() => {
     const hideBanner = sessionStorage.getItem(SessionStorageKeys.HideBanner)
 
-    if (!hideBanner) {
-      setShow(true)
-    }
+    setShow(false)
+    // if (!hideBanner) {
+    //  setShow(true)
+    //}
   }, [])
 
   const hideBanner = () => {
