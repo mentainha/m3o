@@ -113,7 +113,7 @@ npm install m3o
 Call helloworld like so
 
 ```javascript
-const m3o = require("m3o")(process.env.M3O_API_TOKEN);
+const m3o = require("m3o").default(process.env.M3O_API_TOKEN);
 
 // Call returns a personalised "Hello $name" response
 async function main() {
