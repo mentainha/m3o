@@ -116,7 +116,7 @@
         "description": "a cron job",
         "properties": {
           "callback": {
-            "description": "callback url",
+            "description": "callback url e.g https://google.com",
             "type": "string"
           },
           "description": {
@@ -147,10 +147,11 @@
       "JobsResponse": {
         "properties": {
           "jobs": {
+            "description": "the list of scheduled jobs",
             "items": {
               "properties": {
                 "callback": {
-                  "description": "callback url",
+                  "description": "callback url e.g https://google.com",
                   "type": "string"
                 },
                 "description": {
@@ -182,7 +183,7 @@
         "description": "Schedule a cron job",
         "properties": {
           "callback": {
-            "description": "callback url",
+            "description": "callback url e.g https://google.com",
             "type": "string"
           },
           "description": {
@@ -190,11 +191,11 @@
             "type": "string"
           },
           "id": {
-            "description": "unique id of job",
+            "description": "unique id of job (optional)",
             "type": "string"
           },
           "interval": {
-            "description": "interval e.g * * * *",
+            "description": "interval e.g * * * * *",
             "type": "string"
           },
           "name": {
@@ -208,9 +209,10 @@
       "ScheduleResponse": {
         "properties": {
           "job": {
+            "description": "the scheduled job",
             "properties": {
               "callback": {
-                "description": "callback url",
+                "description": "callback url e.g https://google.com",
                 "type": "string"
               },
               "description": {

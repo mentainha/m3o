@@ -1,0 +1,10 @@
+{
+  "name": "function",
+  "icon": "🔥",
+  "category": "hosting",
+  "display_name": "Functions",
+  "pricing": {
+    "Function.Reserve": 1000000
+  }
+}
+  
