@@ -56,7 +56,7 @@ export default function Home({
         <Landing
           heading="Universal Micro Services"
           services={services}
-          subHeading="Explore, discover and consume the cloud as serverless
+          subHeading="Explore, discover and consume the cloud as programmable
           building blocks"
         />
       )}
