@@ -46,6 +46,16 @@ export default function CloudDatabaseTable() {
     },
   )
 
+  const deleteRowMutation = useMutation(
+    (items) => Promise.all(items.map(item => m3o.db.delete({ table: tableName, id: item }))),
+    {
+      onSuccess: () => {
+        router.push(`/cloud/database/${tableName}`)
+        queryClient.invalidateQueries(QueryKeys.CloudDatabaseTables)
+      },
+    },
+  )
+
   const { data, isLoading } = useQuery(
     [QueryKeys.CloudDatabaseTables, tableName],
     async () => {
@@ -67,7 +77,7 @@ export default function CloudDatabaseTable() {
         : `Are you sure you would like to delete these ${items.length} row?`
 
     if (window.confirm(message)) {
-      // deleteFunctionsMutation.mutate(items)
+      deleteRowMutation.mutate(items)
     }
   }
 
