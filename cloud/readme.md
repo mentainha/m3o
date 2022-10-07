@@ -4,7 +4,7 @@ Infrastructure automation for the M3O platform.
 
 ## Overview
 
-This repo serves as infrastructure automation for the M3O platform. It bootstraps [Micro](https://micro.dev) on to any cloud using Pulumi, 
+This directory serves as infrastructure automation for the M3O platform. It bootstraps [Micro](https://micro.dev) on to any cloud using Pulumi, 
 Kubernetes and related open source distributed systems infrastructure. The defaults are set to run on DigitalOcean with potential for 
 Google Cloud and other providers also built in.
 
