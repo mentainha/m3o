@@ -47,7 +47,7 @@ export default function CloudDatabaseTable() {
   )
 
   const deleteRowMutation = useMutation(
-    (items) => Promise.all(items.map(item => m3o.db.delete({ table: tableName, id: item }))),
+    (items: string[]) => Promise.all(items.map(item => m3o.db.delete({ table: tableName, id: item }))),
     {
       onSuccess: () => {
         router.push(`/cloud/database/${tableName}`)
