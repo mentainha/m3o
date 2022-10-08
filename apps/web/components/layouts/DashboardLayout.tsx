@@ -197,7 +197,7 @@ export function DashboardLayout({
                   },
                   {
                     text: 'Community',
-                    href: 'https://m3o.org',
+                    href: 'https://discord.gg/TBR9bRjd6Z',
                     external: true,
                     icon: UsersIcon,
                   },
