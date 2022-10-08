@@ -1,12 +1,12 @@
-# API Ingress
+# M3O Home
 
-Ingress for M3O services
+The home for apps, functions and more 
 
 ## Overview
 
-The M3O API Ingress is a single entrypoint for apps, functions and more hosted on the M3O platform.
+The M3O Home app is a single entrypoint for apps, functions and more hosted on the M3O platform.
 
-Supported endpoints below:
+Supported features below:
 
 - [apps](#apps)
 - [functions](#functions)
