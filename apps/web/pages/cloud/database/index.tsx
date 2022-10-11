@@ -31,7 +31,7 @@ export default function CloudDatabase() {
       <NextSeo {...seo.cloud.database.main} />
       <DashboardLayout>
         <div className="px-6 py-4 border-b tbc flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-medium gradient-text">
+          <h1 className="text-2xl md:text-3xl font-medium">
             Database
           </h1>
           {/* <LinkButton href="/cloud/database/add" className="text-sm">

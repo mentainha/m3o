@@ -107,7 +107,7 @@ export function Faqs() {
 
   return (
     <div>
-      <h2 className="font-bold text-3xl text-center text-white">FAQs</h2>
+      <h2 className="font-bold text-3xl text-center text-black">FAQs</h2>
       {FAQs.map(item => (
         <AccordionItem
           title={item.title}

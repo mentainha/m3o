@@ -213,7 +213,7 @@ export function DashboardLayout({
             ]}
           />
         </aside>
-        <div className="col-span-5 bg-white dark:bg-zinc-900">{children}</div>
+        <div className="col-span-5 bg-white ">{children}</div>
       </section>
     </MainLayout>
   )

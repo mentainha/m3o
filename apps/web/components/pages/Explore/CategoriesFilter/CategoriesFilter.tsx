@@ -24,9 +24,9 @@ function CategoryLink({
     <Link href={href}>
       <a
         className={classNames(
-          'block capitalize !text-white py-2 px-4 text-sm rounded-md',
+          'block capitalize py-2 px-4 text-sm text-black rounded-md',
           {
-            'bg-zinc-800 font-medium': selected,
+            'bg-zinc-800 text-white font-medium': selected,
           },
         )}
         onClick={onClick}>
@@ -46,6 +46,7 @@ export function CategoriesFilter({
     <>
       <CategoryLink
         onClick={onCategoryClick}
+        class
         href="/explore"
         selected={router.pathname === '/explore'}>
         All APIs

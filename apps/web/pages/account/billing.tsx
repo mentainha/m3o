@@ -55,7 +55,7 @@ const Billing: NextPage<Props> = ({ user }) => {
       <BillingProvider user={user}>
         <DashboardLayout>
           <div className="p-6 md:p-10">
-            <h1 className="gradient-text text-3xl mb-6 pb-4 font-medium">
+            <h1 className="text-3xl mb-6 pb-4 font-medium">
               Billing
             </h1>
             <AddFunds />

@@ -100,17 +100,17 @@ const Overview: NextPage<Props> = ({
           <CategoryBubble className="inline-block mb-6">
             {category}
           </CategoryBubble>
-          <h1 className="font-medium text-4xl md:text-5xl mb-4 text-white">
+          <h1 className="font-medium text-4xl md:text-5xl mb-4">
             {displayName}
           </h1>
-          <p className="pb-6 text-lg text-zinc-700 dark:text-zinc-400 font-light mb-4">
+          <p className="pb-6 text-lg text-zinc-700 font-light mb-4">
             {summaryDescription.split('#')[0]}
           </p>
-          <h2 className="text-white text-xl mb-4 font-bold">Introduction</h2>
+          <h2 className="text-xl mb-4 font-bold">Introduction</h2>
           <div className="max-w-lg">
             <OverviewDescription>{description}</OverviewDescription>
           </div>
-          <h2 className="text-white text-xl mb-4 mt-10 font-bold">Features</h2>
+          <h2 className="text-xl mb-4 mt-10 font-bold">Features</h2>
           {features.map(feature => (
             <div className="mb-5">
               <h3>
@@ -120,10 +120,10 @@ const Overview: NextPage<Props> = ({
                   {feature.title}
                 </a>
               </h3>
-              <p className="text-zinc-400 text-sm max-w-lg">{feature.description}</p>
+              <p className="text-zinc-600 text-sm max-w-lg">{feature.description}</p>
             </div>
           ))}
-          <h2 id="pricing" className="text-white text-xl mb-4 mt-10 font-bold">Pricing</h2>
+          <h2 id="pricing" className="text-xl mb-4 mt-10 font-bold">Pricing</h2>
           <table className="min-w-full mb-6">
             <thead className="mb-4">
               <tr>
@@ -142,11 +142,11 @@ const Overview: NextPage<Props> = ({
           ))}
             </tbody>
           </table>
-          <p className="text-zinc-400 text-sm max-w-lg">Base request price is 0.000001 credits per request</p>
+          <p className="text-zinc-600 text-sm max-w-lg">Base request price is 0.000001 credits per request</p>
         </div>
         <div className="flex flex-col">
           <div className="md:mt-20 md:order-1">
-            <h2 className="text-white text-xl mb-6 font-bold md:hidden">
+            <h2 className="text-xl mb-6 font-bold md:hidden">
               Example
             </h2>
             <Example

@@ -70,14 +70,14 @@ export default function CloudAddFunction() {
           </BackButtonLink>
           <h1 className="font-bold mb-10 text-3xl">Add a function</h1>
           <Link href="/cloud/functions/add/source">
-            <a className="bg-zinc-800 flex px-8 py-6 mb-6 items-center rounded-md">
+            <a className="bg-zinc-400 text-white flex px-8 py-6 mb-6 items-center rounded-md">
               Write function in the browser{' '}
               <ArrowRightIcon className="w-6 ml-4" />
             </a>
           </Link>
           <Link href="/cloud/functions/add/repo">
-            <a className="bg-zinc-800 flex px-8 py-6 mb-6 items-center rounded-md">
-              Upload functions from your Github repo{' '}
+            <a className="bg-zinc-400 text-white flex px-8 py-6 mb-6 items-center rounded-md">
+              Deploy function from a Github repo{' '}
               <ArrowRightIcon className="w-6 ml-4" />
             </a>
           </Link>

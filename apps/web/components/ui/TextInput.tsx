@@ -25,6 +25,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(
     ref,
   ) => {
     const classes = classnames('input', className, {
+      'text-zinc-600': 'text-zinc-600',
       'border-zinc-300': !error,
       'border-red-700': error,
       grey: variant === 'grey',

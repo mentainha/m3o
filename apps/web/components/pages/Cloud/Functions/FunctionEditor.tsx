@@ -32,7 +32,6 @@ export function FunctionEditor({ language, onChange, value }: Props) {
       width="100%"
       defaultLanguage="javascript"
       language={language}
-      theme="vs-dark"
       onChange={onChange}
       onValidate={markers => {
         console.log(markers)

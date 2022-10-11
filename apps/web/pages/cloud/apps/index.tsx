@@ -118,7 +118,7 @@ export default function CloudApps() {
       <DashboardLayout>
         <div className="px-6 py-4 border-b tbc">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-medium gradient-text mt-0 md:text-3xl">
+            <h1 className="text-2xl font-medium mt-0 md:text-3xl">
               Apps
             </h1>
             {!!data?.length && (

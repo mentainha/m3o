@@ -43,7 +43,7 @@ const Keys: NextPage<KeysProps> = () => {
       <NextSeo title={seo.account.keys.title} />
       <DashboardLayout>
         <div className="p-6 md:p-10">
-          <h1 className="gradient-text text-3xl mb-6 pb-4 font-medium">
+          <h1 className="text-3xl mb-6 pb-4 font-medium">
             Tokens
           </h1>
           <PersonalToken />

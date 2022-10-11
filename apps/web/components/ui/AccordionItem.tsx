@@ -17,7 +17,7 @@ export function AccordionItem({
   return (
     <div className="border-b border-zinc-800 overflow-hidden max-w-2xl m-auto">
       <button
-        className="text-left flex w-full justify-between items-center py-8 font-bold"
+        className="text-left flex w-full justify-between items-center py-8 font-bold text-zinc-800"
         onClick={onClick}>
         {title}
         <ChevronDownIcon
@@ -27,7 +27,7 @@ export function AccordionItem({
         />
       </button>
       {isOpen && (
-        <div className="px-6 pb-6 text-sm text-zinc-400">{children}</div>
+        <div className="px-6 pb-6 text-sm text-zinc-800">{children}</div>
       )}
     </div>
   )

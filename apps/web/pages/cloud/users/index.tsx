@@ -43,7 +43,7 @@ export default function CloudUsers() {
       <NextSeo {...seo.cloud.users.main} />
       <DashboardLayout>
         <div className="px-6 py-4 border-b tbc flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-medium gradient-text">
+          <h1 className="text-2xl md:text-3xl font-medium">
             Users
           </h1>
           <LinkButton href="/cloud/users/add" className="text-sm">

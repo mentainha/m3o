@@ -5,7 +5,12 @@
 a {
   @apply text-blue-600 dark:text-blue-300 hover:underline;
 }
-
+h1 {
+  @apply text-black;
+}
+h2 {
+  @apply text-black;
+}
 .btn {
   @apply py-4 px-8 bg-indigo-800 rounded-lg text-white hover:bg-indigo-600 transition-colors font-medium dark:bg-indigo-700 dark:hover:bg-indigo-600 disabled:dark:text-zinc-600 disabled:hover:dark:bg-zinc-700 disabled:text-zinc-600 disabled:hover:bg-zinc-800 dark:text-white text-sm;
 }
@@ -24,7 +29,7 @@ a {
 }
 
 .input {
-  @apply border block py-4 px-6 w-full rounded-lg text-sm focus:border-indigo-800 transition-colors dark:border-zinc-600 dark:bg-transparent appearance-none font-light placeholder:text-zinc-500 text-white;
+  @apply border block py-4 px-6 w-full rounded-lg text-sm focus:border-indigo-800 transition-colors dark:border-zinc-600 dark:bg-transparent appearance-none font-light placeholder:text-zinc-500;
 }
 
 .input.grey {
@@ -34,7 +39,9 @@ a {
 .m3o-container {
   @apply container px-4 md:px-6 mx-auto max-w-screen-xl relative w-11/12 md:w-10/12;
 }
-
+.monaco-editor {
+  @apply p-5;
+}
 .tabs {
   @apply flex items-center font-medium text-sm pt-4 px-6 border-b tbc;
 }

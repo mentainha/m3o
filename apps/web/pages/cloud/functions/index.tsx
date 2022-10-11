@@ -142,7 +142,7 @@ export default function CloudFunctions() {
       <NextSeo {...seo.cloud.functions.main} />
       <DashboardLayout>
         <div className="px-6 py-4 border-b tbc flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-medium gradient-text">
+          <h1 className="text-2xl md:text-3xl font-medium">
             Functions
           </h1>
           <LinkButton href="/cloud/functions/add" className="text-sm">

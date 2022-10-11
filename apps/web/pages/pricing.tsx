@@ -69,7 +69,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
             API Credits
           </h2>
           <div className="my-10">
-            <p className="mb-4">
+            <p className="mb-4 text-zinc-800">
               Base requests are charged at 0.000001 credit per request (£1 per credit)
             </p>
           </div>

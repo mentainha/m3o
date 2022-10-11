@@ -4,7 +4,7 @@ export const SubscribeSection: FC = () => {
   return (
     <section>
       <div className="m3o-container sm py-36 text-left">
-        <h4 className="font-bold text-4xl text-white">
+        <h4 className="font-bold text-4xl text-black">
           Subscribe to the latest updates
         </h4>
         <form

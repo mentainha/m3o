@@ -31,7 +31,7 @@ export const ApiPriceBreakdown: FC<PricingItem> = ({
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-zinc-200  dark:divide-zinc-700 dark:bg-zinc-900">
+                <tbody className="bg-white divide-y divide-zinc-200 text-zinc-800 dark:divide-zinc-700 dark:bg-zinc-900">
                   {Object.keys(pricing).map(key => (
                     <tr key={key}>
                       <td className="px-6 py-4 whitespace-nowrap w-1/2 text-sm">

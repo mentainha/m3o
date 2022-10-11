@@ -41,17 +41,17 @@ export const EndpointCard: FC<Props> = ({
           <p className="mr-6 mt-4 float-right text-xs text-indigo-400">
             Credits: {price === 'Free' ? '0.000001' : price}
           </p>
-          <h3 className="font-medium text-black text-3xl dark:text-white mb-2">
+          <h3 className="font-medium text-black text-3xl mb-2">
             {splitEndpointTitle(title)}
           </h3>
           <h4 className="mb-4 inline-block text-xs">
-            <span className="font-medium text-indigo-400">{apiMethod}</span>{' '}
-            <span className="text-sm text-zinc-400">
+            <span className="font-bold text-indigo-400">{apiMethod}</span>{' '}
+            <span className="text-sm">
               /{apiVersion}/{apiName}/{endpointName}
             </span>
           </h4>
           {requestSchema && (
-            <p className="text-zinc-400 mb-10  max-w-md">
+            <p className="mb-10  max-w-md">
               {requestSchema.description}
             </p>
           )}

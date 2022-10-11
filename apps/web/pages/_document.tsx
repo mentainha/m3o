@@ -42,7 +42,7 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="text-zinc-400 font-light bg-zinc-900">
+        <body className="text-zinc-600 font-light bg-slate-50">
           <Main />
           <NextScript />
         </body>

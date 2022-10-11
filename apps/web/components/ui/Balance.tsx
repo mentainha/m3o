@@ -8,7 +8,7 @@ export const Balance: FC = () => {
   const { data = 0, isLoading } = useGetCurrentBalance()
 
   return (
-    <div className="bg-zinc-900 dark:bg-zinc-800 text-white">
+    <div className="bg-zinc-600 dark:bg-zinc-800 text-white">
       <h5 className="font-bold text-xl mb-4">Balance</h5>
       {isLoading ? (
         <Spinner />
