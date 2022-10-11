@@ -9,7 +9,7 @@ export const Banner: FC = () => {
           Universal Micro Services
         </h1>
         <h2 className="text-md md:text-lg max-w-xl mx-auto text-zinc-700 dark:text-zinc-400 font-medium">
-          Explore the cloud as programmable building blocks
+          Explore the web as programmable building blocks
         </h2>
         <div className="mt-6">
           <Link href="/pricing">
