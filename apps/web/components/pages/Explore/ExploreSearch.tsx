@@ -17,7 +17,6 @@ export const ExploreSearch: FC<Props> = ({
         type="text"
         className="p-4 placeholder-zinc-400 pl-16 bg-white dark:bg-zinc-800 w-full rounded-md appearance-none text-sm"
         placeholder="Search for APIs"
-        autoFocus={true}
         defaultValue={initialSearchTerm}
         name="search"
       />
