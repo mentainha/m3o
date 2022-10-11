@@ -46,7 +46,6 @@ export function CategoriesFilter({
     <>
       <CategoryLink
         onClick={onCategoryClick}
-        class
         href="/explore"
         selected={router.pathname === '/explore'}>
         All APIs
