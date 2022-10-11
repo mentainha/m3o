@@ -125,7 +125,7 @@ const Overview: NextPage<Props> = ({
           ))}
         </div>
         <div className="flex flex-col">
-          <div className="md:mt-20 md:order-1">
+          <div className="md:mt-48 md:order-1">
             <h2 className="text-xl mb-6 font-bold md:hidden">
               Example
             </h2>
