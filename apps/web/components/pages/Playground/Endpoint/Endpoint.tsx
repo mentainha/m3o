@@ -16,8 +16,8 @@ export function Endpoint({ description, name, isSelected, onClick }: Props) {
       className={classNames(
         'block p-4 text-left text-sm font-light rounded-md flex-1 endpoint',
         {
-          ' text-white bg-zinc-800': isSelected,
-          'text-zinc-400': !isSelected,
+          ' text-white bg-zinc-600': isSelected,
+          'text-zinc-600': !isSelected,
         },
       )}>
       <span className="font-bold block mb-1 font-mono">

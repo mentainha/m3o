@@ -71,7 +71,6 @@ function EndpointParams({
             key={key}
             placeholder={item.description}
             type={item.type === 'number' ? 'number' : 'text'}
-            variant="grey"
             onChange={event =>
               onParamChange(event.target.name, event.target.value)
             }
@@ -94,8 +93,8 @@ function EndpointParams({
       {item.properties ? (
         createParamsTree(item.properties!)
       ) : (
-        <div className="bg-zinc-800 p-6 rounded-md text-sm">
-          <p className="font-bold">No params required</p>
+        <div className="rounded-md text-sm">
+          <p>No params required</p>
         </div>
       )}
     </div>
@@ -235,8 +234,8 @@ export default function Playground({ user }: WithAuthProps) {
               </>
             ) : (
               <div className="flex items-center justify-center h-full uppercase ">
-                <p className="text-zinc-400">
-                  Please select an API to get started
+                <p>
+                  Select an API to get started
                 </p>
               </div>
             )}

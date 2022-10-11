@@ -12,7 +12,7 @@ export function Buttons({ currentTab, onButtonClick }: Props) {
       {Object.values(OutputTypes).map(item => (
         <button
           className={classNames(
-            'bg-zinc-900 p-4 text-xs mr-2 border-b-2 border-transparent',
+            'bg-zinc-600 p-4 text-xs mr-2 border-b-2 border-transparent',
             {
               'border-indigo-600': currentTab === item,
             },
