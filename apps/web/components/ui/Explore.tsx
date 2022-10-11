@@ -9,7 +9,6 @@ import {
 } from '@/components/pages/Explore'
 import { fetchCategories } from '@/lib/api/m3o/services/explore'
 import { withAuth } from '@/lib/api/m3o/withAuth'
-import { ShowCategoryMobileMenuButton } from './Buttons'
 
 export interface ExploreProps {
   categories: string[]
@@ -80,7 +79,6 @@ export const Explore: FC<ExploreProps> = ({
           </div>
         </div>
       </div>
-      <ShowCategoryMobileMenuButton onClick={() => setShowMobileMenu(true)} />
       <MobileFilters
         isOpen={showMobileMenu}
         onClose={() => setShowMobileMenu(false)}>
