@@ -34,10 +34,10 @@ const CloudPage: NextPage<WithAuthProps> = ({
       <MainLayout>
       <section className="px-4 md:px-0 py-12 md:py-24 text-zinc-600 dark:text-zinc-400">
         <div className="md:max-w-4xl lg:max-w-7xl mx-auto w-11/12 mb-10">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 max-w-2xl dark:text-white font-bold gradient-text">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 max-w-2xl dark:text-white font-bold">
             Cloud
           </h1>
-          <h2 className="text-md md:text-lg lg:text-xl font-medium max-w-3xl">
+          <h2 className="text-md md:text-lg lg:text-xl max-w-3xl">
             Serverless cloud built for developers
           </h2>
         </div>
