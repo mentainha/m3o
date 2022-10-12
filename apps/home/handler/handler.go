@@ -565,8 +565,8 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		h.urlProxy(w, r)
 	}
 
-	// 404
-	http.NotFound(w, r)
+	// load the home screen
+	h.appHome(w, r)
 }
 
 func New() *Handler {
