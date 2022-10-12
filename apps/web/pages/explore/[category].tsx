@@ -33,7 +33,7 @@ const ExploreCategory: NextPage<ExploreProps & WithAuthProps> = ({
         description={seo.explore.description}
       />
       <MainLayout>
-        <Explore {...exploreProps} header={<ExploreHeader title="Explore" />} />
+        <Explore {...exploreProps} header={<ExploreHeader title="Explore Services" />} />
       </MainLayout>
     </>
   )
