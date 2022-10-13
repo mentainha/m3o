@@ -131,9 +131,9 @@ export function DashboardLayout({
                     icon: HomeIcon,
                   },
                   {
-                    text: 'Cloud',
-                    href: '/cloud',
-                    icon: CloudIcon,
+                    text: 'Client',
+                    href: '/client',
+                    icon: TerminalIcon,
                   },
                   {
                     text: 'Services',

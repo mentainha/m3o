@@ -67,10 +67,9 @@ export const Footer: FC = () => {
               <li>
                 <a
                   className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm"
-                  href="/cloud"
-                  target="_blank"
+                  href="/client"
                   rel="noreferrer">
-                  Cloud
+                  Client
                 </a>
               </li>
               <li>
