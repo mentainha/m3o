@@ -7,7 +7,7 @@ interface Props {
 
 export const ExploreHeader: FC<Props> = ({ title }: Props) => {
   return (
-    <div className="mb-6">
+    <div>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl md:text-5xl mb-2 pb-4 font-bold">
           {title}

@@ -69,7 +69,7 @@ export const Explore: FC<ExploreProps> = ({
           </div>
         </div>
       </header>
-      <div className="bg-zinc-50 pt-16 dark:bg-zinc-900 pb-20">
+      <div className="bg-zinc-50 md:pt-8 md:pb-8 dark:bg-zinc-900">
         <div className="m3o-container sm">
           <div className="md:grid md:grid-cols-5 gap-10">
             <aside className="hidden md:block">{categoriesItems}</aside>
