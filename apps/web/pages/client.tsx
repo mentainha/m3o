@@ -163,17 +163,6 @@ export default function Playground({ user }: WithAuthProps) {
         canonical="https://m3o.com/client"
       />
       <MainLayout>
-        <Modal open={!user}>
-          <p>To use the client, first login:</p>
-          <LinkButton
-            href="/login"
-            className="inline-block mt-4"
-            onClick={() => {
-              window.sessionStorage.setItem(REDIRECT_TO_KEY, router.asPath)
-            }}>
-            Login
-          </LinkButton>
-        </Modal>
         <section className="h-screen overflow-hidden grid grid-cols-6">
           <ServicesSidebar
             data={data}
