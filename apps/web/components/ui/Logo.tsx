@@ -15,6 +15,7 @@ export const Logo: FC = () => {
       alt="m3o logo"
       width={368}
       height={236}
+      className={theme === 'dark' ? '' : 'bg-white' }
     />
   ) : null
 }
