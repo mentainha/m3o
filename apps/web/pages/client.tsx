@@ -93,7 +93,7 @@ function EndpointParams({
       {item.properties ? (
         createParamsTree(item.properties!)
       ) : (
-        <div className="rounded-md text-sm">
+        <div className="rounded-md text-sm mb-2">
           <p>No params required</p>
         </div>
       )}
@@ -185,14 +185,6 @@ export default function Playground({ user }: WithAuthProps) {
                   <>
                     <div className="grid grid-cols-6 overflow-hidden flex-grow">
                       <div className="col-span-2 border-r border-zinc-800 p-6">
-                          <Button
-                            className="font-mono text-sm float-right"
-                            onClick={() => run.mutate(api?.name)}
-                            loading={run.isLoading}
-                            disabled={isFetchingApi}>
-                            Submit
-                          </Button>
-                        <h2 className="font-bold mb-8 mt-4">Request</h2>
                         {selectedEndpoint && api && (
                           <EndpointParams
                             key={selectedEndpoint}
@@ -202,6 +194,13 @@ export default function Playground({ user }: WithAuthProps) {
                             onParamChange={handleParamChange}
                           />
                         )}
+                          <Button
+                            className="font-mono text-sm"
+                            onClick={() => run.mutate(api?.name)}
+                            loading={run.isLoading}
+                            disabled={isFetchingApi}>
+                            Submit
+                          </Button>
                       </div>
                       <div className="col-span-4 overflow-scroll flex flex-col">
                         <Output
