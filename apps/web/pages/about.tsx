@@ -6,10 +6,6 @@ import seo from '@/lib/seo.json'
 
 import {
   AboutUs,
-  AWSComparison,
-  Banner,
-  OfferApiBanner,
-  SellingPoints,
 } from '@/components/pages/About'
 
 export const getServerSideProps = withAuth(async context => {
@@ -25,10 +21,7 @@ const About: NextPage = () => {
     <>
       <NextSeo {...seo.about} />
       <MainLayout>
-        <Banner />
-        <SellingPoints />
         <AboutUs />
-        <OfferApiBanner />
       </MainLayout>
     </>
   )

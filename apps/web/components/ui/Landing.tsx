@@ -11,7 +11,7 @@ import {
 } from '@/components/pages/Home'
 import { MainLayout } from '@/components/layouts'
 import { ServicesGrid } from '@/components/ui'
-import { OfferApiBanner } from '@/components/pages/About'
+import { SellingPoints } from '@/components/pages/About'
 interface Props extends BannerProps {
   services: ExploreAPI[]
 }
@@ -27,6 +27,7 @@ export function Landing({
       <WhatIsM3O>
         <ServicesGrid services={services} />
       </WhatIsM3O>
+      <SellingPoints />
       <HowToGetStarted />
       <Pricing />
       <section className="py-20">
@@ -34,7 +35,6 @@ export function Landing({
           <Faqs />
         </div>
       </section>
-      <OfferApiBanner /> 
       <SubscribeSection />
    </MainLayout>
   )
