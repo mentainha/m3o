@@ -26,7 +26,7 @@ export const AboutUs: FC = () => {
             <p className="mb-4">
               M3O started life as an open source project called Micro, to address
               those pains. Now we're leveraging it to offer Micro services for 
-	      everyone to reuse and consume.
+	      everyone to use as simple APIs.
             </p>
           </div>
         </div>
