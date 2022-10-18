@@ -4,7 +4,7 @@ The API backend for the M3O Platform.
 
 ## Overview
 
-This directory serves as the API ackend for the M3O platform and related services. These services enable us 
+This directory serves as the API backend for the M3O platform and related services. These services enable us 
 to offer Micro services as public APIs. The repo includes things like customer management, billing, etc.
 
 ## Dependencies
