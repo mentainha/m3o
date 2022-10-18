@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package onboarding;
+
+option go_package = "./proto;onboarding";
+
+service Signup {
+	// Sends the verification email to the user
+	rpc User(UserRequest) returns (UserResponse);
+	// Verifies and completes signup process
+	rpc Verify(VerifyRequest) returns (VerifyResponse);
+	rpc Recover(RecoverRequest) returns (RecoverResponse);
+	rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+	rpc Track(TrackRequest) returns (TrackResponse);
+	rpc Waitlist(WaitlistRequest) returns(WaitlistResponse);
+}
+
+message UserRequest {
+	string email = 1;
+}
+
+message UserResponse {}
+
+message VerifyRequest {
+	string email = 1;
+	// The token that was received in the email
+	string token = 2;
+	// The secret/password to use for the account
+	string secret = 3;
+}
+
+message VerifyResponse {
+	AuthToken authToken = 1;
+	string customerID = 2;
+	string namespace = 3;
+}
+
+// lifted from https://github.com/micro/go-micro/blob/master/auth/service/proto/auth.proto
+message AuthToken {
+	string access_token = 1;
+	string refresh_token = 2;
+	int64 created = 3;
+	int64 expiry = 4;
+}
+
+message RecoverRequest {
+	string email = 1;
+}
+
+message RecoverResponse {}
+
+message ResetPasswordRequest{
+	string email = 1;
+	// token that was emailed or sent over SMS etc
+	// in case of a forgotten password
+	string token = 3;
+	// new secret/password for the account
+	string password = 4;
+}
+
+message ResetPasswordResponse {}
+
+message TrackRequest {
+	// tracking id, generated on the frontend
+	string id = 1;
+	string email = 2;
+	int64 firstVisit = 3;
+	int64 firstVerification = 4;
+	int64 registration = 5;
+	string referrer = 6;
+}
+
+message TrackResponse {
+
+}
+
+message WaitlistRequest {
+	string email = 1;
+}
+
+message WaitlistResponse {}

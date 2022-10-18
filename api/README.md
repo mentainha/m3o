@@ -1,113 +1,55 @@
-# API
+# M3O API
 
-The [M3O](https://m3o.com) API consists of a set of many public apis all consumed through a single gateway.
+The API backend for the M3O Platform.
 
 ## Overview
 
-M3O APIs are a standard set of http/json APIs which act as programmable building blocks 
-for rapid development of any product or services. Pick up and use one or more APIs as 
-easily as importing a library and making a function call from a library.
+This directory serves as the API ackend for the M3O platform and related services. These services enable us 
+to offer Micro services as public APIs. The repo includes things like customer management, billing, etc.
 
-## Examples
+## Dependencies
 
-Here's a simple helloworld
+We depend on Micro using the "platform" profile. It runs on kubernetes with the resources below:
 
-### Curl
+- Etcd
+- Redis
+- Postgres
 
-```
-curl -H "Authorization: Bearer $M3O_API_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "John"}' \
-     https://api.m3o.com/v1/helloworld/call
-```
+## Design
 
-Find all the shell examples in [m3o-sh](https://github.com/m3o/m3o-sh)
+All services are Micro services written using the Micro framework without exception.
 
-### Go
+- Services speak to each other via RPC
+- Messages are used for async eventing
+- Infrastructure usage occurs only through Micro
 
-Import packages from `go.m3o.com`
-
-```go
-import "go.m3o.com/helloworld"
-```
-
-Create a new client with your API token and call it
-
-```go
-helloworldService := helloworld.NewHelloworldService(os.Getenv("M3O_API_TOKEN"))
-
-rsp, err := helloworldService.Call(&helloworld.CallRequest{
-	"Name": "Alice",
-})
-
-fmt.Println(rsp.Message)
-```
-
-Find all the Go examples in [m3o-go](https://github.com/m3o/m3o-go)
-
-### JS
-
-Install the m3o package
+## Events
+All events should be defined in protobuf under `pkg/events/proto/<topic_name>`. The directory should contain the following files.
+### `events.proto` 
+This should define 
+- `enum EventType` - enumerates all the event types available
+- `message Event` - which should contain at least the field `EnumType type`. Any data specific to the event should be defined in separate fields in the `Event` message. You may also find it useful to have data that is common to all events in a common field. For example, the events on the `customers` stream have a `Customer` field which at a minimum contains the customer ID. The events then have event specific messages for any other data, e.g. the field `Created` contains data associated with the customer creation event.  
+   
+### `constants.go`
+This file should define the topic name so that publishers/consumers can reference this const rather than hand coding the topic name (with the potential for errors). e.g. 
 
 ```
-npm install m3o
+const Topic = "customers"
 ```
 
-Call helloworld like so
+See existing directories for examples.
 
-```javascript
-const { HelloworldService } = require("m3o/helloworld");
+### Mixpanel
+Events are forwarded to Mixpanel for analysis. Due to the way enum types are converted to their string representation we need to redeploy the Mixpanel service every time we add events otherwise they will get incorrectly reported.
 
-const helloworldService = new HelloworldService(process.env.M3O_API_TOKEN);
+## Testing
+We use https://github.com/maxbrunsfeld/counterfeiter for generating test doubles for our services. These can then be imported in to other tests and used instead of real implementations. 
 
-// Call returns a personalised "Hello $name" response
-async function callTheHelloworldService() {
-  const rsp = await helloworldService.call({
-    name: "John",
-  });
-  console.log(rsp);
-}
+We can then write tests which call the endpoints (contract testing) and verify that they do the right thing by checking call counts on the test doubles. 
 
-callTheHelloworldService();
+By convention, we generate fakes in the same directory tree as for the real proto implementation. For example, customers service is defined at `customers/proto` so the test double is defined in `customers/proto/fakes`. 
+
+Example generate command 
 ```
-
-Find more JS examples in [m3o-js](https://github.com/m3o/m3o-js)
-
-See the [examples](../examples) for more use cases.
-
-## API Endpoint
-
-The canonical API endpoint is
-
-```
-https://api.m3o.com/v1/
-```
-
-All service endpoints are append like so. 
-
-```
-# /v1/[service]/[endpoint]
-https://api.m3o.com/v1/helloworld/Call
-```
-
-## Authorization
-
-All API calls require a valid API token. New tokens can be generated on the [API keys](https://m3o.com/account/keys) page.
-
-An API token should be passed in the `Authorization: Bearer` header
-
-```
-Authorization: Bearer $MICRO_API_TOKEN
-```
-
-## Data Format
-
-All request/responses are in JSON format and require a `Content-Type: application/json` header to be passed on each request.
-
-## OpenAPI Specs
-
-Find the OpenAPI specs in the [spec](https://github.com/m3o/m3o/tree/main/api/spec) directory
-
-## Public APIs
-
-A list of public APIs can be found on [m3o.com/explore](https://m3o.com/explore)
+counterfeiter -o proto/fakes/fake_usage_service.go proto UsageService
+``` 
