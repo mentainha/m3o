@@ -152,6 +152,6 @@ More details to come soon.
 
 ## Learn More
 
-- Ask the [Community](https://m3o.org) questions
+- Sign-up to [M3O](https://m3o.com) and start for free
 - Follow on [Twitter](https://twitter.com/m3oservices) for updates
 - Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
