@@ -19,12 +19,8 @@ const EXTERNAL_LINKS_1: ExternalLink[] = [
     link: 'https://blog.m3o.com',
   },
   {
-    name: 'Email',
+    name: 'Contact',
     link: 'mailto:contact@m3o.com',
-  },
-  {
-    name: 'Github',
-    link: 'https://github.com/m3o',
   },
 ]
 
@@ -32,10 +28,6 @@ const EXTERNAL_LINKS_2: ExternalLink[] = [
   {
     name: 'Discord',
     link: 'https://discord.gg/TBR9bRjd6Z',
-  },
-  {
-    name: 'Instagram',
-    link: 'https://www.instagram.com/m3oservices/',
   },
   {
     name: 'LinkedIn',
@@ -65,17 +57,9 @@ export const Footer: FC = () => {
             </h5>
             <ul>
               <li>
-                <a
-                  className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm"
-                  href="/client"
-                  rel="noreferrer">
-                  Client
-                </a>
-              </li>
-              <li>
                 <Link href="/explore">
                   <a className="hover:text-indigo-600 text-zinc-800 transition-colors font-light dark:text-zinc-400 text-sm">
-                    Services
+                    Explore
                   </a>
                 </Link>
               </li>
