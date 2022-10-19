@@ -1,11 +1,12 @@
 # M3O
 
-M3O is a serverless cloud provider
+Explore the cloud as programmable building blocks
 
 ## Overview
 
 M3O transforms public APIs into smaller easier to use Micro services which you can explore, discover and consume 
-as serverless building blocks. The platform generates unified api docs, client libraries and examples.
+as serverless building blocks. The platform generates unified api docs, client libraries and examples on top 
+of [Micro](https://github.com/micro/micro) services using protobuf to OpenAPI conversion and some custom tooling.
 
 The API gateway manages access using a pay per request billing model taken from credit on account.
 
