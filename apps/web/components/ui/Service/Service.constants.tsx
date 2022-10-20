@@ -1,5 +1,6 @@
 import type { ComponentType, ComponentProps } from 'react'
 import {
+  LightBulbIcon,
   AnnotationIcon,
   ClockIcon,
   CodeIcon,
@@ -53,6 +54,7 @@ type Icons = Record<string, ComponentType<ComponentProps<'svg'>> | undefined>
 
 export const ICONS: Icons = {
   address: LocationMarkerIcon,
+  ai: LightBulbIcon,
   analytics: ChartBarIcon,
   answer: QuestionMarkCircleIcon,
   app: TerminalIcon,
