@@ -28,7 +28,7 @@ export const chart = new k8s.helm.v3.Chart(
   {
     namespace: namespace.metadata.name,
     chart: "cert-manager",
-    version: "v1.0.3",
+    version: "v1.6.1",
     fetchOpts: { repo: "https://charts.jetstack.io" },
     values: {
       installCRDs: true,
