@@ -143,7 +143,7 @@ Example call
 m3o helloworld call --name=Alice
 ```
 
-See the [examples](examples) for more use cases.
+See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
 
 ## Learn More
 
