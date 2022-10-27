@@ -777,6 +777,142 @@ export const proxyService = new k8s.core.v1.Service(
   { provider, dependsOn: proxyDeployment }
 );
 
+export const webDeployment = new k8s.apps.v1.Deployment(
+  "micro-web-deployment",
+  {
+    metadata: {
+      name: "micro-web",
+      namespace: "server",
+      labels: {
+        name: "web",
+        version: "latest",
+        micro: "server"
+      }
+    },
+    spec: {
+      replicas,
+      selector: {
+        matchLabels: {
+          name: "web",
+          version: "latest",
+          micro: "server"
+        }
+      },
+      template: {
+        metadata: {
+          labels: {
+            name: "web",
+            version: "latest",
+            micro: "server"
+          },
+          annotations: {
+            "prometheus.io/scrape": "true",
+            "prometheus.io/path": "/metrics",
+            "prometheus.io/port": "9000"
+          }
+        },
+        spec: {
+          containers: [
+            {
+              name: "micro",
+              env: [
+                {
+                  name: "MICRO_API_ADDRESS",
+	          value: "https://api.m3o.com"
+                },
+                {
+                  name: "MICRO_AUTH_PUBLIC_KEY",
+                  valueFrom: {
+                    secretKeyRef: {
+                      name: (jwtCert.metadata as ObjectMeta).name,
+                      key: "tls.crt"
+                    }
+                  }
+                },
+                {
+                  name: "MICRO_AUTH_PRIVATE_KEY",
+                  valueFrom: {
+                    secretKeyRef: {
+                      name: (jwtCert.metadata as ObjectMeta).name,
+                      key: "tls.key"
+                    }
+                  }
+                },
+                {
+                  name: "MICRO_PROFILE",
+                  value: "platform_client"
+                },
+                {
+                  name: "MICRO_PROXY",
+                  value: pulumi.interpolate`${networkService.metadata.name}.${networkService.metadata.namespace}:${networkService.spec.ports[0].port}`
+                },
+                {
+                  name: "MICRO_API_REDIS_ADDRESS",
+                  value: redis.redis.uri
+                },
+                {
+                  name: "MICRO_API_REDIS_USER",
+                  value: redis.redis.user
+                },
+                {
+                  name: "MICRO_API_REDIS_PASSWORD",
+                  value: redis.redis.password
+                }
+              ],
+              args: ["web"],
+              image,
+              imagePullPolicy,
+              ports: [
+                {
+                  name: "web-port",
+                  containerPort: 8082
+                }
+              ],
+              readinessProbe: {
+                tcpSocket: {
+                  port: `web-port`
+                },
+                initialDelaySeconds: 5,
+                periodSeconds: 10
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  { provider, dependsOn: [...server, jwtCert] }
+);
+
+export const apiService = new k8s.core.v1.Service(
+  "micro-web-service",
+  {
+    metadata: {
+      name: "micro-web",
+      namespace: "server",
+      labels: {
+        name: "web",
+        version: "latest",
+        micro: "server"
+      }
+    },
+    spec: {
+      ports: [
+        {
+          name: "http",
+          port: 8082,
+          targetPort: 8082
+        }
+      ],
+      selector: {
+        name: "web",
+        version: "latest",
+        micro: "server"
+      }
+    }
+  },
+  { provider, dependsOn: webDeployment }
+);
 
 export const jaegerDeployment = new k8s.apps.v1.Deployment(
   "micro-jaeger-deployment",
@@ -1046,4 +1182,6 @@ export default [
   apiDeployment,
   proxyService,
   proxyDeployment
+  webService,
+  webDeployment,
 ];

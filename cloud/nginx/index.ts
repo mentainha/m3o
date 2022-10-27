@@ -238,6 +238,48 @@ export const httpIngress = new k8s.networking.v1beta1.Ingress(
   { provider, dependsOn: [externalChart, apiService] }
 );
 
+export const webIngress = new k8s.networking.v1beta1.Ingress(
+  "web-ingress",
+  {
+    metadata: {
+      name: "web-ingress",
+      namespace: "server",
+      annotations: {
+        "kubernetes.io/ingress.class": "external",
+        "cert-manager.io/cluster-issuer": (letsEncryptCerts.metadata as ObjectMeta)
+          .name!
+      }
+    },
+    spec: {
+      tls: [
+        {
+          hosts: cf.require("web-hosts").split(","),
+          secretName: "tls-web"
+        }
+      ],
+      rules: cf
+        .require("web-hosts")
+        .split(",")
+        .map(host => ({
+          host,
+          http: {
+            paths: [
+              {
+                path: "/",
+                pathType: "Prefix",
+                backend: {
+                  serviceName: "micro-web",
+                  servicePort: 8082
+                }
+              }
+            ]
+          }
+        }))
+    }
+  },
+  { provider, dependsOn: [externalChart, webService] }
+);
+
 export const pr = new ocean.ProjectResources("pr-nginx", {
   project: project.id,
   resources: [externalIP.floatingIpUrn]
@@ -250,5 +292,6 @@ export default [
   externalIP,
   pvc,
   grpcIngress,
-  httpIngress
+  httpIngress,
+  webIngress
 ];
