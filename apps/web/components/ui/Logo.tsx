@@ -11,11 +11,11 @@ export const Logo: FC = () => {
 
   return mounted ? (
     <img
-      src={theme === 'dark' ? '/logo-white.png' : '/logo.png'}
+      src="/logo-white.png"
       alt="m3o logo"
       width={368}
       height={236}
-      className={theme === 'dark' ? 'bg-black' : 'bg-white' }
+      className="bg-black border border-black"
     />
   ) : null
 }
