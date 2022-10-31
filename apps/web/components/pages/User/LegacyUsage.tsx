@@ -106,7 +106,7 @@ export const LegacyUsage: FC<Props> = ({ showAllResults = false }) => {
               <div
                 key={item.name}
                 className="grid grid-cols-2 md:grid-cols-4 items-center h-8 border-b tbc last:border-0">
-                <div className=" h-full flex items-center font-medium text-sm px-4 dark:border-zinc-600">
+                <div className=" h-full flex items-center font-medium text-sm px-4 dark:border-zinc-600 dark:text-white">
                   {item.name}
                 </div>
                 <div className="hidden md:block col-span-2  bg-pink-50 h-full dark:bg-zinc-800">
@@ -117,7 +117,7 @@ export const LegacyUsage: FC<Props> = ({ showAllResults = false }) => {
                       opacity: percentage / 100,
                     }}></div>
                 </div>
-                <div className="h-full flex items-center px-4 text-sm dark:border-zinc-600">
+                <div className="h-full flex items-center px-4 text-sm dark:border-zinc-600 dark:text-white">
                   {item.requestsAmount}
                 </div>
               </div>

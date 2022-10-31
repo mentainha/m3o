@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 export const Logo: FC = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme } = useTheme()
+  const [theme, setTheme] = useState()
 
   useEffect(() => setMounted(true), [])
 
@@ -15,7 +15,7 @@ export const Logo: FC = () => {
       alt="m3o logo"
       width={368}
       height={236}
-      className={theme === 'dark' ? '' : 'bg-white' }
+      className={theme === 'dark' ? 'bg-black' : 'bg-white' }
     />
   ) : null
 }

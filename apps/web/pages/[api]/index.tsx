@@ -103,7 +103,7 @@ const Overview: NextPage<Props> = ({
           <h1 className="font-medium text-4xl md:text-5xl mb-4">
             {displayName}
           </h1>
-          <p className="pb-6 text-lg text-zinc-700 font-light mb-4">
+          <p className="pb-6 text-lg font-light mb-4">
             {summaryDescription.split('#')[0]}
           </p>
           <h2 className="text-xl mb-4 font-bold">Introduction</h2>
@@ -120,7 +120,7 @@ const Overview: NextPage<Props> = ({
                   {feature.title}
                 </a>
               </h3>
-              <p className="text-zinc-600 text-sm max-w-lg">{feature.description}</p>
+              <p className="text-sm max-w-lg">{feature.description}</p>
             </div>
           ))}
         </div>

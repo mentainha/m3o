@@ -58,7 +58,7 @@ export const Explore: FC<ExploreProps> = ({
 
   return (
     <>
-      <header className="py-10 px-4 md:pt-16 md:pb-0">
+      <header className="py-10 px-4 md:pt-16 md:pb-0 dark:bg-zinc-900">
         <div className="m3o-container sm md:flex justify-between">
           {header}
           <div className="mt-4 md:mt-0">
@@ -71,7 +71,7 @@ export const Explore: FC<ExploreProps> = ({
       </header>
       <div className="bg-zinc-50 md:pt-8 md:pb-8 dark:bg-zinc-900">
         <div className="m3o-container sm">
-          <div className="md:grid md:grid-cols-5 gap-10">
+          <div className="md:grid md:grid-cols-5 gap-10 dark:text-white">
             <aside className="hidden md:block">{categoriesItems}</aside>
             <div className="col-span-4 pb-6">
               <ExploreResults services={services} />

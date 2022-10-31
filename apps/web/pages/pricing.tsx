@@ -60,7 +60,7 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
           title="Pricing"
           subTitle="Simple, pay-as-you grow pricing"
         />
-        <div className="m3o-container pt-8">
+        <div className="m3o-container pt-8 dark:bg-zinc-900">
           <h2 className="font-bold text-xl md:text-4xl md:mt-8">
             Choose a plan
           </h2>

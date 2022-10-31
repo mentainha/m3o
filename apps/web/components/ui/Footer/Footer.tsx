@@ -41,7 +41,7 @@ const EXTERNAL_LINKS_2: ExternalLink[] = [
 
 export const Footer: FC = () => {
   return (
-    <footer className="bg-zinc-100 py-8 md:py-20 dark:bg-zinc-900 border-t tbc">
+    <footer className="bg-zinc-100 py-8 md:py-20 border-t dark:bg-zinc-900 tbc">
       <div className="m3o-container sm">
         <div className="md:grid md:grid-cols-4">
           <div className="mb-6 md:mb-0">

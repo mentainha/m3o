@@ -5,7 +5,7 @@ export const MainLayout: FC = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="dark:bg-zinc-900">{children}</main>
       <Footer />
     </>
   )
