@@ -64,15 +64,15 @@ const Billing: NextPage<Props> = ({ user }) => {
               <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
                 Subscription
               </h3>
-              <p className="ttc">
-                You are currently on the{' '}
+              {subscriptionLevel !== SubscriptionPlans.Free && (
+              <p className="ttc mb-4">
                 {subscriptionLevel && (
                   <SubscriptionPlanBubble plan={subscriptionLevel} />
                 )}{' '}
-                plan
               </p>
+              )}
               {subscriptionLevel !== SubscriptionPlans.Free && (
-                <div className="mt-4 font-light">
+                <div className="m-2 font-light">
                   <button
                     className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm flex items-center"
                     onClick={() => setShowSubscriptionModal(true)}>
@@ -81,26 +81,14 @@ const Billing: NextPage<Props> = ({ user }) => {
                   </button>
                 </div>
               )}
-              {subscriptionLevel !== SubscriptionPlans.Solo && (
-                <div className="mt-4 font-light">
-                  <Link href="/subscriptions?tier=solo">
-                    <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
-                      {subscriptionLevel === SubscriptionPlans.Pro
-                        ? 'Downgrade'
-                        : 'Upgrade'}{' '}
-                      to Solo <ChevronRightIcon className="w-4 ml-2" />
-                    </a>
-                  </Link>
-                </div>
-              )}
               {subscriptionLevel === SubscriptionPlans.Free && (
-                <div className="mt-4 font-light">
-                  <Link href="/subscriptions?tier=pro">
+                <span className="font-light">
+                  <Link href="/pricing">
                     <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
-                      Upgrade to Pro <ChevronRightIcon className="w-4 ml-2" />
+                      Choose a Plan
                     </a>
                   </Link>
-                </div>
+                </span>
               )}
             </div>
             <History />

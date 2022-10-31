@@ -52,7 +52,7 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
           aria-orientation="vertical"
           aria-labelledby="menu-button"
           tabIndex={-1}>
-          <div className="border-b p-4 text-sm dark:border-zinc-600 dark:text-white">
+          <div className="border-b p-4 py-2 text-sm dark:border-zinc-600 dark:text-white">
             <p>Signed in as</p>
             <p className="font-bold overflow-hidden text-ellipsis">
               {user.name}
@@ -62,7 +62,7 @@ export const LoggedInMenu: FC<LoggedInMenuProps> = ({ user }) => {
                 className={classNames('capitalize', {
                   'gradient-text font-bold': subscriptionLevel === 'pro',
                 })}>
-                {subscriptionLevel == 'free' ? 'dev' : subscriptionLevel}
+                {subscriptionLevel}
               </p>
             )}
           </div>
