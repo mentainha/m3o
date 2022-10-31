@@ -64,48 +64,55 @@ const Billing: NextPage<Props> = ({ user }) => {
               <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
                 Subscription
               </h3>
-              <p className="ttc">
+              <span className="mr-2">
                 {subscriptionLevel && (
                   <SubscriptionPlanBubble plan={subscriptionLevel} />
                 )}{' '}
-              </p>
+              </span>
               {subscriptionLevel !== SubscriptionPlans.Free && (
-                <div className="mt-4 font-light">
+                <span className="mr-2 font-light">
                   <button
                     className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm flex items-center"
                     onClick={() => setShowSubscriptionModal(true)}>
                     Cancel subscription{' '}
                     <ChevronRightIcon className="w-4 ml-2" />
                   </button>
-                </div>
+                </span>
               )}
               {subscriptionLevel !== SubscriptionPlans.Dev && (
-                <div className="mt-4 font-light">
+                <span className="mr-2 font-light">
                   <Link href="/subscriptions?tier=dev">
                     <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
                       Choose Dev <ChevronRightIcon className="w-4 ml-2" />
                     </a>
                   </Link>
-                </div>
+                </span>
               )}
               {subscriptionLevel !== SubscriptionPlans.Solo && (
-                <div className="mt-4 font-light">
+                <span className="mr-2 font-light">
                   <Link href="/subscriptions?tier=solo">
                     <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
                       Choose Solo <ChevronRightIcon className="w-4 ml-2" />
                     </a>
                   </Link>
-                </div>
+                </span>
               )}
               {subscriptionLevel != SubscriptionPlans.Pro && (
-                <div className="mt-4 font-light">
+                <span className="mr-2font-light">
                   <Link href="/subscriptions?tier=pro">
                     <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
                       Choose Pro <ChevronRightIcon className="w-4 ml-2" />
                     </a>
                   </Link>
-                </div>
+                </span>
               )}
+              <p className="mt-2">
+                  <Link href="/pricing">
+                    <a className="text-sm">
+                      See features & pricing
+                    </a>
+                  </Link>
+              </p>
             </div>
             <History />
             <DeleteCardModal />
