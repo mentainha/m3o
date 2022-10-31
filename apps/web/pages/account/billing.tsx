@@ -64,15 +64,13 @@ const Billing: NextPage<Props> = ({ user }) => {
               <h3 className="font-bold text-2xl text-black mb-3 dark:text-white">
                 Subscription
               </h3>
-              {subscriptionLevel !== SubscriptionPlans.Free && (
-              <p className="ttc mb-4">
+              <p className="ttc">
                 {subscriptionLevel && (
                   <SubscriptionPlanBubble plan={subscriptionLevel} />
                 )}{' '}
               </p>
-              )}
               {subscriptionLevel !== SubscriptionPlans.Free && (
-                <div className="m-2 font-light">
+                <div className="mt-4 font-light">
                   <button
                     className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm flex items-center"
                     onClick={() => setShowSubscriptionModal(true)}>
@@ -81,14 +79,32 @@ const Billing: NextPage<Props> = ({ user }) => {
                   </button>
                 </div>
               )}
-              {subscriptionLevel === SubscriptionPlans.Free && (
-                <span className="font-light">
-                  <Link href="/pricing">
+              {subscriptionLevel !== SubscriptionPlans.Dev && (
+                <div className="mt-4 font-light">
+                  <Link href="/subscriptions?tier=dev">
                     <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
-                      Choose a Plan
+                      Choose Dev <ChevronRightIcon className="w-4 ml-2" />
                     </a>
                   </Link>
-                </span>
+                </div>
+              )}
+              {subscriptionLevel !== SubscriptionPlans.Solo && (
+                <div className="mt-4 font-light">
+                  <Link href="/subscriptions?tier=solo">
+                    <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
+                      Choose Solo <ChevronRightIcon className="w-4 ml-2" />
+                    </a>
+                  </Link>
+                </div>
+              )}
+              {subscriptionLevel != SubscriptionPlans.Pro && (
+                <div className="mt-4 font-light">
+                  <Link href="/subscriptions?tier=pro">
+                    <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
+                      Choose Pro <ChevronRightIcon className="w-4 ml-2" />
+                    </a>
+                  </Link>
+                </div>
               )}
             </div>
             <History />
