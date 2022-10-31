@@ -119,7 +119,7 @@ export function DashboardLayout({
   return (
     <MainLayout>
       <section className="min-h-screen md:grid md:grid-cols-6">
-        <aside className=" bg-white dark:bg-zinc-900 md:pt-6 md:border-r tbc">
+        <aside className="md:pt-6 md:border-r tbc">
           <SidebarItems
             items={[
               {
@@ -213,7 +213,7 @@ export function DashboardLayout({
             ]}
           />
         </aside>
-        <div className="col-span-5 bg-white ">{children}</div>
+        <div className="col-span-5">{children}</div>
       </section>
     </MainLayout>
   )
