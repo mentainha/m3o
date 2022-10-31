@@ -41,7 +41,7 @@ export const EndpointCard: FC<Props> = ({
           <p className="mr-6 mt-4 float-right text-xs text-indigo-400">
             Credits: {price === 'Free' ? '0.000001' : price}
           </p>
-          <h3 className="font-medium text-black text-3xl mb-2">
+          <h3 className="font-medium text-3xl mb-2">
             {splitEndpointTitle(title)}
           </h3>
           <h4 className="mb-4 inline-block text-xs">

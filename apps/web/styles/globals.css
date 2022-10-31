@@ -11,6 +11,9 @@ h1 {
 h2 {
   @apply text-black dark:text-white;
 }
+h3 {
+  @apply text-black dark:text-white;
+}
 td {
   @apply text-black dark:text-white;
 }
