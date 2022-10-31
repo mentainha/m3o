@@ -69,8 +69,12 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
             API Credits
           </h2>
           <div className="my-10">
-            <p className="mb-4 text-zinc-800">
-              Base requests are charged at 0.000001 credit per request (£1 per credit)
+            <p className="mb-4">
+              M3O operates using an API credit model. API requests are charged on a per request basis using credit on account.
+              Base requests are charged at 0.000001 credit per request. 1 credit costs £1 (GBP).
+              Any requests beyond the subscription quota is taken from the account balance.
+              If there is no balance and quota has been exceeded requests will be blocked.
+              Premium APIs below are charged exclusively from account credit.
             </p>
           </div>
         </div>
