@@ -10,25 +10,25 @@ export const SELLING_POINTS: SellingPointProps[] = [
   {
     Icon: EmojiHappyIcon,
     description:
-      'Use one account to fulfill all your API needs. Access multiple APIs with a single API token.',
+      'Use one account for all your API needs. Access multiple services with a single token',
     title: 'Simple',
   },
   {
     Icon: LightningBoltIcon,
     description:
-      "Using a new API is simple - no need to learn yet another API style, it's all the same Dev UX.",
+      "Using a new API is simple - no need to learn yet another API style, it's all the same Dev UX",
     title: 'Fast',
   },
   {
     Icon: CashIcon,
     description:
-      "Start for free. It's a simple pay as you grow model and everything is priced per request.",
+      "It's a simple pay as you grow model and everything is priced per request",
     title: 'Affordable',
   },
   {
     Icon: EyeOffIcon,
     description:
-      "Don't get lost in a sea of infinite cloud billing. We show you exactly what you use with no hidden costs.",
+      "Don't get lost in infinite billing. We show you exactly what you use with no hidden costs",
     title: 'No Hidden Fees',
   },
 ]
