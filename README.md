@@ -1,6 +1,6 @@
 # M3O
 
-Explore the cloud as programmable building blocks
+Explore the cloud as serverless building blocks
 
 ## Overview
 
