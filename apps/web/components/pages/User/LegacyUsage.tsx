@@ -76,6 +76,9 @@ export const LegacyUsage: FC<Props> = ({ showAllResults = false }) => {
           <h5 className="font-bold text-xl text-black dark:text-white">
             Your Usage
           </h5>
+          <p className="text-sm mt-2">
+            Request quota: {Number(data.quota_remaining).toLocaleString()}
+          </p>
         </div>
         {!showAllResults && (
           <Link href={Routes.UserUsage}>
