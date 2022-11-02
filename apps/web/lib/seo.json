@@ -57,6 +57,10 @@
     "title": "Client",
     "description": "M3O API Client"
   },
+  "community": {
+    "title": "Community",
+    "description": "Ask questions, share knowledge and stay in sync"
+  },
   "dashboard": {
     "title": "Dashboard",
     "description": "Your M3O overview dashboard"
