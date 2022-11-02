@@ -197,8 +197,7 @@ export function DashboardLayout({
                   },
                   {
                     text: 'Community',
-                    href: 'https://discord.gg/TBR9bRjd6Z',
-                    external: true,
+                    href: '/community',
                     icon: UsersIcon,
                   },
                   isProUser
