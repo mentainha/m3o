@@ -66,7 +66,7 @@ const CommunityPage: NextPage<WithAuthProps> = ({
 	      </div>
 	    </div>
 	    <div className="mb-6 md:mb-0 text-left relative card hover:shadow-lg transition-shadow tbc">
-	      <Link href="https://m3o.app">
+	      <Link href="https://m3o.org">
 		<a className="absolute top-0 left-0 w-full h-full z-30"></a>
 	      </Link>
 	      <div className="relative z-40 pointer-events-none p-6 pb-0 md:pb-0">
@@ -74,7 +74,7 @@ const CommunityPage: NextPage<WithAuthProps> = ({
 		  <CodeIcon className="w-5 text-indigo-600 dark:text-pink-400" />
 		</div>
 		<h3 className="mt-0 text-2xl mb-1">
-		  <Link href="https://m3o.app">
+		  <Link href="https://m3o.org">
 		    <a
 		      data-testid={`service-link-functions`}
 		      className="font-bold text-zinc-900 pointer-events-auto dark:text-white">
