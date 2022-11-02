@@ -37,15 +37,15 @@ export const Usage: FC<Props> = ({ showAllResults = false }) => {
   return (
     <div className="mt-8 tbgc rounded-lg pt-10 pb-16">
       <div className="px-10">
-        <h5 className="font-bold text-xl text-black dark:text-white">
-          Your API Usage
+        <h5 className="font-bold text-xl text-black dark:text-white mb-2">
+          Historic Usage
         </h5>
         {Object.values(TimeSelections).map(value => (
           <button
             onClick={() => setTimeSelection(value)}
             key={value}
             className={classNames('px-4 py-2 text-sm', {
-              'bg-zinc-700 rounded-lg font-bold text-pink-500':
+              'bg-zinc-700 rounded-lg font-bold text-white':
                 timeSelection === value,
             })}>
             {value}
