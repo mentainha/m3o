@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 import { DashboardLayout } from '@/components/layouts'
 import { Routes } from '@/lib/constants'
 import { LegacyUsage } from '@/components/pages/User'
+import { Usage as UsageChart } from '@/components/pages/User/Usage'
 import { withAuth } from '@/lib/api/m3o/withAuth'
 import seo from '@/lib/seo.json'
 
@@ -32,11 +33,12 @@ const Usage: NextPage<UsageProps> = () => {
     <>
       <NextSeo title={seo.account.usage.title} />
       <DashboardLayout>
-        <div className="p-6 md:p-10">
+        <div className="p-6 md:p-10 max-w-4xl">
           <h1 className="text-3xl mb-6 pb-4 font-medium">
             Usage
           </h1>
           <LegacyUsage showAllResults={true} />
+          <UsageChart showAllResults={true} />
         </div>
       </DashboardLayout>
     </>
