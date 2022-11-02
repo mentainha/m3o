@@ -34,6 +34,9 @@ var (
 	// host to proxy for Apps
 	AppHost = "m3o.app"
 
+	// host to proxy for Apps
+	OrgHost = "m3o.org"
+
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
 
@@ -157,7 +160,7 @@ func (h *Handler) appHome(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 	// load the home screen
-	if r.Host == AppHost {
+	if r.Host == AppHost || r.Host == OrgHost {
 		h.appHome(w, r)
 		return
 	}
@@ -188,6 +191,7 @@ func (h *Handler) appResolve(w http.ResponseWriter, r *http.Request, serve bool)
 	// not in app map, try resolve it
 	subdomain := strings.TrimSuffix(r.Host, "."+AppHost)
 	subdomain = strings.TrimSuffix(subdomain, "."+ComHost)
+	subdomain = strings.TrimSuffix(subdomain, "."+OrgHost)
 
 	// only process one part for now
 	parts := strings.Split(subdomain, ".")
@@ -534,6 +538,12 @@ func (h *Handler) Proxy(backend *url.URL, w http.ResponseWriter, r *http.Request
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// m3o.app
 	if strings.HasSuffix(r.Host, AppHost) {
+		h.appProxy(w, r)
+		return
+	}
+
+	// m3o.org
+	if strings.HasSuffix(r.Host, OrgHost) {
 		h.appProxy(w, r)
 		return
 	}
