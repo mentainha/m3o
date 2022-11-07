@@ -374,6 +374,10 @@ func (h *Handler) urlProxy(w http.ResponseWriter, r *http.Request) {
 	if strings.HasPrefix(r.URL.Path, "/url/") {
 		id = strings.TrimPrefix(r.URL.Path, "/url/")
 	}
+	// check url prefix
+	if strings.HasPrefix(r.URL.Path, "/u/") {
+		id = strings.TrimPrefix(r.URL.Path, "/u/")
+	}
 
 	if len(id) > 0 {
 		params = "?id=" + id
