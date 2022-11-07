@@ -16,6 +16,7 @@ import (
 	"time"
 
 	"m3o.dev/api/client"
+	"m3o.dev/apps/home/server"
 )
 
 var (
@@ -35,7 +36,7 @@ var (
 	AppHost = "m3o.app"
 
 	// host to proxy for Apps
-	OrgHost = "m3o.org"
+	HomeHost = "m3o.org"
 
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
@@ -60,6 +61,9 @@ type Handler struct {
 	client      *client.Client
 	lastUpdated time.Time
 	appList     []*App
+
+	// the home server
+	server *server.Server
 }
 
 type backend struct {
@@ -109,7 +113,7 @@ func (h *Handler) loadApps() error {
 }
 
 // render the app home screen
-func (h *Handler) appHome(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) appIndex(w http.ResponseWriter, r *http.Request) {
 	// grab the existing app cache
 	h.mtx.RLock()
 	lastUpdated := h.lastUpdated
@@ -121,47 +125,25 @@ func (h *Handler) appHome(w http.ResponseWriter, r *http.Request) {
 		go h.loadApps()
 	}
 
-	// if home app exists load it
-	var home *App
-
-	// check if we have a "home" app
-	for _, app := range appList {
-		if app.Name == "home" {
-			home = app
-			break
-		}
-	}
-
-	// we have a home app that will load instead of the index
-	if home != nil {
-		u, err := url.Parse(home.Backend)
-		if err != nil {
-			http.Error(w, err.Error(), 500)
-			return
-		}
-		h.Proxy(u, w, r)
-		return
-	}
-
 	// render the default home screen
 
 	// parse the web template
-	t, err := template.New("home").Parse(WebTemplate)
+	t, err := template.New("index").Parse(WebTemplate)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
 	}
 
 	// load the template with app data
-	if err := t.ExecuteTemplate(w, "home", appList); err != nil {
+	if err := t.ExecuteTemplate(w, "index", appList); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
 
 func (h *Handler) appProxy(w http.ResponseWriter, r *http.Request) {
 	// load the home screen
-	if r.Host == AppHost || r.Host == OrgHost {
-		h.appHome(w, r)
+	if r.Host == AppHost {
+		h.appIndex(w, r)
 		return
 	}
 	// load a backend app e.g helloworld.m3o.app
@@ -191,7 +173,6 @@ func (h *Handler) appResolve(w http.ResponseWriter, r *http.Request, serve bool)
 	// not in app map, try resolve it
 	subdomain := strings.TrimSuffix(r.Host, "."+AppHost)
 	subdomain = strings.TrimSuffix(subdomain, "."+ComHost)
-	subdomain = strings.TrimSuffix(subdomain, "."+OrgHost)
 
 	// only process one part for now
 	parts := strings.Split(subdomain, ".")
@@ -542,12 +523,6 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// m3o.org
-	if strings.HasSuffix(r.Host, OrgHost) {
-		h.appProxy(w, r)
-		return
-	}
-
 	// m3o.sh
 	if strings.HasSuffix(r.Host, FunctionHost) {
 		h.functionProxy(w, r)
@@ -575,15 +550,16 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		h.urlProxy(w, r)
 	}
 
-	// load the home screen
-	h.appHome(w, r)
+	// load the home server
+	h.server.ServeHTTP(w, r)
 }
 
-func New() *Handler {
+func New(server *server.Server) *Handler {
 	h := &Handler{
 		client:  client.NewClient(&client.Options{Token: APIKey}),
 		appMap:  make(map[string]*backend),
 		funcMap: make(map[string]*backend),
+		server:  server,
 	}
 	if err := h.loadApps(); err != nil {
 		log.Printf("Error loading apps: %v", err)
