@@ -10,10 +10,10 @@ var WebTemplate = `
       .container {
 	margin: 0 auto;
 	text-align: center;
-	padding: 25px;
+	padding: 50px;
 	text-transform: capitalize;
 	font-family: arial;
-	background: beige;
+	background: whitesmoke;
 	height: 100%;
       }
       .app {
@@ -31,9 +31,10 @@ var WebTemplate = `
   </head>
   <body>
     <div class="container">
-    {{range .}}
-      <a class="app" href="{{.Url}}">{{.Name}}</a>
-    {{end}}
+      <div id="header"><h1>Apps</h1></div>
+      {{range .}}
+        <a class="app" href="{{.Url}}">{{.Name}}</a>
+      {{end}}
     </div>
   </body>
 </html>
