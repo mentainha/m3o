@@ -35,9 +35,6 @@ var (
 	// host to proxy for Apps
 	AppHost = "m3o.app"
 
-	// host to proxy for Apps
-	HomeHost = "m3o.org"
-
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
 
