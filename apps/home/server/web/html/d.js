@@ -33,26 +33,6 @@ String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-// load the background theme colour
-function background() {
-	var bg = localStorage.getItem("background");
-	if (bg != undefined) {
-		console.log("Setting background:", bg);
-		document.body.style.backgroundColor = bg;
-	}
-	var click = function(id, colour) {
-		console.log("Setting background:", id, colour);
-		var item = document.getElementById(id);
-		item.addEventListener("click", function() {
-			document.body.style.backgroundColor = colour;
-			localStorage.setItem("background", colour);
-		});
-	}
-	click("grey", "silver");
-	click("white", "whitesmoke");
-	click("yellow", "beige");
-}
-
 function chars() {
 	var i = document.getElementById('text').value.length;
 	var c = maxChars;
@@ -980,7 +960,6 @@ routes.set("account", loadAccount);
 document.addEventListener("DOMContentLoaded", function(event) {
 	login();
 	reload(true);
-	background();
 })
 
 window.addEventListener('hashchange', function() {

@@ -21,9 +21,6 @@ a { color: black; font-weight: 400; }
 .colour:hover {
   cursor: pointer;
 }
-#white { background: whitesmoke; }
-#grey { background: silver; }
-#yellow { background: beige; }
 .link {
   color: black;
   font-size: 12px;
