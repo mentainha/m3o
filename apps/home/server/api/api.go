@@ -330,7 +330,7 @@ func emailUsers(byUser, subj, msg string) error {
 			continue
 		}
 		// don't send if emails disabled
-		if send, ok := sendEmail[user.Id]; ok && !send {
+		if send, ok := sendEmail[user.Id]; !ok || !send {
 			continue
 		}
 		// send to this user

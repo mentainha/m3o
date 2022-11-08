@@ -13,10 +13,6 @@ can additionally be self hosted by anyone else.
 - [Next.js](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/)
 
-## Disclaimer
-
-M3O-Web is constantly undergoing changes and updates, `git pull` as much as possible to ensure you have the latest code. If you see anything that causes confusion or raises questions, please [email us](mailto:contact@m3o.com) or join our [Discord](https://discord.com/invite/TBR9bRjd6Z) and we'll help with any queries.
-
 ## Development
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
