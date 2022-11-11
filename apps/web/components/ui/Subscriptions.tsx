@@ -16,7 +16,7 @@ export function Subscriptions(): ReactElement {
           '10 Image uploads',
           '100 User accounts',
           '10k DB records',
-          '1M API requests',
+          '100k API requests',
           '1GB Space storage',
         ]}
         button={
@@ -39,7 +39,7 @@ export function Subscriptions(): ReactElement {
           '100 Image uploads',
           '1k User accounts',
           '100k DB records',
-          '5M API requests',
+          '1M API requests',
           '10GB Space storage',
           'Community support',
         ]}
@@ -63,7 +63,7 @@ export function Subscriptions(): ReactElement {
           '1k Image uploads',
           '10k User accounts',
           '1M DB records',
-          '25M API requests',
+          '10M API requests',
           '100GB Space storage',
           'Email support',
         ]}
