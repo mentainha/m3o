@@ -35,6 +35,10 @@ type Headlines struct {
 	Data map[string][]*Article `json:"data"`
 }
 
+type TopStories struct {
+	Data []*Article `json:"data"`
+}
+
 var (
 	apiURL = "https://api.thenewsapi.com"
 )
@@ -80,8 +84,8 @@ func (n *News) Headlines(ctx context.Context, req *pb.HeadlinesRequest, rsp *pb.
 	}
 
 	var seen bool
-	for _, locale := range Locales {
-		if locale == req.Locale {
+	for _, loc := range Locales {
+		if loc == locale {
 			seen = true
 			break
 		}
@@ -110,6 +114,53 @@ func (n *News) Headlines(ctx context.Context, req *pb.HeadlinesRequest, rsp *pb.
 				rsp.Articles = append(rsp.Articles, toProto(a))
 			}
 		}
+	}
+
+	return nil
+}
+
+func (n *News) TopStories(ctx context.Context, req *pb.TopStoriesRequest, rsp *pb.TopStoriesResponse) error {
+	path := "/v1/news/top"
+	locale := "us"
+	language := "en"
+	date := time.Now().Format("2006-01-02")
+
+	if len(req.Locale) > 0 {
+		locale = req.Locale
+	}
+	if len(req.Language) > 0 {
+		language = req.Language
+	}
+
+	if len(req.Date) > 0 {
+		date = req.Date
+	}
+
+	var seen bool
+	for _, loc := range Locales {
+		if loc == locale {
+			seen = true
+			break
+		}
+	}
+	if !seen {
+		return errors.BadRequest("news.top-stories", "invalid locale")
+	}
+
+	vals := url.Values{}
+	vals.Set("api_token", n.apiKey)
+	vals.Set("locale", locale)
+	vals.Set("published_on", date)
+	vals.Set("language", language)
+
+	uri := fmt.Sprintf("%s%s?%s", apiURL, path, vals.Encode())
+	var resp *TopStories
+	if err := api.Get(uri, &resp); err != nil {
+		return errors.InternalServerError("news.top", err.Error())
+	}
+
+	for _, articles := range resp.Data {
+		rsp.Articles = append(rsp.Articles, toProto(articles))
 	}
 
 	return nil

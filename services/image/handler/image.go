@@ -35,7 +35,7 @@ type Image struct {
 
 func NewImage() *Image {
 	var hp string
-	cfg, err := config.Get("micro.image.host_prefix")
+	cfg, err := config.Get("image.host_prefix")
 	if err != nil {
 		hp = cfg.String(hostPrefix)
 	}
@@ -352,6 +352,29 @@ func (e *Image) DeleteData(ctx context.Context, request *adminpb.DeleteDataReque
 	return nil
 }
 
-func (e *Image) Usage(ctx context.Context, request *adminpb.UsageRequest, response *adminpb.UsageResponse) error {
+func (i *Image) Usage(ctx context.Context, request *adminpb.UsageRequest, response *adminpb.UsageResponse) error {
+	method := "admin.Usage"
+	_, err := pauth.VerifyMicroAdmin(ctx, method)
+	if err != nil {
+		return err
+	}
+
+	if len(request.TenantId) < 10 { // deliberate length check so we don't grab all the things
+		return merrors.BadRequest(method, "Missing tenant ID")
+	}
+
+	key := fmt.Sprintf("%v/%v/", pathPrefix, request.TenantId)
+
+	// list all images for the user
+	recs, err := store.DefaultBlobStore.List(store.BlobListPrefix(key))
+	if err != nil {
+		return err
+	}
+
+	response.Usage = map[string]*adminpb.Usage{
+		"Image.Upload": &adminpb.Usage{Usage: int64(len(recs)), Units: "images"},
+		// all other methods don't add to space so are not usage capped
+	}
+
 	return nil
 }

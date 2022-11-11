@@ -6,9 +6,11 @@ set -x
 DIR=$(realpath `dirname $0`)
 PWD=`pwd`
 
-git clone https://github.com/micro/services /tmp/services
+if [ -d /tmp/services ]; then
+	rm -rf /tmp/services
+fi
 
-cd /tmp/services
+git clone https://github.com/micro/services /tmp/services
 
 for j in *; do
   if [ ! -d $j ] || [ -f $j/skip ] || [ ! -d $j/proto ]; then
