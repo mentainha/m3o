@@ -194,7 +194,7 @@ function getLinks(post) {
 	// add votes
 	var votes = getVotes(post);
 	links.innerHTML += " | <a id='upvote-"+post.id+"' data-votes=" + votes + " href='#upvote=" 
-			+ post.id + "' onclick='upvote(\""+post.id+"\"); return false;'><span class=upvote>🔺</span>" 
+			+ post.id + "' onclick='upvote(\""+post.id+"\"); return false;'><span class=upvote>⭐</span>&nbsp;" 
 			+ votes + "</a>";
 
 	return links;
