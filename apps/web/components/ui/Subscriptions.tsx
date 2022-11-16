@@ -7,8 +7,8 @@ export function Subscriptions(): ReactElement {
   return (
     <div className="grid xl:grid-cols-4 mt-10 text-left gap-4">
       <Subscription
-        cost="£5/month"
-        plan={SubscriptionPlans.Dev}
+        cost="Start for Free"
+        plan={SubscriptionPlans.Free}
         description="For small projects"
         features={[
           '1 app deployment',
@@ -20,11 +20,11 @@ export function Subscriptions(): ReactElement {
           '1GB Space storage',
         ]}
         button={
-          <Link href="/register?subscription=dev">
+          <Link href="/register">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-dev-start-button">
-              Choose Dev
+              Get Started
             </a>
           </Link>
         }
