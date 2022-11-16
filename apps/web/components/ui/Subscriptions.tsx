@@ -79,7 +79,7 @@ export function Subscriptions(): ReactElement {
       />
       <Subscription
         cost="Custom pricing"
-        plan={SubscriptionPlans.Enterprise}
+        plan={SubscriptionPlans.Business}
         description="For growing companies"
         features={[
           '20 app deployments',
