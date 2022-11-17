@@ -19,7 +19,7 @@ const SERVICES_NAMES = [
   'user',
   'email',
   'sms',
-  'geocoding',
+  'secret',
   'search',
   'space',
 ]
