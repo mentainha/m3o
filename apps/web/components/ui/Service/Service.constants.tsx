@@ -108,6 +108,7 @@ export const ICONS: Icons = {
   routing: LocationMarkerIcon,
   rss: RssIcon,
   search: SearchIcon,
+  secret: KeyIcon,
   sentiment: DesktopComputerIcon,
   sms: ChatIcon,
   space: DatabaseIcon,
