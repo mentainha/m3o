@@ -79,15 +79,6 @@ const Billing: NextPage<Props> = ({ user }) => {
                   </button>
                 </span>
               )}
-              {subscriptionLevel !== SubscriptionPlans.Dev && (
-                <span className="mr-2 font-light">
-                  <Link href="/subscriptions?tier=dev">
-                    <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
-                      Choose Dev <ChevronRightIcon className="w-4 ml-2" />
-                    </a>
-                  </Link>
-                </span>
-              )}
               {subscriptionLevel !== SubscriptionPlans.Solo && (
                 <span className="mr-2 font-light">
                   <Link href="/subscriptions?tier=solo">
