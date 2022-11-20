@@ -147,7 +147,7 @@ See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for example
 
 ## Learn More
 
-- Signup on the [Website](https://m3o.com) and start for free
-- Follow us on [Twitter](https://twitter.com/m3oservices) for updates
-- Join the [Discord](https://discord.gg/TBR9bRjd6Z) server
-- Ask questions on [M3O.org](https://m3o.org)
+- Signup on the [Website](https://m3o.com)
+- Follow us on [Twitter](https://twitter.com/m3oservices)
+- Ask questions on [Discord](https://discord.gg/TBR9bRjd6Z)
+- Join the community on [Mastodon](https://m3o.org)
