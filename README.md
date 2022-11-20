@@ -1,4 +1,4 @@
-# M3O
+# M3O [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Mastodon](https://img.shields.io/:mastodon-server-purple.svg)](https://M3O.org)
 
 Explore the cloud as serverless building blocks
 
