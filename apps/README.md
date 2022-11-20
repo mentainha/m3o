@@ -1,6 +1,6 @@
 # M3O Apps
 
-M3O apps are core products built and run on top of the M3O platform.
+M3O apps are web apps built and run on top of the M3O platform.
 
 - [web](web) - powers [m3o.com](https://m3o.com)
 - [home](home) - powers [m3o.org](https://m3o.org)
