@@ -18,8 +18,8 @@ export const AboutUs: FC = () => {
           </div>
           <div className="mb-6 md:mb-0">
             <p className="mb-4">
-              A decade ago, at a ride hailing startup called Hailo, we cut our teeth on 
-	      AWS and the cost of cloud complexity just to ship a taxi app to end consumers.
+              Almost a decade ago, at the ride hailing startup Hailo, we cut our teeth on 
+	      AWS and the cost of cloud complexity just to ship a mobile app to end consumers.
             </p>
           </div>
           <div className="mb-6 md:mb-0">
