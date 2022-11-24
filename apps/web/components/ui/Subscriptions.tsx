@@ -5,7 +5,7 @@ import { SubscriptionPlans } from '@/lib/constants'
 
 export function Subscriptions(): ReactElement {
   return (
-    <div className="grid xl:grid-cols-4 mt-10 text-left gap-4">
+    <div className="grid xl:grid-cols-3 mt-10 text-left gap-4">
       <Subscription
         cost="Start for Free"
         plan={SubscriptionPlans.Free}
@@ -25,30 +25,6 @@ export function Subscriptions(): ReactElement {
               className="btn block w-full text-center"
               data-testid="subscription-dev-start-button">
               Get Started
-            </a>
-          </Link>
-        }
-      />
-      <Subscription
-        cost="£20/month"
-        plan={SubscriptionPlans.Solo}
-        description="For creators and individuals"
-        features={[
-          '5 app deployments',
-          '10 lambda functions',
-          '100 Image uploads',
-          '1k User accounts',
-          '100k DB records',
-          '1M API requests',
-          '10GB Space storage',
-          'Community support',
-        ]}
-        button={
-          <Link href="/register?subscription=solo">
-            <a
-              className="btn block w-full text-center"
-              data-testid="subscription-solo-start-button">
-              Choose Solo
             </a>
           </Link>
         }
