@@ -38,9 +38,9 @@ export function Subscriptions(): ReactElement {
           '20 lambda functions',
           '1k Image uploads',
           '10k User accounts',
-          '1M DB records',
-          '10M API requests',
-          '100GB Space storage',
+          '100k DB records',
+	  '1M API Requests',
+          '10GB Space storage',
           'Email support',
         ]}
         button={
@@ -62,9 +62,9 @@ export function Subscriptions(): ReactElement {
           '100 lambda functions',
           '10k Image uploads',
           '100k User accounts',
-          '10M DB records',
-          '100M API requests',
-          '1TB Space storage',
+          '1M DB records',
+          '10M API requests',
+          '100GB Space storage',
           'Premium support',
         ]}
         button={

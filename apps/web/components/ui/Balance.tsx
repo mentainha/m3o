@@ -9,7 +9,7 @@ export const Balance: FC = () => {
 
   return (
     <div className="bg-zinc-600 dark:bg-zinc-800 text-white">
-      <h5 className="font-bold text-xl mb-4">Balance</h5>
+      <h5 className="font-bold text-xl mb-4">Credits</h5>
       {isLoading ? (
         <Spinner />
       ) : (
