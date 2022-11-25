@@ -54,7 +54,7 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="Custom pricing"
+        cost="£250/month"
         plan={SubscriptionPlans.Business}
         description="For growing companies"
         features={[
@@ -64,16 +64,17 @@ export function Subscriptions(): ReactElement {
           '100k User accounts',
           '1M DB records',
           '10M API requests',
-          '100GB Space storage',
+          '25GB Space storage',
           'Premium support',
         ]}
         button={
-          <a
-            className="btn block w-full text-center"
-            data-testid="subscription-business-start-button"
-            href="mailto:contact@m3o.com?subject=M3O Business Plan">
-            Contact Us
-          </a>
+          <Link href="/register?subscription=business">
+            <a
+              className="btn block w-full text-center"
+              data-testid="subscription-business-start-button">
+              Choose Business
+            </a>
+          </Link>
         }
       />
     </div>

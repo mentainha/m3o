@@ -73,7 +73,7 @@ export default function SubscriptionsCardDetails({ user, tier }: Props) {
         </Alert>
       )}
       <h2 className="ttc pb-8 md:text-lg">
-        Thanks for choosing to upgrade to the {tier} tier.
+        You're switching to the <span className="bg-zinc-700 rounded-full px-2 py-1 text-sm text-white">{tier}</span> plan.
       </h2>
       <h2 className="ttc tbc border-b pb-8 md:text-lg">
         Please {cards.length ? 'select a card' : 'add a new card'}.
@@ -90,7 +90,7 @@ export default function SubscriptionsCardDetails({ user, tier }: Props) {
             disabled={!cardId}
             onClick={handleSubscribe}
             loading={isCompleting}>
-            Upgrade to {tier}
+            Switch to {tier}
           </Button>
         </>
       ) : (
