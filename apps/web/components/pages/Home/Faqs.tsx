@@ -65,17 +65,31 @@ const FAQs: FAQItem[] = [
     ),
   },
   {
+    title: 'How do subscription quotas work?',
+    content: (
+      <>
+        <p className="mb-6">
+          Subscription quotas provides usage limits for each plan. These are hard limits 
+	  applied on a per request basis when calling M3O APIs. If a quota is exceeded 
+          further requests will be blocked e.g adding DB records, uploading images, etc.
+        </p>
+      </>
+    ),
+  },
+  {
     title: 'How does billing and usage work?',
     content: (
       <>
         <p className="mb-6">
-          Each account has a credit based balance. Any request made to a an API
-          will be debited from the balance in real time. When your balance is
-          zero requests to any API will return a blocked status.
+          Each account has an API request quota and credit based balance.
+          Any request made to an API will be debited from the quota in real time. 
+          When the quota is exhausted the credit balance is debited instead.
+          If your balance is zero, requests to APIs will be blocked.
         </p>
         <p className="mb-6">
-          API calls are charged a minimum of 0.000001 credit per request (£1 per credit).
-          Premium calls are priced higher, see the pricing page for more info.
+          API calls beyond the quota are charged a minimum of 0.000001 credit per request 
+          (£1 GBP per credit).
+          Premium APIs are exclusively paid from the balance on account.
         </p>
         <p>
           To check your balance and top-up your account head to the Billing page.
