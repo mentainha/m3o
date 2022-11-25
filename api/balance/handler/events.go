@@ -117,7 +117,7 @@ func (b *Balance) processChargeSucceeded(ctx context.Context, ev *stripeevents.C
 	// the remaining project. If multiple then sweep it back in to the parent account balance
 	amt := ev.Amount * 10000
 	description := "Credit added"
-	margin := 0.05
+	margin := float64(0.0)
 
 	if srsp.Payment.Description != "M3O credit" {
 		description = "Subscription credit added"

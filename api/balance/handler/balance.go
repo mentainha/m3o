@@ -131,7 +131,7 @@ func NewHandler(svc *service.Service) *Balance {
 	b := &Balance{
 		c:         &counter{redisClient: rc},
 		stripeSvc: stripe.NewStripeService("stripe", svc.Client()),
-		margin:    mval.Float64(0.75),
+		margin:    mval.Float64(1.0),
 	}
 	go b.consumeEvents()
 	return b
