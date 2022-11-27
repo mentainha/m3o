@@ -86,6 +86,7 @@ const Billing: NextPage<Props> = ({ user }) => {
 		      Choose Solo <ChevronRightIcon className="w-4 ml-2" />
 		    </a>
 		  </Link>
+                </span>
 	      )}
               {subscriptionLevel != SubscriptionPlans.Pro && (
                 <span className="mr-2 font-light">
