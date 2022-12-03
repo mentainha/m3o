@@ -151,3 +151,9 @@ See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for example
 - Follow us on [Twitter](https://twitter.com/m3oservices)
 - Ask questions on [Discord](https://discord.gg/TBR9bRjd6Z)
 - Join the community on [Mastodon](https://m3o.org)
+
+## Development
+
+[1 click deploy](https://marketplace.digitalocean.com/apps/micro) a Micro Dev environment on a DigitalOcean Droplet
+
+Use our [refcode](https://marketplace.digitalocean.com/apps/micro?refcode=1eb1b2aca272&action=deploy) so we get $25 credit too!
