@@ -47,6 +47,7 @@ export const Subscription: FC<Props> = ({
       <div className="border-t dark:border-zinc-700 p-6">{button}</div>
       <div className="border-t dark:border-zinc-700 p-6 tgbc">
         <ul>
+          <li className="font-bold mb-4">Plan Includes</li>
           {features.map(feature => (
             <li
               key={feature}
