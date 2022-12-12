@@ -13,8 +13,8 @@ export function Subscriptions(): ReactElement {
         features={[
           '1 app deployment',
           '5 lambda functions',
-          '10 Image uploads',
-          '100 User accounts',
+          '10 User accounts',
+          '100 Image uploads',
           '1k DB records',
           '10k API requests',
           '1GB Space storage',
@@ -36,8 +36,8 @@ export function Subscriptions(): ReactElement {
         features={[
           '5 app deployments',
           '10 lambda functions',
-          '100 Image uploads',
-          '1k User accounts',
+          '100 User accounts',
+          '1000 Image uploads',
           '10k DB records',
           '100k API requests',
           '5GB Space storage',
@@ -60,8 +60,8 @@ export function Subscriptions(): ReactElement {
         features={[
           '10 app deployments',
           '20 lambda functions',
-          '1k Image uploads',
-          '10k User accounts',
+          '1k User accounts',
+          '10k Image uploads',
           '100k DB records',
 	  '1M API Requests',
           '10GB Space storage',
@@ -84,8 +84,8 @@ export function Subscriptions(): ReactElement {
         features={[
           '20 app deployments',
           '100 lambda functions',
-          '10k Image uploads',
-          '100k User accounts',
+          '10k User accounts',
+          '100k Image uploads',
           '1M DB records',
           '10M API requests',
           '25GB Space storage',
