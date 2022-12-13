@@ -73,6 +73,7 @@ func (e *Emails) Send(ctx context.Context, request *emails.SendRequest, response
 		}
 	}
 	if err := e.sendEmail(request.From, request.To, request.TemplateId, request.SendAt, templateData); err != nil {
+		log.Errorf("Failed to send email: %v", err)
 		return errors.InternalServerError("emails.sendemail", "Error sending email")
 	}
 	return nil
