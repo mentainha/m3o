@@ -16,7 +16,7 @@ export function Subscriptions(): ReactElement {
           '10 User accounts',
           '100 Image uploads',
           '1k DB records',
-          '10k API requests',
+          '5k API requests',
           '1GB Space storage',
         ]}
         button={
