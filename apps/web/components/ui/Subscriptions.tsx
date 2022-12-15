@@ -12,12 +12,12 @@ export function Subscriptions(): ReactElement {
         description="For small projects"
         features={[
           '1 app deployment',
-          '5 lambda functions',
           '10 User accounts',
           '100 Image uploads',
           '1k DB records',
           '5k API requests',
           '1GB Space storage',
+          'Pay as you grow',
         ]}
         button={
           <Link href="/register">
