@@ -15,7 +15,7 @@ export function Subscriptions(): ReactElement {
           '10 User accounts',
           '100 Image uploads',
           '1000 DB records',
-          '1k API requests',
+          '10k API requests',
           '1GB Space storage',
           'Pay as you grow',
         ]}
