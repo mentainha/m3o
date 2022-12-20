@@ -1,0 +1,179 @@
+{
+  "alert": {
+    "blocklist": [],
+    "discord": {
+      "enabled": false,
+      "webhook": "https://discord.com/api/webhooks/xxx"
+    },
+    "slack": {
+      "channel": "alerts",
+      "enabled": false,
+      "token": "",
+      "user_name": "Alerts Service"
+    }
+  },
+  "api": {
+    "blocklist_enabled": false
+  },
+  "balance": {
+    "redis": {
+      "address": "localhost:6379",
+      "password": "",
+      "user": ""
+    }
+  },
+  "billing": {
+    "tiers": {
+      "free": "free"
+    }
+  },
+  "emails": {
+    "email_from": "M3O <noreply@m3o.com>",
+    "enabled": false,
+    "ip_pool_name": "M3O",
+    "sendgrid": {
+      "api_key": ""
+    }
+  },
+  "endtoend": {
+    "email": "xxx@cloudmailin.net"
+  },
+  "mailchimp": {
+    "api_key": "",
+    "block_list": [],
+    "main_list_id": "xxx"
+  },
+  "mixpanel": {
+    "ignoreList": "",
+    "project": "",
+    "secret": "",
+    "user": ""
+  },
+  "oauth": {
+    "github": {
+      "client_id": "",
+      "client_secret": "",
+      "redirect_url": "https://m3o.com/github-login",
+      "test_client_id": "",
+      "test_client_secret": "",
+      "test_redirect_url": "http://localhost:3000/github-login"
+    },
+    "google": {
+      "client_id": "",
+      "client_secret": "",
+      "redirect_url": "https://m3o.com/google-login",
+      "test_client_id": "",
+      "test_client_secret": "",
+      "test_redirect_url": "http://localhost:3000/google-login"
+    }
+  },
+  "redis": {
+    "address": "localhost:6379",
+    "password": "",
+    "secure": false,
+    "username": ""
+  },
+  "signup": {
+    "block_list": [],
+    "email_from": "Micro Team <support@m3o.com>",
+    "engagement_block_list": [],
+    "oauth": {
+      "client_id": "",
+      "client_secret": "",
+      "google": {
+        "client_id": "",
+        "client_secret": ""
+      }
+    },
+    "promoCredit": 10000,
+    "promoMessage": "Welcome to M3O, here is a little something to get you started 💸",
+    "sendgrid": {
+      "invite_template_id": "",
+      "recovery_template_id": "",
+      "template_id": "",
+      "welcome_template_id": ""
+    },
+    "welcome_delay": "24h"
+  },
+  "status": {
+    "services": "api,auth,broker,config,network,proxy,registry,runtime,status,store,stripe,v1,usage,balance,publicapi,customers,emails,alerts"
+  },
+  "stripe": {
+    "api_key": "",
+    "cancel_url": "https://m3o.com/account/billing",
+    "signing_secret": "",
+    "success_url": "https://m3o.com/account/billing",
+    "test_api_key": "",
+    "test_mode": false,
+    "test_signing_secret": ""
+  },
+  "usage": {
+    "quotas": {
+      "free": 10000,
+      "solo": 100000,
+      "pro": 1000000,
+      "business": 10000000
+    },
+    "redis": {
+      "address": "localhost:6379",
+      "password": "",
+      "user": ""
+    },
+    "usage_caps": {
+      "business": {
+        "app$App_Run": 20,
+        "db$Db_Create": 1000000,
+        "function$Function_Deploy": 100,
+        "image$Image_Upload": 100000,
+        "space$Space_Create": 26843545600,
+        "space$Space_Update": 26843545600,
+        "space$Space_Upload": 26843545600,
+        "user$User_Create": 10000
+      },
+      "free": {
+        "app$App_Run": 1,
+        "db$Db_Create": 1000,
+        "function$Function_Deploy": 0,
+        "image$Image_Upload": 100,
+        "space$Space_Create": 536870912,
+        "space$Space_Update": 536870912,
+        "space$Space_Upload": 1073741824,
+        "space$Space_upload": 536870912,
+        "user$User_Create": 10
+      },
+      "pro": {
+        "app$App_Run": 10,
+        "db$Db_Create": 100000,
+        "function$Function_Deploy": 20,
+        "image$Image_Upload": 10000,
+        "space$Space_Create": 10737418240,
+        "space$Space_Update": 10737418240,
+        "space$Space_Upload": 10737418240,
+        "user$User_Create": 1000
+      },
+      "solo": {
+        "app$App_Run": 5,
+        "db$Db_Create": 10000,
+        "function$Function_Deploy": 10,
+        "image$Image_Upload": 1000,
+        "space$Space_Create": 10737418240,
+        "space$Space_Update": 10737418240,
+        "space$Space_Upload": 10737418240,
+        "user$User_Create": 100
+      }
+    }
+  },
+  "v1": {
+    "rate-limits": {
+      "business": 10000,
+      "free": 1000,
+      "pro": 1000,
+      "solo": 1000
+    },
+    "redis": {
+      "address": "localhost:6379",
+      "password": "",
+      "user": ""
+    }
+  }
+}
