@@ -25,7 +25,7 @@ All services are Micro services written using the Micro framework without except
 
 ## Config
 
-Example config lives in `config.json`. Fill in the blanks and set `micro config set micro "\`cat config.json\`"`
+Example config lives in `config.json`. Fill in the blanks and set `micro config set micro "$(cat config.json)"`
 
 ## Events
 All events should be defined in protobuf under `pkg/events/proto/<topic_name>`. The directory should contain the following files.
