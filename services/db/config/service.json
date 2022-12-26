@@ -1,3 +1,0 @@
-{
-  "address": "postgresql://postgres:postgres@localhost:5432/db?sslmode=disable"
-}

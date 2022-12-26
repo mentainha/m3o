@@ -1,7 +1,0 @@
-{
-	"google": {
-		"apikey": ""
-	},
-	"address":"https://routing.geofabrik.de/",
-	"provider":"osrm"
-}
