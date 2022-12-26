@@ -1,4 +1,4 @@
-# M3O [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Discord](https://img.shields.io/:join-discord-purple.svg)](https://discord.gg/TBR9bRjd6Z) [![Mastodon](https://img.shields.io/:mastodon-server-black.svg)](https://M3O.org) [![Twitter](https://img.shields.io/:twitter-follow-blue.svg)](https://twitter.com/m3oservices)
+# M3O [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Universal Micro services gateway
 
