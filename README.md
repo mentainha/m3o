@@ -145,13 +145,6 @@ m3o helloworld call --name=Alice
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
 
-## Learn More
-
-- Signup on the [Website](https://m3o.com)
-- Follow us on [Twitter](https://twitter.com/m3oservices)
-- Ask questions on [Discord](https://discord.gg/TBR9bRjd6Z)
-- Join the community on [Mastodon](https://m3o.org)
-
 ## Development
 
 [1 click deploy](https://marketplace.digitalocean.com/apps/micro) a Micro Dev environment on a DigitalOcean Droplet
