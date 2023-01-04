@@ -144,9 +144,3 @@ m3o helloworld call --name=Alice
 ```
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
-
-## Development
-
-[1 click deploy](https://marketplace.digitalocean.com/apps/micro) a Micro Dev environment on a DigitalOcean Droplet
-
-Use our [refcode](https://marketplace.digitalocean.com/apps/micro?refcode=1eb1b2aca272&action=deploy) so we get $25 credit too!
