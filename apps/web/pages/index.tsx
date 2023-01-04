@@ -18,10 +18,7 @@ const SERVICES_NAMES = [
   'db',
   'user',
   'email',
-  'sms',
-  'secret',
-  'search',
-  'space',
+  'sms'
 ]
 
 export const getServerSideProps = withAuth(async context => {
