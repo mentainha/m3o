@@ -53,8 +53,8 @@ export M3O_API_TOKEN=xxxxxxx
 curl \
   -H "Authorization: Bearer $M3O_API_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name": "John"}' \
-  https://api.m3o.com/v1/helloworld/call
+  -d '{"name": "helloworld", "repo": "github.com/m3o/helloworld"}' \
+  https://api.m3o.com/v1/app/Run
 ```
 
 Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
@@ -66,7 +66,7 @@ Import packages from [go.m3o.com](https://pkg.go.dev/go.m3o.com)
 ```go
 import (
         "go.m3o.com"
-        "go.m3o.com/helloworld"
+        "go.m3o.com/app"
 )
 ```
 
@@ -74,8 +74,9 @@ Create a new client with your API token and call it
 
 ```go
 client := m3o.New(os.Getenv("M3O_API_TOKEN"))
-rsp, err := client.Helloworld.Call(&helloworld.CallRequest{
-	Name: "John",
+rsp, err := client.App.Run(&app.RunRequest{
+	Name: "helloworld",
+	Repo: "github.com/m3o/helloworld"
 })
 fmt.Println(rsp, err)
 ```
@@ -90,15 +91,16 @@ Install the [m3o](https://www.npmjs.com/package/m3o) package
 npm install m3o
 ```
 
-Call helloworld like so
+Call app run like so
 
 ```javascript
 const m3o = require("m3o").default(process.env.M3O_API_TOKEN);
 
 // Call returns a personalised "Hello $name" response
 async function main() {
-  let rsp = await m3o.helloworld.call({
-    name: "John",
+  let rsp = await m3o.app.run({
+    name: "helloworld",
+    repo: "github.com/m3o/helloworld"
   });
   console.log(rsp);
 }
@@ -119,7 +121,7 @@ curl -fssl https://install.m3o.com/cli | /bin/bash
 Example call
 
 ```
-m3o helloworld call --name=Alice
+m3o app run --name=helloworld --repo=github.com/m3o/helloworld
 ```
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
