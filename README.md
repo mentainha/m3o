@@ -20,35 +20,14 @@ Here are the main features:
 
 ## Services
 
-So far there are over 60+ services. Here are some of the highlights:
-
-### ☁️ Cloud
+Here are some of them:
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
 - [**Functions**](https://m3o.com/function) - Serverless lambda functions
-- [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Users**](https://m3o.com/user) - User management and authentication
-- [**Space**](https://m3o.com/space) - Infinite cloud storage
-- [**Search**](https://m3o.com/search) - Indexing and full text search
-
-### 🗺️ Logistics
-
-- [**Address**](https://m3o.com/address) - Address lookup by postcode
-- [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
-- [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
-- [**Places**](https://m3o.com/place) - Search for geographic points of interest
-- [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
-- [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
-
-### ⚙️ Miscellaneous
-
 - [**Email**](https://m3o.com/email) - Send emails in a flash
-- [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
-- [**OTP**](https://m3o.com/otp) - One time password generation
-- [**QR Codes**](https://m3o.com/qr) - QR code generator
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
-- [**Weather**](https://m3o.com/weather) - Real time weather forecast
 
 See the full list at [m3o.com/explore](https://m3o.com/explore).
 
