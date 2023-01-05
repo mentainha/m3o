@@ -20,7 +20,7 @@ Here are the main features:
 
 ## Services
 
-Here are some of them:
+Here are some of the APIs:
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
