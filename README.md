@@ -20,35 +20,14 @@ Here are the main features:
 
 ## Services
 
-So far there are over 60+ services. Here are some of the highlights:
-
-### ☁️ Cloud
+Here are some of the APIs:
 
 - [**Apps**](https://m3o.com/app) - Serverless app deployment
 - [**Database**](https://m3o.com/db) - Serverless postgres database
 - [**Functions**](https://m3o.com/function) - Serverless lambda functions
-- [**Events**](https://m3o.com/event) - Publish and subscribe to messages
 - [**Users**](https://m3o.com/user) - User management and authentication
-- [**Space**](https://m3o.com/space) - Infinite cloud storage
-- [**Search**](https://m3o.com/search) - Indexing and full text search
-
-### 🗺️ Logistics
-
-- [**Address**](https://m3o.com/address) - Address lookup by postcode
-- [**Geocoding**](https://m3o.com/geocoding) - Geocode an address to gps location and the reverse.
-- [**Location**](https://m3o.com/location) - Real time GPS location tracking and search
-- [**Places**](https://m3o.com/place) - Search for geographic points of interest
-- [**Routes**](https://m3o.com/routing) - Etas, routes and turn by turn directions
-- [**IP2Geo**](https://m3o.com/ip) - IP to geolocation lookup
-
-### ⚙️ Miscellaneous
-
 - [**Email**](https://m3o.com/email) - Send emails in a flash
-- [**Image**](https://m3o.com/image) - Quickly upload, resize, and convert images
-- [**OTP**](https://m3o.com/otp) - One time password generation
-- [**QR Codes**](https://m3o.com/qr) - QR code generator
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
-- [**Weather**](https://m3o.com/weather) - Real time weather forecast
 
 See the full list at [m3o.com/explore](https://m3o.com/explore).
 
@@ -74,8 +53,8 @@ export M3O_API_TOKEN=xxxxxxx
 curl \
   -H "Authorization: Bearer $M3O_API_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name": "John"}' \
-  https://api.m3o.com/v1/helloworld/call
+  -d '{"name": "helloworld", "repo": "github.com/m3o/helloworld"}' \
+  https://api.m3o.com/v1/app/Run
 ```
 
 Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
@@ -87,7 +66,7 @@ Import packages from [go.m3o.com](https://pkg.go.dev/go.m3o.com)
 ```go
 import (
         "go.m3o.com"
-        "go.m3o.com/helloworld"
+        "go.m3o.com/app"
 )
 ```
 
@@ -95,8 +74,9 @@ Create a new client with your API token and call it
 
 ```go
 client := m3o.New(os.Getenv("M3O_API_TOKEN"))
-rsp, err := client.Helloworld.Call(&helloworld.CallRequest{
-	Name: "John",
+rsp, err := client.App.Run(&app.RunRequest{
+	Name: "helloworld",
+	Repo: "github.com/m3o/helloworld"
 })
 fmt.Println(rsp, err)
 ```
@@ -111,15 +91,16 @@ Install the [m3o](https://www.npmjs.com/package/m3o) package
 npm install m3o
 ```
 
-Call helloworld like so
+Call app run like so
 
 ```javascript
 const m3o = require("m3o").default(process.env.M3O_API_TOKEN);
 
 // Call returns a personalised "Hello $name" response
 async function main() {
-  let rsp = await m3o.helloworld.call({
-    name: "John",
+  let rsp = await m3o.app.run({
+    name: "helloworld",
+    repo: "github.com/m3o/helloworld"
   });
   console.log(rsp);
 }
@@ -140,13 +121,7 @@ curl -fssl https://install.m3o.com/cli | /bin/bash
 Example call
 
 ```
-m3o helloworld call --name=Alice
+m3o app run --name=helloworld --repo=github.com/m3o/helloworld
 ```
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
-
-## Development
-
-[1 click deploy](https://marketplace.digitalocean.com/apps/micro) a Micro Dev environment on a DigitalOcean Droplet
-
-Use our [refcode](https://marketplace.digitalocean.com/apps/micro?refcode=1eb1b2aca272&action=deploy) so we get $25 credit too!
