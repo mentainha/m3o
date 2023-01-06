@@ -16,6 +16,7 @@ export function Subscriptions(): ReactElement {
           '100 Image uploads',
           '1000 DB records',
           '10k API requests',
+          '1 request/second',
           '1GB Space storage',
           'Pay as you grow',
         ]}
@@ -40,6 +41,7 @@ export function Subscriptions(): ReactElement {
           '1000 Image uploads',
           '10k DB records',
           '100k API requests',
+          '20 request/second',
           '5GB Space storage',
           'Community support',
         ]}
@@ -64,6 +66,7 @@ export function Subscriptions(): ReactElement {
           '10k Image uploads',
           '100k DB records',
 	  '1M API Requests',
+          '100 request/second',
           '10GB Space storage',
           'Email support',
         ]}
@@ -88,6 +91,7 @@ export function Subscriptions(): ReactElement {
           '100k Image uploads',
           '1M DB records',
           '10M API requests',
+          '1000 request/second',
           '25GB Space storage',
           'Premium support',
         ]}
