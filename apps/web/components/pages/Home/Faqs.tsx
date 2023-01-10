@@ -45,7 +45,7 @@ const FAQs: FAQItem[] = [
     title: 'How do I generate an API token?',
     content: (
       <p>
-        To create a new access token, visit API settings page. You can specify
+        To create a new access token, visit API Tokens page. You can specify
         which APIs the token can call or leave scopes blank to create a token
         that has access to all the APIs.
       </p>

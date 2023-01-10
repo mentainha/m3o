@@ -24,6 +24,7 @@ import {
   UsersIcon,
   MailIcon,
   TerminalIcon,
+  QuestionMarkCircleIcon,
 } from '@heroicons/react/outline'
 
 interface SidebarItem {
@@ -200,13 +201,11 @@ export function DashboardLayout({
                     href: '/community',
                     icon: UsersIcon,
                   },
-                  isProUser
-                    ? {
-                        text: 'Email',
-                        href: 'mailto:support@m3o.com',
-                        icon: MailIcon,
-                      }
-                    : undefined,
+                  {
+                    text: 'FAQ',
+                    href: '/faq',
+                    icon: QuestionMarkCircleIcon,
+                  }
                 ],
               },
             ]}
