@@ -41,6 +41,9 @@ var (
 	// host to proxy for Functions
 	FunctionHost = "m3o.sh"
 
+	// host of go vanity
+	GoHost = "go.m3o.com"
+
 	// host for user auth
 	UserHost = "user.m3o.com"
 )
@@ -65,8 +68,8 @@ type Handler struct {
 	// the home server
 	server *server.Server
 
-	// vanity handler
-	vanity http.Handler
+	// vanity handlers
+	vanity1, vanity2 http.Handler
 }
 
 type backend struct {
@@ -544,7 +547,13 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	// m3o.dev
 	if r.Host == DevHost {
-		h.vanity.ServeHTTP(w, r)
+		h.vanity1.ServeHTTP(w, r)
+		return
+	}
+
+	// go.m3o.com
+	if r.Host == GoHost {
+		h.vanity2.ServeHTTP(w, r)
 		return
 	}
 
@@ -567,13 +576,14 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.server.ServeHTTP(w, r)
 }
 
-func New(server *server.Server, vanity http.Handler) *Handler {
+func New(server *server.Server, vanity1, vanity2 http.Handler) *Handler {
 	h := &Handler{
 		client:  client.NewClient(&client.Options{Token: APIKey}),
 		appMap:  make(map[string]*backend),
 		funcMap: make(map[string]*backend),
 		server:  server,
-		vanity:  vanity,
+		vanity1: vanity1,
+		vanity2: vanity2,
 	}
 	if err := h.loadApps(); err != nil {
 		log.Printf("Error loading apps: %v", err)

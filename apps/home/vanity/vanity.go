@@ -20,8 +20,8 @@ import (
 	"net/http"
 )
 
-func Handler() http.Handler {
-	vanity, err := ioutil.ReadFile("vanity.yaml")
+func Handler(config string) http.Handler {
+	vanity, err := ioutil.ReadFile(config)
 	if err != nil {
 		log.Fatal(err)
 	}
