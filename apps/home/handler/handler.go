@@ -29,6 +29,9 @@ var (
 	// dot com host
 	ComHost = "m3o.com"
 
+	// dev host
+	DevHost = "m3o.dev"
+
 	// host to proxy for URLs
 	URLHost = "m3o.one"
 
@@ -61,6 +64,9 @@ type Handler struct {
 
 	// the home server
 	server *server.Server
+
+	// vanity handler
+	vanity http.Handler
 }
 
 type backend struct {
@@ -536,6 +542,12 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// m3o.dev
+	if r.Host == DevHost {
+		h.vanity.ServeHTTP(w, r)
+		return
+	}
+
 	// if it's /url then resolve by id
 	if strings.HasPrefix(r.URL.Path, "/url/") {
 		h.urlProxy(w, r)
@@ -555,12 +567,13 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.server.ServeHTTP(w, r)
 }
 
-func New(server *server.Server) *Handler {
+func New(server *server.Server, vanity http.Handler) *Handler {
 	h := &Handler{
 		client:  client.NewClient(&client.Options{Token: APIKey}),
 		appMap:  make(map[string]*backend),
 		funcMap: make(map[string]*backend),
 		server:  server,
+		vanity:  vanity,
 	}
 	if err := h.loadApps(); err != nil {
 		log.Printf("Error loading apps: %v", err)

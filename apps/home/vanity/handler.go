@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // govanityurls serves Go vanity URLs.
-package main
+package vanity
 
 import (
 	"errors"

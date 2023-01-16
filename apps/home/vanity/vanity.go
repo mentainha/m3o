@@ -12,26 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package vanity
 
 import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 )
 
-func main() {
-	var configPath string
-	switch len(os.Args) {
-	case 1:
-		configPath = "vanity.yaml"
-	case 2:
-		configPath = os.Args[1]
-	default:
-		log.Fatal("usage: vanity-url [CONFIG]")
-	}
-	vanity, err := ioutil.ReadFile(configPath)
+func Handler() http.Handler {
+	vanity, err := ioutil.ReadFile("vanity.yaml")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -39,15 +29,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	http.Handle("/", h)
-
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
-		log.Fatal(err)
-	}
+	return h
 }
 
 func defaultHost(r *http.Request) string {
