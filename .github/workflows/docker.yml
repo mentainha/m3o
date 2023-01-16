@@ -1,12 +1,5 @@
 name: Docker Images
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/docker.yml'
-      - 'cmd/micro-platform/**'
-      - 'api/v1/**'
   repository_dispatch:
     types: [micro_release]
 jobs:
@@ -22,7 +15,7 @@ jobs:
       - name: Clone micro repo
         uses: actions/checkout@v2
         with:
-          repository: "m3o/m3o"
+          repository: "micro/micro"
 
       - name: Fetch tags
         run: git fetch --prune --unshallow
