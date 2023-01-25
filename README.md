@@ -124,7 +124,7 @@ m3o app run --name=helloworld --repo=github.com/m3o/helloworld
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
 
-## Self Hosting
+## Deployment
 
 We're still working on configuration for self hosting
 
