@@ -19,6 +19,7 @@ export function Subscriptions(): ReactElement {
           '10 request/second',
           '1GB Space storage',
           'Pay as you grow',
+          'Community support',
         ]}
         button={
           <Link href="/register">
@@ -26,31 +27,6 @@ export function Subscriptions(): ReactElement {
               className="btn block w-full text-center"
               data-testid="subscription-dev-start-button">
               Get Started
-            </a>
-          </Link>
-        }
-      />
-      <Subscription
-        cost="£20/month"
-        plan={SubscriptionPlans.Solo}
-        description="For creators and individuals"
-        features={[
-          '5 app deployments',
-          '10 lambda functions',
-          '100 User accounts',
-          '1000 Image uploads',
-          '10k DB records',
-          '100k API requests',
-          '20 request/second',
-          '5GB Space storage',
-          'Community support',
-        ]}
-        button={
-          <Link href="/register?subscription=solo">
-            <a
-              className="btn block w-full text-center"
-              data-testid="subscription-solo-start-button">
-              Choose Solo
             </a>
           </Link>
         }
@@ -81,26 +57,26 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£250/month"
+        cost=""
         plan={SubscriptionPlans.Business}
-        description="For growing companies"
+        description="For enterprises"
         features={[
-          '20 app deployments',
-          '100 lambda functions',
-          '10k User accounts',
-          '100k Image uploads',
-          '1M DB records',
-          '10M API requests',
+          '100 app deployments',
+          '1000 lambda functions',
+          '100k User accounts',
+          '1m Image uploads',
+          '10M DB records',
+          '100M API requests',
           '1000 request/second',
-          '25GB Space storage',
+          '100GB Space storage',
           'Premium support',
         ]}
         button={
-          <Link href="/register?subscription=business">
+          <Link href="mailto:contact@m3o.com">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-business-start-button">
-              Choose Business
+              Contact Us
             </a>
           </Link>
         }
