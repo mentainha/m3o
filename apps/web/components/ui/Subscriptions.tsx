@@ -9,7 +9,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="Start for Free"
         plan={SubscriptionPlans.Free}
-        description="For small projects"
+        description="For individuals"
         features={[
           'Pay as you grow',
           '1 app deployment',
@@ -33,7 +33,7 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="$35/month"
         plan={SubscriptionPlans.Pro}
-        description="For professionals and teams"
+        description="For professionals"
         features={[
           'Unlock Premium APIs',
           '10 app deployments',
