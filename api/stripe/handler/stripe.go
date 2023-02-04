@@ -483,7 +483,7 @@ func (s *Stripe) ChargeCard(ctx context.Context, request *stripepb.ChargeCardReq
 	intent, err := c.PaymentIntents.New(&stripe.PaymentIntentParams{
 		Params:        stripe.Params{},
 		Amount:        stripe.Int64(request.Amount),
-		Currency:      stripe.String(string(stripe.CurrencyGBP)),
+		Currency:      stripe.String(string(stripe.CurrencyUSD)),
 		Customer:      stripe.String(cm.StripeID),
 		Description:   stripe.String("M3O credit"),
 		PaymentMethod: stripe.String(request.Id),
