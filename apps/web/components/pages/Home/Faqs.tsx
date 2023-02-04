@@ -88,7 +88,7 @@ const FAQs: FAQItem[] = [
         </p>
         <p className="mb-6">
           API calls beyond the quota are charged a minimum of 0.000001 credit per request 
-          (£1 GBP per credit).
+          ($1 per credit).
           Premium APIs are exclusively paid from the balance on account.
         </p>
         <p>

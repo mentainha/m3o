@@ -11,6 +11,7 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Free}
         description="For small projects"
         features={[
+          'Pay as you grow',
           '1 app deployment',
           '10 User accounts',
           '100 Image uploads',
@@ -18,8 +19,6 @@ export function Subscriptions(): ReactElement {
           '10k API requests',
           '10 request/second',
           '1GB Space storage',
-          'Pay as you grow',
-          'Community support',
         ]}
         button={
           <Link href="/register">
@@ -32,10 +31,11 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost="£100/month"
+        cost="$35/month"
         plan={SubscriptionPlans.Pro}
         description="For professionals and teams"
         features={[
+          'Unlock Premium APIs',
           '10 app deployments',
           '20 lambda functions',
           '1k User accounts',
@@ -44,7 +44,6 @@ export function Subscriptions(): ReactElement {
 	  '1M API Requests',
           '100 request/second',
           '10GB Space storage',
-          'Email support',
         ]}
         button={
           <Link href="/register?subscription=pro">
@@ -69,7 +68,6 @@ export function Subscriptions(): ReactElement {
           '100M API requests',
           '1000 request/second',
           '100GB Space storage',
-          'Premium support',
         ]}
         button={
           <Link href="mailto:contact@m3o.com">

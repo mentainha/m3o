@@ -129,7 +129,7 @@ const GettingStarted: NextPage<Props> = ({user, examples, requestSchema}) => {
             status.
           </p>
           <p className="mt-4">
-            API calls are charged at 0.000001 credit per request (£1 per 
+            API calls are charged at 0.000001 credit per request ($1 per 
             credit). Premium APIs are charged differently. See the 
             pricing page for more info.
           </p>

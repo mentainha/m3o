@@ -37,7 +37,7 @@ export const AddFunds: FC = () => {
             }}
             render={({ field: { ref, ...fieldProps }, fieldState }) => (
               <TextInput
-                label="Amount (GBP)"
+                label="Amount (USD)"
                 {...fieldProps}
                 error={fieldState.error?.message}
                 type="number"
