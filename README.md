@@ -1,6 +1,6 @@
 # M3O [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Universal Micro services gateway
+Serverless Micro services gateway
 
 ## Overview
 
