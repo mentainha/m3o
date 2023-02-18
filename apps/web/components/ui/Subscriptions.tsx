@@ -9,16 +9,12 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost="Start for Free"
         plan={SubscriptionPlans.Free}
-        description="For individuals"
+        description="For testing"
         features={[
           'Pay as you grow',
-          '1 app deployment',
-          '10 User accounts',
-          '100 Image uploads',
-          '1000 DB records',
-          '10k API requests',
-          '10 request/second',
-          '1GB Space storage',
+          '10k requests/month',
+          '5 requests/second',
+          'Unlimited API tokens',
         ]}
         button={
           <Link href="/register">
@@ -31,19 +27,35 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
+        cost="$10/month"
+        plan={SubscriptionPlans.Solo}
+        description="For individuals"
+        features={[
+          'Everything in Free plus',
+          'Unlock Premium APIs',
+	  '100k requests/month',
+          '10 request/second',
+          'Community support',
+        ]}
+        button={
+          <Link href="/register?subscription=solo">
+            <a
+              className="btn block w-full text-center"
+              data-testid="subscription-solo-start-button">
+              Choose Solo
+            </a>
+          </Link>
+        }
+      />
+      <Subscription
         cost="$35/month"
         plan={SubscriptionPlans.Pro}
         description="For professionals"
         features={[
-          'Unlock Premium APIs',
-          '10 app deployments',
-          '20 lambda functions',
-          '1k User accounts',
-          '10k Image uploads',
-          '100k DB records',
-	  '1M API Requests',
-          '100 request/second',
-          '10GB Space storage',
+          'Everything in Solo plus',
+	  '1M requests/month',
+          '100 requests/second',
+          'Email support',
         ]}
         button={
           <Link href="/register?subscription=pro">
@@ -58,16 +70,12 @@ export function Subscriptions(): ReactElement {
       <Subscription
         cost=""
         plan={SubscriptionPlans.Business}
-        description="For enterprises"
+        description="For businesses"
         features={[
-          '100 app deployments',
-          '1000 lambda functions',
-          '100k User accounts',
-          '1m Image uploads',
-          '10M DB records',
-          '100M API requests',
-          '1000 request/second',
-          '100GB Space storage',
+          'Everything in Pro plus',
+          '10M requests/month',
+          '1000 requests/second',
+          'Premium support',
         ]}
         button={
           <Link href="mailto:contact@m3o.com">
