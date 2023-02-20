@@ -126,8 +126,6 @@ See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for example
 
 ## Deployment
 
-We're still working on configuration for self hosting
-
 1. See [Cloud](https://github.com/m3o/m3o/tree/main/cloud) for Infrastructure deployment
 2. See [API](https://github.com/m3o/m3o/tree/main/api) for Backend deployment
 3. See [Apps](https://github.com/m3o/m3o/tree/main/apps) for Web deployment
