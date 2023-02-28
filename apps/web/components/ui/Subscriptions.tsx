@@ -12,7 +12,7 @@ export function Subscriptions(): ReactElement {
         description="For testing"
         features={[
           'Pay as you grow',
-          '10k requests/month',
+          '1k requests/month',
           '5 requests/second',
           'Unlimited API tokens',
         ]}
@@ -33,7 +33,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Free plus',
           'Unlock Premium APIs',
-	  '100k requests/month',
+	  '10k requests/month',
           '10 request/second',
           'Community support',
         ]}
@@ -53,7 +53,7 @@ export function Subscriptions(): ReactElement {
         description="For professionals"
         features={[
           'Everything in Solo plus',
-	  '1M requests/month',
+	  '100k requests/month',
           '100 requests/second',
           'Email support',
         ]}
@@ -68,21 +68,21 @@ export function Subscriptions(): ReactElement {
         }
       />
       <Subscription
-        cost=""
+        cost="$95/month"
         plan={SubscriptionPlans.Business}
         description="For businesses"
         features={[
           'Everything in Pro plus',
-          '10M requests/month',
+          '1M requests/month',
           '1000 requests/second',
           'Premium support',
         ]}
         button={
-          <Link href="mailto:contact@m3o.com">
+          <Link href="/register?subscription=business">
             <a
               className="btn block w-full text-center"
               data-testid="subscription-business-start-button">
-              Contact Us
+              Choose Business
             </a>
           </Link>
         }
