@@ -6,7 +6,7 @@ Serverless Micro services gateway
 
 M3O transforms public APIs into smaller easier to use Micro services which you can explore, discover and consume 
 as serverless building blocks. The platform generates unified api docs, client libraries and examples on top 
-of [Micro](https://github.com/micro/micro) services using protobuf to OpenAPI conversion and some custom tooling. 
+of [Micro Services](https://github.com/micro/services) using protobuf to OpenAPI conversion and some custom tooling. 
 
 ## Features
 
@@ -126,8 +126,6 @@ See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for example
 
 ## Deployment
 
-We're still working on configuration for self hosting
-
-1. Look at [Cloud](https://github.com/m3o/m3o/tree/main/cloud) dir for Infrastructure deployment
-2. Look at [API](https://github.com/m3o/m3o/tree/main/api) dir for Backend deployment
-3. Look at [Apps](https://github.com/m3o/m3o/tree/main/apps) dir for Web deployment
+1. See [Cloud](https://github.com/m3o/m3o/tree/main/cloud) for Infrastructure deployment
+2. See [API](https://github.com/m3o/m3o/tree/main/api) for Backend deployment
+3. See [Apps](https://github.com/m3o/m3o/tree/main/apps) for Web deployment

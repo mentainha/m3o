@@ -35,7 +35,6 @@ export function Subscriptions(): ReactElement {
           'Unlock Premium APIs',
 	  '10k requests/month',
           '10 request/second',
-          'Community support',
         ]}
         button={
           <Link href="/register?subscription=solo">
