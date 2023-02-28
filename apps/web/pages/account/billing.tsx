@@ -97,6 +97,15 @@ const Billing: NextPage<Props> = ({ user }) => {
                   </Link>
                 </span>
               )}
+              {subscriptionLevel != SubscriptionPlans.Business && (
+                <span className="mr-2 font-light">
+                  <Link href="/subscriptions?tier=business">
+                    <a className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center">
+                     Choose Business <ChevronRightIcon className="w-4 ml-2" />
+                    </a>
+                  </Link>
+                </span>
+              )}
               <p className="mt-2">
                   <Link href="/pricing">
                     <a className="text-sm">
