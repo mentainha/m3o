@@ -32,9 +32,9 @@ export function Subscriptions(): ReactElement {
         description="For individuals"
         features={[
           'Everything in Free plus',
-          'Unlock Premium APIs',
 	  '10k requests/month',
           '10 request/second',
+          'Unlock Premium APIs',
         ]}
         button={
           <Link href="/register?subscription=solo">
