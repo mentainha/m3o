@@ -123,6 +123,26 @@ const Overview: NextPage<Props> = ({
               <p className="text-sm max-w-lg">{feature.description}</p>
             </div>
           ))}
+          <h2 id="pricing" className="text-xl mb-4 mt-10 font-bold">Pricing</h2>
+          <table className="w-10/12 mb-6">
+            <thead className="mb-4">
+              <tr>
+                <th className="text-left font-normal">Endpoint</th>
+                <th className="text-left font-normal">Credits</th>
+                {/* <th className="text-left font-normal">Quota</th> */}
+              </tr>
+            </thead>
+            <tbody>
+          {features.map(feature => (
+              <tr className="border-t border-zinc-300">
+                <td className="py-2 w-10/12 text-sm">{feature.title}</td>
+                <td className="py-2 w-2/12 text-sm">{feature.price === 'Free' ? 'Base' : feature.price}</td>
+                {/* <td className="py-2 w-2/12 text-sm">{feature.quota}</td> */}
+              </tr>
+          ))}
+            </tbody>
+          </table>
+          <p className="text-zinc-600 text-sm max-w-lg">Base requests are 0.000001 credit per request (1 credit = $1 USD)</p>
         </div>
         <div className="flex flex-col">
           <div className="md:mt-20 md:order-1">
