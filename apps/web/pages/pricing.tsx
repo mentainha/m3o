@@ -70,10 +70,11 @@ const Pricing: NextPage<PricingProps> = ({ prices }) => {
           </h2>
           <div className="my-10">
             <p className="mb-4">
-              We charge on a per request basis using an API credit model.
-              Base requests are 0.000001 credit per request. 1 credit = $1 (USD).
-              Requests beyond the subscription quota is taken from the account balance.
-              If there is no balance and quota has been exceeded requests will be blocked.
+              M3O usage is billed using an API credit model. Credits are 1 dollar USD per credit.
+              Base requests are charged at 0.000001 credits per request aka 1 million requests per credit.
+              Premium APIs are charged above the base rate, see pricing below.
+              Any requests beyond the free quota are taken from the account balance.
+              If there is no credit on account aka zero balance and the quota has been exceeded all requests are blocked.
             </p>
           </div>
         </div>
