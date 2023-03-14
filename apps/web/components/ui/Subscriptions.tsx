@@ -11,9 +11,10 @@ export function Subscriptions(): ReactElement {
         plan={SubscriptionPlans.Free}
         description="For testing"
         features={[
-          'Pay as you grow',
+          'Access to 50+ APIs',
           '1k requests/month',
           '5 requests/second',
+          'Top-up to add credit',
           'Unlimited API tokens',
         ]}
         button={
@@ -34,6 +35,7 @@ export function Subscriptions(): ReactElement {
           'Everything in Free plus',
 	  '10k requests/month',
           '10 request/second',
+          '5 API credits/month',
           'Unlock Premium APIs',
         ]}
         button={
@@ -54,6 +56,7 @@ export function Subscriptions(): ReactElement {
           'Everything in Solo plus',
 	  '100k requests/month',
           '100 requests/second',
+          '15 API credits/month',
           'Email support',
         ]}
         button={
@@ -74,6 +77,7 @@ export function Subscriptions(): ReactElement {
           'Everything in Pro plus',
           '1M requests/month',
           '1000 requests/second',
+          '45 API credits/month',
           'Premium support',
         ]}
         button={
