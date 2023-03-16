@@ -13,11 +13,14 @@ interface Props extends WithAuthProps {
 }
 
 const SERVICES_NAMES = [
-  'app',
-  'function',
+  'ai',
+  'cache',
   'db',
-  'event',
-  'space',
+  'email',
+  'sms',
+  'geocoding',
+  'ip',
+  'weather',
   'user'
 ]
 
