@@ -72,7 +72,7 @@ const Billing: NextPage<Props> = ({ user }) => {
               {subscriptionLevel !== SubscriptionPlans.Free && (
                 <span className="mr-2 font-light">
                   <button
-                    className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm flex items-center"
+                    className="bg-zinc-200 dark:bg-zinc-700 py-2 px-4 rounded-full text-sm inline-flex items-center"
                     onClick={() => setShowSubscriptionModal(true)}>
                     Cancel subscription{' '}
                     <ChevronRightIcon className="w-4 ml-2" />
