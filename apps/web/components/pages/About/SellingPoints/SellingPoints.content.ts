@@ -16,7 +16,7 @@ export const SELLING_POINTS: SellingPointProps[] = [
   {
     Icon: LightningBoltIcon,
     description:
-      "Using a new API is simple - no need to learn yet another API style, it's all the same Dev UX",
+      "Using a new API is simple - no need to learn yet another API format, it's all the same UX",
     title: 'Fast',
   },
   {
@@ -28,7 +28,7 @@ export const SELLING_POINTS: SellingPointProps[] = [
   {
     Icon: EyeOffIcon,
     description:
-      "Don't get lost in infinite billing. We show you exactly what you use with no hidden costs",
+      "Don't get lost in complex billing. We show you exactly what you use with no hidden costs",
     title: 'No Hidden Fees',
   },
 ]
