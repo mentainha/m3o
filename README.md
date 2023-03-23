@@ -51,7 +51,7 @@ export M3O_API_TOKEN=xxxxxxx
 curl \
   -H "Authorization: Bearer $M3O_API_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '-d '{"days": 2, "location": "London"}' \
+  -d '{"days": 2, "location": "London"}' \
   https://api.m3o.com/v1/weather/Forecast
 ```
 
