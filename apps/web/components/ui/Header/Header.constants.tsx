@@ -36,10 +36,6 @@ export const LOGGED_IN_MENU_ITEMS: MenuItem[] = [
 
 export const LOGGED_OUT_HEADER_LINKS: HeaderLink[] = [
   {
-    link: Routes.About,
-    text: 'About',
-  },
-  {
     link: 'https://blog.m3o.com',
     text: 'Blog',
     external: true,
@@ -51,6 +47,11 @@ export const LOGGED_OUT_HEADER_LINKS: HeaderLink[] = [
   {
     link: Routes.Pricing,
     text: 'Pricing',
+  },
+  {
+    link: 'https://status.m3o.com',
+    text: 'Status',
+    external: true,
   },
 ]
 
