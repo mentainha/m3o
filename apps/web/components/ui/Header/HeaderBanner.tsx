@@ -12,10 +12,9 @@ export function HeaderBanner() {
   useEffect(() => {
     const hideBanner = sessionStorage.getItem(SessionStorageKeys.HideBanner)
 
-    setShow(false)
-    // if (!hideBanner) {
-    //  setShow(true)
-    //}
+    if (!hideBanner) {
+      setShow(true)
+    }
   }, [])
 
   const hideBanner = () => {
@@ -34,8 +33,8 @@ export function HeaderBanner() {
       )}>
       <a
         className="text-white text-xs md:text-sm w-full flex items-center px-6 py-2 dark:text-white"
-        href="https://m3o.org">
-        Join M3O.org, a community for remote work</a>
+        href="https://discord.gg/TBR9bRjd6Z">
+        Join the M3O  community on Discord</a>
       <button onClick={hideBanner} className="mr-6">
         <XIcon className="w-4 text-white" />
       </button>
