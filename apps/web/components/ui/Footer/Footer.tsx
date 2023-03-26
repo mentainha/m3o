@@ -35,7 +35,7 @@ const EXTERNAL_LINKS_2: ExternalLink[] = [
   },
   {
     name: 'Twitter',
-    link: 'https://twitter.com/m3oservices',
+    link: 'https://twitter.com/m3ocloud',
   },
 ]
 
