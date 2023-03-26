@@ -19,7 +19,7 @@ export const CloudBanner: FC = () => {
         </Link>
         <div className="rounded-t-xl overflow-hidden bg-zinc-900 dark:border dark:border-zinc-700 w-full -mb-10 px-6 text-center">
           <img
-            src="/cloud.png"
+            src="/admin.png"
             className="h-full object-cover object-left w-full"
             alt="M3O - Cloud"
           />

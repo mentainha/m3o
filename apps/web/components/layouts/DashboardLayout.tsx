@@ -132,6 +132,11 @@ export function DashboardLayout({
                     icon: HomeIcon,
                   },
                   {
+                    text: 'Admin',
+                    href: '/admin',
+                    icon: ServerIcon,
+                  },
+                  {
                     text: 'Explore',
                     href: '/explore',
                     icon: SearchIcon,

@@ -67,7 +67,7 @@ export const RoundCircleCtas: FC<Props> = ({
         {canManageOnCloud && (
           <li className="ml-3">
             <RoundCircleCtaExternalLink
-              href="https://cloud.m3o.com"
+              href="https://admin.m3o.com"
               target="_blank"
               rel="noreferrer"
               toolTip="Manage your data on M3O Cloud">
