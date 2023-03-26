@@ -20,12 +20,12 @@ Here are the main features:
 
 Here are some of the APIs:
 
-- [**Apps**](https://m3o.com/app) - Serverless app deployment
-- [**Database**](https://m3o.com/db) - Serverless postgres database
-- [**Functions**](https://m3o.com/function) - Serverless lambda functions
-- [**Users**](https://m3o.com/user) - User management and authentication
-- [**Email**](https://m3o.com/email) - Send emails in a flash
+- [**AI**](https://m3o.com/ai) - GPT powered by OpenAI
+- [**Cache**](https://m3o.com/cache) - Fast access key-value storage
+- [**DB**](https://m3o.com/db) - Serverless postgres DB
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
+- [**Email**](https://m3o.com/email) - Send emails in a flash
+- [**Geocoding**](https://m3o.com/geocoding) - Address lookup and reverse resolution
 
 See the full list at [m3o.com/explore](https://m3o.com/explore).
 
@@ -51,8 +51,8 @@ export M3O_API_TOKEN=xxxxxxx
 curl \
   -H "Authorization: Bearer $M3O_API_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name": "helloworld", "repo": "github.com/m3o/helloworld"}' \
-  https://api.m3o.com/v1/app/Run
+  -d '{"days": 2, "location": "London"}' \
+  https://api.m3o.com/v1/weather/Forecast
 ```
 
 Find all the curl examples in [m3o-sh](https://github.com/m3o/m3o-sh)
@@ -64,7 +64,7 @@ Import packages from [go.m3o.com](https://pkg.go.dev/go.m3o.com)
 ```go
 import (
         "go.m3o.com"
-        "go.m3o.com/app"
+        "go.m3o.com/weather"
 )
 ```
 
@@ -72,9 +72,9 @@ Create a new client with your API token and call it
 
 ```go
 client := m3o.New(os.Getenv("M3O_API_TOKEN"))
-rsp, err := client.App.Run(&app.RunRequest{
-	Name: "helloworld",
-	Repo: "github.com/m3o/helloworld"
+rsp, err := client.Weather.Forecast(&weather.ForecastRequest{
+	Days:     2,
+	Location: "London",
 })
 fmt.Println(rsp, err)
 ```
@@ -94,11 +94,10 @@ Call app run like so
 ```javascript
 const m3o = require("m3o").default(process.env.M3O_API_TOKEN);
 
-// Call returns a personalised "Hello $name" response
 async function main() {
-  let rsp = await m3o.app.run({
-    name: "helloworld",
-    repo: "github.com/m3o/helloworld"
+  let rsp = await m3o.weather.forecast({
+    days: 2,
+    location: "London",
   });
   console.log(rsp);
 }
@@ -119,7 +118,7 @@ curl -fssl https://install.m3o.com/cli | /bin/bash
 Example call
 
 ```
-m3o app run --name=helloworld --repo=github.com/m3o/helloworld
+m3o weather forecast --location=London --days=2
 ```
 
 See the [m3o-cli](https://github.com/m3o/m3o-cli/tree/main/examples) for examples
