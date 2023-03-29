@@ -31,7 +31,7 @@ const EXTERNAL_LINKS_2: ExternalLink[] = [
   },
   {
     name: 'LinkedIn',
-    link: 'https://www.linkedin.com/company/micro-services-inc',
+    link: 'https://www.linkedin.com/company/m3o-com',
   },
   {
     name: 'Twitter',
