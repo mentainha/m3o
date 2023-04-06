@@ -11,16 +11,16 @@ interface ExternalLink {
 
 const EXTERNAL_LINKS_1: ExternalLink[] = [
   {
-    name: 'About',
-    link: '/about',
-  },
-  {
     name: 'Blog',
     link: 'https://blog.m3o.com',
   },
   {
     name: 'Email',
     link: 'mailto:contact@m3o.com',
+  },
+  {
+    name: 'GitHub',
+    link: 'https://github.com/m3o',
   },
 ]
 
