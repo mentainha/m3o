@@ -74,7 +74,7 @@ const CommunityPage: NextPage<WithAuthProps> = ({
 		  <CodeIcon className="w-5 text-indigo-600 dark:text-pink-400" />
 		</div>
 		<h3 className="mt-0 text-2xl mb-1">
-		  <Link href="https://m3o.org">
+		  <Link href="https://mastodon.social/@m3ocloud">
 		    <a
 		      data-testid={`service-link-functions`}
 		      className="font-bold text-zinc-900 pointer-events-auto dark:text-white">
