@@ -41,7 +41,7 @@ export const getServerSideProps = withAuth(async context => {
   }
 })
 
-const APP_FIELDS: (keyof Service)[] = ['name', 'id', 'branch', 'port', 'repo']
+const APP_FIELDS: (keyof Service)[] = ['name', 'id', 'branch', 'port', 'repo', 'region']
 
 export default function CloudApp({ app }: Props): ReactElement {
   const { data = {} } = useFetchSingleApp(app)

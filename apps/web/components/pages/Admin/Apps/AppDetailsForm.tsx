@@ -74,7 +74,6 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
           />
         )}
       />
-      {/*
       <Controller
         control={control}
         name="region"
@@ -91,7 +90,6 @@ export function AppDetailsForm({ regions }: Props): ReactElement {
           />
         )}
       />
-      */}
     </>
   )
 }
