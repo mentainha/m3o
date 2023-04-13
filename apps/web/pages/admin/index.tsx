@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import seo from '@/lib/seo.json'
-import { MainLayout } from '@/components/layouts'
+import { Routes } from '@/lib/constants'
+import { DashboardLayout } from '@/components/layouts'
 import { WithAuthProps, withAuth } from '@/lib/api/m3o/withAuth'
 import type { NextPage } from 'next'
 import Link from 'next/link'
@@ -13,7 +14,17 @@ import {
   TerminalIcon,
 } from '@heroicons/react/outline'
 
+
 export const getServerSideProps = withAuth(async context => {
+  if (!context.req.user) {
+    return {
+      redirect: {
+        destination: Routes.Home,
+        permanent: false,
+      },
+    }
+  }
+
   return {
     props: {
       user: context.req.user,
@@ -21,7 +32,7 @@ export const getServerSideProps = withAuth(async context => {
   }
 })
 
-const CloudPage: NextPage<WithAuthProps> = ({
+const AdminPage: NextPage<WithAuthProps> = ({
   user
 }) => {
   return (
@@ -31,7 +42,7 @@ const CloudPage: NextPage<WithAuthProps> = ({
         description={seo.cloud.description}
         canonical="https://m3o.com/admin"
       />
-      <MainLayout>
+      <DashboardLayout>
       <section className="px-4 md:px-0 py-12 md:py-24 text-zinc-600 dark:text-zinc-400">
         <div className="md:max-w-4xl lg:max-w-7xl mx-auto w-11/12 mb-10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl mb-6 max-w-2xl dark:text-white font-bold">
@@ -134,9 +145,9 @@ const CloudPage: NextPage<WithAuthProps> = ({
           </div>
         </div>
       </section>
-      </MainLayout>
+      </DashboardLayout>
     </>
   )
 }
 
-export default CloudPage
+export default AdminPage
