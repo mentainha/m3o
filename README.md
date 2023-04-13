@@ -22,7 +22,7 @@ Here are some of the APIs:
 
 - [**AI**](https://m3o.com/ai) - GPT powered by OpenAI
 - [**Cache**](https://m3o.com/cache) - Fast access key-value storage
-- [**DB**](https://m3o.com/db) - Serverless postgres DB
+- [**DB**](https://m3o.com/db) - Serverless postgres database 
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Geocoding**](https://m3o.com/geocoding) - Address lookup and reverse resolution
