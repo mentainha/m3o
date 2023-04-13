@@ -13,7 +13,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Access to 50+ APIs',
           '1k requests/month',
-          '1 request/second',
+          '5 request/second',
           'Top-up to add credit',
           'Unlimited API tokens',
         ]}
@@ -34,7 +34,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Free plus',
 	  '10k requests/month',
-          '5 request/second',
+          '10 request/second',
           '5 API credits/month',
           'Unlock Premium APIs',
         ]}
@@ -55,7 +55,7 @@ export function Subscriptions(): ReactElement {
         features={[
           'Everything in Solo plus',
 	  '100k requests/month',
-          '10 requests/second',
+          '20 requests/second',
           '15 API credits/month',
           'Email support',
         ]}
