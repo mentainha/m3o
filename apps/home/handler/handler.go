@@ -44,6 +44,9 @@ var (
 	// host of go vanity
 	GoHost = "go.m3o.com"
 
+	// home host
+	HomeHost = "home.m3o.com"
+
 	// host for user auth
 	UserHost = "user.m3o.com"
 )
@@ -536,6 +539,12 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// m3o.sh
 	if strings.HasSuffix(r.Host, FunctionHost) {
 		h.functionProxy(w, r)
+		return
+	}
+
+	// home.m3o.com
+	if r.Host == HomeHost {
+		h.server.ServeHTTP(w, r)
 		return
 	}
 
