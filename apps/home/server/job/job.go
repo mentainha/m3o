@@ -32,7 +32,7 @@ func Register() {
 	defer mtx.Unlock()
 
 	// lookup jobs
-	rsp, err := api.Client.Cron.Jobs(&cron.JobsRequest{})
+	rsp, err := api.Client(nil).Cron.Jobs(&cron.JobsRequest{})
 	if err != nil {
 		fmt.Printf("Error retrieving existing jobs: %v\n", err)
 		return
@@ -54,7 +54,7 @@ func Register() {
 
 		fmt.Println("Scheduling", job.Id, job.Name)
 
-		if _, err := api.Client.Cron.Schedule(&cron.ScheduleRequest{
+		if _, err := api.Client(nil).Cron.Schedule(&cron.ScheduleRequest{
 			Id:       job.Id,
 			Name:     job.Name,
 			Interval: job.Interval,

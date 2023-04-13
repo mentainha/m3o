@@ -54,7 +54,7 @@ function escapeHTML(str) {
 };
 
 // call the backend api
-function callAPI(ep, req, fn, errFn) {
+function callAPI(ep, req, fn, errFn, cache) {
 	const http = new XMLHttpRequest();
 	const url = "/api/" + ep;
 
@@ -63,6 +63,12 @@ function callAPI(ep, req, fn, errFn) {
 		if (this.readyState == 4 && this.status == 200) {
 			var data = JSON.parse(this.responseText);
 			fn(data);
+
+			// cache the data
+			if (cache == true) {
+
+
+			}
 		} else if (this.status == 500) {
 			console.log(ep, errFn);
 			if (errFn != undefined) {

@@ -25,8 +25,6 @@ var (
 	AppURL = os.Getenv("M3O_APP_URL")
 	// our global M3O API Token
 	Token = os.Getenv("M3O_API_TOKEN")
-	// new m3o client
-	Client = m3o.New(Token)
 )
 
 // Types
@@ -139,8 +137,27 @@ type UsersRequest struct {
 
 type Handler struct{}
 
+func Client(r *http.Request) *m3o.Client {
+	var token string
+	// only emails the owner of the token
+	if r == nil {
+		return m3o.New(token)
+	}
+
+	if v := r.Header.Get("Authorization"); strings.HasPrefix(v, "Bearer") {
+		token = strings.TrimSpace(strings.TrimPrefix(v, "Bearer"))
+	} else if c, err := r.Cookie("micro_token"); err != nil && len(c.Value) > 0 {
+		token = c.Value
+	} else {
+		// global token
+		// TODO: remove
+		token = Token
+	}
+	return m3o.New(token)
+}
+
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// check cors
+	// check cor
 	if Cors(w, r) {
 		return
 	}
@@ -207,7 +224,7 @@ func Email(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// check we know this user
-	user, err := Client.User.Read(&user.ReadRequest{
+	user, err := Client(r).User.Read(&user.ReadRequest{
 		Email: email.Address,
 	})
 	if err != nil {
@@ -240,7 +257,7 @@ func Email(w http.ResponseWriter, r *http.Request) {
 	// TODO: enable sending to users, store in their inbox
 	// check the group exists
 
-	if !groupExists(group) {
+	if !groupExists(r, group) {
 		fmt.Println("Group does not exist", group)
 		return
 	}
@@ -260,7 +277,7 @@ func Email(w http.ResponseWriter, r *http.Request) {
 		"created":   time.Now(),
 	}
 
-	_, err = Client.Db.Create(&db.CreateRequest{
+	_, err = Client(r).Db.Create(&db.CreateRequest{
 		Table:  "posts",
 		Record: p,
 	})
@@ -270,7 +287,7 @@ func Email(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// index the post
-	go indexData("posts", p)
+	go indexData(r, "posts", p)
 
 	// fire an update
 	/*
@@ -284,30 +301,30 @@ func Email(w http.ResponseWriter, r *http.Request) {
 }
 
 // helpers
-func createPost(p map[string]interface{}) error {
-	_, err := Client.Db.Create(&db.CreateRequest{
+func createPost(r *http.Request, p map[string]interface{}) error {
+	_, err := Client(r).Db.Create(&db.CreateRequest{
 		Table:  "posts",
 		Record: p,
 	})
 
 	// index the post
-	go indexData("posts", p)
+	go indexData(r, "posts", p)
 
 	return err
 }
 
 // email user notifications excluding the user created by
-func emailUsers(byUser, subj, msg string) error {
+func emailUsers(r *http.Request, byUser, subj, msg string) error {
 	// get users
 	// TODO: cache user list
-	rsp, err := Client.User.List(&user.ListRequest{Limit: 1000})
+	rsp, err := Client(r).User.List(&user.ListRequest{Limit: 1000})
 	if err != nil {
 		return err
 	}
 
 	// load user settings
 	// TODO: increase load limit
-	readRsp, err := Client.Db.Read(&db.ReadRequest{
+	readRsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table: "settings",
 		Limit: 1000,
 	})
@@ -341,7 +358,7 @@ func emailUsers(byUser, subj, msg string) error {
 
 	// email each user
 	for _, to := range emails {
-		Client.Email.Send(&email.SendRequest{
+		Client(r).Email.Send(&email.SendRequest{
 			From:     "M3O.org",
 			To:       to,
 			Subject:  subj,
@@ -351,15 +368,15 @@ func emailUsers(byUser, subj, msg string) error {
 	return nil
 }
 
-func groupExists(name string) bool {
+func groupExists(r *http.Request, name string) bool {
 	// check if the group exists
-	r := &db.ReadRequest{
+	req := &db.ReadRequest{
 		Table: "groups",
 		Limit: 1,
 		Query: fmt.Sprintf("name == '%v'", name),
 	}
 
-	rsp, err := Client.Db.Read(r)
+	rsp, err := Client(r).Db.Read(req)
 	if err == nil && len(rsp.Records) > 0 {
 		return true
 	}
@@ -368,7 +385,7 @@ func groupExists(name string) bool {
 }
 
 // upvote or downvote a post or a comment
-func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool, t VoteRequest) error {
+func vote(w http.ResponseWriter, r *http.Request, upvote bool, isComment bool, t VoteRequest) error {
 	if t.Id == "" {
 		return fmt.Errorf("missing post id")
 	}
@@ -376,7 +393,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 	if isComment {
 		table = "comments"
 	}
-	rsp, err := Client.Db.Read(&db.ReadRequest{
+	rsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table: table,
 		Id:    t.Id,
 		Limit: 1,
@@ -389,7 +406,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 	}
 
 	// auth
-	sessionRsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	sessionRsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -401,7 +418,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 
 	// prevent double votes
 	checkId := table + ":" + t.Id + ":" + sessionRsp.Session.UserId
-	checkRsp, err := Client.Db.Read(&db.ReadRequest{
+	checkRsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table: "votes",
 		Id:    checkId,
 	})
@@ -412,7 +429,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 
 	// add the vote sync
 	go func() {
-		_, err = Client.Db.Create(&db.CreateRequest{
+		_, err = Client(r).Db.Create(&db.CreateRequest{
 			Table: "votes",
 			Record: map[string]interface{}{
 				"id": checkId,
@@ -442,7 +459,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 	obj["score"] = obj["upvotes"].(float64) - obj["downvotes"].(float64)
 
 	// update the upvote for the post or comment
-	_, err = Client.Db.Update(&db.UpdateRequest{
+	_, err = Client(r).Db.Update(&db.UpdateRequest{
 		Table:  table,
 		Id:     t.Id,
 		Record: obj,
@@ -456,12 +473,12 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 	go func() {
 		userId := obj["userId"]
 		// index the data
-		indexData(table, obj)
+		indexData(r, table, obj)
 
 		// credit or debit their account
 		if upvote {
 			// TODO: transfer of credit?
-			_, err := Client.Wallet.Credit(&wallet.CreditRequest{
+			_, err := Client(r).Wallet.Credit(&wallet.CreditRequest{
 				Id:        userId.(string),
 				Amount:    1,
 				Visible:   true,
@@ -472,7 +489,7 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 			}
 		} else {
 			// TODO: transfer of credit?
-			_, err := Client.Wallet.Debit(&wallet.DebitRequest{
+			_, err := Client(r).Wallet.Debit(&wallet.DebitRequest{
 				Id:        userId.(string),
 				Amount:    1,
 				Visible:   true,
@@ -487,8 +504,8 @@ func vote(w http.ResponseWriter, req *http.Request, upvote bool, isComment bool,
 	return nil
 }
 
-func indexData(idx string, data map[string]interface{}) {
-	_, err := Client.Search.Index(&search.IndexRequest{
+func indexData(r *http.Request, idx string, data map[string]interface{}) {
+	_, err := Client(r).Search.Index(&search.IndexRequest{
 		Data:  data,
 		Index: idx,
 	})
@@ -507,16 +524,16 @@ func isMod(userId, s string) bool {
 	return false
 }
 
-func VoteWrapper(upvote bool, isComment bool) func(w http.ResponseWriter, req *http.Request) {
-	return func(w http.ResponseWriter, req *http.Request) {
-		decoder := json.NewDecoder(req.Body)
+func VoteWrapper(upvote bool, isComment bool) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		decoder := json.NewDecoder(r.Body)
 		var t VoteRequest
 		err := decoder.Decode(&t)
 		if err != nil {
 			respond(w, nil, err)
 			return
 		}
-		err = vote(w, req, upvote, isComment, t)
+		err = vote(w, r, upvote, isComment, t)
 		respond(w, nil, err)
 	}
 }
@@ -525,7 +542,7 @@ func VoteWrapper(upvote bool, isComment bool) func(w http.ResponseWriter, req *h
 func Checkin(w http.ResponseWriter, r *http.Request) {
 	group := "#daily+check-in"
 
-	rsp, err := Client.Cache.Get(&cache.GetRequest{
+	rsp, err := Client(r).Cache.Get(&cache.GetRequest{
 		Key: group,
 	})
 	if err == nil && len(rsp.Value) > 0 {
@@ -534,7 +551,7 @@ func Checkin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// set a cache value
-	_, err = Client.Cache.Set(&cache.SetRequest{
+	_, err = Client(r).Cache.Set(&cache.SetRequest{
 		Key:   group,
 		Value: time.Now().String(),
 		Ttl:   int64((time.Hour * 12).Seconds()),
@@ -546,6 +563,7 @@ func Checkin(w http.ResponseWriter, r *http.Request) {
 
 	// send the email
 	err = emailUsers(
+		r,
 		"micro",
 		"Daily check-in",
 		fmt.Sprintf(`Hey 👋, <a href="%s/%s">check-in</a> and let us know what you're upto!`, URL(nil), group),
@@ -557,7 +575,7 @@ func Checkin(w http.ResponseWriter, r *http.Request) {
 }
 
 func Notify(w http.ResponseWriter, r *http.Request) {
-	rsp, err := Client.Cache.Get(&cache.GetRequest{
+	rsp, err := Client(r).Cache.Get(&cache.GetRequest{
 		Key: "notify",
 	})
 	if err == nil && len(rsp.Value) > 0 {
@@ -566,7 +584,7 @@ func Notify(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// set a cache value
-	_, err = Client.Cache.Set(&cache.SetRequest{
+	_, err = Client(r).Cache.Set(&cache.SetRequest{
 		Key:   "notify",
 		Value: time.Now().String(),
 		Ttl:   int64(120),
@@ -581,8 +599,8 @@ func Notify(w http.ResponseWriter, r *http.Request) {
 	// group and send notifications
 }
 
-func Signup(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func Signup(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t SignupRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -590,11 +608,11 @@ func Signup(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	_, err = Client.User.Read(&user.ReadRequest{
+	_, err = Client(r).User.Read(&user.ReadRequest{
 		Username: t.Username,
 	})
 	if err != nil {
-		createRsp, err := Client.User.Create(&user.CreateRequest{
+		createRsp, err := Client(r).User.Create(&user.CreateRequest{
 			Username: t.Username,
 			Email:    t.Email,
 			Password: t.Password,
@@ -605,7 +623,7 @@ func Signup(w http.ResponseWriter, req *http.Request) {
 		}
 
 		// create a wallet for the user
-		wRsp, err := Client.Wallet.Create(&wallet.CreateRequest{
+		wRsp, err := Client(r).Wallet.Create(&wallet.CreateRequest{
 			Id:   createRsp.Account.Id,
 			Name: t.Username,
 		})
@@ -615,7 +633,7 @@ func Signup(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 
-	logRsp, err := Client.User.Login(&user.LoginRequest{
+	logRsp, err := Client(r).User.Login(&user.LoginRequest{
 		Username: t.Username,
 		Password: t.Password,
 	})
@@ -623,37 +641,37 @@ func Signup(w http.ResponseWriter, req *http.Request) {
 	respond(w, logRsp, err)
 }
 
-func Login(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func Login(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t LoginRequest
 	err := decoder.Decode(&t)
 	if err != nil {
 		respond(w, err, err)
 		return
 	}
-	logRsp, err := Client.User.Login(&user.LoginRequest{
+	logRsp, err := Client(r).User.Login(&user.LoginRequest{
 		Username: t.Username,
 		Password: t.Password,
 	})
 	respond(w, logRsp, err)
 }
 
-func Logout(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func Logout(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t LogoutRequest
 	err := decoder.Decode(&t)
 	if err != nil {
 		respond(w, err, err)
 		return
 	}
-	logRsp, err := Client.User.Logout(&user.LogoutRequest{
+	logRsp, err := Client(r).User.Logout(&user.LogoutRequest{
 		SessionId: t.SessionID,
 	})
 	respond(w, logRsp, err)
 }
 
-func ReadSession(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func ReadSession(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t ReadSessionRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -661,7 +679,7 @@ func ReadSession(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// get the user session
-	rsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	rsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionId,
 	})
 	if err != nil {
@@ -676,7 +694,7 @@ func ReadSession(w http.ResponseWriter, req *http.Request) {
 	ch := make(chan error, 1)
 
 	go func() {
-		readRsp, err := Client.User.Read(&user.ReadRequest{
+		readRsp, err := Client(r).User.Read(&user.ReadRequest{
 			Id: rsp.Session.UserId,
 		})
 		if err != nil {
@@ -691,7 +709,7 @@ func ReadSession(w http.ResponseWriter, req *http.Request) {
 	// read the account balance while the session is being read
 	var balance int64
 	// get the balance
-	if bRsp, err := Client.Wallet.Balance(&wallet.BalanceRequest{
+	if bRsp, err := Client(r).Wallet.Balance(&wallet.BalanceRequest{
 		Id: rsp.Session.UserId,
 	}); err != nil {
 		balance = int64(0)
@@ -710,8 +728,8 @@ func ReadSession(w http.ResponseWriter, req *http.Request) {
 	respond(w, response, nil)
 }
 
-func NewGroup(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func NewGroup(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t GroupRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -728,7 +746,7 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// check if the group exists
-	r := &db.ReadRequest{
+	req := &db.ReadRequest{
 		Table: "groups",
 		Limit: 1,
 	}
@@ -739,13 +757,13 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 		query += fmt.Sprintf("name == '%v'", t.Group.Name)
 	}
 	if query != "" {
-		r.Query = query
+		req.Query = query
 	}
 	if t.Group.Id != "" {
-		r.Id = t.Group.Id
+		req.Id = t.Group.Id
 	}
 
-	rsp, err := Client.Db.Read(r)
+	rsp, err := Client(r).Db.Read(req)
 	if err == nil && len(rsp.Records) > 0 {
 		respond(w, nil, fmt.Errorf("group %s already exists", t.Group.Name))
 		return
@@ -758,7 +776,7 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 
 	var userID, userName string
 
-	srsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	srsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -766,7 +784,7 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	userID = srsp.Session.UserId
-	readRsp, err := Client.User.Read(&user.ReadRequest{
+	readRsp, err := Client(r).User.Read(&user.ReadRequest{
 		Id: userID,
 	})
 	if err != nil {
@@ -788,7 +806,7 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// create the group
-	crsp, err := Client.Db.Create(&db.CreateRequest{
+	crsp, err := Client(r).Db.Create(&db.CreateRequest{
 		Table: "groups",
 		Record: map[string]interface{}{
 			"name":        t.Group.Name,
@@ -803,17 +821,18 @@ func NewGroup(w http.ResponseWriter, req *http.Request) {
 
 	// fire an update
 	go emailUsers(
+		r,
 		userID,
 		"New # just made",
 		fmt.Sprintf(`Checkout <a href="%s/#%s">%s</a> - %s`,
-			URL(req), gg, gg, t.Group.Description),
+			URL(r), gg, gg, t.Group.Description),
 	)
 
 	respond(w, crsp, err)
 }
 
-func NewPost(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func NewPost(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t PostRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -848,7 +867,7 @@ func NewPost(w http.ResponseWriter, req *http.Request) {
 
 	var userID, userName string
 
-	rsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	rsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -857,7 +876,7 @@ func NewPost(w http.ResponseWriter, req *http.Request) {
 	}
 
 	userID = rsp.Session.UserId
-	readRsp, err := Client.User.Read(&user.ReadRequest{
+	readRsp, err := Client(r).User.Read(&user.ReadRequest{
 		Id: userID,
 	})
 	if err != nil {
@@ -872,7 +891,7 @@ func NewPost(w http.ResponseWriter, req *http.Request) {
 	userName = readRsp.Account.Username
 
 	// check the group exists before posting
-	if !groupExists(t.Post.Group) {
+	if !groupExists(r, t.Post.Group) {
 		respond(w, nil, fmt.Errorf("group does not exist"))
 		return
 	}
@@ -890,27 +909,28 @@ func NewPost(w http.ResponseWriter, req *http.Request) {
 		"created":   time.Now(),
 	}
 
-	crsp, err := Client.Db.Create(&db.CreateRequest{
+	crsp, err := Client(r).Db.Create(&db.CreateRequest{
 		Table:  "posts",
 		Record: p,
 	})
 
 	// index the post
-	go indexData("posts", p)
+	go indexData(r, "posts", p)
 
 	// fire an update
 	go emailUsers(
+		r,
 		userID,
 		"New post: "+t.Post.Title,
 		fmt.Sprintf(`Checkout <a href="%s/#post=%s">%s</a> in #%s`,
-			URL(req), crsp.Id, t.Post.Title, strings.Replace(t.Post.Group, " ", "+", -1)),
+			URL(r), crsp.Id, t.Post.Title, strings.Replace(t.Post.Group, " ", "+", -1)),
 	)
 
 	respond(w, crsp, err)
 }
 
-func NewComment(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func NewComment(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t CommentRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -926,7 +946,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 	var userID, userName string
 
 	// get user if available
-	rsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	rsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -934,7 +954,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	userID = rsp.Session.UserId
-	readRsp, err := Client.User.Read(&user.ReadRequest{
+	readRsp, err := Client(r).User.Read(&user.ReadRequest{
 		Id: userID,
 	})
 	if err != nil {
@@ -955,7 +975,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// get post to update comment counter
-	dbRsp, err := Client.Db.Read(&db.ReadRequest{
+	dbRsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table: "posts",
 		Id:    t.Comment.PostId,
 	})
@@ -985,7 +1005,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 		"created":   time.Now(),
 	}
 
-	_, err = Client.Db.Create(&db.CreateRequest{
+	_, err = Client(r).Db.Create(&db.CreateRequest{
 		Table:  "comments",
 		Record: c,
 	})
@@ -994,7 +1014,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	go indexData("comments", c)
+	go indexData(r, "comments", c)
 
 	post := dbRsp.Records[0]
 	title := post["title"].(string)
@@ -1002,10 +1022,11 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 
 	// fire an update
 	go emailUsers(
+		r,
 		userID,
 		"New comment on "+title,
 		fmt.Sprintf(`Checkout a new comment on <a href="%s/#post=%s">%s</a> in #%s`,
-			URL(req), post["id"].(string), title, group),
+			URL(r), post["id"].(string), title, group),
 	)
 
 	go func() {
@@ -1016,7 +1037,7 @@ func NewComment(w http.ResponseWriter, req *http.Request) {
 		}
 		oldCount++
 		dbRsp.Records[0]["commentCount"] = oldCount
-		_, err = Client.Db.Update(&db.UpdateRequest{
+		_, err = Client(r).Db.Update(&db.UpdateRequest{
 			Table:  "posts",
 			Id:     t.Comment.PostId,
 			Record: dbRsp.Records[0],
@@ -1061,11 +1082,11 @@ func score(m map[string]interface{}) float64 {
 	return sign*order + float64(seconds)/45000
 }
 
-func Groups(w http.ResponseWriter, req *http.Request) {
+func Groups(w http.ResponseWriter, r *http.Request) {
 	var t GroupsRequest
-	decoder := json.NewDecoder(req.Body)
+	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&t)
-	r := &db.ReadRequest{
+	req := &db.ReadRequest{
 		Table:   "groups",
 		Order:   "asc",
 		OrderBy: "name",
@@ -1077,16 +1098,16 @@ func Groups(w http.ResponseWriter, req *http.Request) {
 		query += fmt.Sprintf("name == '%v'", t.Name)
 	}
 	if query != "" {
-		r.Query = query
+		req.Query = query
 	}
 	if t.Id != "" {
-		r.Id = t.Id
+		req.Id = t.Id
 	}
 	if t.Limit > 0 {
-		r.Limit = t.Limit
+		req.Limit = t.Limit
 	}
 
-	rsp, err := Client.Db.Read(r)
+	rsp, err := Client(r).Db.Read(req)
 
 	sort.Slice(rsp.Records, func(i, j int) bool {
 		return score(rsp.Records[i]) > score(rsp.Records[j])
@@ -1095,11 +1116,11 @@ func Groups(w http.ResponseWriter, req *http.Request) {
 	respond(w, rsp, err)
 }
 
-func Posts(w http.ResponseWriter, req *http.Request) {
+func Posts(w http.ResponseWriter, r *http.Request) {
 	var t PostsRequest
-	decoder := json.NewDecoder(req.Body)
+	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&t)
-	r := &db.ReadRequest{
+	req := &db.ReadRequest{
 		Table:   "posts",
 		Order:   "desc",
 		OrderBy: "created",
@@ -1124,27 +1145,27 @@ func Posts(w http.ResponseWriter, req *http.Request) {
 		query += fmt.Sprintf("group == '%v'", t.Group)
 	}
 	if query != "" {
-		r.Query = query
+		req.Query = query
 	}
 	if t.Id != "" {
-		r.Id = t.Id
+		req.Id = t.Id
 	}
 
-	rsp, err := Client.Db.Read(r)
+	rsp, err := Client(r).Db.Read(req)
 	sort.Slice(rsp.Records, func(i, j int) bool {
 		return score(rsp.Records[i]) > score(rsp.Records[j])
 	})
 	respond(w, rsp, err)
 }
 
-func Comments(w http.ResponseWriter, req *http.Request) {
+func Comments(w http.ResponseWriter, r *http.Request) {
 	var t CommentsRequest
-	decoder := json.NewDecoder(req.Body)
+	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&t)
 	if err != nil {
 		fmt.Fprintf(w, fmt.Sprintf("%v", err.Error()))
 	}
-	rsp, err := Client.Db.Read(&db.ReadRequest{
+	rsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table:   "comments",
 		Order:   "desc",
 		Query:   "postId == '" + t.PostId + "'",
@@ -1156,8 +1177,8 @@ func Comments(w http.ResponseWriter, req *http.Request) {
 	respond(w, rsp, err)
 }
 
-func Settings(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func Settings(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t SettingsRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -1171,7 +1192,7 @@ func Settings(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// get user if available
-	rsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	rsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -1183,7 +1204,7 @@ func Settings(w http.ResponseWriter, req *http.Request) {
 	userID := rsp.Session.UserId
 
 	// check for existing settings
-	readRsp, err := Client.Db.Read(&db.ReadRequest{
+	readRsp, err := Client(r).Db.Read(&db.ReadRequest{
 		Table: "settings",
 		Query: "userId == '" + userID + "'",
 		Limit: 1,
@@ -1213,7 +1234,7 @@ func Settings(w http.ResponseWriter, req *http.Request) {
 
 		t.Settings["userId"] = userID
 
-		createRsp, err := Client.Db.Create(&db.CreateRequest{
+		createRsp, err := Client(r).Db.Create(&db.CreateRequest{
 			Table:  "settings",
 			Record: t.Settings,
 		})
@@ -1230,7 +1251,7 @@ func Settings(w http.ResponseWriter, req *http.Request) {
 	settings["userId"] = userID
 
 	// store the update
-	updateRsp, err := Client.Db.Update(&db.UpdateRequest{
+	updateRsp, err := Client(r).Db.Update(&db.UpdateRequest{
 		Table:  "settings",
 		Id:     settings["id"].(string),
 		Record: settings,
@@ -1239,10 +1260,10 @@ func Settings(w http.ResponseWriter, req *http.Request) {
 	respond(w, updateRsp, err)
 }
 
-func Users(w http.ResponseWriter, req *http.Request) {
+func Users(w http.ResponseWriter, r *http.Request) {
 	// read the user
 	var t UsersRequest
-	decoder := json.NewDecoder(req.Body)
+	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&t)
 	if err != nil {
 		fmt.Fprintf(w, fmt.Sprintf("%v", err.Error()))
@@ -1253,14 +1274,14 @@ func Users(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// get the account
-	rsp, err := Client.User.Read(&user.ReadRequest{Id: t.Id, Username: t.Username})
+	rsp, err := Client(r).User.Read(&user.ReadRequest{Id: t.Id, Username: t.Username})
 	if err != nil {
 		respond(w, nil, err)
 		return
 	}
 	var balance int64
 	// get the balance
-	bRsp, err := Client.Wallet.Balance(&wallet.BalanceRequest{
+	bRsp, err := Client(r).Wallet.Balance(&wallet.BalanceRequest{
 		Id: t.Id,
 	})
 	if err != nil {
@@ -1276,8 +1297,8 @@ func Users(w http.ResponseWriter, req *http.Request) {
 	}, nil)
 }
 
-func VerifyAccount(w http.ResponseWriter, req *http.Request) {
-	decoder := json.NewDecoder(req.Body)
+func VerifyAccount(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 	var t SettingsRequest
 	err := decoder.Decode(&t)
 	if err != nil {
@@ -1291,7 +1312,7 @@ func VerifyAccount(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// get user if available
-	rsp, err := Client.User.ReadSession(&user.ReadSessionRequest{
+	rsp, err := Client(r).User.ReadSession(&user.ReadSessionRequest{
 		SessionId: t.SessionID,
 	})
 	if err != nil {
@@ -1302,7 +1323,7 @@ func VerifyAccount(w http.ResponseWriter, req *http.Request) {
 	// get user id from session
 	userID := rsp.Session.UserId
 
-	readRsp, err := Client.User.Read(&user.ReadRequest{
+	readRsp, err := Client(r).User.Read(&user.ReadRequest{
 		Id: userID,
 	})
 	if err != nil {
@@ -1311,11 +1332,11 @@ func VerifyAccount(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// send verification email
-	emailRsp, err := Client.User.SendVerificationEmail(&user.SendVerificationEmailRequest{
+	emailRsp, err := Client(r).User.SendVerificationEmail(&user.SendVerificationEmailRequest{
 		Email:       readRsp.Account.Email,
 		FromName:    "M3O",
 		Subject:     "Verify M3O user account",
-		RedirectUrl: URL(req) + "/#account",
+		RedirectUrl: URL(r) + "/#account",
 		TextContent: "Click the following link to verify your M3O user account\n\n$micro_verification_link",
 	})
 
@@ -1324,16 +1345,16 @@ func VerifyAccount(w http.ResponseWriter, req *http.Request) {
 
 // Utils
 
-func Cors(w http.ResponseWriter, req *http.Request) bool {
+func Cors(w http.ResponseWriter, r *http.Request) bool {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "*")
-	if req.Method == "OPTIONS" {
+	if r.Method == "OPTIONS" {
 		w.WriteHeader(http.StatusOK)
 		return true
 	}
 
-	if v := req.Header.Get("Content-Type"); strings.Contains(v, "application/json") {
+	if v := r.Header.Get("Content-Type"); strings.Contains(v, "application/json") {
 		w.Header().Set("Content-Type", "application/json")
 	}
 
