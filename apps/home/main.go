@@ -14,8 +14,8 @@ func main() {
 	// the home server
 	srv := server.New()
 
-	van1 := vanity.Handler("m3o-dev.yaml")
-	van2 := vanity.Handler("go-m3o-com.yaml")
+	van1 := vanity.Handler("./config/m3o-dev.yaml")
+	van2 := vanity.Handler("./config/go-m3o-com.yaml")
 
 	// new handler
 	hdr := handler.New(srv, van1, van2)
