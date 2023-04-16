@@ -36,16 +36,21 @@ export function useRecentlyViewed(): UseRecentlyViewed {
     )
   }, [recentlyViewedKeys])
 
-  const recentlyViewedApis = useMemo(() => {
-    if (apis.isLoading || !apis.data) {
-      return []
+const recentlyViewedApis = useMemo(() => {
+  if (apis.isLoading || !apis.data) {
+    return []
+  }
+
+  return recentlyViewedKeys.map(name => {
+    if (!name) {
+      return null
     }
-
-    return recentlyViewedKeys.map(
-      name => apis.data.find(api => api.name === name)!,
-    )
-  }, [apis.isLoading, apis.data, recentlyViewedKeys])
-
+    
+    const api = apis.data.find(api => api.name === name)
+    return api || null
+  })
+    .filter(api => api !== null)
+}, [apis.isLoading, apis.data, recentlyViewedKeys])
   return {
     addApiToRecentlyViewed,
     isLoading: apis.isLoading,
