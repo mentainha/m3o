@@ -18,7 +18,7 @@ Here are the main features:
 
 ## Services
 
-Here are some of the APIs:
+Here are a few APIs:
 
 - [**AI**](https://m3o.com/ai) - GPT powered by OpenAI
 - [**Cache**](https://m3o.com/cache) - Fast access key-value storage
@@ -26,8 +26,8 @@ Here are some of the APIs:
 - [**SMS**](https://m3o.com/sms) - Send an SMS message
 - [**Email**](https://m3o.com/email) - Send emails in a flash
 - [**Geocoding**](https://m3o.com/geocoding) - Address lookup and reverse resolution
-
-See the full list at [m3o.com/explore](https://m3o.com/explore).
+- [**Weather**](https://m3o.com/weather) - Real time weather info and forecast
+- [**User**](https://m3o.com/user) - Account management and authentication 
 
 ## Getting Started
 
