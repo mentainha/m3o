@@ -41,16 +41,14 @@ const recentlyViewedApis = useMemo(() => {
     return []
   }
 
-  return recentlyViewedKeys.map(name => {
-    if (!name) {
-      return null
-    }
-    
+  const apisArray = recentlyViewedKeys.map(name => {
     const api = apis.data.find(api => api.name === name)
     return api || null
   })
-    .filter(api => api !== null)
+  
+  return apisArray.filter(api => api !== null) as ExploreAPI[]
 }, [apis.isLoading, apis.data, recentlyViewedKeys])
+
   return {
     addApiToRecentlyViewed,
     isLoading: apis.isLoading,
