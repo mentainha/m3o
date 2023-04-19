@@ -1,25 +1,19 @@
-package main
+package chats
 
 import (
 	"time"
 
-	"m3o.dev/apps/chat/api"
 	"m3o.dev/apps/chat/api/chats/handler"
 	pb "m3o.dev/apps/chat/api/chats/proto"
+	"m3o.dev/apps/chat/api/db"
 
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/logger"
 )
 
-func main() {
-	// Create service
-	srv := service.New(
-		service.Name("chats"),
-		service.Version("latest"),
-	)
-
+func Register(srv *service.Service) {
 	// Connect to the database
-	db, err := api.NewDB("chats")
+	db, err := db.New("chats")
 	if err != nil {
 		logger.Fatalf("Error connecting to database: %v", err)
 	}
@@ -30,9 +24,4 @@ func main() {
 
 	// Register handler
 	pb.RegisterChatsHandler(srv.Server(), &handler.Chats{DB: db, Time: time.Now})
-
-	// Run service
-	if err := srv.Run(); err != nil {
-		logger.Fatal(err)
-	}
 }

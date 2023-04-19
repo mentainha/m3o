@@ -1,7 +1,7 @@
-package main
+package groups
 
 import (
-	"m3o.dev/apps/chat/api"
+	"m3o.dev/apps/chat/api/db"
 	"m3o.dev/apps/chat/api/groups/handler"
 	pb "m3o.dev/apps/chat/api/groups/proto"
 
@@ -9,15 +9,9 @@ import (
 	"github.com/micro/micro/v3/service/logger"
 )
 
-func main() {
-	// Create service
-	srv := service.New(
-		service.Name("groups"),
-		service.Version("latest"),
-	)
-
+func Register(srv *service.Service) {
 	// Connect to the database
-	db, err := api.NewDB("groups")
+	db, err := db.New("groups")
 	if err != nil {
 		logger.Fatalf("Error connecting to database: %v", err)
 	}
@@ -27,9 +21,4 @@ func main() {
 
 	// Register handler
 	pb.RegisterGroupsHandler(srv.Server(), &handler.Groups{DB: db.Debug()})
-
-	// Run service
-	if err := srv.Run(); err != nil {
-		logger.Fatal(err)
-	}
 }

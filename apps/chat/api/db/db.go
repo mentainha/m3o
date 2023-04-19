@@ -1,4 +1,4 @@
-package api
+package db
 
 import (
 	"os"
@@ -15,7 +15,7 @@ import (
 	"github.com/micro/micro/v3/util/user"
 )
 
-func NewDB(name string) (*gorm.DB, error) {
+func New(name string) (*gorm.DB, error) {
 	dbAddress := "sqlite://" + name + ".db"
 
 	// Connect to the database
