@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "NODE_OPTIONS='--openssl-legacy-provider --inspect' next start",
     "export": "next export",
-    "prepare": "husky install",
+    "prepare": "cd ../../ && husky install apps/chat/.husky",
     "tsc": "tsc --noEmit",
     "prettier": "prettier --check .",
     "prettier:write": "prettier --write .",
