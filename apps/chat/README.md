@@ -29,13 +29,11 @@ micro login
 Start the api
 
 ```bash
-for api in chats codes groups invites seen streams threads users; do
-  ## generate an auth rule to open the api
-  micro auth create rule --resource=service:$api:* --access=granted --priority=1 $api
+## generate an auth rule to open the api
+micro auth create rule --resource=service:chat:* --access=granted --priority=1 chat
 
-  ## run the service
-  micro run github.com/micro/chat/api/$api
-done
+## run the service
+micro run github.com/micro/chat/api
 ```
 
 ### Optional Configuration
