@@ -16,10 +16,10 @@ const SERVICES_NAMES = [
   'ai',
   'apps',
   'cache',
-  'cron',
   'db',
   'email',
   'sms',
+  'image',
   'geocoding',
   'user'
 ]
