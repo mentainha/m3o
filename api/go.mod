@@ -11,16 +11,20 @@ require (
 	github.com/google/uuid v1.1.2
 	github.com/gorilla/websocket v1.4.2
 	github.com/micro/micro/plugin/prometheus/v3 v3.0.0-20210806112317-b9d708632505
-	github.com/micro/micro/v3 v3.12.4-0.20220918071809-e030bcee1fc5
+	github.com/micro/micro/v3 v3.16.1-0.20230503122214-05c25470f102
 	github.com/micro/services v0.18.1-0.20210820083700-3f2383c55554
 	github.com/onsi/gomega v1.15.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/slack-go/slack v0.6.5
+	github.com/stretchr/testify v1.8.0
 	github.com/stripe/stripe-go/v71 v71.28.0
+	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	google.golang.org/grpc v1.40.0
 	google.golang.org/protobuf v1.27.1
+	gorm.io/driver/postgres v1.4.5
+	gorm.io/gorm v1.24.1-0.20221019064659-5dd2bb482755
 )
 
 require (
@@ -38,6 +42,17 @@ require (
 	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	github.com/improbable-eng/grpc-web v0.13.0 // indirect
+	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
+	github.com/jackc/pgconn v1.13.0 // indirect
+	github.com/jackc/pgio v1.0.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgproto3/v2 v2.3.1 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
+	github.com/jackc/pgtype v1.12.0 // indirect
+	github.com/jackc/pgx/v4 v4.17.2 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/miekg/dns v1.1.31 // indirect
 	github.com/nightlyone/lockfile v1.0.0 // indirect
@@ -53,8 +68,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
-	github.com/stretchr/objx v0.2.0 // indirect
-	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/uber/jaeger-client-go v2.29.1+incompatible // indirect
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
@@ -63,14 +77,14 @@ require (
 	go.opentelemetry.io/otel/metric v0.19.0 // indirect
 	go.opentelemetry.io/otel/trace v0.19.0 // indirect
 	go.uber.org/atomic v1.6.0 // indirect
-	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
-	golang.org/x/net v0.0.0-20210428140749-89ef3d95e781 // indirect
-	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
-	golang.org/x/text v0.3.6 // indirect
+	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
+	golang.org/x/text v0.3.8 // indirect
 	google.golang.org/appengine v1.6.1 // indirect
 	google.golang.org/genproto v0.0.0-20201001141541-efaab9d3c4f7 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+	gorm.io/driver/sqlite v1.4.3 // indirect
 )
