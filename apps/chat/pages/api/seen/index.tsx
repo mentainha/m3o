@@ -22,7 +22,7 @@ export default async function handler(
   // authenticate the request
   let user: any
   try {
-    const rsp = await call('/chat/users/validate', { token })
+    const rsp = await call('/users/validate', { token })
     user = rsp.user
   } catch ({ error, code }) {
     const statusCode = code === 400 ? 401 : code
@@ -41,7 +41,7 @@ export default async function handler(
 
   // update the last seen time
   try {
-    await call('/chat/cache/Set', { key: "seen:"+user.id, value: body })
+    await call('/cache/Set', { key: "seen:"+user.id, value: body })
     res.status(200).json({})
   } catch ({ error, code }) {
     console.error(`Error updating last seen: ${error}, code: ${code}`)

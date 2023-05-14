@@ -20,7 +20,7 @@ export default async function handler(
 
   let user: any
   try {
-    const rsp = await call('/chat/users/ReadByEmail', { emails: [body.email] })
+    const rsp = await call('/users/ReadByEmail', { emails: [body.email] })
     user = rsp.users ? rsp.users[body.email?.toLowerCase()] : null
   } catch ({ error, code }) {
     console.error(`Error reading users: ${error}`)
@@ -34,7 +34,7 @@ export default async function handler(
 
   let code: string
   try {
-    const rsp = await call('/chat/otp/Generate', { id: user.email, expiry: 360 })
+    const rsp = await call('/otp/Generate', { id: user.email, expiry: 360 })
     code = rsp.code
   } catch ({ error, code }) {
     console.error(`Error creating code: ${error}`)
