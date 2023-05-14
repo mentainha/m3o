@@ -17,7 +17,7 @@ func main() {
 	)
 
 	// Connect to the database
-	db, err := sql.New("streams")
+	db, err := sql.NewDB("streams")
 	if err != nil {
 		logger.Fatalf("Error connecting to database: %v", err)
 	}

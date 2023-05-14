@@ -14,7 +14,7 @@ func main() {
 	)
 
 	// Connect to the database
-	db, err := sql.New("seen")
+	db, err := sql.NewDB("seen")
 	if err != nil {
 		logger.Fatalf("Error connecting to database: %v", err)
 	}

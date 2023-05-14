@@ -14,7 +14,7 @@ func main() {
 	)
 
 	// Connect to the database
-	db, err := sql.New("groups")
+	db, err := sql.NewDB("groups")
 	if err != nil {
 		logger.Fatalf("Error connecting to database: %v", err)
 	}
