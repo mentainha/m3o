@@ -26,7 +26,7 @@ func main() {
 	}
 
 	// Register handler
-	pb.RegisterChatsHandler(srv.Server(), &handler.Chats{DB: db, Time: time.Now})
+	pb.RegisterChatsHandler(srv.Server(), &handler.Chats{DB: db.DB, Time: time.Now})
 
 	if err := srv.Run(); err != nil {
 		logger.Fatal(err)

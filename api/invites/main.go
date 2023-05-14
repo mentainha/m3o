@@ -23,7 +23,7 @@ func main() {
 	}
 
 	// Register handler
-	pb.RegisterInvitesHandler(srv.Server(), &handler.Invites{DB: db})
+	pb.RegisterInvitesHandler(srv.Server(), &handler.Invites{DB: db.DB})
 
 	if err := srv.Run(); err != nil {
 		logger.Fatal(err)

@@ -25,7 +25,7 @@ func main() {
 	}
 
 	// Register handler
-	pb.RegisterUsersHandler(srv.Server(), &handler.Users{DB: db, Time: time.Now})
+	pb.RegisterUsersHandler(srv.Server(), &handler.Users{DB: db.DB, Time: time.Now})
 
 	if err := srv.Run(); err != nil {
 		logger.Fatal(err)

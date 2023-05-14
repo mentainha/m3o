@@ -25,7 +25,7 @@ func main() {
 	}
 
 	// Register handler
-	pb.RegisterThreadsHandler(srv.Server(), &handler.Threads{DB: db, Time: time.Now})
+	pb.RegisterThreadsHandler(srv.Server(), &handler.Threads{DB: db.DB, Time: time.Now})
 
 	if err := srv.Run(); err != nil {
 		logger.Fatal(err)

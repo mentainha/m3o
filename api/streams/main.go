@@ -27,7 +27,7 @@ func main() {
 
 	// Register handler
 	pb.RegisterStreamsHandler(srv.Server(), &handler.Streams{
-		DB:     db,
+		DB:     db.DB,
 		Events: events.DefaultStream,
 		Time:   time.Now,
 	})
