@@ -3,14 +3,11 @@ package main
 import (
 	_ "net/http/pprof"
 
-	"github.com/micro/micro/plugin/prometheus/v3"
 	"github.com/micro/micro/v3/service"
 	"github.com/micro/micro/v3/service/api"
 	"github.com/micro/micro/v3/service/logger"
-	"github.com/micro/micro/v3/service/metrics"
 	"github.com/micro/micro/v3/service/registry"
 	"github.com/micro/micro/v3/service/registry/cache"
-	"m3o.dev/api/pkg/tracing"
 	"m3o.dev/api/v1/handler"
 )
 
@@ -67,17 +64,6 @@ func main() {
 	if regName != "cache" {
 		logger.Infof("Setting up cached registry for %s", regName)
 		registry.DefaultRegistry = cache.New(registry.DefaultRegistry)
-	}
-
-	traceCloser := tracing.SetupOpentracing("v1")
-	defer traceCloser.Close()
-	// Set up a default metrics reporter (being careful not to clash with any that have already been set):
-	if !metrics.IsSet() {
-		prometheusReporter, err := prometheus.New()
-		if err != nil {
-			logger.Fatalf("Failed to configure prom %s", err)
-		}
-		metrics.SetDefaultMetricsReporter(prometheusReporter)
 	}
 
 	// Run service

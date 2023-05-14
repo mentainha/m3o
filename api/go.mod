@@ -1,19 +1,18 @@
 module m3o.dev/api
 
-go 1.17
+go 1.20
 
 require (
-	github.com/go-redis/redis/v8 v8.8.0
+	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-redis/redismock/v8 v8.0.6
 	github.com/golang-jwt/jwt v0.0.0-20210529014511-0f726ea0e725
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-github/v38 v38.1.0
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.4.2
-	github.com/micro/micro/plugin/prometheus/v3 v3.0.0-20210806112317-b9d708632505
-	github.com/micro/micro/v3 v3.16.1-0.20230513212828-fd0f4fb4ea18
-	github.com/micro/services v0.18.1-0.20210820083700-3f2383c55554
-	github.com/onsi/gomega v1.15.0
+	github.com/micro/micro/v3 v3.17.0
+	github.com/micro/services v1.4.2-0.20230514074209-a57d3fab7232
+	github.com/onsi/gomega v1.18.1
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/slack-go/slack v0.6.5
@@ -30,7 +29,6 @@ require (
 require (
 	cloud.google.com/go/compute v1.18.0 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
-	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
@@ -54,18 +52,12 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/mattn/go-sqlite3 v1.14.15 // indirect
-	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/miekg/dns v1.1.43 // indirect
 	github.com/nightlyone/lockfile v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/prometheus/client_golang v1.7.1 // indirect
-	github.com/prometheus/client_model v0.2.0 // indirect
-	github.com/prometheus/common v0.10.0 // indirect
-	github.com/prometheus/procfs v0.1.3 // indirect
-	github.com/rogpeppe/go-internal v1.9.0 // indirect
 	github.com/rs/cors v1.7.0 // indirect
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
@@ -75,9 +67,6 @@ require (
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
-	go.opentelemetry.io/otel v0.19.0 // indirect
-	go.opentelemetry.io/otel/metric v0.19.0 // indirect
-	go.opentelemetry.io/otel/trace v0.19.0 // indirect
 	go.uber.org/atomic v1.6.0 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.8.0 // indirect
