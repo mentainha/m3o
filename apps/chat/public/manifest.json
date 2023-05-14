@@ -1,6 +1,6 @@
 {
-  "name": "Micro Chat",
-  "short_name": "Chat",
+  "name": "Micro",
+  "short_name": "Mu",
   "theme_color": "#FAFAFA",
   "background_color": "#F5F3F2",
   "display": "fullscreen",
@@ -9,7 +9,7 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "logo.png",
       "sizes": "144x144"
     }
   ],

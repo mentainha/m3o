@@ -27,9 +27,9 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
-        <title>Micro Chat</title>
+        <title>Micro</title>
         <meta name="description" content="Stay in sync with friends, family and colleagues" />
-        <meta name="og:title" content="Micro Chat" />
+        <meta name="og:title" content="Micro" />
 
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -60,7 +60,7 @@ export default function Layout({
         <div className={styles.container}>
           <header className={styles.header}>
             <Link href="/">
-              <img src="/logo.svg" alt="Logo" />
+              <img src="/logo.png" height="100px" width="100px" alt="Logo" />
             </Link>
 
             <nav>

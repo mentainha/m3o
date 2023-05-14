@@ -85,12 +85,12 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Login | Micro Chat</title>
+        <title>Login | Micro</title>
       </Head>
 
       <div className={styles.inner}>
-        <img className={styles.logo} src="/logo.svg" alt="Micro Chat Logo" />
-        <h1 className={styles.title}>Micro Chat</h1>
+        <img className={styles.logo} src="/logo.png" height="100px" width="100px" alt="Micro Logo" />
+        <h1 className={styles.title}>Micro</h1>
         {error ? (
           <p className={styles.error}>{JSON.stringify(error, null, 2)}</p>
         ) : null}

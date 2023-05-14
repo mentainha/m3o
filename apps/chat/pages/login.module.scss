@@ -1,9 +1,8 @@
-$color: #a38b7b;
+$color: #333333;
 
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: rgba($color: $color, $alpha: 0.2);
   position: relative;
 }
 
@@ -51,7 +50,7 @@ $color: #a38b7b;
   }
 
   input[type='submit'] {
-    background-color: #14248a;
+    background-color: #333333;
     border: none;
     outline: none;
     height: 40px;
@@ -100,6 +99,6 @@ $color: #a38b7b;
   margin: 5px 0px;
 
   &:hover {
-    color: #14248a;
+    color: #333333;
   }
 }
