@@ -10,7 +10,7 @@ require (
 	github.com/google/go-github/v38 v38.1.0
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.4.2
-	github.com/micro/micro/v3 v3.17.0
+	github.com/micro/micro/v3 v3.18.0
 	github.com/micro/services v1.4.2-0.20230514074209-a57d3fab7232
 	github.com/onsi/gomega v1.18.1
 	github.com/patrickmn/go-cache v2.1.0+incompatible
@@ -20,7 +20,7 @@ require (
 	github.com/stripe/stripe-go/v71 v71.28.0
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
 	golang.org/x/oauth2 v0.5.0
-	google.golang.org/grpc v1.53.0
+	google.golang.org/grpc v1.54.1
 	google.golang.org/protobuf v1.28.1
 	gorm.io/driver/postgres v1.4.5
 	gorm.io/gorm v1.24.1-0.20221019064659-5dd2bb482755
