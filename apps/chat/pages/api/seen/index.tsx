@@ -41,7 +41,8 @@ export default async function handler(
 
   // update the last seen time
   try {
-    await call('/cache/Set', { key: "seen:"+user.id, value: body })
+    var key = user.id + "/" + body.resource_id + "/" + body.resource_type
+    await call('/cache/Set', { key: "seen/"+key, value: "true" })
     res.status(200).json({})
   } catch ({ error, code }) {
     console.error(`Error updating last seen: ${error}, code: ${code}`)
