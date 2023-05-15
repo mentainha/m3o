@@ -62,7 +62,7 @@ func (u *Users) Update(ctx context.Context, req *pb.UpdateRequest, rsp *pb.Updat
 
 	// write the user to the database
 	err := u.DB.Save(user).Error
-	if err != nil && strings.Contains(err.Error(), "idx_users_email") {
+	if err != nil && strings.Contains(err.Error(), "users_email") {
 		return ErrDuplicateEmail
 	} else if err != nil {
 		logger.Errorf("Error writing to the database: %v", err)

@@ -42,7 +42,7 @@ func (c *Chats) CreateChat(ctx context.Context, req *pb.CreateChatRequest, rsp *
 		rsp.Chat = chat.Serialize()
 		return nil
 	}
-	if !strings.Contains(err.Error(), "idx_chats_user_ids") {
+	if !strings.Contains(err.Error(), "chats_user_ids") {
 		logger.Errorf("Error creating chat: %v", err)
 		return errors.InternalServerError("DATABASE_ERROR", "Error connecting to database")
 	}

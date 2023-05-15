@@ -48,7 +48,7 @@ func (u *Users) Create(ctx context.Context, req *pb.CreateRequest, rsp *pb.Creat
 			Password:  phash,
 		}
 		err = u.DB.Create(user).Error
-		if err != nil && strings.Contains(err.Error(), "idx_users_email") {
+		if err != nil && strings.Contains(err.Error(), "users_email") {
 			return ErrDuplicateEmail
 		} else if err != nil {
 			logger.Errorf("Error writing to the database: %v", err)
