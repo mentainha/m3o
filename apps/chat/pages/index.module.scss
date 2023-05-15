@@ -6,7 +6,7 @@
     height: 50px;
     margin-top: auto;
     margin-bottom: auto;
-    background-color: #14248a;
+    background-color: #333333;
     border: none;
     outline: none;
     color: white;
@@ -60,7 +60,7 @@
     background-color: rgba($color: #14248a, $alpha: 0.1);
     &:hover {
       color: white;
-      background-color: #14248a;
+      background-color: #333333;
     }
   }
 
@@ -91,4 +91,6 @@
 .groups {
   overflow: auto;
   max-height: 350px;
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: 5px;
 }

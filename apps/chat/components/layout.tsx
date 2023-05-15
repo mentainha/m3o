@@ -60,7 +60,7 @@ export default function Layout({
         <div className={styles.container}>
           <header className={styles.header}>
             <Link href="/">
-              <img src="/logo.png" height="100px" width="100px" alt="Logo" />
+              <img src="/logo.png" height="30px" width="30px" alt="Logo" />
             </Link>
 
             <nav>
