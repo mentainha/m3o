@@ -432,7 +432,7 @@ export default function Group() {
           onClick={() => setSubview(undefined)}
         />
         <div className={styles.settings}>
-          <h1>{chat.type === 'thread' ? 'Room' : 'User'} Settings</h1>
+          <h1>{chat.type === 'thread' ? 'Topic' : 'User'} Settings</h1>
           <div className={styles.dismiss} onClick={() => setSubview(undefined)}>
             <p>🔙</p>
           </div>
@@ -607,7 +607,7 @@ export default function Group() {
 
         <div className={styles.section}>
           <h3>
-            <span>🛋️</span> Rooms
+            <span>💬</span> Topics
           </h3>
           <ul>
             {uniqueByID(groupLoader.group?.threads || []).map((s) => {
@@ -626,7 +626,7 @@ export default function Group() {
               )
             })}
             <li className={styles.gray} key="room" onClick={createChannel}>
-              New Room
+              New Topic
             </li>
           </ul>
         </div>
